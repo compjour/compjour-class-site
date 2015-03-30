@@ -1,0 +1,123 @@
+sections:
+  - title: Quantitative measurements
+    deliverables:
+      - title: "Receive 10,000 unique visits across the webpages you publish for this class."
+        due: Ongoing
+        points: 10
+        description: |
+          Pageviews and visits aren't everything, but they aren't nothing either. This requirement means that you'll have to figure out how to get a Google Analytics embed code, and how to publish web pages in which you can embed this code.
+          You can receive partial credit (1 point per 1,000 visits). You won't get extra credit for exceeding the requirement.
+
+      - title: Make at least 150 commits to Github
+        due: Ongoing
+        points: 10
+        description: |
+          Make at least 150 commits to Github over the course of the quarter. There is no requirement as to what the commits actually contain. These points are all or nothing.
+
+      - title: Have at least 10 consecutive days of commits to Github
+        due: Ongoing
+        points: 10
+        description: |
+          During this quarter, you must have made commits to Github for at least 10 days in a row. There is no requirement as to what the commits actually contain. These points are all or nothing.
+
+      - title: Submit something to the class private subreddit every week
+        due: Ongoing
+        points: 5
+        description: |
+          For every week of the quarter, make at least one submission to the r/compjour2015 private subreddit. These points are all or nothing.
+
+      - title: Make at least one comment to the class private subreddit every week
+        due: Ongoing
+        points: 5
+        description: |
+          For every week of the quarter, comment at least once on someone else's submission to the r/compjour2015 private subreddit. These points are all or nothing.
+
+      - title: Physically attend class
+        due: Ongoing
+        points: 0
+        description: |
+          You don't get points for showing up to class. However, if I mark you as absent for a given class date, you will be docked 10 points.
+
+  - title: Technical checkboxes
+    deliverables:
+      - title: Debug and publish a webpage
+        points: 10
+        due: 2015-04-13
+        description: |
+          You will be given a buggy webpage to fix up, including changing stylesheet errors, fixing broken HTML elements and links, and cleaning up JavaScript errors. This exercise is meant to demonstrate your knowledge of the web inspector and basic web development concepts. The page-to-fix and instructions will be posted before April 8.
+        more_link: TBA
+
+      - title: Deploy a simple Flask app on a remote server
+        points: 10
+        due: 2015-04-24
+        description: |
+          Using the [Python Flask web framework](http://flask.pocoo.org/), create and deploy an app on a remote server with at least 3 dynamic endpoints. The remote server can be a service such as Heroku, Amazon AWS, or DigitalOcean. The actual look and functionality of the app and its endpoints can be the bare minimum (e.g. "Hello :username"). More info TBA.
+        more_link: TBA
+
+      - title: Deploy a database-backed Flask app on a remote server
+        points: 10
+        due: 2015-05-04
+        description: |
+          Create a Flask app that, based on parameters from user-input, [will query a database (preferably SQLite3) and return results](http://flask.pocoo.org/docs/0.10/patterns/sqlite3/#sqlite3).
+        more_link: TBA
+
+      - title: Execute a SQL injection attack on your own web app
+        points: 5
+        due: 2015-05-06
+        description: |
+          This assignment requires you to create a web application that connects to a database and then to be designed in such a way that you can craft an attack that corrupts the database. Do not attempt this on any application except your own. More info TBA.
+        more_link: TBA
+
+      - title: Execute a XSS attack on your own web app
+        points: 5
+        due: 2015-05-06
+        description: |
+          This assignment requires you to create a web application designed in such a way that user input is naively reprinted by the app, [allowing for a cross-site scripting attack](http://en.wikipedia.org/wiki/Cross-site_scripting). Do not attempt to attack a web application other than your own. More info TBA.
+        more_link: TBA
+
+      - title: A Python mashup of at least two different APIs or data sources
+        points: 10
+        due: 2015-05-13
+        description: |
+          Create a Python project (could be a web-app, could be a few scripts packaged together to make a command-line tool) that talks to two different APIs or data sources, e.g. counting up the number of Twitter followers by Congressional party (via the Sunlight Foundation data)
+        more_link: TBA
+
+
+  - title: Quick visualizations
+    description: |
+      Not everything has to be a full-fledged web project or narrative story. Use code to build a visualization from start to finish, including the collection, filtering, and calculation of a dataset to the actual creation of the visualization. The visualization itself can be a static image or an interactive Javascript display.
+      More information TBA.
+    deliverables:
+      - title: Visualization 1
+        points: 20
+        due: 2015-05-10
+      - title: Visualization 2
+        points: 20
+        due: 2015-05-20
+
+
+  - title: The Public Project
+    description: |
+
+    deliverables:
+      - title: Fake memo
+        points: 10
+        due: 2015-05-01
+        description: |
+          Write a project memo in the required format, but for an already existing journalism project that someone else has already built. You will write the memo as if you were the project creator, which means you have to do some research about how the project was actually built.
+        more_link: TBA
+
+      - title: Actual memo
+        points: 20
+        due: 2015-05-18
+        description: |
+          Write a project memo in the required format for the project you actually want to make for this class.
+        more_link: TBA
+
+      - title: Produce and publish the project
+        points: 100
+        due: 2015-06-05
+        description: |
+          The project should be accessible to the public and do what you described in the actual project memo.
+        more_link: TBA
+
