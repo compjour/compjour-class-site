@@ -78,10 +78,12 @@
 
       table#earthquakes{
         float: left;
-        width: 420px;
+        width: 380px;
         margin-right: 10px;
       }
 
       img#earthquakes-map{
         float: left;
+        max-width: 380px;
+        width: 50%;
       }

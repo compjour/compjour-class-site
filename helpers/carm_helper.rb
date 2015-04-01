@@ -27,8 +27,9 @@ def nav_prev?
   end
 end
 
-def link_to_slug(slug)
+def link_to_slug(slug, title = nil, opts = {})
   c = carm_content.find{|c| c.url =~ /#{Regexp.escape(slug)}/ }
+  t = title || c.data.title
 
-  link_to c.data.title, c.url
+  link_to t, c.url, opts
 end
