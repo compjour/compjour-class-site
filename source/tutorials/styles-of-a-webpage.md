@@ -1,6 +1,12 @@
 ---
 title: The Styles of a Webpage
+nav:
+  prev: elements-of-a-webpage
+  part_of: intro-to-the-web-inspector 
 ---
+
+
+In the previous
 
 
 

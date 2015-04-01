@@ -46,7 +46,7 @@ function just_shake(){
 
 function just_swift(){
   $("#the-container").children().fadeOut(300, function(){
-    $('#the-container').html('<iframe id="swift-video" width="560" height="315" src="https://www.youtube.com/embed/nfWlot6h_JM?start=2&autoplay=1" frameborder="0" allowfullscreen></iframe>')
+    $('#the-container').html('<iframe id="swift-video" width="560" height="315" src="https://www.youtube.com/embed/nfWlot6h_JM?start=4&autoplay=1" frameborder="0" allowfullscreen></iframe>')
 
 
     console.info("Resizing video!");

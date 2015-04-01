@@ -1,0 +1,10 @@
+div.articles-nav
+          - if nav_part_of?
+              span> This article is part of a series,
+              span> #{{link_to_slug(current_page.data.nav.part_of)}}.
+          - if nav_next?
+            span> The next article is
+            span> #{{link_to_slug(current_page.data.nav.next)}}.
+          - if nav_prev?
+            span> The previous article is
+            span> #{{link_to_slug(current_page.data.nav.prev)}}.

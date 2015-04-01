@@ -5,6 +5,10 @@
         line-height: 1.5em;
       }
 
+      p{
+        font-family: Georgia;
+      }
+
       button{
         padding: 10px;
         cursor: pointer;

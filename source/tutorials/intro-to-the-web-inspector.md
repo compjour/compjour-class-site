@@ -1,47 +1,38 @@
 ---
 title: Inspecting the Web with Chrome's DevTools
 description: How to activate the Chrome Developer Tools and start debugging web pages
+nav:
+  next: elements-of-a-webpage
+
 ---
 
-
-## The Panels
-### The Web Inspector
-
-Elements of a Web Page - Everything is just text
-Styles of a Web Page
-Forge the Web
-
-
-
-
-### The Network Panel
-
-
-
-- Accessing Data Files without the Packaging
-- Checking Forms
-- A Bit for a Bit
-
-
-### The Console
-
-- Executing JavaScript and printing messages
 
 
 
 ## Opening the DevTools
 
+![img](/files/images/tutorials/devtools/intro-devtools-open-panel.gif)
 
-### The menubar
+
+
+### Go horizontal
+
+![img](/files/images/tutorials/devtools/intro-devtools-go-horz.gif)
+
 
 ### Pop-out
 
+![img](/files/images/tutorials/devtools/intro-devtools-pop-out.gif)
 
-### Finding within the page
+### The menubar
+
+![img](/files/images/tutorials/devtools/intro-devtools-menubar.gif)
 
 
 
+### Disabling the cache
 
+![img](/files/images/tutorials/devtools/intro-devtools-disable-cache.gif)
 
 
 --------
