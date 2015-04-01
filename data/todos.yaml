@@ -1,0 +1,53 @@
+- title: Create a Github account
+  description: |
+    If you haven't already, [create a Github account](https://github.com/join). You can set it at the __free__ level for now.
+
+- title: Register for a Github Student Developer Pack
+  description: |
+    As soon as you're registered on Github, please sign-up (if you haven't already) for a [Student Developer Pack](https://education.github.com/pack).
+
+- title: Create a Twitter account
+  description: |
+    If you haven't already, or if you want to make a new one just for this class, join the [Twitter messaging service](https://twitter.com).
+
+- title: Create a Instagram account
+  description: |
+    If you haven't already, or if you want to make a new one just for this class, join the [Instagram image-sharing service](https://instagram.com).
+
+- title: Create New York Times Developer Account
+  description: |
+    The [NYT Developers group has many useful data APIs](http://developer.nytimes.com/). However, you have to [create a regular NYT account (it's free)](https://myaccount.nytimes.com/register) first.
+
+- title: Download and install either Sublime Text or Atom
+  description: |
+    For this class, you're going to need a full-featured text-editor. You can download either [Sublime Text](http://www.sublimetext.com/2) or [Atom](https://atom.io/)
+
+
+- title: Install Google Chrome
+  description: |
+    We'll be using the Google Chrome web inspector in class.
+
+- title: Email Dan some account/system information
+  description: |
+    Send an email to dun@stanford.edu with "Compjour info [your-sunet-id]" in the __Subject__. In the __body__, paste on separate lines:
+
+    1. the URL to your Github account
+    2. the URL to your Twitter account
+    3. the URL to your Instagram account
+    4. Your Stanford email address
+    5. Your operating system and version
+    6. The result when you go to your Terminal/command-line and execute
+
+       `python --version`
+
+- title: Read these Github guides
+  description: |
+    Read, and follow to the best of your ability, these Github tutorials:
+
+    - [Getting your project on GitHub](https://guides.github.com/introduction/getting-your-project-on-github/)
+    - [Hello World](https://guides.github.com/activities/hello-world/)
+
+
+- title: Signup for Codecademy's interactive Python lesson (optional)
+  description: |
+    If you are pretty new to programming, and/or Python in general, [give it a spin in this web-browser interactive lesson](http://www.codecademy.com/en/tracks/python). It's better to get acquianted with it in a friendly environment before running it "for real".

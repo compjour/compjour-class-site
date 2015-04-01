@@ -1,0 +1,22 @@
+@import "variables";
+
+table.homework-listing{
+
+  tr.section > td.title{
+    background: $highlight-bg;
+    font-weight: bold;
+    font-size: 1.05em;
+    padding: 5px 10px;
+  }
+
+  td.due, td.points{
+    text-align: right
+  }
+}
+
+
+table.todos-listing{
+  td.title{
+    font-weight: bold;
+  }
+}

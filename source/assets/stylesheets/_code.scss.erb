@@ -1,0 +1,19 @@
+pre{
+  padding: 1.0em;
+}
+
+pre{
+  margin-bottom: 1.5em;
+}
+
+
+div.codepiece{
+  overflow: auto;
+  &.brief{
+    pre{
+      max-height: 400px;
+    }
+  }
+}
+
+<%= Rouge::Themes::Github.render(:scope => '.highlight') %>

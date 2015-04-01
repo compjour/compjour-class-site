@@ -1,0 +1,13 @@
+head
+  meta charset="utf-8"
+  meta content="IE=edge,chrome=1" http-equiv="X-UA-Compatible"
+  title => page_title
+  meta[name="description" content="#{{page_description}}"]
+  meta[name="author" content="#{{page_author}}"]
+
+  = javascript_include_tag 'application'
+  = stylesheet_link_tag 'application'
+
+
+  - if build? && (ga_id = config[:google_analytics_id])
+    = partial '/layouts/site/google_analytics', locals: { :ga_id => ga_id }

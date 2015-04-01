@@ -1,0 +1,83 @@
+      body{
+        font-family: "Helvetica Neue", "Helvetica", sans-serif;
+        font-size: 17px;
+        margin: 0 auto;
+        line-height: 1.5em;
+      }
+
+      button{
+        padding: 10px;
+        cursor: pointer;
+      }
+      section{
+        padding: 30px 15%;
+      }
+
+      section#sherlock-sec{
+        background: #eedfdf;
+      }
+      section#fruit-sec(2){
+        background: #eff;
+      }
+      section#videos-sec{
+        background: #FFFDE4;
+        text-align: center;
+      }
+
+      section#shakes-sec(4){
+        background: #FFF0F4;
+      }
+
+      h2{
+        text-align: center;
+      }
+
+      hr{
+        margin: 20px 0 50px;
+      }
+
+      td, th{
+        border: thin solid #aaa;
+        font-family: 'Gill Sans', Arial, sans-serif;
+        padding: 10px;
+      }
+
+      table#fruits{
+        width: 100%;
+      }
+
+
+      #fruits td{
+         text-align: right;
+      }
+
+      #fruits td.name{
+        font-weight: bold;
+        text-align: left;
+      }
+
+      #fruits td.name img{
+        height: 50px;
+        width: 50px;
+        vertical-align: middle;
+      }
+
+      ul.videos{
+        padding-left: 0;
+      }
+
+      ul.videos li{
+        list-style: none;
+        margin: 0 0 20px 0;
+      }
+
+
+      table#earthquakes{
+        float: left;
+        width: 420px;
+        margin-right: 10px;
+      }
+
+      img#earthquakes-map{
+        float: left;
+      }

@@ -1,0 +1,9 @@
+div.weeks-listing
+  - weeks().each do |week|
+    div.week
+      div
+        span.title => friendly_date week_start_date_foo(week)
+        - if week.data.show_link == true
+          span = link_to "(Notes)", week.url
+
+

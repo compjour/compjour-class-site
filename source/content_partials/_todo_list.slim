@@ -1,0 +1,6 @@
+table.todos-listing.table.table-striped
+  - todos.each do |t|
+
+      tr
+        td.title = t.title
+        td.description = make_markdown t.description

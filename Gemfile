@@ -8,6 +8,8 @@ gem "middleman", "~>3.3.10"
 gem "middleman-livereload", "~> 3.1.0"
 gem 'middleman-s3_sync'
 gem 'middleman-pry'
+gem 'middleman-syntax'
+
 gem "slim"
 gem 'bootstrap-sass', '~> 3.3.3'
 gem 'chronic'

@@ -1,0 +1,20 @@
+footer.woz{
+
+  border-top: thin solid #bbb;
+    color: $text-color;
+  min-height: 100px;
+  margin-top: 3.0em;
+  padding-top: 3.0em;
+  padding-bottom: 5.0em;
+  background: white;
+  a, a:link, a:visited{
+    color: $theme-color;
+  }
+
+  h5{ margin-bottom: 0.1em;}
+  ul li{
+    line-height: 1.3em;
+    font-size: 1.0em;
+  }
+
+}

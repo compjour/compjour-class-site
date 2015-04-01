@@ -1,0 +1,297 @@
+---
+layout: none
+---
+<html lang="en">
+<html>
+<head>
+    <title>Web DevTools Sandbox</title>
+      <meta charset="UTF-8">
+
+    <meta name="author" content="Dan Nguyen for Stanford Journalism" =>
+    <meta name="description" content="A sandbox for testing out the web inspector/Chrome dev tools, by Dan Nguyen for Stanford Computational Journalism">
+    <meta name="og:image" content="http://stash.compjour.org.s3.amazonaws.com/images/taylor-swift-by-jana-zills.jpg">
+
+
+    <link href="/files/pages/web-inspector/assets/a-styles.css" rel="stylesheet">
+    <script src="https://code.jquery.com/jquery-1.11.2.min.js"></script>
+    <script src="/files/pages/web-inspector/assets/a-app.js"></script>
+    <link href="//vjs.zencdn.net/4.12/video-js.css" rel="stylesheet">
+    <script src="//vjs.zencdn.net/4.12/video.js"></script>
+</head>
+
+<body>
+    <div id="the-container">
+        <section id="sherlock-sec">
+            <h2>The Web Inspector Test Page</h2>
+
+            <div style="float: right; width: 67%; margin-left: 2%">
+                <p style="font-family: Georgia;">"From a drop of water," said
+                the writer, "a logician could infer the possibility of an
+                Atlantic or a Niagara without having seen or heard of one or
+                the other. <strong>So all life is a great chain, the nature of
+                which is known whenever we are shown a single link of it. Like
+                all other arts, the Science of Deduction and Analysis is one
+                which can only be acquired by long and patient study nor is
+                life long enough to allow any mortal to attain the highest
+                possible perfection in it.</strong> Before turning to those
+                moral and mental aspects of the matter which present the
+                greatest difficulties, let the enquirer begin by mastering more
+                elementary problems. Let him, on meeting a fellow-mortal, learn
+                at a glance to distinguish the history of the man, and the
+                trade or profession to which he belongs.</p>
+
+                <p style="font-family: Georgia">Puerile as such an exercise may
+                seem, it sharpens the faculties of observation, and teaches one
+                where to look and what to look for. By a man's finger nails, by
+                his coat-sleeve, by his boot, by his trouser knees, by the
+                callosities of his forefinger and thumb, by his expression, by
+                his shirt cuffs—by each of these things a man's calling is
+                plainly revealed. That all united should fail to enlighten the
+                competent enquirer in any case is almost inconceivable."</p>
+
+                <p style="text-align: right;">&ndash; <em>A Study in
+                <span style="color:FireBrick;">Scarlet</span></em> by Arthur
+                Conan Doyle, <a href=
+                "http://www.gutenberg.org/files/244/244-h/244-h.htm">via
+                Gutenberg.org</a></p>
+            </div>
+
+            <div style="float: right; width: 30%;">
+                <img alt="holmes" src=
+                "http://upload.wikimedia.org/wikipedia/commons/c/cd/Sherlock_Holmes_Portrait_Paget.jpg">
+
+                <p style=
+                "line-height: 1.0em; font-size: 13px; margin-top: 0.5em;">
+                Portrait of Sherlock Holmes <a href=
+                "http://en.wikipedia.org/wiki/Sherlock_Holmes#/media/File:Sherlock_Holmes_Portrait_Paget.jpg"
+                target="_blank">by Sidney Paget</a></p>
+            </div>
+
+            <div style="clear:both;"></div>
+        </section>
+
+        <section class="fruits-sec">
+            <h2>A Table of Fruits</h2>
+
+            <table id="fruits">
+                <thead>
+                    <tr>
+                        <th>Name</th>
+
+                        <th>Quantity</th>
+
+                        <th>Price</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="name">
+                            <a href=
+                            "http://en.wikipedia.org/wiki/Apple"><img alt=
+                            "apple" src=
+                            "http://upload.wikimedia.org/wikipedia/commons/thumb/1/15/Red_Apple.jpg/265px-Red_Apple.jpg">
+                            Apples</a>
+                        </td>
+
+                        <td>50</td>
+
+                        <td>$2.00</td>
+                    </tr>
+
+                    <tr>
+                        <td class="name">
+                            <img alt="orange" src=
+                            "http://upload.wikimedia.org/wikipedia/commons/thumb/6/63/Starr_070730-7915_Citrus_sinensis.jpg/320px-Starr_070730-7915_Citrus_sinensis.jpg">
+                            <a href=
+                            "http://en.wikipedia.org/wiki/Orange_(fruit)">Oranges</a>
+                        </td>
+
+                        <td>200</td>
+
+                        <td>$1.50</td>
+                    </tr>
+
+                    <tr>
+                        <td class="name">
+                            <a href=
+                            "http://en.wikipedia.org/wiki/Pear"><img alt=
+                            "pears" src=
+                            "http://upload.wikimedia.org/wikipedia/commons/thumb/6/61/Alexander_Lucas_10.10.10.jpg/185px-Alexander_Lucas_10.10.10.jpg">
+                            Pears</a>
+                        </td>
+
+                        <td>99</td>
+
+                        <td>$3.00</td>
+                    </tr>
+                </tbody>
+            </table>
+
+            <ul class="credits">
+                <li>Apple photo <a href=
+                "http://www.flickr.com/photos/24340456@N03/3345977842/">by
+                Abhijit Tembhekar from Mumbai, India</a>
+                </li>
+
+                <li>Orange photo <a href="http://www.hear.org/starr/">by Forest
+                &amp; Kim Starr</a>
+                </li>
+
+                <li>Pear photo <a href=
+                "http://commons.wikimedia.org/wiki/File:Alexander_Lucas_10.10.10.jpg">
+                    by Wikipedia user Kombucha1</a>
+                </li>
+            </ul>
+        </section>
+
+        <section id="videos-sec">
+            <h2>Videos</h2>
+
+            <p>These videos courtesy of videomaker <a href="http://danwin.com">Dan Nguyen</a></p>
+
+            <ul class="videos">
+                <li>
+                    <video class="video-js vjs-default-skin" controls=""
+                    height="360" id="gagavegas" poster=
+                    "http://stash.compjour.org/images/gagavegas.jpg" preload=
+                    "none" width="480">
+                    <source src=
+                    "http://stash.compjour.org/videos/gagavegas.mp4" type=
+                    'video/mp4'>
+
+                    <p class="vjs-no-js">To view this video please enable
+                    JavaScript, and consider upgrading to a web browser that
+                    <a href="http://videojs.com/html5-video-support/" target=
+                    "_blank">supports HTML5 video</a></p></video>
+
+                    <p><a href=
+                    "https://www.youtube.com/watch?v=inS5Ku1kP6A">Violinist
+                    Brandon Summers playing Lady Gaga on the Las Vegas
+                    Strip</a></p>
+                </li>
+
+                <li>
+                    <video class="video-js vjs-default-skin" controls=""
+                    height="360" id="mariosub" poster=
+                    "http://stash.compjour.org/images/mariosub.jpg" preload=
+                    "none" width="480">
+                    <source src="http://stash.compjour.org/videos/mariosub.mp4"
+                    type='video/mp4'>
+
+                    <p class="vjs-no-js">To view this video please enable
+                    JavaScript, and consider upgrading to a web browser that
+                    <a href="http://videojs.com/html5-video-support/" target=
+                    "_blank">supports HTML5 video</a></p></video>
+
+                    <p><a href=
+                    "https://www.youtube.com/watch?v=HZmw_cLLco8">Subway Super
+                    Mario Bros. by Gypsy Joe Trane in the NYC Subway</a></p>
+                </li>
+            </ul>
+        </section>
+
+        <section id="shakes-sec">
+            <h2>The Shakes</h2>
+
+            <p>Click this button to get the <em>latest</em> earthquake data:
+            <button id="refresh-quake-data" type="button">Shake the
+            data</button> Or just <button id="refresh-swift" type=
+            "button">Shake it off</button></p>
+
+            <table id="earthquakes">
+                <thead>
+                    <tr>
+                        <th>Place</th>
+
+                        <th>Time</th>
+
+                        <th>Magnitude</th>
+                    </tr>
+                </thead>
+
+                <tbody>
+                    <tr>
+                        <td class="place">132km SSW of Taron, Papua New
+                        Guinea</td>
+
+                        <td class="time">3/31/2015&nbsp;9:50</td>
+
+                        <td class="mag">4.9</td>
+                    </tr>
+
+                    <tr>
+                        <td class="place">17km N of Lixourion, Greece</td>
+
+                        <td class="time">3/31/2015&nbsp;8:48</td>
+
+                        <td class="mag">4.6</td>
+                    </tr>
+
+                    <tr>
+                        <td class="place">61km SSE of Kokopo, Papua New
+                        Guinea</td>
+
+                        <td class="time">3/31/2015&nbsp;5:18</td>
+
+                        <td class="mag">5.9</td>
+                    </tr>
+
+                    <tr>
+                        <td class="place">69km SW of Taron, Papua New
+                        Guinea</td>
+
+                        <td class="time">3/31/2015&nbsp;5:15</td>
+
+                        <td class="mag">5.6</td>
+                    </tr>
+
+                    <tr>
+                        <td class="place">77km SE of Kirakira, Solomon
+                        Islands</td>
+
+                        <td class="time">3/31/2015&nbsp;5:10</td>
+
+                        <td class="mag">5.8</td>
+                    </tr>
+
+                    <tr>
+                        <td class="place">87km NNE of Tobelo, Indonesia</td>
+
+                        <td class="time">3/30/2015&nbsp;20:46</td>
+
+                        <td class="mag">4.9</td>
+                    </tr>
+
+                    <tr>
+                        <td class="place">Northern Mid-Atlantic Ridge</td>
+
+                        <td class="time">3/30/2015&nbsp;19:52</td>
+
+                        <td class="mag">4.7</td>
+                    </tr>
+
+                    <tr>
+                        <td class="place">51km W of Abra Pampa, Argentina</td>
+
+                        <td class="time">3/30/2015&nbsp;14:0</td>
+
+                        <td class="mag">4.7</td>
+                    </tr>
+                </tbody>
+            </table><img id="earthquakes-map" src=
+            "https://maps.googleapis.com/maps/api/staticmap?zoom=1&size=500x400&markers=size:tiny%7C-5.5959,152.6376&markers=size:tiny%7C38.3533,20.3935&markers=size:tiny%7C-4.8472,152.5066&markers=size:tiny%7C-4.918,152.5934&markers=size:tiny%7C-10.9135,162.4525&markers=size:tiny%7C2.4631,128.3017&markers=size:tiny%7C13.1737,-44.9487&markers=size:tiny%7C-22.6775,-66.1985" alt="googlemap">
+
+            <div style="clear:both;">
+                <p>Data from the <a href=
+                "http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php">USGS
+                GeoJSON API for 4.5+ magnitude quakes in the past day</a>.</p>
+
+                <p>This page's meta image comes courtesy of <a href=
+                "http://www.flickr.com/photos/94347223@N07/8588016225/">Jana
+                Zills</a></p>
+            </div>
+        </section>
+    </div>
+</body>
+</html>

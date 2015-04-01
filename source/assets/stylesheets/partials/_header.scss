@@ -1,0 +1,33 @@
+header.woz{
+  .navbar{
+    position: relative;
+    margin-bottom: 1.0em;
+    border: 1px solid transparent;
+    padding: 6px 0px;
+    min-height: 10px;
+    background: $theme-color;
+  }
+  .navbar:after {
+    clear: both;
+  }
+
+  h2.title{
+    color: white;
+    font-size: 16px;
+    font-weight: 400;
+    margin: 0 auto;
+    padding: 0 0;
+    text-align: left;
+
+    .brand{
+      background: $brand-primary;
+      padding: 5px;
+      margin-right: 10px;
+    }
+
+    a:link, a:visited{
+      color:inherit;
+      text-decoration: none;
+    }
+  }
+}

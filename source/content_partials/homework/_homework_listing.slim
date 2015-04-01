@@ -1,0 +1,11 @@
+
+
+table.homework-listing.table.table-condensed
+  - homework_sections.each do |section|
+    tr.section
+      td.title colspan=3 = section.title
+    - Array(section.deliverables).each do |d|
+      tr data-date="#{{machine_date d.due}}"
+        td.title = d.title
+        td.due = friendly_date d.due
+        td.points = d.points

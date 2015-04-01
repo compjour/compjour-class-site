@@ -1,0 +1,33 @@
+@import "compass";
+@import "variables";
+@import "mixins";
+@import "code";
+
+@import "bootstrap-compass";
+@import "bootstrap";
+
+// import partials
+@import "partials/footer";
+@import "partials/header";
+
+// import pages
+@import "pages/contents-page";
+@import "pages/homeworks";
+
+
+
+a:link, a:visited{
+  text-decoration: underline;
+}
+
+h1,h2,h3,h4,h5,h6{
+  a:link, a:visited{
+    text-decoration: none;
+  }
+}
+
+
+blockquote{
+  font-size: 1.0em;
+  color: #666;
+}

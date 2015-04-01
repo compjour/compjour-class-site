@@ -1,0 +1,13 @@
+.detailed-lessons{
+  .collection > .title{
+    text-align: center;
+  }
+
+  .lesson{
+    .tldr{
+      h1,h2,h3,h4,h5,h6,p,code,li{
+        font-size: smaller;
+      }
+    }
+  }
+}

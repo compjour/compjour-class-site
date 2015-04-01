@@ -1,7 +1,9 @@
-le_option_validator!
+Slim::Engine.disable_option_validator!
 
-set :site_title, 'Computational Journalism: Stanford COMM 277A'
+set :site_title, 'Computational Journalism'
+set :site_deck, 'Stanford COMM 277A'
 set :site_author, "Dan Nguyen"
+set :class_start_date, '2015-03-30'
 
 set :site_description, "Public-facing data projects"
 # set :google_analytics_id, 'UA-60893965-1'
@@ -21,7 +23,7 @@ set :js_dir, 'assets/javascripts'
 set :images_dir, 'assets/images'
 
 ######### layout stuff
-# set :layout, 'page'
+set :layout, 'page'
 # page "/content/*", :layout => "content"
 
 ############################# Build-specific configuration
