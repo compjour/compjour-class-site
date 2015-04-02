@@ -7,14 +7,10 @@ nav:
   next: styles-of-a-webpage
 ---
 
-TK
-
-
-The Chrome Dev Tools documentation is excellent: [Editing Styles And The DOM Introduction](https://developer.chrome.com/devtools/docs/dom-and-styles)
 
 ## Everything is just text
 
-
+(rambling about HTML, the nature of data, web, etc. TK)
 
 ## A brief primer to HTML
 

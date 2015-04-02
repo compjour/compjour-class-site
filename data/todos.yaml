@@ -1,3 +1,11 @@
+
+- title: "Read the initial lessons on DevTools"
+  description: |
+    In progress: [http://www.compjour.org/tutorials/intro-to-the-web-inspector/](http://www.compjour.org/tutorials/intro-to-the-web-inspector/)
+- title: "Try out the Freebie #1 on SSS"
+  description: |
+    While you're waiting for the Search-Script-Scrape page to be fully fleshed out, try out the freebie exercise. You might have to do some reading, including how to get those Python libraries to work. But that's part of the process.
+
 - title: Create a Github account
   description: |
     If you haven't already, [create a Github account](https://github.com/join). You can set it at the __free__ level for now.

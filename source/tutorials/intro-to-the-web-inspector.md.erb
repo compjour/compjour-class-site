@@ -1,0 +1,85 @@
+---
+title: Inspecting the Web with Chrome's DevTools
+description: How to activate the Chrome Developer Tools and start debugging web pages
+nav:
+  next: elements-of-a-webpage
+
+---
+
+
+We will learn how to use the Chrome DevTools to debug webpages and, by doing so, gain a better understanding of how the Web (and computers) work, as well as gain experience in using an invaluable tool for web-scraping and other programming.
+
+
+
+
+Lessons so far:
+
+- <%= link_to_slug 'elements-of-a-webpage' %>
+- <%= link_to_slug 'styles-of-a-webpage' %>
+- <%= link_to_slug 'watching-traffic-network-panel' %>
+
+Other references:
+
+- [A Web Inspector Tutorial for Front-End Developers](https://thewc.co/articles/view/web-inspector-tutorial)
+- [Google Chrome keyboard shortcuts](https://support.google.com/chrome/answer/157179?hl=en)
+- [Chrome DevTools Overview](https://developer.chrome.com/devtools)
+- [Editing Styles And The DOM Introduction](https://developer.chrome.com/devtools/docs/dom-and-styles)
+- [Network panel overview from the Chrome DevTools docs](https://developer.chrome.com/devtools/docs/network)
+- [Safari's Developer Tools](https://developer.apple.com/safari/tools/)
+- [The F12 Developer Tools](https://msdn.microsoft.com/library/ie/bg182326(v=vs.85))
+
+
+
+
+TK: More text about what's going on in these instructions:
+
+
+## Opening the DevTools Panel
+
+You can open the DevTools by going to the menu and selecting __View -> Developer -> Developer Tools__.
+
+Or better yet, use the keyboard shortcut:
+
+__PC:__ <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">Shift</kbd>+<kbd class="kbd">I</kbd> / __Mac:__ <kbd class="kbd">Cmd</kbd>+<kbd class="kbd">Opt</kbd>+<kbd class="kbd">I</kbd>
+
+
+![img](/files/images/tutorials/devtools/intro-devtools-open-panel.gif)
+
+
+
+### Go horizontal
+
+Usually by default, the panel will open up vertically. This isn't an ideal layout for most web debugging tasks, so click-and-hold the layout icon (in the top right of the __DevTools Panel's menubar__) to see the horizontal-layout option.
+
+![img](/files/images/tutorials/devtools/intro-devtools-go-horz.gif)
+
+
+### Pop-out
+
+There's also a __pop-out option__, which is what I normally use. For the purposes of the animated-GIF-screencasts in these tutorials, I stick to the horizontal layout.
+
+![img](/files/images/tutorials/devtools/intro-devtools-pop-out.gif)
+
+
+
+### The menubar
+
+The menubar contains three menu items that we care about:
+
+- Elements
+- Network
+- Console
+
+
+![img](/files/images/tutorials/devtools/intro-devtools-menubar.gif)
+
+
+
+### Disabling the cache
+
+By default, your web browser saves copies of webpages and their files to a __cache__ on your hard drive, so that when you visit next time, the browser reads from the cache, which is much faster than re-fetching the files across the Internet.
+
+However, we don't want that convenience, at least for the purposes of debugging the browser operations. So click the little __Gear icon__ on the DevTools menubar and select the __Disable cache__ option.
+
+![img](/files/images/tutorials/devtools/intro-devtools-disable-cache.gif)
+

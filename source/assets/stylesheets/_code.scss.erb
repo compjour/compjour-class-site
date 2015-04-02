@@ -3,17 +3,10 @@ pre{
 }
 
 pre{
-  margin-bottom: 1.5em;
+  margin-top: 1.5em;
+  margin-bottom: 2.0em;
 }
 
 
-div.codepiece{
-  overflow: auto;
-  &.brief{
-    pre{
-      max-height: 400px;
-    }
-  }
-}
 
 <%= Rouge::Themes::Github.render(:scope => '.highlight') %>

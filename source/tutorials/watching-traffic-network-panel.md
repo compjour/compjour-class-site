@@ -1,19 +1,87 @@
 ---
 title: Watching Traffic with the Network Panel
+nav:
+  prev: styles-of-a-webpage
+  part_of: intro-to-the-web-inspector 
 ---
 
 
-[Network panel overview from the Chrome DevTools docs](https://developer.chrome.com/devtools/docs/network)
+The __Network Panel__ is used to watch, in __real-time__, how the browser downloads all the bits and pieces that we experience as "_a webpage_". While this _usually_ feels like  an instantaneous process, the reality is that data on the Internet &ndash; like just about everything else in the universe except for the U.S.S. Enterprise and [bad news](http://www.goodreads.com/quotes/782724-nothing-travels-faster-than-the-speed-of-light-with-the) &ndash; is limited to the speed of light, at _best_. So definitely _not_instantaneous.
+
+One mitigating feature of the Web is that webpages don't come as a linear block of data, but as many separate pieces that can be delivered, in parallel, from multiple servers anywhere in the world, and then assembled by the browser. It's not instantaneous but for our human senses, it's close enough.
+
+The __Network Panel__ lets us see this computational ballet happen in real-time, on any webpage we wish to visit. This is an invaluable feature for developers needing to optimize their webpage performance, especially if [you're a Google or Amazon developer](http://www.fastcompany.com/1825005/how-one-second-could-cost-amazon-16-billion-sales).
+
+However, if you're reading this, webpage delivery performance is probably not at the top of your list of concerns. But learning the Network Panel is still invaluable, as it grounds the discrete nature of data and the Web in a way that can't be done just by reading about it. And it's incredibly useful for hunting down data.
 
 
-## Opening the Panel
+__A sandbox:__ For this lesson, I've set up a test page full of quirky code and files, so that we have a controlled sandbox to observe the mechanics of modern web page construction:
+
+[http://www.compjour.org/files/pages/web-inspector/a/](/files/pages/web-inspector/a/)
+
+
+## Opening the Network Panel
+
+To get a better feel for how the browser pulls in remote files, and the resulting effects of latency, let's do this:
+
+1. __Close__ the DevTools panel. You can either click the little __X__ in the top-right corner of the panel. Or better yet, __use the same keyboard shortcut you used to open the DevTools__. If the DevTools are already open, that same shortcut will close the DevTools.
+2. Go to a new page. You can go to the [test page I've set up for this lesson](/files/pages/web-inspector/a/).
+3. Wait a few seconds for the page to load. Then pop open the DevTools panel.
+4. In the DevTools menubar, click the __Network__ label.
+
+If you follow the above steps in order, and depending on your network speed, your DevTools Network Panel might be empty:
+
+![img](/files/images/tutorials/devtools/network-panel-blank-latency.gif)
+
+
+
+
 
 ## Reload for real-time traffic
 
-## Hard reload
+Why is the Network Panel blank? Because it presents a __real-time__ view of the data transfers. If we open it well after the page has loaded, then _nothing should show up_ &ndash; although, as we'll see soon, webpages can continuously pull in external files even after the pages themselves have fully loaded into the browser.
 
-## Filtering traffic
+So leave the Network Panel open. And make sure you've followed the instructions in <%=link_to_slug intro-to-the-web-inspector%> on __disabling the cache__.
 
-## Size (and time) matters
+Then hit __Reload__ on your browser. Or rather, use the keyboard shortcut:
+
+__PC:__ <kbd class="kbd">Ctrl</kbd>+<kbd class="kbd">R</kbd> / __Mac:__ <kbd class="kbd">Cmd</kbd>+<kbd class="kbd">R</kbd>
+
+And watch that traffic fly:
+
+![img](/files/images/tutorials/devtools/network-panel-reloaded.gif)
+
+## Sorting out the network traffic
+
+Note: I'll add more to this section later. But basically, the Network Panel's traffic timeline table lets you sort by file size, type, time to load, etc. Read more about it [on Chrome's DevDocs](https://developer.chrome.com/devtools/docs/network#network-panel-overview)
 
 
+## Post-load loading
+
+As I mentioned earlier, webpages can load new data and elements after the webpage has "finished" loading. This _asynchronous loading_, popularly referred to as [AJAX](http://en.wikipedia.org/wiki/Ajax_%28programming%29), is something you experience so frequently you don't even notice: when you scroll to the end of your Facebook Newsfeed and more posts keep loading (i.e. infinite scroll), or when you pan and zoom a Google Map and new tiles load in.
+
+On the test page, I've set up some video players in the ["Videos" section](/files/pages/web-inspector/a#videos-sec). The video files themselves won't load until we hit the __Play__ button.
+
+Before you do that, though, hit the __No__ symbol in the Network Panel's submenu; this will __clear out__ the downloaded files currently listed on the Network Panel:
+
+![img](/files/images/tutorials/devtools/network-traffic-submenu-xout.png)
+
+Once the panel is clear, click the __Play button__ for one of the videos:
+
+![img](/files/images/tutorials/devtools/gaga-traffic.gif)
+
+
+Even if you don't know much about the web, it should seem logical that a __movie__ file is not inextricably part of a webpage. One consequence of webpages and their media files being separately loaded is, well, they are all separate files. 
+
+So what if you just want the video file? Web-based video players generally do not make it obvious that you can just download a video file, just as some photo websites do what they can to block you from downloading photo files.
+
+But they can't fight the fundamental fact that when your browser opens up a page and loads in that media content, you, the user, have been able to download those media files on your computer. And that was only possible because your browser was directed to a URL where that media exists.
+
+In the simple example I've given here, we see that `gagavegas.mp4` is listed in the Network Panel. Right-click the entry to bring up a pop-up menu:
+
+![img](/files/images/tutorials/devtools/downloading-vegas-gaga-mp4.png)
+
+
+
+
+Note: I need to expand on this page. In the meantime, check out Google's excellent tutorial: [Network panel overview from the Chrome DevTools docs](https://developer.chrome.com/devtools/docs/network)

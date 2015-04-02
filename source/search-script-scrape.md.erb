@@ -1,60 +1,54 @@
 ---
-title: "Search, Script, Scrape"
+title: "Search-Script-Scrape"
 ---
 
-
-The concept of web-scraping is simple, if not tedious. And so is civic data.
-
-This is less a programming exercise than a time-management scenario. If the thought of writing 101 separate programs seem so overwhelming
-
-A few caveats
-
-
-
-https://docs.google.com/spreadsheets/d/1JbY_-g9MkGH78Rta0PnE6D8rG8T-wdKGsMa3kAC3bDs/edit?usp=sharing
-
-
-
-## Getting set up
-
-Please follow these instructions to the letter.
-
-### Create a Github repo named compjour-sss
-
-
-
-## How to complete each assignment
-
-### One script for every task
-
-Each task is simple enough to be done in 4 to 10 lines
-
-
-### Print the answer
-
-The script should execute the `print()` command 
-
-
-
-### Mark scripts as "DONE"
-
-For every script that you 
+Note: This section is still under major revision. Don't worry about committing any code right now, but [go ahead and copy the spreadsheet ](https://docs.google.com/spreadsheets/d/1JbY_-g9MkGH78Rta0PnE6D8rG8T-wdKGsMa3kAC3bDs/edit?usp=sharing) and start making notes on each of the tasks.
 
 
 
 
-Every task must be
+## Purpose
+
+__Search-Script-Scrape__ is an ongoing homework project, in which students will have to write 101 programs to scrape 101 different bits of data from government sites.
+
+The programs themselves are relatively simple; each will be less than 5 to 10 lines, and none require even a `for-loop` to complete. So the ulterior purposes of __Search-Script-Scrape__ are:
+
+1. Make the concept of web-scraping as ordinary as possible.
+2. Serve as a real-world basic Python exercise.
+3. Showcase the patchwork world of government institutions and the messy nature of data in general.
+
+A [Google Spreadsheet of the tasks can be found here](https://docs.google.com/spreadsheets/d/1JbY_-g9MkGH78Rta0PnE6D8rG8T-wdKGsMa3kAC3bDs/edit?usp=sharing).
+
+### Make your own spreadsheet
+
+Students will be expected to copy this spreadsheet and use it as a baseline for creating a sort of "data-gathering diary". In the first weeks of class, many of the scraping tasks may seem impossible. That's OK, what you need to do is _triage_ the things you _can_ do now, and keep track of the things you need to learn how to do.
+
+__SSS__ is less an exercise about programming and more about how to strategically break down an otherwise overwhelming task.
 
 
+### Hints
 
-- Is the script's first line `# DONE`?
-- Is the script named after its corresponding task number, e.g. `42.py`?
-- Does the script leave any intermediary data files behind? It shouldn't.
-- Does the script get its data from an official .gov domain (unless the task instructions state otherwise)?
-- Does the script download a file greater than 100MB? It shouldn't.
-- Does the script print the answer when running it from the command-line?
-  
-  e.g. `python 42.py`
-- Does the script print anything else besides
+(Again, under construction)
+
+
+#### Freebie #1
+
+Problem 1 is: __Number of datasets currently listed on data.gov__
+
+That number is displayed at the top of [http://www.data.gov/](http://www.data.gov/). You can use the [Chrome DevTools to find the exact path to that element](/tutorials/intro-to-the-web-inspector).
+
+
+Sample Python 2.x/3.x script, using the [requests](http://docs.python-requests.org/en/latest/) and [BeautifulSoup](http://www.crummy.com/software/BeautifulSoup/bs4/doc/) libraries:
+
+
+~~~py
+import bs4
+import requests
+response = requests.get('http://www.data.gov/')
+soup = bs4.BeautifulSoup(response.text)
+link = soup.select("small a")[0]
+print(link.text)
+~~~
+
 
 
