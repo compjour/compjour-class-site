@@ -1,6 +1,7 @@
 ---
 title: Elements of a Webpage
 description: Using Chrome DevTools to inspect HTML structure
+curriculum_order: 21
 
 nav:
   part_of: intro-to-the-web-inspector

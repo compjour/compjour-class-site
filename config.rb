@@ -1,13 +1,13 @@
 Slim::Engine.disable_option_validator!
 
 set :site_title, 'Computational Journalism'
-set :site_deck, 'Stanford COMM 277A'
+set :site_deck, 'Stanford COMM 177A/277A'
 set :site_author, "Dan Nguyen"
 set :class_start_date, '2015-03-30'
 
-set :site_description, "Public-facing data projects"
-# set :google_analytics_id, 'UA-60893965-1'
-
+set :site_description, "Data-mining, analysis, and visualization for civic purposes"
+set :google_analytics_id, 'UA-61452895-1'
+set :google_custom_search_id, '012541043402465721355:gangr7fszpw'
 activate :directory_indexes
 activate :i18n, :mount_at_root => :en
 activate :livereload
@@ -46,4 +46,5 @@ activate :s3_sync do |s3_sync|
   s3_sync.encryption                 = false
   s3_sync.prefix                     = ''
 end
+
 

@@ -11,6 +11,20 @@ layout: home
 
 
 
+<div class="sitesearch"> 
+ <%=partial '/layouts/site/sitesearch', locals: {search_id: config[:google_custom_search_id]} %>
+ </div>
+
+
+
+<div class="well">
+  <%= partial 'content_partials/weeks/this_week' %>
+  <%= link_to 'Todos', '/todos' %>
+
+  <%= partial 'content_partials/weeks/past_weeks' %>
+</div>
+
+
 
 Official course description via the [Stanford Bulletin](https://explorecourses.stanford.edu/search?view=catalog&filter-coursestatus-Active=on&page=0&catalog=&academicYear=&q=computational+journalism&collapse=):
 
@@ -20,13 +34,6 @@ _Focuses on using data and algorithms to lower the cost of discovering stories o
 
 This class is about how to intentionally use computational techniques to search for and collect information, to filter and reduce it to its most newsworthy components, and to publish our findings to the world. It is not a traditional computer science class, but programming is necessary to adeptly (and sanely) accomplish this work. It is not a traditional journalism class, but reporting and research is necessary to create civic and moral impact. 
 
-
-<div class="well">
-<%= partial 'content_partials/weeks/this_week' %>
-
-<%= link_to 'Todos', '/todos' %>
-
-</div>
 
 
 <%= partial 'content_partials/syllabus/logistics' %>

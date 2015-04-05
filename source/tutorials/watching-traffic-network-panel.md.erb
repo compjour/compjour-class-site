@@ -1,12 +1,15 @@
 ---
 title: Watching Traffic with the Network Panel
+curriculum_order: 25
 nav:
   prev: styles-of-a-webpage
+  next: data-files-without-packaging
   part_of: intro-to-the-web-inspector 
 ---
 
 
-The __Network Panel__ is used to watch, in __real-time__, how the browser downloads all the bits and pieces that we experience as "_a webpage_". While this _usually_ feels like  an instantaneous process, the reality is that data on the Internet &ndash; like just about everything else in the universe except for the U.S.S. Enterprise and [bad news](http://www.goodreads.com/quotes/782724-nothing-travels-faster-than-the-speed-of-light-with-the) &ndash; is limited to the speed of light, at _best_. So definitely _not_instantaneous.
+The __Network Panel__ is used to watch, in __real-time__, how the browser downloads all the bits and pieces that we experience as "_a webpage_". While this _usually_ feels like  an instantaneous process, the reality is that data on the Internet &ndash; like just about everything else in the universe except for the U.S.S. Enterprise and [bad news](http://www.goodreads.com/quotes/782724-nothing-travels-faster-than-the-speed-of-light-with-the) &ndash; is limited to the speed of light, at _best_. So definitely _not_ instantaneous.
+
 
 One mitigating feature of the Web is that webpages don't come as a linear block of data, but as many separate pieces that can be delivered, in parallel, from multiple servers anywhere in the world, and then assembled by the browser. It's not instantaneous but for our human senses, it's close enough.
 
@@ -41,7 +44,7 @@ If you follow the above steps in order, and depending on your network speed, you
 
 Why is the Network Panel blank? Because it presents a __real-time__ view of the data transfers. If we open it well after the page has loaded, then _nothing should show up_ &ndash; although, as we'll see soon, webpages can continuously pull in external files even after the pages themselves have fully loaded into the browser.
 
-So leave the Network Panel open. And make sure you've followed the instructions in <%=link_to_slug intro-to-the-web-inspector%> on __disabling the cache__.
+So leave the Network Panel open. And make sure you've followed the instructions in <%=link_to_slug "intro-to-the-web-inspector"%> on __disabling the cache__.
 
 Then hit __Reload__ on your browser. Or rather, use the keyboard shortcut:
 
@@ -77,11 +80,18 @@ So what if you just want the video file? Web-based video players generally do no
 
 But they can't fight the fundamental fact that when your browser opens up a page and loads in that media content, you, the user, have been able to download those media files on your computer. And that was only possible because your browser was directed to a URL where that media exists.
 
-In the simple example I've given here, we see that `gagavegas.mp4` is listed in the Network Panel. Right-click the entry to bring up a pop-up menu:
+In the simple example I've given here, we see that `gagavegas.mp4` is listed in the Network Panel. Right-click the entry to bring up a pop-up menu to reveal the option to copy the URL or open it into a new tab:
 
 ![img](/files/images/tutorials/devtools/downloading-vegas-gaga-mp4.png)
 
 
 
 
-Note: I need to expand on this page. In the meantime, check out Google's excellent tutorial: [Network panel overview from the Chrome DevTools docs](https://developer.chrome.com/devtools/docs/network)
+
+
+--------------
+
+
+Note: I need to expand on this page. In the meantime, check out Google's excellent tutorial: [Network panel overview from the Chrome DevTools docs](https://developer.chrome.com/devtools/docs/network).
+
+In particular, the notes on how to [sort and filter the Network Panel](https://developer.chrome.com/devtools/docs/network#sorting-and-filtering) will be of practical use.

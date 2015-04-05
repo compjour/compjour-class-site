@@ -1,0 +1,6 @@
+h5 Past weeks
+
+
+ul.list-inline.past-weeks
+  - past_active_weeks.each do |w|
+    li => link_to "Week #{w.data.week}"

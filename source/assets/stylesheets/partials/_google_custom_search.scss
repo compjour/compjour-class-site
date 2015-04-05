@@ -1,0 +1,17 @@
+.sitesearch{
+  outline: #a3a3a3 dotted thin;
+}
+
+.gsc-search-button{
+    background-color: #1a4195;
+    border-radius: 5px;
+}
+
+input.gsc-search-button, input.gsc-search-button:hover, input.gsc-search-button:focus {
+    background-color: #1a4195 !important;
+    background-position: 50% 50%;
+    background-repeat: no-repeat;
+    height: 16px !important;
+    border-color: #1a4195 !important;
+    filter: none;
+}

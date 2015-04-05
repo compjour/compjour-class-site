@@ -10,6 +10,10 @@ def active_weeks
   weeks.select{|w| w.data.show_link == true}
 end
 
+def past_active_weeks
+  active_weeks.reverse[1..-1]
+end
+
 def first_day
   Chronic.parse(config[:class_start_date])
 end

@@ -20,7 +20,7 @@
       section#sherlock-sec{
         background: #eedfdf;
       }
-      section#fruit-sec(2){
+      section#fruit-sec{
         background: #eff;
       }
       section#videos-sec{
@@ -28,7 +28,7 @@
         text-align: center;
       }
 
-      section#shakes-sec(4){
+      section#shakes-sec{
         background: #FFF0F4;
       }
 

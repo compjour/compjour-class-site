@@ -1,7 +1,10 @@
 ---
 title: The Styles of a Webpage
+curriculum_order: 12
+
 nav:
   prev: elements-of-a-webpage
+  next: watching-traffic-network-panel
   part_of: intro-to-the-web-inspector 
 ---
 

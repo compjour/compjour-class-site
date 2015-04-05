@@ -1,11 +1,15 @@
 ---
 title: Installing Python 3.4
+curriculum_order: 35
+
 ---
 
 Note: There are many ways to get a stable install of Python onto your system &ndash; I personally [go with __pyenv__](https://github.com/yyuu/pyenv) &ndash; but the [Anaconda package from Continuum Analytics](https://store.continuum.io/cshop/anaconda/) seems to ably fill all of our needs while being as simplified of a cross-platform installation process as possible.
 
 Currently, the instructions below walk through the installation process for __OS X 10.7+__, but the steps in Windows should largely be the same. I'll update this page with more instructions if it turns out alternatives to Anaconda are needed.
 
+
+The Anaconda installation package is __300MB__ by itself. When installed, Anaconda's Python will take up __1.9GB__.
 
 
 
@@ -18,22 +22,25 @@ The following steps are for Max OS X 10.7+, though they should be similar for Wi
 
 ### Download the Anaconda 3.4 installer
 
-[Download Anaconda 3.4](http://continuum.io/downloads#py34)
+[Download Anaconda 3.4](http://continuum.io/downloads#py34). This is what the installation page looks like:
 
-On Mac OS X, you should have a file named something like:
+![image](/files/images/tutorials/python/download-anaconda-button.png)
+
+
+The installer package is more than __300MB__. After downloading the file, your __Downloads__ folder should have something like:
 
       Anaconda3-2.2.0-MacOSX-x86_64.pkg
 
-![img](/files/images/tutorials/downloaded-anaconda-mac.png)
+![img](/files/images/tutorials/python/downloaded-anaconda-mac.png)
 
 
-__Double-click__ the package file.
+__Double-click__ the package file to launch the installer.
 
-![img](/files/images/tutorials/welcome-to-anaconda-installer.png)
+![img](/files/images/tutorials/python/welcome-to-anaconda-installer.png)
 
 If possible, choose the __Install for me only__:
 
-![img](/files/images/tutorials/install-anaconda-diskspace.png)
+![img](/files/images/tutorials/python/install-anaconda-diskspace.png)
 
 
 ### Verify the Anaconda installation
@@ -52,7 +59,7 @@ The respective responses should look similar, but not  _exactly_ the same. The m
 
 When I run those commands in my own Terminal, this is what I get:
 
-![img](/files/images/tutorials/testing-anaconda-install-cli.png)
+![img](/files/images/tutorials/python/testing-anaconda-install-cli.png)
 
 
 
@@ -97,6 +104,12 @@ Here's an animated GIF of the process:
 
 This of course is slower than just putting code in a script file and executing it. But when you don't know yet what the code should be, __iPython__ is a great environment for tinkering with code and seeing how each command works.
 
-Here's an animated GIF of the process. Note that at __line 4__, I hit the __Tab__ key to do an autocomplete, hence, the weird break in the code. Speaking of the __Tab__ key: taking the 5 to 10 minutes to build the muscle memory needed to reflexively hit [__Tab__ to autocomplete commands in iPython](http://ipython.org/ipython-doc/stable/interactive/tutorial.html#tab-completion) is one of __the easiest things you can do__ to increase your short- and long-term success rate at programming.
+Here's an animated GIF of the process. Note that at __line 4__, I hit the __Tab__ key to do an autocomplete, hence, the weird break in the code:
+
 
 ![img](/files/images/tutorials/python/example.py.ipython.gif)
+
+
+Speaking of the __Tab__ key: taking the 5 to 10 minutes to build the muscle memory needed to reflexively hit [__Tab__ to autocomplete commands in iPython](http://ipython.org/ipython-doc/stable/interactive/tutorial.html#tab-completion) is one of __the easiest things you can do__ to increase your short- and long-term success rate at programming.
+
+Check out the [official iPython tutorial](http://ipython.org/ipython-doc/stable/interactive/tutorial) for more tips and background on how to effectively work with Python.

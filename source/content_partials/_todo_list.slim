@@ -1,6 +1,9 @@
-table.todos-listing.table.table-striped
-  - todos.each do |t|
+ul.todos-listing.list-unstyled
+  - todos.each_pair do |d, tasks|
 
-      tr
-        td.title = t.title
-        td.description = make_markdown t.description
+      li: h3 = d
+
+      - tasks.each do |t|
+        li
+          div.h5.title = t.title
+          div.description = make_markdown t.description

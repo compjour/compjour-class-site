@@ -1,14 +1,15 @@
 
 - if current_page.data.nav
-  div.articles-nav
+  ul.articles-nav.list-unstyled
     - if nav_part_of?
-        span> This article is part of a series:
-        span> #{{link_to_slug(current_page.data.nav.part_of)}}.
+        li
+          span> This article is part of a series:
+          span> #{{link_to_slug(current_page.data.nav.part_of)}}.
     - if nav_next?
-      br
-      span> The next article:
-      span> #{{link_to_slug(current_page.data.nav.next)}}.
+        li
+          span> The next article:
+          span> #{{link_to_slug(current_page.data.nav.next)}}.
     - if nav_prev?
-      br
-      span> The previous article:
-      span> #{{link_to_slug(current_page.data.nav.prev)}}.
+        li
+          span> The previous article:
+          span> #{{link_to_slug(current_page.data.nav.prev)}}.
