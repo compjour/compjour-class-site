@@ -1,0 +1,16 @@
+---
+title: Curriculum
+---
+
+section.sec
+
+  p In reverse-order, the list of things we've learned (or will soon be learning). In addition to the articles/tutorials listed below, here are a couple of overall references:
+
+
+section.curriculum.sec
+  table.table.table-striped
+    - carm_curriculum.reverse.each do |r|
+      tr
+        td
+          h5 => link_to r.title, r.url
+          p.description = r.description

@@ -1,3 +1,5 @@
+require 'lib/carm'
+
 Slim::Engine.disable_option_validator!
 
 set :site_title, 'Computational Journalism'
@@ -24,7 +26,8 @@ set :images_dir, 'assets/images'
 
 ######### layout stuff
 set :layout, 'page'
-# page "/content/*", :layout => "content"
+page "/tutorials/*", :layout => "content_article"
+page "/articles/*", :layout => "content_article"
 
 ############################# Build-specific configuration
 configure :build do

@@ -2,15 +2,6 @@
   div.container
       h1.title => current_page.data.title
 
-      div.page-meta
-        = partial '/layouts/site/articles-nav'
-
-
-
       div.page-content
         div => yield
 
-
-
-      div.page-meta.footer
-        = partial '/layouts/site/articles-nav'

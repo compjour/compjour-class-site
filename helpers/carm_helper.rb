@@ -1,35 +1,28 @@
-def carm_content
-  sitemap.resources.select{|r| r.url =~ /\/(?:articles|tutorials|weeks)\/\w+/ }
+# TK todo, make this a singleton
+def carm
+  Carm.new(sitemap)
+end
+
+def current_content_article
+  carm.get_content_article(current_page)
 end
 
 
-def link_to_part_of
-  slug = current_page.data.nav.part_of
-  link_to_slug(slug)
+
+# not used directly
+# def carm_content
+#   carm.content
+# end
+
+def carm_curriculum
+  carm.curriculum
 end
 
 
-def nav_next?
-  if (n = current_page.data.nav)
-    !n.next.nil?
-  end
-end
-
-def nav_part_of?
-  if (n = current_page.data.nav)
-    !n.part_of.nil?
-  end
-end
-
-def nav_prev?
-  if (n = current_page.data.nav)
-    !n.prev.nil?
-  end
-end
 
 def link_to_slug(slug, title = nil, opts = {})
-  c = carm_content.find{|c| c.url =~ /#{Regexp.escape(slug)}/ }
-  t = title || c.data.title
+  c = carm.find_content(slug)
+  t = title || c.title
 
   link_to t, c.url, opts
 end

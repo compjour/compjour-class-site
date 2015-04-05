@@ -1,6 +1,6 @@
 ---
 title: The Styles of a Webpage
-curriculum_order: 12
+curriculum_order: 22
 
 nav:
   prev: elements-of-a-webpage

@@ -3,7 +3,7 @@
 "2015-04-01":
   - title: "Read the initial lessons on DevTools"
     description: |
-      In progress: [http://www.compjour.org/tutorials/intro-to-the-web-inspector/](http://www.compjour.org/tutorials/intro-to-the-web-inspector/)
+      In progress: [Intro to the Chrome Dev Tools](/tutorials/intro-to-the-web-inspector/)
 
   - title: "Install Python 3.4"
     description: |
