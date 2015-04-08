@@ -10,23 +10,33 @@ topics:
 ---
 
 
+## Some logistics notes
+
+Homework: <%=link_to_slug 'opener-project-intro'%>
+
+
+This week and next week will be pretty Python-programming heavy, and so it'll be intimidating for those of you new to the language (which is almost everyone) or to programming in general. So we're taking it relatively slow in terms of work. Besides talking about the technicalities of programming, it's important to talk about __why we program__.
+
+For this class, the answer is simple: We want to publish insightful, interesting projects. The better we're at finding and filtering data, and doing all sorts of information-related tasks (such as creating web pages or visualizations), the more time we have to think about and explore interesting angles. 
+
+And the fundamental purpose of programming is to make us better at working with information.
+
+> When you have enough data, sometimes, you don’t have to be too clever about coming up with the best algorithm.” - [Peter Norvig, Google](http://www.youtube.com/watch?v=ql623nyCdKE#t=340)
+
+
+__Free food:__ The Stanford [CS + Social Good club is having a kickoff this Thursday evening](https://www.facebook.com/events/408560675991922/). Free food. [RSVP here](https://www.facebook.com/events/408560675991922/)
+
+
+-----------
+
+
+### The forms of data
 
 _Pictured: the [New York Police Department's UF-250 form](http://www.nyclu.org/files/SQF_Codebook.pdf) for reporting stop-and-frisk incidents_:
-
 
 ![img](/files/images/articles/nypd-stop-and-frisk-uf-250.jpg)
 
 
-
-## Wars or Bars
-
-An unavoidable &ndash; and _necessary_ &ndash; effect of data is __that it simplifies the world__. This is important to remember when conducting or consuming any kind of data task, whether it be analysis, collection, or visualization. We must always ask: _what is being simplified_, or more to the point, _what is lost in oversimplification_?
-
-Take a data point that is ubiquitous in its acceptance and use: __age__. This data point is defined by the number of whole years since your recorded birth date. But it's used by society to define your level of maturity, such as when you're ready to go to wars, or bars. And the cutoff is binary: as soon as the exact second of your 21st birthday hits, you're suddenly assumed to be responsible enough to drink.
-
-With __buckets__ (a.k.a. _binning_, or _clustering_), the simplification becomes even more pronounced. In the three decades from when you turn 18, you are [_the_ demographic for TV advertisers to cater to](http://en.wikipedia.org/wiki/Nielsen_ratings#Demographics). And again, when the clock strikes on your 50th birthday, you're suddenly less valuable.
-
-As we design visualizations and projects around data, our goal will be to simplify. But realize that not everyone will agree with our simplification.
 
 
 
@@ -45,8 +55,84 @@ When information comes as "data" &ndash; even in the physical dressing of a spre
 The _process_ can be something as mundane as _the form (paper or electronic) used to record the data_ and how often the data is recorded. 
 
 
-## Links
+Related:
 
 The [NYPD Stop and Frisk codebook and forms, via the NYCLU](http://www.nyclu.org/files/SQF_Codebook.pdf).
+
+
+[‘Stop-and-Frisk’ Is All but Gone From New York (2014)](http://www.nytimes.com/interactive/2014/09/19/nyregion/stop-and-frisk-is-all-but-gone-from-new-york.html)
+
+![img](/files/images/articles/stop-and-frisk-change-nytimes.png)
+
+
+[Stop, Question and Frisk in New York Neighborhoods](http://www.nytimes.com/interactive/2010/07/11/nyregion/20100711-stop-and-frisk.html) - An effective combination of maps, charts, and tables. Take particular notice of the simple line charts showing the crime rate versus the number of annual stop-and-frisks.
+
+
+[Stop-and-Frisk data by year/month and race](https://gist.github.com/dannguyen/67ece10c6132282b1da2): This sparked a fun reddit/dataisbeautiful thread, which brought up many issues of cause-and-effect and how (in)effectively data can capture the actual reality of a policy. Before wondering whether the stop-and-frisks brought down the crime rate, we need to find out if the NYPD has released similarly granular data about arrests/incidents. They haven't. So then [why are they giving out a relative abundance of stop-and-frisk data](http://www.nyclu.org/issues/racial-justice/stop-and-frisk-practices)?
+
+
+---------------
+
+
+
+
+## Wars or Bars
+
+An unavoidable &ndash; and _necessary_ &ndash; effect of data is __that it simplifies the world__. This is important to remember when conducting or consuming any kind of data task, whether it be analysis, collection, or visualization. We must always ask: _what is being simplified_, or more to the point, _what is lost in oversimplification_?
+
+Take a data point that is ubiquitous in its acceptance and use: __age__. This data point is defined by the number of whole years since your recorded birth date. But it's used by society to define your level of maturity, such as when you're ready to go to wars, or bars. And the cutoff is binary: as soon as the exact second of your 21st birthday hits, you're suddenly assumed to be responsible enough to drink.
+
+With __buckets__ (a.k.a. _binning_, or _clustering_), the simplification becomes even more pronounced. In the three decades from when you turn 18, you are [_the_ demographic for TV advertisers to cater to](http://en.wikipedia.org/wiki/Nielsen_ratings#Demographics). And again, when the clock strikes on your 50th birthday, you're suddenly less valuable.
+
+As we design visualizations and projects around data, our goal will be to simplify. But realize that not everyone will agree with our simplification.
+
+
+
+
+## Some other readings
+
+[Not fit to print: When good design goes bad; A lesson from the New York Times on how to mislead with numbers](https://medium.com/aj-news/not-fit-to-print-when-good-design-goes-bad-cc52931a2ce0). Original [interactive here](http://www.nytimes.com/interactive/2014/07/31/world/middleeast/in-gaza-a-pattern-of-conflict.html).
+
+> What follows is a breakdown of some ways that design can be misused to tell a biased story. TLDR: This New York Times article reminds us that design is just as much an editorial tool as it is a tool of aesthetics, usability and user experience. Use your power as a designer wisely.
+
+
+[How Many Years Until the [Baseball] Record Falls?](http://www.nytimes.com/interactive/2015/04/03/sports/baseball/mlb-records.html
+) - A great example of the many ways you can expand the scope of what you examine in a dataset.
+
+A list of the records is interesting enough, and [Wikipedia does a serviceable job](http://en.wikipedia.org/wiki/List_of_Major_League_Baseball_record_holders):
+
+![img](/files/images/articles/wikipedia-single-season-baseball.png)
+
+
+But look at the different layers that the NYT graphics team includes for each category/record:
+
+- For every year, the best performer.
+
+- For every year, the other top performers, and the distribution of their performance. Notice how the clustering of performers in the __Innings pitched__, and how much tigher/lower it is in modern times:
+
+    ![img](/files/images/articles/nyt-innings-pitched-clusters.png)
+
+
+- The <span style="color: #9E4B6C">record holders are marked with a different color</span> so at a glance, it's easy to tell how many times the record was broken.
+
+- To make the point even clearer, the number of years between now and when the record was last set is stated in the headlines.
+
+- Finally: each record has a photo and narrative: data should not be "just charts", but a mix of storytelling techniques.
+
+   ![img](/files/images/articles/nyt-batting-average-chart.png)
+
+One thing to particularly note is how effective the feature is even as just static screenshots. Even though the interactive aspect is executed exceptionally well, the meat of the chart is already delivered without requiring any interaction from the user.
+
+
+Speaking of calculating time between events/data points, one of the under-appreciated yet most effective data features is [MacRumors Buyers Guide](http://buyersguide.macrumors.com/#iOS). We can easily imagine how a spreadsheet powers it, with a row for each time a product is released. Collecting such data is easy, because product updates happen with a bi-annual/annual frequency. And yet, after a few years, the aggregate of this data is incredibly useful, allowing the user to see not just when the last update of a product was, but the time between each past update.
+
+![img](/files/images/articles/macrumors-ios-buyers-guide.png)
+
+
+---------
+
+Another simple but data-you-can-use example from Bloomberg: [Here's How Much You Should Be Tipping Your Cab Driver](http://www.bloomberg.com/bw/articles/2014-07-31/heres-how-much-you-should-be-tipping-your-cab-driver%20):
+
+![img](/files/images/articles/bloomberg-how-much-tip.png)
 
 

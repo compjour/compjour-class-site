@@ -21,6 +21,7 @@ for m in congressmembers:
         active_members.append(m)
 print("There are {} active Congressmembers".format(len(active_members)))
 
+# Now we want active members who are in California
 ca_active_members = []
 for m in active_members:
     if m['state'] == 'CA':
@@ -34,3 +35,4 @@ print("There are {} active Congressmembers from CA".format(len(ca_active_members
 #           ca_twitters.append(m)
 ca_tweeters = [m for m in ca_active_members if m['twitter_id'] != '']
 print("There are active CA Congressmembers from CA on Twitter".format(len(ca_tweeters)))
+# yes, the list comprehension syntax can be hard to understand

@@ -25,7 +25,6 @@ for link in topic_links:
         heds = tsoup.select("#main-content .postcard-text")
         # getting the first member of the list
         h = heds[0]
-#        dateline = h.find('.dateline').text
         hed = h.find('h3').text
         print("   Latest headline: {}".format(hed))
         print("")

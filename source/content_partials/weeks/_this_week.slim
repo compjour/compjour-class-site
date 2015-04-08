@@ -1,4 +1,4 @@
-h3 = "Week #{this_week.data.week}: #{friendly_date week_start_date_foo(this_week)}"
+h3 = link_to "Week #{this_week.data.week}: #{friendly_date week_start_date_foo(this_week)}", this_week.url
 
 div.topics
   span => this_week.data.topics.map{|t| t.title}.join(' / ')

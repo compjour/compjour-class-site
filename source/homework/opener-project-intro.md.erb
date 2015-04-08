@@ -1,0 +1,231 @@
+---
+title: The Opener Project
+due_date: 2015-04-14
+---
+
+
+
+### Table of contents
+{:.no_toc}
+
+* TOC
+{:toc .tock}
+
+
+## Deliverables
+
+Due date: <%= homework_due_date %>
+
+By the end of this assignment, these things will have been done:
+
+- Create a Github repository named: __compjour-hw__
+- This homework should be inside a subfolder named: __opener-project__
+- Inside __opener-project__ will be __13__ separate Python scripts, as copied from: 
+      
+  - <%=link_to_slug 'opener-project-part-1'%> 
+  - <%=link_to_slug 'opener-project-part-2' %>
+
+
+## Purpose
+
+### Copy but don't paste
+
+This assignment only asks that you copy the already-working files in <%=link_to_slug 'opener-project-part-1'%> and <%=link_to_slug 'opener-project-part-2' %>. That's right, you don't have to come up with your own code. This exercise is mostly a freebie, to make sure your development environment is set up correctly, to see if you can follow instructions, to grind in some good workflow habits, and then to give a brief walkthrough of Python code.
+
+That said, I'm going to ask that you do as little copying-and-pasting as possible, unless you already completely get this. First of all, practicing typing and keyboard shortcuts is a much overlooked but incredibly important part of becoming a better developer. Second, it's very easy to read something and _feel_ that you get it. Having to type it out helps you to see easy-to-miss steps.
+
+
+### Don't panic
+
+If you're new to Python and relatively new to programming, 95% of the code in this assignment should seem completely foreign to you. __That's fine__. But that also means you _definitely should not copy-and-paste_ the assignments.
+
+Along with each script file to read, I've tried to give a short explanation of what it does, and also, links to supplementary readings, which I encourage you to follow up on. I don't expect you to learn Python in one-week or two, but I definitely expect you to be familiar with the rhythm and process of writing code, running it, and then debugging it.
+
+
+
+
+## Getting started
+
+
+### Pre-requisites
+
+Make sure you've done these things:
+
+1. <%=link_to_slug 'installing-python', "Installed Python 3.4 with the Anaconda installer"%>
+2. Installed [Sublime Text 2 (or 3 if you bought it)](http://www.sublimetext.com/2)
+3. <%= link_to 'Created a Github account', 'https://github.com/join' %>
+4. Downloaded and installed [the Github desktop app](https://mac.github.com/)
+
+
+When you have all that done. __Close everything__ except for this web page.
+
+
+### Create the `compjour-hw/` directory
+
+Everything closed (except for this browser)? Good.
+
+I'm going to assume you __have not__ created a homework Github repository for this class. If you have already (i.e. `https://github.com/your_username/compjour-hw` exists), then you can skip this step.
+
+Find your __Desktop__ directory. On OS X, go to your __Finder__; usually there's a Desktop shortcut in the sidebar:
+
+![img](/files/images/tutorials/finder-desktop-sidebar.png)
+
+
+In OS X, there is also a keyboard shortcut to __Go to a Folder__: 
+
+        Cmd+Shift+G
+
+![img](/files/images/tutorials/finder-go-to-a-folder.png)
+
+
+Now you can create this `compjour-hw/` directory anywhere, but the `Desktop/` is pretty straightforward (also, it's a destination common to both Windows and OS X platforms).
+
+In OS X, you can right-click in the Finder area to bring up a pop-up menu. Then select the __New Folder__ option which should create a new folder icon in the Desktop directory.
+
+Name that directory: `compjour-hw`:
+
+![img](/files/images/tutorials/create-compjour-hw-folder.png)
+
+
+Go ahead and double-click the folder to get inside of it.
+
+
+### Open the `compjour-hw` folder in Sublime Text 2
+
+Now open the __Sublime Text 2__ text editor.
+
+Use the keyboard shortcut __Cmd+O__ to bring up the __Open File__ dialog.
+
+Then navigate to wherever your `compjour-hw` folder is. If you followed my instructions, you just have to find the `Desktop` folder.
+
+Just __highlight__ the `compjour-hw` folder, then click the __Open__ button:
+
+![img](/files/images/tutorials/sublime-open-file-compjour-hw-folder.png)
+
+Whenever you open a folder/directory in Sublime Text, it sets it up as a quasi-project. Right now, this project is, like the folder itself, _empty_.
+
+#### Create a new file in `compjour-hw`
+
+Now __right-click__ on the `comjour-hw` folder name that is in the __FOLDERS__ sidebar:
+
+![img](/files/images/tutorials/create-new-file-in-compjour-hw-project.png)
+
+Select the __New File__ action. This subtly creates a new file in the main window of Sublime Text, with the title of `untitled`. The file hasn't been created _yet_.
+
+To actually add the new file to the project, hit the Keyboard shortcut __Cmd+S__, or, __Save File__. This will bring up a standard file-saving dialog.
+
+Name the file: `README.md`.
+
+Now your project has a file:
+
+![img](/files/images/tutorials/readme-added-to-compjour-hw.png)
+
+Go ahead and type some text into that `README.md`. Do whatever you want, but this is a good time to [practice some Markdown](https://help.github.com/articles/markdown-basics/):
+
+~~~md
+# My compjour-hw repo
+
+Hello there, my name is __Dan__
+
+This is a kitten:
+
+![img](http://placekitten.com/g/300/300)
+~~~
+
+
+### Publish compjour-hw repo to Github
+
+Github repositories are pretty much file folders on your computer, except with a hidden folder ('.git') that contains some metadata.
+
+In other words, we have enough to publish this repo onto Github.
+
+There are multiple ways to publish a repo on Github. Here's [instructions for the old-fashioned via the web-browser](https://help.github.com/articles/create-a-repo/). 
+
+But to keep things straightforward, __open the Github Desktop Application__, which you've hopefully installed and authenticated to your Github user account. It should look something like this:
+
+![img](/files/images/tutorials/empty-github-desktop-app.png)
+
+#### Create a repository in the Github desktop app
+
+In the Github app. click the __plus-sign icon__ in the top-left. Then click the __Create__ tab, and then __Choose__ the path to your `compjour-hw` folder, i.e. `~/Desktop` if you're following me. 
+
+![img](/files/images/tutorials/github-desktop-appcreate-choose.png)
+
+
+Then put in `compjour-hw` in the __Name__ field and click __Create Repository__
+
+#### Add/commit a "change"
+
+Creating `README.md` counts as a "change". So in the bottom part of the __Changes__ tab, you'll see a button that says __Commit to master__.
+
+Before you push that button, add something to the __Summary__ and __Description__ text field:
+
+![img](/files/images/tutorials/github-desktop-app-first-commit.png)
+
+
+#### Publish
+
+Then hit the __Commit to master__ button.
+
+Now, see that __Publish__ button in the top-right corner? Once you push _that_ button, your file folder will be published online on your Github account.
+
+When you're ready, push the __Publish__ button. This will bring up another dialog, which may be irrelevant if you currently only have one Github identity. You should be able to push the __Push Repository__ button:
+
+![img](/files/images/tutorials/get-ready-to-push-push-repo-button.png)
+
+
+#### Visit the repo online
+
+If your username is `your_username`, your compjour-hw repo should now be live at:
+
+https://github.com/your_username/compjour-hw
+
+Here's my version:
+
+https://github.com/dannguyen/compjour-hw
+
+![img](/files/images/tutorials/dannguyen-compjour-hw.png)
+
+
+### Add a Python script from the homework
+
+OK, now to do the homework. Switch back to Sublime Text. I find it easiest to use the Keyboard Shortcut: __Cmd-Tab__
+
+__Add a new subdirectory:__ `opener-project`
+
+In other words, your directory structure will look like:
+
+        compjour/
+        |
+        |_____ opener-project/
+
+
+Open <%=link_to_slug 'opener-project-part-1'%> in a new browser window.
+
+
+Take note of the section, __hello-world.py__
+
+In Sublime Text, create a new file named __opener-project/hello-world.py__
+
+Then enter the code as found in the exercise <%=link_to_slug 'opener-project-part-1'%>
+
+#### Run the Python script
+
+(this may or may not work for you)
+
+Now does this script actually work? Inside Sublime Text, the keyboard shortcut for __Build__, i.e. __Cmd+B__ should __execute__ the current script. The output should show up in a bottom subpanel:
+
+![img](/files/images/tutorials/sublime-text-hello-world-build.png)
+
+
+
+
+
+
+
+
+
+
+
+
+

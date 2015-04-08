@@ -47,7 +47,7 @@ class Carm
   # obviously, if content has the same slug, this
   # is a problem
   def get_content_article_by_base_slug(aslug)
-    a = @curriculum.find{|a| a.base_slug == aslug}
+    a = @content_articles.find{|a| a.base_slug == aslug}
     if a.nil?
       raise ContentArticleSlugNotFound, "'#{aslug}' did not match any articles"
     else
@@ -64,7 +64,7 @@ class Carm
     end
 
     def formulate_content_articles
-       @site_resources.select{|r| r.url =~ /\/(?:tutorials|articles|weeks)\// }.
+       @site_resources.select{|r| r.url =~ /\/(?:tutorials|articles|weeks|homework)\// }.
         reject{|c| c.path =~ /index.html/ }.
         map{|c| ContentArticle(c) }
     end

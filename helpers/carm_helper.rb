@@ -26,3 +26,8 @@ def link_to_slug(slug, title = nil, opts = {})
 
   link_to t, c.url, opts
 end
+
+
+def homework_due_date
+  friendly_date current_page.data.due_date
+end

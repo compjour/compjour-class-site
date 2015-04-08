@@ -1,0 +1,89 @@
+---
+title: Opener Project Part 2
+---
+
+### Table of contents
+{:.no_toc}
+
+* TOC
+{:toc .tock}
+
+
+## fetch-and-unpack-twitter-data.py
+
+This script performs the unglorious task of downloading a zipfile from a URL and unzipping its contents to a folder. When it's done its job, inspect the contents of `data-hold/`
+
+<%= codepiece 'opener-project/fetch-and-unpack-twitter-data.py' %>
+
+
+
+
+## read-sunlight-csv.py
+
+The first data file [comes courtesy of the Sunlight Foundation](https://sunlightlabs.github.io/congress/#legislator-spreadsheet): it's a spreadsheet (CSV file) that contains information on every current and recent Congressmember, and more helpfully, their unique identifiers to other data sources, such as FEC filings and social networks.
+
+In this script, we use the `csv` module to create a collection of `Dict` objects, so that we can access the attributes more easily of each row (i.e. Congressmember).
+
+<%= codepiece 'opener-project/read-sunlight-csv.py' %>
+
+The output:
+
+~~~
+There are 894 Congressmembers listed
+There are 539 active Congressmembers
+There are 55 active Congressmembers from CA
+There are active CA Congressmembers from CA on Twitter
+~~~
+{:.output}
+
+
+## read-twitter-json.py
+<%= codepiece 'opener-project/read-twitter-json.py' %>
+
+
+The output will look like this:
+
+~~~
+Rep. Mike Honda goes by the screen_name of repmikehonda:
+* Has 16985 followers and follows 827
+* Has been on Twitter for 2375 days
+* Overall Tweet rate of 0.69 tweets/day
+* Has 128 original tweets in his last 200
+* Most retweeted tweet has 10608 RTs and said: As the proud grandpa of a transgender grandchild, I hope she can feel safe at school without fear of being bullied. http://t.co/NDIfOdW9sk
+~~~
+{:.output}
+
+
+
+## twitter_foo.py
+<%= codepiece 'opener-project/twitter_foo.py' %>
+
+
+
+
+## twitter_foo_fun.py
+<%= codepiece 'opener-project/twitter_foo_fun.py' %>
+
+The output will look like this:
+
+~~~
+There are 54 CA tweeters
+----------------
+reppeteaguilar has 312 followers and tweets 1.15 times per day since joining Twitter 60 days ago
+Number of original tweets with 'obama' in last 200 tweets: 0
+----------------
+repbecerra has 17686 followers and tweets 0.85 times per day since joining Twitter 1815 days ago
+Number of original tweets with 'obama' in last 200 tweets: 8
+----------------
+senatorboxer has 57927 followers and tweets 0.7 times per day since joining Twitter 2455 days ago
+Number of original tweets with 'obama' in last 200 tweets: 14
+~~~
+{:.output}
+
+
+## twitter-tablemaker.py
+<%= codepiece 'opener-project/twitter-tablemaker.py' %>
+
+
+## twitter-word-tweets.py
+<%= codepiece 'opener-project/twitter-word-tweets.py' %>

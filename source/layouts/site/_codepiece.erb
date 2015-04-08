@@ -1,9 +1,10 @@
 
 <%- display_class ||= "full" %>
 
-<%= link_to( url, url )%>
 <div class="codepiece <%=display_class%>">
 <%- code(lang) do -%>
 <%= content %>        
 <%- end -%>
+<small>File found at: <%= link_to( url, url )%></small>
+
 </div>

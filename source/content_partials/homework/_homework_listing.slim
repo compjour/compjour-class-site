@@ -1,4 +1,22 @@
 
+h3 Currently assigned
+
+table.homework-listing.assigned.table.table-condensed
+  - assigned_homework.each do |d|
+
+      tr data-date="#{{machine_date d.due}}"
+        td
+          div.title = d.title
+          - if d.content_slug
+            div = link_to_slug(d.content_slug, 'More info')
+        td.due = friendly_date d.due
+        td.points = d.points
+
+
+
+
+
+h3 All homework (past, to come)
 
 table.homework-listing.table.table-condensed
   - homework_sections.each do |section|
@@ -6,6 +24,10 @@ table.homework-listing.table.table-condensed
       td.title colspan=3 = section.title
     - Array(section.deliverables).each do |d|
       tr data-date="#{{machine_date d.due}}"
-        td.title = d.title
+        td
+          div.title = d.title
+          - if d.content_slug
+            div = link_to_slug(d.content_slug, 'More info')
         td.due = friendly_date d.due
         td.points = d.points
+

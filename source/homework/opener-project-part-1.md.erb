@@ -1,22 +1,143 @@
+---
+title: Opener Project Part 1
+---
 
 
 
+### Table of contents
+{:.no_toc}
 
-## The Deliverables
-
-
-
-
-
-## 1. Hello World
-## 2. Create a directory named tmp and a gitignore
-## 2. Downloading a legislators file
-## 3. 
+* TOC
+{:toc .tock}
 
 
 
 ## hello-world.py
+
+A quick demonstration of simple Python 3.x syntax, including how to assign variables, do math, and `print` things to the screen.
+
+If you don't use the `print()` function in your program, then the program won't tell you anything. Sometimes, this is just fine.
+
 <%= codepiece 'opener-project/hello-world.py' %>
 
+
+Relevant reading:
+
+- [Codecademy: Python Syntax](http://www.codecademy.com/courses/introduction-to-python-6WeG3/0/1?curriculum_id=4f89dab3d788890003000096)
+- [Codecademy: Tip Calculator](http://www.codecademy.com/courses/python-beginner-GB6hM/0/1?curriculum_id=4f89dab3d788890003000096)
+- [LPTHY: A Good First Program](http://learnpythonthehardway.org/book/ex1.html)
+- [LPTHY: Comments and Pound Characters](http://learnpythonthehardway.org/book/ex2.html)
+- [LPTHY: Numbers and Math](http://learnpythonthehardway.org/book/ex3.html)
+- [LPTHY: Variables And Names](http://learnpythonthehardway.org/book/ex4.html)
+
+
+The output:
+
+~~~
+Hello world
+My name is Dan
+I am 42 years old
+That is roughly 15330 days
+Or, 1324512000 seconds
+~~~
+{:.output}
+
+
+------------
+
+
+
 ## imports-and-setup.py
+
+
+Relevant reading: [LearnPython: Modules and Packages](http://www.learnpython.org/en/Modules_and_Packages)
+
 <%= codepiece 'opener-project/imports-and-setup.py' %>
+
+The output:
+
+~~~
+I am using Python: 3.4.3 |Anaconda 2.2.0 (x86_64)| (default, Mar  6 2015, 12:07:41) 
+[GCC 4.2.1 (Apple Inc. build 5577)]
+I am making a new local directory named data-hold/stuff
+~~~
+{:.output}
+
+
+
+
+
+## stanford-news-download.py
+
+Using the [Requests package](http://docs.python-requests.org/en/latest/user/quickstart/) to fetch and read files.
+
+<%= codepiece 'opener-project/stanford-news-download.py' %>
+
+The output:
+
+~~~
+Downloading the news.stanford.edu homepage
+news.stanford.edu has 27422 characters
+Saving the current news.stanford.edu to my data-hold/stuff folder
+~~~
+
+
+
+## stanford-news-heds.py
+
+This is a simple demonstration of HTML parsing with the BeautifulSoup package.
+
+<%= codepiece 'opener-project/stanford-news-heds.py' %>
+
+The output:
+
+~~~
+The currently downloaded data-hold/stuff/news.stanford.edu.html has 9 recent headlines and 19 images
+There are more images
+~~~
+{:.output}
+
+
+## stanford-news-topics.py
+<%= codepiece 'opener-project/stanford-news-topics.py' %>
+
+Sample output:
+
+~~~
+There are 23 topic links total
+Tagged topic: Arts & Creativity at URL: /tags/arts/
+   Latest headline: Stanford's Cantor Arts Center presents solo exhibition of Jacob Lawrence's work, Promised Land
+
+Tagged topic: Energy at URL: /tags/energy
+   Latest headline: Stanford's Cardinal Cogeneration plant shuts down to make way for SESI
+~~~
+{:.output}
+
+
+
+
+## get-er-done.py
+<%= codepiece 'opener-project/get-er-done.py' %>
+
+
+The ideal output:
+
+~~~
+hello-world.py ...Finished!
+imports-and-setup.py ...Finished!
+stanford-news-download.py ...Finished!
+stanford-news-heds.py ...Finished!
+stanford-news-topics.py ...Finished!
+get-er-done.py ...Finished!
+fetch-and-unpack-twitter-data.py ...Finished!
+read-sunlight-csv.py ...Finished!
+read-twitter-json.py ...Finished!
+twitter_foo.py ...Finished!
+twitter_foo_fun.py ...Finished!
+twitter-tablemaker.py ...Finished!
+twitter-word-tweets.py ...Finished!
+
+    All done (theoretically...)!
+    You should now be able to turn in the assignment by pushing it to Github
+~~~
+{:.output}

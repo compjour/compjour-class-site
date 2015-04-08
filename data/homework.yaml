@@ -24,12 +24,19 @@ sections:
 
   - title: Technical Checkboxes
     deliverables:
-      - title: Debug and publish a webpage
+      - title: Practice Python and Development with The Opener Project
+        due: 2015-04-14
         points: 10
-        due: 2015-04-13
         description: |
-          You will be given a buggy webpage to fix up, including changing stylesheet errors, fixing broken HTML elements and links, and cleaning up JavaScript errors. This exercise is meant to demonstrate your knowledge of the web inspector and basic web development concepts. The page-to-fix and instructions will be posted before April 8.
-        more_link: TBA
+          An exercise to get you through the hoops of writing and running Python data-related programs.
+        content_slug: opener-project-intro
+
+      # - title: Debug and publish a webpage
+      #   points: 10
+      #   due: 2015-04-13
+      #   description: |
+      #     You will be given a buggy webpage to fix up, including changing stylesheet errors, fixing broken HTML elements and links, and cleaning up JavaScript errors. This exercise is meant to demonstrate your knowledge of the web inspector and basic web development concepts. The page-to-fix and instructions will be posted before April 8.
+      #   more_link: TBA
 
       - title: Deploy a simple Flask app on a remote server
         points: 10
