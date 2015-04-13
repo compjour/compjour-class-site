@@ -10,6 +10,105 @@ topics:
 ---
 
 
+# Wednesday notes
+
+- [Intro to IFTTT](/tutorials/ifttt-intro)
+- [Intro to the Chrome Dev Tools](/tutorials/intro-to-the-web-inspector/)
+
+## Information overload
+
+![img](/files/images/tutorials/apis/nyt-freeing-us-from-our-phones.png)
+
+The Apple Watch is reviewed. Via the [New York Times](http://www.nytimes.com/2015/04/09/technology/personaltech/apple-watch-bliss-but-only-after-a-steep-learning-curve.html):
+
+> It took three days — three long, often confusing and frustrating days — for me to fall for the Apple Watch. But once I fell, I fell hard.
+
+> First there was a day to learn the device’s initially complex user interface. Then another to determine how it could best fit it into my life. And still one more to figure out exactly what Apple’s first major new product in five years is trying to do — and, crucially, what it isn’t.
+
+> It was only on Day 4 that I began appreciating the ways in which the elegant $650 computer on my wrist was more than just another screen. By notifying me of digital events as soon as they happened, and letting me act on them instantly, without having to fumble for my phone, the Watch became something like a natural extension of my body — a direct link, in a way that I’ve never felt before, from the digital world to my brain. __The effect was so powerful that people who’ve previously commented on my addiction to my smartphone started noticing a change in my behavior; my wife told me that I seemed to be getting lost in my phone less than in the past. She found that a blessing__.
+
+(i.e. let's learn a new device to free us from our old one)
+
+adding more technology to our bodies
+
+------
+
+![img](http://www.nytco.com/wp-content/uploads/photo2-1024x420.jpg)
+
+
+
+[The Times Rolls Out One-Sentence Stories on Apple Watch](http://www.nytco.com/the-times-rolls-out-one-sentence-stories-on-apple-watch/): 
+
+> The New York Times has developed a new form of storytelling to help readers catch up in seconds on Apple Watch. One-sentence stories, crafted specially for small screens, will provide the news at a glance across many Times sections, including Business, Politics, Science, Tech and The Arts.
+
+
+Proposed Watch one-sentence story: __The E.U. will extend Greece's bailout by four months__
+
+The headline for the story on the website: [Eurozone Officials Reach Accord With Greece to Extend Bailout](http://www.nytimes.com/2015/02/21/business/international/greece-debt-eurozone-finance-ministers.html)
+
+https://twitter.com/nytimes/status/563691784522711040
+
+Proposed Watch one-sentence story: __U.S. Economy Added 257,000 Jobs in January__
+
+The Tweet version: [U.S. Economy Added 257,000 Jobs in January; Unemployment Rate at 5.7%](https://twitter.com/nytimes/status/563691784522711040)
+
+
+## Politwoops
+
+Here's an example of a service that takes another service (Twitter) and filters it to show just the Tweets that the Politwoops creators think is interesting:
+
+1. Tweets by politicians.
+2. Tweets that have been deleted.
+
+That second _filter_ is one that benefits most from programmatic technique; it requires polling the Twitter service constantly, and then upon each refresh, noticing which tweets that were previously collected are no longer being collected. It's somewhat trivial to create a program that can run every few seconds and save some data for the rest of eternity (or until your computer shuts off).
+
+The first filter is one that is more weighted toward _human_ labor. It's hard to write a program that, given a hundred million Twitter accounts (which, unless you are part of Twitter, is itself a big task to collect), could accurately pick out which ones belong to U.S. politicians. It's much easier just to create a list by hand and then feed that list of usernames to the Twitter-checking program ([Sunlight Foundation maintains a current list of U.S. Congressmembers](https://sunlightlabs.github.io/congress/#legislator-spreadsheet) and social media accounts).
+
+
+However, when things are manually maintained, as in the case of list of elected officials and their Twitter accounts, it means that someone has to, well, manually maintain them. Yesterday there was a fun item about New York State Senator Jeff Klein's account tweeting "susan del percio hot". [Business Insider got the spokesperson's excuse](http://www.businessinsider.com/jeff-klein-blames-staffer-for-hot-strategist-tweet-2015-4):
+
+> "A female, junior communications staffer - who also happens to be a recent hire in our office -  accidentally tweeted a link from her personal phone," Giove said. "As is the case with most elected officials, staff have access to and are responsible for social media updates for their principal. Mistakes like this happen and are taken seriously. We extend our apologies to Susan."
+
+However, [Klein is not currently tracked by Politwoops](http://politwoops.sunlightfoundation.com/users?state=NY&party=&office=), so his account's snafu would've been unnoticed if someone hadn't seen it come across their own feed.
+
+[Politwoops Twitter account](http://politwoops.nl/) was originally created by the [Open State Foundation](http://openstate.eu/projects/politwoops/). The [Sunlight Foundation launched their version](http://politwoops.sunlightfoundation.com/) in mid-2012. More [than 30 countries have a version of it](http://www.politwoops.eu/countries). It's worth noting that the [Anthony Weiner sexting scandal happened in 2011](http://en.wikipedia.org/wiki/Anthony_Weiner_sexting_scandals).
+
+
+A couple of other interesting links:
+
+- [Sunlight Foundation's Politwoops source code](https://github.com/sunlightlabs/politwoops)
+- [Politwoops, There It Is: The Best Deleted Tweets from Politicians](http://motherboard.vice.com/blog/politwoops-there-it-is-the-best-deleted-tweets-from-politicians)
+
+
+Even as interesting and fleshed-out of a concept as Politwoops is, there are still plenty of ways to expand upon it. There are more interesting kinds of Tweeters than politicians: CEOs, for instance. And not all deleted Tweets were created equally. Not just in content, but what _time_ the Tweet was sent (e.g. weekend versus workday, 2PM vs 2AM), what _client_ was used (someone using their iPhone versus a professional such such as HootSuite or Buffer), and to _whom_: a reply to a fellow Congressmember is different than a reply to some random citizen's account (or 21-year-old college student, [in the case of Rep. Weiner](http://en.wikipedia.org/wiki/Anthony_Weiner_sexting_scandals)). Each of these properties can be found in [each Tweet from Twitter's API](https://dev.twitter.com/rest/reference/get/statuses/user_timeline), and each can be used programmatically in a variety of ways to filter for interesting tweets.
+
+An example newsy usage of Twitter data: "[We know when Dzhokhar Tsarnev sleeps](http://qz.com/76442/we-know-when-dzhokhar-tsarnaev-sleeps/)", via Quartz:
+
+![img](/files/images/tutorials/apis/quartz-viz-boston-tweets.png)
+
+> That’s our visualization of tweets by @J_tsar, a Twitter account that has been linked to Dzhokhar, one of the alleged Boston bombers. The darker the pink, the more tweets. What it tells us, quite mundanely, is that Dzhokhar stays up late, often smoking weed, and sleeps past noon. Like so many other college students.
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+--------------
+
+# Monday notes
+
+
 ## Some logistics notes
 
 Homework: <%=link_to_slug 'opener-project-intro'%>

@@ -1,0 +1,261 @@
+{
+  "type": "FeatureCollection",
+  "metadata": {
+    "generated": 1428896157000,
+    "url": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson",
+    "title": "USGS Significant Earthquakes, Past Month",
+    "status": 200,
+    "api": "1.0.17",
+    "count": 6
+  },
+  "features": [
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 3.61,
+        "place": "1km NNW of San Ramon, California",
+        "time": 1427958363870,
+        "updated": 1428851531682,
+        "tz": -420,
+        "url": "http://earthquake.usgs.gov/earthquakes/eventpage/nc72424876",
+        "detail": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/nc72424876.geojson",
+        "felt": 3312,
+        "cdi": 5.1,
+        "mmi": 3.72,
+        "alert": null,
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 710,
+        "net": "nc",
+        "code": "72424876",
+        "ids": ",nc72424876,",
+        "sources": ",nc,",
+        "types": ",cap,dyfi,focal-mechanism,general-link,geoserve,moment-tensor,nearby-cities,origin,phase-data,scitech-link,shakemap,tectonic-summary,",
+        "nst": 235,
+        "dmin": 0.005873,
+        "rms": 0.14,
+        "gap": 45,
+        "magType": "mw",
+        "type": "earthquake",
+        "title": "M 3.6 - 1km NNW of San Ramon, California"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -121.9868333,
+          37.792,
+          10.03
+        ]
+      },
+      "id": "nc72424876"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 6.5,
+        "place": "99km ENE of Hihifo, Tonga",
+        "time": 1427705306330,
+        "updated": 1427734200040,
+        "tz": -720,
+        "url": "http://earthquake.usgs.gov/earthquakes/eventpage/us10001ryu",
+        "detail": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us10001ryu.geojson",
+        "felt": 1,
+        "cdi": 2,
+        "mmi": 4.51,
+        "alert": "green",
+        "status": "reviewed",
+        "tsunami": 1,
+        "sig": 650,
+        "net": "us",
+        "code": "10001ryu",
+        "ids": ",us10001ryu,at00nm0oha,gcmt20150330084826,",
+        "sources": ",us,at,gcmt,",
+        "types": ",associate,cap,dyfi,geoserve,impact-link,losspager,moment-tensor,nearby-cities,origin,phase-data,shakemap,tectonic-summary,",
+        "nst": null,
+        "dmin": 4.563,
+        "rms": 0.86,
+        "gap": 39,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 6.5 - 99km ENE of Hihifo, Tonga"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -172.9402,
+          -15.5149,
+          15.5
+        ]
+      },
+      "id": "us10001ryu"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 6.4,
+        "place": "109km NE of Hihifo, Tonga",
+        "time": 1427703480770,
+        "updated": 1427727383000,
+        "tz": -720,
+        "url": "http://earthquake.usgs.gov/earthquakes/eventpage/us10001ryq",
+        "detail": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us10001ryq.geojson",
+        "felt": 2,
+        "cdi": 3.8,
+        "mmi": 4.3,
+        "alert": "green",
+        "status": "reviewed",
+        "tsunami": 1,
+        "sig": 631,
+        "net": "us",
+        "code": "10001ryq",
+        "ids": ",at00nm0n21,us10001ryq,gcmt20150330081800,",
+        "sources": ",at,us,gcmt,",
+        "types": ",cap,dyfi,geoserve,impact-link,losspager,moment-tensor,nearby-cities,origin,phase-data,shakemap,tectonic-summary,",
+        "nst": null,
+        "dmin": 4.641,
+        "rms": 1.02,
+        "gap": 34,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 6.4 - 109km NE of Hihifo, Tonga"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -172.9038,
+          -15.388,
+          11.5
+        ]
+      },
+      "id": "us10001ryq"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 7.5,
+        "place": "56km SE of Kokopo, Papua New Guinea",
+        "time": 1427672911190,
+        "updated": 1428652423911,
+        "tz": 600,
+        "url": "http://earthquake.usgs.gov/earthquakes/eventpage/us10001rvu",
+        "detail": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us10001rvu.geojson",
+        "felt": 9,
+        "cdi": 8.2,
+        "mmi": 7.05,
+        "alert": "green",
+        "status": "reviewed",
+        "tsunami": 1,
+        "sig": 873,
+        "net": "us",
+        "code": "10001rvu",
+        "ids": ",pt15088051,at00nlzzgx,us10001rvu,gcmt20150329234831,",
+        "sources": ",pt,at,us,gcmt,",
+        "types": ",cap,dyfi,finite-fault,general-link,geoserve,impact-link,losspager,moment-tensor,moment-tensor,moment-tensor,nearby-cities,origin,phase-data,shakemap,tectonic-summary,",
+        "nst": null,
+        "dmin": 0.692,
+        "rms": 0.88,
+        "gap": 19,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 7.5 - 56km SE of Kokopo, Papua New Guinea"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          152.5606,
+          -4.7632,
+          41
+        ]
+      },
+      "id": "us10001rvu"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 6.4,
+        "place": "45km ESE of Putre, Chile",
+        "time": 1427086298010,
+        "updated": 1428026352537,
+        "tz": -180,
+        "url": "http://earthquake.usgs.gov/earthquakes/eventpage/us10001ppx",
+        "detail": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us10001ppx.geojson",
+        "felt": 45,
+        "cdi": 5.4,
+        "mmi": 5.31,
+        "alert": "green",
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 654,
+        "net": "us",
+        "code": "10001ppx",
+        "ids": ",us10001ppx,gcmt20150323045137,",
+        "sources": ",us,gcmt,",
+        "types": ",cap,dyfi,geoserve,impact-text,losspager,moment-tensor,moment-tensor,moment-tensor,nearby-cities,origin,phase-data,shakemap,tectonic-summary,",
+        "nst": null,
+        "dmin": 0.324,
+        "rms": 1.3,
+        "gap": 35,
+        "magType": "mww",
+        "type": "earthquake",
+        "title": "M 6.4 - 45km ESE of Putre, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -69.1663,
+          -18.3534,
+          130
+        ]
+      },
+      "id": "us10001ppx"
+    },
+    {
+      "type": "Feature",
+      "properties": {
+        "mag": 6.2,
+        "place": "82km NNW of Talcahuano, Chile",
+        "time": 1426703248120,
+        "updated": 1427591232841,
+        "tz": -300,
+        "url": "http://earthquake.usgs.gov/earthquakes/eventpage/us10001nj1",
+        "detail": "http://earthquake.usgs.gov/earthquakes/feed/v1.0/detail/us10001nj1.geojson",
+        "felt": 61,
+        "cdi": 4.6,
+        "mmi": 4.73,
+        "alert": "green",
+        "status": "reviewed",
+        "tsunami": 0,
+        "sig": 619,
+        "net": "us",
+        "code": "10001nj1",
+        "ids": ",us10001nj1,gcmt20150318182728,",
+        "sources": ",us,gcmt,",
+        "types": ",cap,dyfi,geoserve,losspager,moment-tensor,nearby-cities,origin,phase-data,shakemap,tectonic-summary,",
+        "nst": null,
+        "dmin": 0.888,
+        "rms": 1.85,
+        "gap": 34,
+        "magType": "mwb",
+        "type": "earthquake",
+        "title": "M 6.2 - 82km NNW of Talcahuano, Chile"
+      },
+      "geometry": {
+        "type": "Point",
+        "coordinates": [
+          -73.6259,
+          -36.0967,
+          10
+        ]
+      },
+      "id": "us10001nj1"
+    }
+  ],
+  "bbox": [
+    -172.9402,
+    -36.0967,
+    10,
+    152.5606,
+    37.792,
+    130
+  ]
+}

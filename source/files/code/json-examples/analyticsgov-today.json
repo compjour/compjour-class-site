@@ -1,0 +1,146 @@
+{
+  "name": "today",
+  "query": {
+    "start-date": "today",
+    "end-date": "today",
+    "dimensions": "ga:date,ga:hour",
+    "metrics": [
+      "ga:sessions"
+    ],
+    "start-index": 1,
+    "max-results": 10000,
+    "samplingLevel": "HIGHER_PRECISION"
+  },
+  "meta": {
+    "name": "Today",
+    "description": "Today's visits for all .gov sites tracked by the U.S. federal government's Digital Analytics Program."
+  },
+  "data": [
+    {
+      "date": "2015-04-12",
+      "hour": "00",
+      "visits": "332963"
+    },
+    {
+      "date": "2015-04-12",
+      "hour": "01",
+      "visits": "244768"
+    },
+    {
+      "date": "2015-04-12",
+      "hour": "02",
+      "visits": "192071"
+    },
+    {
+      "date": "2015-04-12",
+      "hour": "03",
+      "visits": "158825"
+    },
+    {
+      "date": "2015-04-12",
+      "hour": "04",
+      "visits": "144991"
+    },
+    {
+      "date": "2015-04-12",
+      "hour": "05",
+      "visits": "150028"
+    },
+    {
+      "date": "2015-04-12",
+      "hour": "06",
+      "visits": "190622"
+    },
+    {
+      "date": "2015-04-12",
+      "hour": "07",
+      "visits": "280561"
+    },
+    {
+      "date": "2015-04-12",
+      "hour": "08",
+      "visits": "399740"
+    },
+    {
+      "date": "2015-04-12",
+      "hour": "09",
+      "visits": "498005"
+    },
+    {
+      "date": "2015-04-12",
+      "hour": "10",
+      "visits": "564725"
+    },
+    {
+      "date": "2015-04-12",
+      "hour": "11",
+      "visits": "601932"
+    },
+    {
+      "date": "2015-04-12",
+      "hour": "12",
+      "visits": "617590"
+    },
+    {
+      "date": "2015-04-12",
+      "hour": "13",
+      "visits": "636489"
+    },
+    {
+      "date": "2015-04-12",
+      "hour": "14",
+      "visits": "648336"
+    },
+    {
+      "date": "2015-04-12",
+      "hour": "15",
+      "visits": "663140"
+    },
+    {
+      "date": "2015-04-12",
+      "hour": "16",
+      "visits": "674634"
+    },
+    {
+      "date": "2015-04-12",
+      "hour": "17",
+      "visits": "677081"
+    },
+    {
+      "date": "2015-04-12",
+      "hour": "18",
+      "visits": "665113"
+    },
+    {
+      "date": "2015-04-12",
+      "hour": "19",
+      "visits": "701173"
+    },
+    {
+      "date": "2015-04-12",
+      "hour": "20",
+      "visits": "738835"
+    },
+    {
+      "date": "2015-04-12",
+      "hour": "21",
+      "visits": "730459"
+    },
+    {
+      "date": "2015-04-12",
+      "hour": "22",
+      "visits": "86"
+    },
+    {
+      "date": "2015-04-12",
+      "hour": "23",
+      "visits": "0"
+    }
+  ],
+  "totals": {
+    "visits": 10512167,
+    "start_date": "2015-04-12",
+    "end_date": "2015-04-12"
+  },
+  "taken_at": "2015-04-13T03:19:02.825Z"
+}

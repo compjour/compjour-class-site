@@ -1,0 +1,205 @@
+{
+  "results": [
+    {
+      "bill_id": "sjres8-114",
+      "bill_type": "sjres",
+      "chamber": "senate",
+      "committee_ids": [
+        "SSHR"
+      ],
+      "congress": 114,
+      "cosponsors_count": 51,
+      "enacted_as": null,
+      "history": {
+        "active": true,
+        "active_at": "2015-02-23",
+        "awaiting_signature": false,
+        "enacted": false,
+        "house_passage_result": "pass",
+        "house_passage_result_at": "2015-03-19T16:09:00Z",
+        "senate_passage_result": "pass",
+        "senate_passage_result_at": "2015-03-04",
+        "vetoed": true,
+        "vetoed_at": "2015-03-31"
+      },
+      "introduced_on": "2015-02-09",
+      "last_action_at": "2015-03-31",
+      "last_version": {
+        "version_code": "enr",
+        "issued_on": "2015-03-24",
+        "version_name": "Enrolled Bill",
+        "bill_version_id": "sjres8-114-enr",
+        "urls": {
+          "html": "http://www.gpo.gov/fdsys/pkg/BILLS-114sjres8enr/html/BILLS-114sjres8enr.htm",
+          "pdf": "http://www.gpo.gov/fdsys/pkg/BILLS-114sjres8enr/pdf/BILLS-114sjres8enr.pdf",
+          "xml": "http://www.gpo.gov/fdsys/pkg/BILLS-114sjres8enr/xml/BILLS-114sjres8enr.xml"
+        },
+        "pages": 1
+      },
+      "last_version_on": "2015-03-24",
+      "last_vote_at": "2015-03-19T16:09:00Z",
+      "number": 8,
+      "official_title": "A joint resolution providing for congressional disapproval under chapter 8 of title 5, United States Code, of the rule submitted by the National Labor Relations Board relating to representation case procedures.",
+      "popular_title": null,
+      "related_bill_ids": [
+        "hres152-114",
+        "hjres29-114"
+      ],
+      "short_title": null,
+      "sponsor": {
+        "first_name": "Lamar",
+        "last_name": "Alexander",
+        "middle_name": null,
+        "name_suffix": null,
+        "nickname": null,
+        "title": "Sen"
+      },
+      "sponsor_id": "A000360",
+      "urls": {
+        "congress": "http://beta.congress.gov/bill/114th/senate-joint-resolution/8",
+        "govtrack": "https://www.govtrack.us/congress/bills/114/sjres8",
+        "opencongress": "https://www.opencongress.org/bill/sjres8-114"
+      },
+      "withdrawn_cosponsors_count": 0
+    },
+    {
+      "bill_id": "s1-114",
+      "bill_type": "s",
+      "chamber": "senate",
+      "committee_ids": [],
+      "congress": 114,
+      "cosponsors_count": 59,
+      "enacted_as": null,
+      "history": {
+        "active": true,
+        "active_at": "2015-01-08",
+        "awaiting_signature": false,
+        "enacted": false,
+        "house_passage_result": "pass",
+        "house_passage_result_at": "2015-02-11T22:14:00Z",
+        "senate_cloture_result": "pass",
+        "senate_cloture_result_at": "2015-01-12",
+        "senate_override_result": "fail",
+        "senate_override_result_at": "2015-03-04",
+        "senate_passage_result": "pass",
+        "senate_passage_result_at": "2015-01-29",
+        "vetoed": true,
+        "vetoed_at": "2015-02-24"
+      },
+      "introduced_on": "2015-01-06",
+      "last_action_at": "2015-03-04",
+      "last_version": {
+        "version_code": "enr",
+        "issued_on": "2015-02-13",
+        "version_name": "Enrolled Bill",
+        "bill_version_id": "s1-114-enr",
+        "urls": {
+          "html": "http://www.gpo.gov/fdsys/pkg/BILLS-114s1enr/html/BILLS-114s1enr.htm",
+          "pdf": "http://www.gpo.gov/fdsys/pkg/BILLS-114s1enr/pdf/BILLS-114s1enr.pdf",
+          "xml": "http://www.gpo.gov/fdsys/pkg/BILLS-114s1enr/xml/BILLS-114s1enr.xml"
+        },
+        "pages": 13
+      },
+      "last_version_on": "2015-02-13",
+      "last_vote_at": "2015-03-04",
+      "number": 1,
+      "official_title": "A bill to approve the Keystone XL Pipeline.",
+      "popular_title": null,
+      "related_bill_ids": [
+        "hres100-114",
+        "hr3-114",
+        "hr873-114",
+        "hr906-114",
+        "s147-114",
+        "s259-114",
+        "s523-114",
+        "s720-114"
+      ],
+      "short_title": "Keystone XL Pipeline Approval Act",
+      "sponsor": {
+        "first_name": "John",
+        "last_name": "Hoeven",
+        "middle_name": null,
+        "name_suffix": null,
+        "nickname": null,
+        "title": "Sen"
+      },
+      "sponsor_id": "H001061",
+      "urls": {
+        "congress": "http://beta.congress.gov/bill/114th/senate-bill/1",
+        "govtrack": "https://www.govtrack.us/congress/bills/114/s1",
+        "opencongress": "https://www.opencongress.org/bill/s1-114"
+      },
+      "withdrawn_cosponsors_count": 0
+    },
+    {
+      "bill_id": "hr3808-111",
+      "bill_type": "hr",
+      "chamber": "house",
+      "committee_ids": [
+        "HSJU",
+        "HSJU03",
+        "SSJU"
+      ],
+      "congress": 111,
+      "cosponsors_count": 3,
+      "enacted_as": null,
+      "history": {
+        "active": true,
+        "active_at": "2010-04-27T21:15:00Z",
+        "awaiting_signature": false,
+        "enacted": false,
+        "house_override_result": "fail",
+        "house_override_result_at": "2010-11-17T22:24:00Z",
+        "house_passage_result": "pass",
+        "house_passage_result_at": "2010-04-27T21:23:00Z",
+        "senate_passage_result": "pass",
+        "senate_passage_result_at": "2010-09-27",
+        "vetoed": true,
+        "vetoed_at": "2010-10-08"
+      },
+      "introduced_on": "2009-10-14",
+      "last_action_at": "2010-11-17T22:24:00Z",
+      "last_version": {
+        "version_code": "enr",
+        "issued_on": "2010-09-29",
+        "version_name": "Enrolled Bill",
+        "bill_version_id": "hr3808-111-enr",
+        "urls": {
+          "html": "http://www.gpo.gov/fdsys/pkg/BILLS-111hr3808enr/html/BILLS-111hr3808enr.htm",
+          "pdf": "http://www.gpo.gov/fdsys/pkg/BILLS-111hr3808enr/pdf/BILLS-111hr3808enr.pdf",
+          "xml": "http://www.gpo.gov/fdsys/pkg/BILLS-111hr3808enr/xml/BILLS-111hr3808enr.xml"
+        },
+        "pages": 2
+      },
+      "last_version_on": "2010-09-29",
+      "last_vote_at": "2010-11-17T22:24:00Z",
+      "number": 3808,
+      "official_title": "To require any Federal or State court to recognize any notarization made by a notary public licensed by a State other than the State where the court is located when such notarization occurs in or affects interstate commerce.",
+      "popular_title": null,
+      "related_bill_ids": [],
+      "short_title": "Interstate Recognition of Notarizations Act of 2010",
+      "sponsor": {
+        "first_name": "Robert",
+        "last_name": "Aderholt",
+        "middle_name": "B.",
+        "name_suffix": null,
+        "nickname": null,
+        "title": "Rep"
+      },
+      "sponsor_id": "A000055",
+      "urls": {
+        "congress": "http://beta.congress.gov/bill/111th/house-bill/3808",
+        "govtrack": "http://www.govtrack.us/congress/bills/111/hr3808",
+        "opencongress": "http://www.opencongress.org/bill/111-h3808/show"
+      },
+      "withdrawn_cosponsors_count": 0
+    }
+  ],
+  "count": 3,
+  "page": {
+    "count": 3,
+    "per_page": 20,
+    "page": 1
+  }
+}

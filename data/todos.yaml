@@ -1,5 +1,13 @@
 
 
+"2015-04-08":
+  - title: Join IFTTT
+    description: |
+      Make a recipe on IFTTT and test it out: [Intro to IFTTT](/tutorials/ifttt-intro)
+  - title: Install Tweepy and register a Twitter Application
+    description: |
+      Instructions here. [Getting started with Tweepy](/tutorials/getting-started-with-tweepy)
+
 "2015-04-01":
   - title: "Read the initial lessons on DevTools"
     description: |

@@ -1,0 +1,99 @@
+---
+title: Getting Started with Tweepy
+---
+
+
+[Tweepy](http://tweepy.readthedocs.org/en/v3.3.0/getting_started.html) is a "wrapper" written in Python that makes it easier to work with the Twitter API.
+
+You can install it on your own system by going to your Terminal/command-line and typing in:
+
+        pip install tweepy
+
+
+## Registering a Twitter Application
+
+(if you've already done this, you can go ahead and do it again and create a new app. Or just use your old credentials)
+
+
+Assuming you've already created a Twitter account, the next thing you need to do is register an "application" with Twitter. You're basically telling Twitter that you want to create a new app/interface/site using Twitter data, and so you need to go through Twitter's authentication process.
+
+Note that this is not specific to using Tweepy, this is the standard process needed for any third-party code/app to call Twitter on a user's behalf. Once you go through this process, you can use the credentials for any other program you might write.
+
+### Setting up the app
+
+
+Visit [https://apps.twitter.com/](https://apps.twitter.com/)
+
+![img](http://www.compciv.org/files/images/topics/twitter/apps-twitter-com.png)
+
+Click [Create a New App](https://apps.twitter.com/app/new) button
+
+
+Fill out the fields, scroll to the bottom, read the __Developer Agreement__ agree to them, and then click the __Create your Twitter application__ button.
+
+
+### Configuring your app
+
+If you plan to send tweets via the command line, change the __Access level__ to __Read and Write__
+
+![img](http://www.compciv.org/files/images/topics/twitter/rw-access-twitter-app.png)
+
+Now click the __Keys and Access Tokens tab__ (near the beginning of the page) and you should see this:
+
+![img](http://www.compciv.org/files/images/topics/twitter/twitter-app-secrets.png)
+
+Take note of two of those fields, __Consumer Key (API Key)__ and __Consumer Secret (API Secret)__, which we'll copy later.
+
+<div id="twitter-app-access-token"></div>
+
+### Create an access token
+
+Scroll down until you see the subheading, __Your Access Token__.
+
+![img](http://www.compciv.org/files/images/topics/twitter/create-access-token.png)
+
+
+Click the __Create my access token__ button, which should cause a page refresh of the settings page. Below is a screenshot and the __highlighted fields that you need to copy for the next step__: __Consumer Key (API Key)__, __Consumer Secret (API Secret__), __Access Token__, and __Access Token Secret__
+
+![img](http://www.compciv.org/files/images/topics/twitter/app-settings-with-tokens.png)
+
+
+## Working with Tweepy
+
+The easiest way to do this is to start up __iPython__ from the command-line, so you can play with the commands interactively.
+
+From the Tweepy docs, I've [adapted code from the intro](http://tweepy.readthedocs.org/en/v3.3.0/getting_started.html).
+
+
+~~~py
+import tweepy
+
+CONSUMER_KEY = "XXX"
+CONSUMER_SECRET = "XXX"
+ACCESS_TOKEN = "XXX"
+ACCESS_TOKEN_SECRET = "XXX"
+
+auth = tweepy.OAuthHandler(CONSUMER_KEY, CONSUMER_SECRET)
+auth.set_access_token(ACCESS_TOKEN, ACCESS_TOKEN_SECRET)
+api = tweepy.API(auth)
+~~~
+
+Once that `api` variable has been set to the object returned by `tweepy.API(auth)`, you're free to make some Twitter API calls. To print out the last 20 tweets by @Stanford:
+
+~~~py
+stanford_tweets = api.user_timeline('stanford')
+for tweet in stanford_tweets:
+    print( tweet.created_at, tweet.text)
+~~~
+
+
+To send a Tweet from your account (assuming you allowed your app to have read/write permissions):
+
+~~~py
+api.update_status(status = "Hey, I'm tweeting with Tweepy!")
+~~~
+
+
+If these commands work, then you're all set up with Twitter and Tweepy. We'll [expand on the use cases in other tutorials](https://dev.twitter.com/rest/public). Some of the extensions will be quite simple, such as making the authentication process a one-line command.
+
+

@@ -1,0 +1,110 @@
+
+
+## 1.
+
+~~~
+https://status.github.com/api/last-message.json
+~~~
+
+<%= codepiece 'json-examples/github-last-message.json' %>
+
+
+## 2.
+
+
+~~~
+https://maps.googleapis.com/maps/api/geocode/json?address=McClatchy+Hall+Stanford,CA
+~~~
+
+<%= codepiece 'json-examples/maps.googleapis-geocode-mcclatchy.json' %>
+
+
+
+## 3. Single tweet
+
+~~~py
+# assuming that client is an authenticated instance of tweepy.api.API
+data = client.statuses_lookup([586227094285225984])[0]._json
+with open("./single-tweet-librarycongress.json", 'w') as f:
+    f.write(json.dumps(data, indent = 2))
+~~~
+
+<%= codepiece 'json-examples/single-tweet-librarycongress.json' %>
+
+
+## 4. Several Twitter users
+
+https://dev.twitter.com/rest/reference/get/lists/members
+
+~~~py
+# assuming that client is an authenticated instance of tweepy.api.API
+members = client.list_members(owner_screen_name = 'cspan', slug = 'members-of-congress', count = 1000)
+data = [m._json for m in members]
+with open("./twitter-cspan-congress-list.json", 'w') as f:
+    f.write(json.dumps(data, indent = 2))
+~~~
+
+## 5. Sunlight legislators list
+
+
+https://sunlightlabs.github.io/congress/legislators.html
+
+
+`https://congress.api.sunlightfoundation.com/legislators&api_key=YOUR_API_KEY`
+
+
+## Sunlight Bills
+
+https://sunlightlabs.github.io/congress/bills.html
+Bills sponsored by Republicans that have been vetoed
+
+
+
+https://congress.api.sunlightfoundation.com/bills?apikey=YOUR_API_KEY&sponsor.party=R&history.vetoed=true
+
+
+## Federal Register
+https://www.federalregister.gov/learn/developers
+[API Explorer](https://www.federalregister.gov/developers/api/v1)
+
+`http://www.federalregister.gov/api/v1/articles.json?per_page=20&order=relevance&conditions%5Bsections%5D%5B%5D=environment`
+
+
+## USAJobs
+
+https://data.usajobs.gov/api/jobs?series=2210
+
+
+
+## NYT Books
+http://developer.nytimes.com/docs/books_api/Books_API_Best_Sellers
+
+2e33ea458fa387bc742c62d1ba879702:11:65561518
+
+http://api.nytimes.com/svc/books/v3/lists/2015-01-01/hardcover-fiction.json?sort-by=rank&api-key=YOURAPIKEY
+
+
+## Facebook
+
+https://graph.facebook.com/WhiteHouse
+
+
+## Instagram
+
+https://api.instagram.com/v1/users/472797365/media/recent?access_token=YOURACCESSTOKEN&count=50
+
+## Analytics.gov
+
+https://analytics.usa.gov/data/live/top-pages-realtime.json
+
+
+## FDA Food API recalls
+
+https://api.fda.gov/food/enforcement.json?search=report_date:[20040101+TO+20131231]&limit=20
+
+
+## USGS GeoJSON data
+
+http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
+
+http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson

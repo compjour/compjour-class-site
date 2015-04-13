@@ -1,0 +1,75 @@
+
+{
+   "results" : [
+      {
+         "address_components" : [
+            {
+               "long_name" : "McClatchy Hall",
+               "short_name" : "McClatchy Hall",
+               "types" : [ "subpremise" ]
+            },
+            {
+               "long_name" : "Stanford University",
+               "short_name" : "Stanford University",
+               "types" : [ "establishment" ]
+            },
+            {
+               "long_name" : "450",
+               "short_name" : "450",
+               "types" : [ "street_number" ]
+            },
+            {
+               "long_name" : "Serra Mall",
+               "short_name" : "Serra Mall",
+               "types" : [ "route" ]
+            },
+            {
+               "long_name" : "Stanford",
+               "short_name" : "Stanford",
+               "types" : [ "locality", "political" ]
+            },
+            {
+               "long_name" : "Santa Clara County",
+               "short_name" : "Santa Clara County",
+               "types" : [ "administrative_area_level_2", "political" ]
+            },
+            {
+               "long_name" : "California",
+               "short_name" : "CA",
+               "types" : [ "administrative_area_level_1", "political" ]
+            },
+            {
+               "long_name" : "United States",
+               "short_name" : "US",
+               "types" : [ "country", "political" ]
+            },
+            {
+               "long_name" : "94305",
+               "short_name" : "94305",
+               "types" : [ "postal_code" ]
+            }
+         ],
+         "formatted_address" : "Stanford University, Main Quad, 450 Serra Mall McClatchy Hall, Stanford, CA 94305, USA",
+         "geometry" : {
+            "location" : {
+               "lat" : 37.4283125,
+               "lng" : -122.169494
+            },
+            "location_type" : "ROOFTOP",
+            "viewport" : {
+               "northeast" : {
+                  "lat" : 37.4296614802915,
+                  "lng" : -122.1681450197085
+               },
+               "southwest" : {
+                  "lat" : 37.4269635197085,
+                  "lng" : -122.1708429802915
+               }
+            }
+         },
+         "place_id" : "ChIJeX4mBSq7j4AR-m6TP-ImoPo",
+         "types" : [ "subpremise" ]
+      }
+   ],
+   "status" : "OK"
+}

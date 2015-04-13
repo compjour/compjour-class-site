@@ -1,0 +1,516 @@
+{
+  "description": "Documents in Environment",
+  "results": [
+    {
+      "type": "Rule",
+      "html_url": "https://www.federalregister.gov/articles/2015/04/13/2015-08182/approval-and-promulgation-of-air-quality-implementation-plans-district-of-columbia-infrastructure",
+      "title": "Approval and Promulgation of Air Quality Implementation Plans; District of Columbia; Infrastructure Requirements for the 2008 Ozone, 2010 Nitrogen Dioxide, and 2010 Sulfur Dioxide National Ambient Air Quality Standards; Approval of Air Pollution Emergency Episode Plan",
+      "pdf_url": "http://www.gpo.gov/fdsys/pkg/FR-2015-04-13/pdf/2015-08182.pdf",
+      "abstract": "The Environmental Protection Agency (EPA) is approving portions of three State Implementation Plan (SIP) revision submittals from the District of Columbia (the District) pursuant to the Clean Air Act (CAA). Whenever new or revised national ambient air quality standards (NAAQS) are promulgated, the CAA requires states to submit a plan for the implementation, maintenance, and enforcement of such NAAQS. The plan is required to address basic program elements, including, but not limited to, regulatory structure, monitoring, modeling, legal authority, and adequate resources necessary to assure attainment and maintenance of the standards. These elements are referred to as infrastructure requirements. The District has made three separate submittals addressing the infrastructure requirements for the 2008 ozone NAAQS, the 2010 nitrogen dioxide (NO<INF>2</INF>) NAAQS, and the 2010 sulfur dioxide (SO<INF>2</INF>) NAAQS. One of the submittals also includes the ``Revised Air Quality Emergency Plan for the District of Columbia'' for satisfying EPA's requirements for air quality emergency episodes.",
+      "excerpts": "The Environmental Protection Agency (EPA) is approving portions of three State Implementation Plan (SIP) revision submittals from the District of Columbia (the District) pursuant to the Clean Air Act (CAA). Whenever new or revised national ambient air  &#8230; ",
+      "agencies": [
+        {
+          "raw_name": "ENVIRONMENTAL PROTECTION AGENCY",
+          "parent_id": null,
+          "url": "https://www.federalregister.gov/agencies/environmental-protection-agency",
+          "name": "Environmental Protection Agency",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/145.json",
+          "id": 145
+        }
+      ],
+      "publication_date": "2015-04-13",
+      "document_number": "2015-08182",
+      "public_inspection_pdf_url": "https://s3.amazonaws.com/public-inspection.federalregister.gov/2015-08182.pdf?1428669930"
+    },
+    {
+      "type": "Rule",
+      "html_url": "https://www.federalregister.gov/articles/2015/04/13/2015-08417/approval-and-promulgation-of-air-quality-implementation-plans-virginia-prevention-of-significant",
+      "title": "Approval and Promulgation of Air Quality Implementation Plans; Virginia-Prevention of Significant Deterioration; Amendment to the Definition of “Regulated NSR Pollutant” Concerning Condensable Particulate Matter",
+      "pdf_url": "http://www.gpo.gov/fdsys/pkg/FR-2015-04-13/pdf/2015-08417.pdf",
+      "abstract": "The Environmental Protection Agency (EPA) is taking direct final action to approve a July 25, 2013 State Implementation Plan (SIP) revision submitted by the Virginia Department of Environmental Quality (VADEQ) for the Commonwealth of Virginia. The revision includes a correction to the definition of ``regulated NSR [New Source Review] pollutant'' as it relates to condensable particulate matter under Virginia's Prevention of Significant Deterioration (PSD) program. The revision also includes the correction of a minor typographical error. EPA is approving these revisions to the Virginia SIP in accordance with the requirements of the Clean Air Act (CAA).",
+      "excerpts": "The Environmental Protection Agency (EPA) is taking direct final action to approve a July 25, 2013 State Implementation Plan (SIP) revision submitted by the Virginia Department of Environmental Quality (VADEQ) for the Commonwealth of Virginia. The  &#8230; ",
+      "agencies": [
+        {
+          "raw_name": "ENVIRONMENTAL PROTECTION AGENCY",
+          "parent_id": null,
+          "url": "https://www.federalregister.gov/agencies/environmental-protection-agency",
+          "name": "Environmental Protection Agency",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/145.json",
+          "id": 145
+        }
+      ],
+      "publication_date": "2015-04-13",
+      "document_number": "2015-08417",
+      "public_inspection_pdf_url": "https://s3.amazonaws.com/public-inspection.federalregister.gov/2015-08417.pdf?1428669991"
+    },
+    {
+      "type": "Rule",
+      "html_url": "https://www.federalregister.gov/articles/2015/04/13/2015-08421/revisions-to-the-california-state-implementation-plan-northern-sierra-air-quality-management",
+      "title": "Revisions to the California State Implementation Plan, Northern Sierra Air Quality Management District",
+      "pdf_url": "http://www.gpo.gov/fdsys/pkg/FR-2015-04-13/pdf/2015-08421.pdf",
+      "abstract": "The Environmental Protection Agency (EPA) is taking direct final action to approve a revision to the Northern Sierra Air Quality Management District (NSAQMD or the District) portion of the California State Implementation Plan (SIP). The submitted SIP revision contains the District's demonstration regarding Reasonably Available Control Technology (RACT) requirements for the 1997 8-hour ozone National Ambient Air Quality Standards (NAAQS). The submitted SIP revision also contains negative declarations for volatile organic compound (VOC) source categories for the NSAQMD. We are approving the submitted SIP revision under the Clean Air Act as amended in 1990 (CAA or the Act).",
+      "excerpts": "The Environmental Protection Agency (EPA) is taking direct final action to approve a revision to the Northern Sierra Air Quality Management District (NSAQMD or the District) portion of the California State Implementation Plan (SIP). The submitted SIP  &#8230; ",
+      "agencies": [
+        {
+          "raw_name": "ENVIRONMENTAL PROTECTION AGENCY",
+          "parent_id": null,
+          "url": "https://www.federalregister.gov/agencies/environmental-protection-agency",
+          "name": "Environmental Protection Agency",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/145.json",
+          "id": 145
+        }
+      ],
+      "publication_date": "2015-04-13",
+      "document_number": "2015-08421",
+      "public_inspection_pdf_url": "https://s3.amazonaws.com/public-inspection.federalregister.gov/2015-08421.pdf?1428669992"
+    },
+    {
+      "type": "Rule",
+      "html_url": "https://www.federalregister.gov/articles/2015/04/13/2015-08164/approval-and-promulgation-of-air-quality-implementation-plans-pennsylvania-redesignation-of-the",
+      "title": "Approval and Promulgation of Air Quality Implementation Plans; Pennsylvania; Redesignation of the Allentown Nonattainment Area to Attainment for the 2006 24-Hour Fine Particulate Matter Standard",
+      "pdf_url": "http://www.gpo.gov/fdsys/pkg/FR-2015-04-13/pdf/2015-08164.pdf",
+      "abstract": "The Environmental Protection Agency (EPA) is approving the Commonwealth of Pennsylvania's request to redesignate to attainment the Allentown Nonattainment Area (Allentown Area or Area) for the 2006 24- hour fine particulate matter (PM<INF>2.5</INF>) national ambient air quality standard (NAAQS or standard). EPA has determined that the Allentown Area attained the 2006 24-hour PM<INF>2.5</INF> NAAQS and that it continues to attain the standard. In addition, EPA is approving, as a revision to the Pennsylvania State Implementation Plan (SIP), the Allentown Area maintenance plan to show maintenance of the 2006 24-hour PM<INF>2.5</INF> NAAQS through 2025 for the Area. The maintenance plan includes the 2017 and 2025 PM<INF>2.5</INF> and nitrogen oxides (NO<INF>X</INF>) mobile vehicle emissions budgets (MVEBs) for the Area for the 2006 24- hour PM<INF>2.5</INF> NAAQS, which EPA is approving for transportation conformity purposes. Furthermore, EPA is approving the 2007 base year emissions inventory, also included in the maintenance plan, for the Area for the 2006 24-hour PM<INF>2.5</INF> NAAQS. These actions are being taken under the Clean Air Act (CAA).",
+      "excerpts": "The Environmental Protection Agency (EPA) is approving the Commonwealth of Pennsylvania's request to redesignate to attainment the Allentown Nonattainment Area (Allentown Area or Area) for the 2006 24- hour fine particulate matter (PM<INF>2.5</INF>)  &#8230; ",
+      "agencies": [
+        {
+          "raw_name": "ENVIRONMENTAL PROTECTION AGENCY",
+          "parent_id": null,
+          "url": "https://www.federalregister.gov/agencies/environmental-protection-agency",
+          "name": "Environmental Protection Agency",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/145.json",
+          "id": 145
+        }
+      ],
+      "publication_date": "2015-04-13",
+      "document_number": "2015-08164",
+      "public_inspection_pdf_url": "https://s3.amazonaws.com/public-inspection.federalregister.gov/2015-08164.pdf?1428669927"
+    },
+    {
+      "type": "Rule",
+      "html_url": "https://www.federalregister.gov/articles/2015/04/13/2015-08394/fisheries-off-west-coast-states-west-coast-salmon-fisheries-management-reference-point-updates-for",
+      "title": "Fisheries Off West Coast States; West Coast Salmon Fisheries; Management Reference Point Updates for Three Stocks of Pacific Salmon",
+      "pdf_url": "http://www.gpo.gov/fdsys/pkg/FR-2015-04-13/pdf/2015-08394.pdf",
+      "abstract": "NMFS issues a final rule to update management reference point values for Southern Oregon coastal Chinook salmon, Grays Harbor fall Chinook salmon, and Willapa Bay natural coho, as recommended by the Pacific Fishery Management Council (Council) for use in developing annual management measures beginning in 2015.",
+      "excerpts": "NMFS issues a final rule to update management reference point values for Southern Oregon coastal Chinook salmon, Grays Harbor fall Chinook salmon, and Willapa Bay natural coho, as recommended by the Pacific Fishery Management Council (Council) for use in  &#8230; ",
+      "agencies": [
+        {
+          "raw_name": "DEPARTMENT OF COMMERCE",
+          "parent_id": null,
+          "url": "https://www.federalregister.gov/agencies/commerce-department",
+          "name": "Commerce Department",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/54.json",
+          "id": 54
+        },
+        {
+          "raw_name": "National Oceanic and Atmospheric Administration",
+          "parent_id": 54,
+          "url": "https://www.federalregister.gov/agencies/national-oceanic-and-atmospheric-administration",
+          "name": "National Oceanic and Atmospheric Administration",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/361.json",
+          "id": 361
+        }
+      ],
+      "publication_date": "2015-04-13",
+      "document_number": "2015-08394",
+      "public_inspection_pdf_url": "https://s3.amazonaws.com/public-inspection.federalregister.gov/2015-08394.pdf?1428669980"
+    },
+    {
+      "type": "Proposed Rule",
+      "html_url": "https://www.federalregister.gov/articles/2015/04/13/2015-08154/energy-conservation-program-for-consumer-products-energy-conservation-standards-for-hearth-products",
+      "title": "Energy Conservation Program for Consumer Products: Energy Conservation Standards for Hearth Products",
+      "pdf_url": "http://www.gpo.gov/fdsys/pkg/FR-2015-04-13/pdf/2015-08154.pdf",
+      "abstract": "The U.S. Department of Energy (DOE) has published a notice of proposed rulemaking (NOPR) and TSD (technical support document) that analyzes the potential economic impacts and energy savings that could result from potential energy conservation standards for hearth products. DOE published this NOPR and analysis so stakeholders can review the relevant outputs and the underlying assumptions and calculations. After receiving a request for additional time to comment, DOE has decided to extend the comment period for the NOPR pertaining to the energy conservation standards for hearth products until May 11, 2015.",
+      "excerpts": "The U.S. Department of Energy (DOE) has published a notice of proposed rulemaking (NOPR) and TSD (technical support document) that analyzes the potential economic impacts and energy savings that could result from potential energy conservation standards  &#8230; ",
+      "agencies": [
+        {
+          "raw_name": "DEPARTMENT OF ENERGY",
+          "parent_id": null,
+          "url": "https://www.federalregister.gov/agencies/energy-department",
+          "name": "Energy Department",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/136.json",
+          "id": 136
+        }
+      ],
+      "publication_date": "2015-04-13",
+      "document_number": "2015-08154",
+      "public_inspection_pdf_url": "https://s3.amazonaws.com/public-inspection.federalregister.gov/2015-08154.pdf?1428610515"
+    },
+    {
+      "type": "Proposed Rule",
+      "html_url": "https://www.federalregister.gov/articles/2015/04/13/2015-08419/revisions-to-the-california-state-implementation-plan-northern-sierra-air-quality-management",
+      "title": "Revisions to the California State Implementation Plan, Northern Sierra Air Quality Management District",
+      "pdf_url": "http://www.gpo.gov/fdsys/pkg/FR-2015-04-13/pdf/2015-08419.pdf",
+      "abstract": "The Environmental Protection Agency (EPA) is proposing to approve a revision to the Northern Sierra Air Quality Management District (NSAQMD) portion of the California State Implementation Plan (SIP). The submitted SIP revision contains the District's demonstration regarding Reasonably Available Control Technology (RACT) requirements for the 1997 8-hour ozone National Ambient Air Quality Standards (NAAQS). The submitted SIP revision also contains negative declarations for volatile organic compound (VOC) source categories for the NSAQMD. We are proposing to approve the submitted SIP revision under the Clean Air Act as amended in 1990 (CAA or the Act). We are taking comments on this proposal and plan to follow with a final action.",
+      "excerpts": "The Environmental Protection Agency (EPA) is proposing to approve a revision to the Northern Sierra Air Quality Management District (NSAQMD) portion of the California State Implementation Plan (SIP). The submitted SIP revision contains the District's  &#8230; ",
+      "agencies": [
+        {
+          "raw_name": "ENVIRONMENTAL PROTECTION AGENCY",
+          "parent_id": null,
+          "url": "https://www.federalregister.gov/agencies/environmental-protection-agency",
+          "name": "Environmental Protection Agency",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/145.json",
+          "id": 145
+        }
+      ],
+      "publication_date": "2015-04-13",
+      "document_number": "2015-08419",
+      "public_inspection_pdf_url": "https://s3.amazonaws.com/public-inspection.federalregister.gov/2015-08419.pdf?1428669992"
+    },
+    {
+      "type": "Proposed Rule",
+      "html_url": "https://www.federalregister.gov/articles/2015/04/13/2015-08462/approval-and-promulgation-of-air-quality-implementation-plans-pennsylvania-adoption-of-control",
+      "title": "Approval and Promulgation of Air Quality Implementation Plans; Pennsylvania; Adoption of Control Techniques Guidelines for Offset Lithographic Printing and Letterpress Printing; Flexible Package Printing; and Adhesives, Sealants, Primers, and Solvents",
+      "pdf_url": "http://www.gpo.gov/fdsys/pkg/FR-2015-04-13/pdf/2015-08462.pdf",
+      "abstract": "The Environmental Protection Agency (EPA) is proposing to approve revisions to the Pennsylvania State Implementation Plan (SIP) submitted by the Commonwealth of Pennsylvania. These revisions pertain to control of volatile organic compound (VOC) emissions from offset lithographic printing and letterpress printing, flexible package printing, and adhesives, sealants, primers, and solvents. These revisions also meet the requirement to adopt Reasonably Available Control Technology (RACT) for sources covered by EPA's Control Technique Guidelines (CTG) recommendations for the following categories: Offset lithographic printing and letterpress printing, flexible package printing, and adhesives, sealants, primers, and solvents. This action is being taken under the Clean Air Act (CAA).",
+      "excerpts": "The Environmental Protection Agency (EPA) is proposing to approve revisions to the Pennsylvania State Implementation Plan (SIP) submitted by the Commonwealth of Pennsylvania. These revisions pertain to control of volatile organic compound (VOC) emissions  &#8230; ",
+      "agencies": [
+        {
+          "raw_name": "ENVIRONMENTAL PROTECTION AGENCY",
+          "parent_id": null,
+          "url": "https://www.federalregister.gov/agencies/environmental-protection-agency",
+          "name": "Environmental Protection Agency",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/145.json",
+          "id": 145
+        }
+      ],
+      "publication_date": "2015-04-13",
+      "document_number": "2015-08462",
+      "public_inspection_pdf_url": "https://s3.amazonaws.com/public-inspection.federalregister.gov/2015-08462.pdf?1428670006"
+    },
+    {
+      "type": "Proposed Rule",
+      "html_url": "https://www.federalregister.gov/articles/2015/04/13/2015-08414/approval-and-promulgation-of-air-quality-implementation-plans-virginia-prevention-of-significant",
+      "title": "Approval and Promulgation of Air Quality Implementation Plans; Virginia-Prevention of Significant Deterioration; Amendment to the Definition of “Regulated NSR Pollutant” Concerning Condensable Particulate Matter",
+      "pdf_url": "http://www.gpo.gov/fdsys/pkg/FR-2015-04-13/pdf/2015-08414.pdf",
+      "abstract": "The Environmental Protection Agency (EPA) proposes to approve a July 25, 2013 State Implementation Plan (SIP) revision submitted by the Virginia Department of Environmental Quality (VADEQ) for the Commonwealth of Virginia. The revision includes a correction to the definition of ``regulated NSR [New Source Review] pollutant'' as it relates to condensable particulate matter under Virginia's Prevention of Significant Deterioration (PSD) program. In the Final Rules section of this Federal Register, EPA is approving the State's SIP submittal as a direct final rule without prior proposal because the Agency views this as a noncontroversial submittal and anticipates no adverse comments. A detailed rationale for the approval is set forth in the direct final rule. If no adverse comments are received in response to this action, no further activity is contemplated. If EPA receives adverse comments, the direct final rule will be withdrawn and all public comments received will be addressed in a subsequent final rule based on this proposed rule. EPA will not institute a second comment period. Any parties interested in commenting on this action should do so at this time.",
+      "excerpts": "The Environmental Protection Agency (EPA) proposes to approve a July 25, 2013 State Implementation Plan (SIP) revision submitted by the Virginia Department of Environmental Quality (VADEQ) for the Commonwealth of Virginia. The revision includes a  &#8230; ",
+      "agencies": [
+        {
+          "raw_name": "ENVIRONMENTAL PROTECTION AGENCY",
+          "parent_id": null,
+          "url": "https://www.federalregister.gov/agencies/environmental-protection-agency",
+          "name": "Environmental Protection Agency",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/145.json",
+          "id": 145
+        }
+      ],
+      "publication_date": "2015-04-13",
+      "document_number": "2015-08414",
+      "public_inspection_pdf_url": "https://s3.amazonaws.com/public-inspection.federalregister.gov/2015-08414.pdf?1428669990"
+    },
+    {
+      "type": "Proposed Rule",
+      "html_url": "https://www.federalregister.gov/articles/2015/04/13/2015-08425/international-affairs-high-seas-fishing-compliance-act-permitting-and-monitoring-of-us-high-seas",
+      "title": "International Affairs; High Seas Fishing Compliance Act; Permitting and Monitoring of U.S. High Seas Fishing Vessels",
+      "pdf_url": "http://www.gpo.gov/fdsys/pkg/FR-2015-04-13/pdf/2015-08425.pdf",
+      "abstract": "NMFS proposes regulatory changes to improve the administration of the High Seas Fishing Compliance Act program and the monitoring of U.S. fishing vessels operating on the high seas. The proposed rule includes, for all U.S. fishing vessels operating on the high seas, adjustments to permitting and reporting procedures. It also includes requirements for the installation and operation of enhanced mobile transceiver units for vessel monitoring, carrying observers on vessels, reporting of transshipments taking place on the high seas, and protection of vulnerable marine ecosystems. This proposed rule has been prepared to minimize duplication and to be consistent with other established requirements.",
+      "excerpts": "NMFS proposes regulatory changes to improve the administration of the High Seas Fishing Compliance Act program and the monitoring of U.S. fishing vessels operating on the high seas. The proposed rule includes, for all U.S. fishing vessels operating on the &#8230; ",
+      "agencies": [
+        {
+          "raw_name": "DEPARTMENT OF COMMERCE",
+          "parent_id": null,
+          "url": "https://www.federalregister.gov/agencies/commerce-department",
+          "name": "Commerce Department",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/54.json",
+          "id": 54
+        },
+        {
+          "raw_name": "National Oceanic and Atmospheric Administration",
+          "parent_id": 54,
+          "url": "https://www.federalregister.gov/agencies/national-oceanic-and-atmospheric-administration",
+          "name": "National Oceanic and Atmospheric Administration",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/361.json",
+          "id": 361
+        }
+      ],
+      "publication_date": "2015-04-13",
+      "document_number": "2015-08425",
+      "public_inspection_pdf_url": "https://s3.amazonaws.com/public-inspection.federalregister.gov/2015-08425.pdf?1428669997"
+    },
+    {
+      "type": "Proposed Rule",
+      "html_url": "https://www.federalregister.gov/articles/2015/04/13/2015-08152/migratory-bird-hunting-proposed-2015-16-migratory-game-bird-hunting-regulations-preliminary-with",
+      "title": "Migratory Bird Hunting; Proposed 2015-16 Migratory Game Bird Hunting Regulations (Preliminary) With Requests for Indian Tribal Proposals and Requests for 2017 Spring and Summer Migratory Bird Subsistence Harvest Proposals in Alaska",
+      "pdf_url": "http://www.gpo.gov/fdsys/pkg/FR-2015-04-13/pdf/2015-08152.pdf",
+      "abstract": "The U.S. Fish and Wildlife Service (hereinafter the Service or we) proposes to establish annual hunting regulations for certain migratory game birds for the 2015-16 hunting season. We annually prescribe outside limits (frameworks) within which States may select hunting seasons. This proposed rule provides the regulatory schedule, describes the proposed regulatory alternatives for the 2015-16 duck hunting seasons, requests proposals from Indian tribes that wish to establish special migratory game bird hunting regulations on Federal Indian reservations and ceded lands, and requests proposals for the 2017 spring and summer migratory bird subsistence season in Alaska. Migratory game bird hunting seasons provide opportunities for recreation and sustenance; aid Federal, State, and tribal governments in the management of migratory game birds; and permit harvests at levels compatible with migratory game bird population status and habitat conditions.",
+      "excerpts": "The U.S. Fish and Wildlife Service (hereinafter the Service or we) proposes to establish annual hunting regulations for certain migratory game birds for the 2015-16 hunting season. We annually prescribe outside limits (frameworks) within which States may  &#8230; ",
+      "agencies": [
+        {
+          "raw_name": "DEPARTMENT OF THE INTERIOR",
+          "parent_id": null,
+          "url": "https://www.federalregister.gov/agencies/interior-department",
+          "name": "Interior Department",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/253.json",
+          "id": 253
+        },
+        {
+          "raw_name": "Fish and Wildlife Service",
+          "parent_id": 253,
+          "url": "https://www.federalregister.gov/agencies/fish-and-wildlife-service",
+          "name": "Fish and Wildlife Service",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/197.json",
+          "id": 197
+        }
+      ],
+      "publication_date": "2015-04-13",
+      "document_number": "2015-08152",
+      "public_inspection_pdf_url": "https://s3.amazonaws.com/public-inspection.federalregister.gov/2015-08152.pdf?1428669925"
+    },
+    {
+      "type": "Notice",
+      "html_url": "https://www.federalregister.gov/articles/2015/04/13/2015-08353/submission-for-omb-review-comment-request",
+      "title": "Submission for OMB Review; Comment Request",
+      "pdf_url": "http://www.gpo.gov/fdsys/pkg/FR-2015-04-13/pdf/2015-08353.pdf",
+      "abstract": null,
+      "excerpts": "",
+      "agencies": [
+        {
+          "raw_name": "DEPARTMENT OF COMMERCE",
+          "parent_id": null,
+          "url": "https://www.federalregister.gov/agencies/commerce-department",
+          "name": "Commerce Department",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/54.json",
+          "id": 54
+        },
+        {
+          "raw_name": "National Oceanic and Atmospheric Administration",
+          "parent_id": 54,
+          "url": "https://www.federalregister.gov/agencies/national-oceanic-and-atmospheric-administration",
+          "name": "National Oceanic and Atmospheric Administration",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/361.json",
+          "id": 361
+        }
+      ],
+      "publication_date": "2015-04-13",
+      "document_number": "2015-08353",
+      "public_inspection_pdf_url": "https://s3.amazonaws.com/public-inspection.federalregister.gov/2015-08353.pdf?1428669952"
+    },
+    {
+      "type": "Notice",
+      "html_url": "https://www.federalregister.gov/articles/2015/04/13/2015-08461/takes-of-marine-mammals-incidental-to-specified-activities-taking-marine-mammals-incidental-to",
+      "title": "Takes of Marine Mammals Incidental to Specified Activities; Taking Marine Mammals Incidental to Construction of the Block Island Transmission System",
+      "pdf_url": "http://www.gpo.gov/fdsys/pkg/FR-2015-04-13/pdf/2015-08461.pdf",
+      "abstract": "NMFS received a joint request from Deepwater Wind Block Island Transmission, LLC (DWBIT) and the Narragansett Electric Company (a subsidiary of National Grid USA), doing business as National Grid (TNEC), to transfer from DWBIT to TNEC, a Marine Mammal Protection Act (MMPA) one-year Incidental Harassment Authorization (IHA) to take marine mammals, by harassment, incidental to construction of the Block Island Transmission System (BITS), following the sale of the BITS from DWBIT to TNEC. No other changes are proposed. NMFS is inviting comments on the proposed transfer of the BITS IHA from DWBIT to TNEC.",
+      "excerpts": "NMFS received a joint request from Deepwater Wind Block Island Transmission, LLC (DWBIT) and the Narragansett Electric Company (a subsidiary of National Grid USA), doing business as National Grid (TNEC), to transfer from DWBIT to TNEC, a Marine Mammal  &#8230; ",
+      "agencies": [
+        {
+          "raw_name": "DEPARTMENT OF COMMERCE",
+          "parent_id": null,
+          "url": "https://www.federalregister.gov/agencies/commerce-department",
+          "name": "Commerce Department",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/54.json",
+          "id": 54
+        },
+        {
+          "raw_name": "National Oceanic and Atmospheric Administration",
+          "parent_id": 54,
+          "url": "https://www.federalregister.gov/agencies/national-oceanic-and-atmospheric-administration",
+          "name": "National Oceanic and Atmospheric Administration",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/361.json",
+          "id": 361
+        }
+      ],
+      "publication_date": "2015-04-13",
+      "document_number": "2015-08461",
+      "public_inspection_pdf_url": "https://s3.amazonaws.com/public-inspection.federalregister.gov/2015-08461.pdf?1428670006"
+    },
+    {
+      "type": "Notice",
+      "html_url": "https://www.federalregister.gov/articles/2015/04/13/2015-08352/submission-for-omb-review-comment-request",
+      "title": "Submission for OMB Review; Comment Request",
+      "pdf_url": "http://www.gpo.gov/fdsys/pkg/FR-2015-04-13/pdf/2015-08352.pdf",
+      "abstract": null,
+      "excerpts": "",
+      "agencies": [
+        {
+          "raw_name": "DEPARTMENT OF COMMERCE",
+          "parent_id": null,
+          "url": "https://www.federalregister.gov/agencies/commerce-department",
+          "name": "Commerce Department",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/54.json",
+          "id": 54
+        },
+        {
+          "raw_name": "National Oceanic and Atmospheric Administration",
+          "parent_id": 54,
+          "url": "https://www.federalregister.gov/agencies/national-oceanic-and-atmospheric-administration",
+          "name": "National Oceanic and Atmospheric Administration",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/361.json",
+          "id": 361
+        }
+      ],
+      "publication_date": "2015-04-13",
+      "document_number": "2015-08352",
+      "public_inspection_pdf_url": "https://s3.amazonaws.com/public-inspection.federalregister.gov/2015-08352.pdf?1428669950"
+    },
+    {
+      "type": "Notice",
+      "html_url": "https://www.federalregister.gov/articles/2015/04/13/2015-08424/application-to-export-electric-energy-saracen-power-lp",
+      "title": "Application to Export Electric Energy; Saracen Power LP",
+      "pdf_url": "http://www.gpo.gov/fdsys/pkg/FR-2015-04-13/pdf/2015-08424.pdf",
+      "abstract": "Saracen Power LP (Applicant or Saracen Power) has applied for authority to transmit electric energy from the United States to Canada pursuant to section 202(e) of the Federal Power Act.",
+      "excerpts": "Saracen Power LP (Applicant or Saracen Power) has applied for authority to transmit electric energy from the United States to Canada pursuant to section 202(e) of the Federal Power Act.",
+      "agencies": [
+        {
+          "raw_name": "DEPARTMENT OF ENERGY",
+          "parent_id": null,
+          "url": "https://www.federalregister.gov/agencies/energy-department",
+          "name": "Energy Department",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/136.json",
+          "id": 136
+        }
+      ],
+      "publication_date": "2015-04-13",
+      "document_number": "2015-08424",
+      "public_inspection_pdf_url": "https://s3.amazonaws.com/public-inspection.federalregister.gov/2015-08424.pdf?1428669996"
+    },
+    {
+      "type": "Notice",
+      "html_url": "https://www.federalregister.gov/articles/2015/04/13/2015-08399/combined-notice-of-filings",
+      "title": "Combined Notice of Filings",
+      "pdf_url": "http://www.gpo.gov/fdsys/pkg/FR-2015-04-13/pdf/2015-08399.pdf",
+      "abstract": null,
+      "excerpts": "",
+      "agencies": [
+        {
+          "raw_name": "DEPARTMENT OF ENERGY",
+          "parent_id": null,
+          "url": "https://www.federalregister.gov/agencies/energy-department",
+          "name": "Energy Department",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/136.json",
+          "id": 136
+        },
+        {
+          "raw_name": "Federal Energy Regulatory Commission",
+          "parent_id": 136,
+          "url": "https://www.federalregister.gov/agencies/federal-energy-regulatory-commission",
+          "name": "Federal Energy Regulatory Commission",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/167.json",
+          "id": 167
+        }
+      ],
+      "publication_date": "2015-04-13",
+      "document_number": "2015-08399",
+      "public_inspection_pdf_url": "https://s3.amazonaws.com/public-inspection.federalregister.gov/2015-08399.pdf?1428669982"
+    },
+    {
+      "type": "Notice",
+      "html_url": "https://www.federalregister.gov/articles/2015/04/13/2015-08401/adelanto-solar-ii-llc-supplemental-notice-that-initial-market-based-rate-filing-includes-request-for",
+      "title": "Adelanto Solar II, LLC; Supplemental Notice That Initial Market-Based Rate Filing Includes Request for Blanket Section 204 Authorization",
+      "pdf_url": "http://www.gpo.gov/fdsys/pkg/FR-2015-04-13/pdf/2015-08401.pdf",
+      "abstract": null,
+      "excerpts": "",
+      "agencies": [
+        {
+          "raw_name": "DEPARTMENT OF ENERGY",
+          "parent_id": null,
+          "url": "https://www.federalregister.gov/agencies/energy-department",
+          "name": "Energy Department",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/136.json",
+          "id": 136
+        },
+        {
+          "raw_name": "Federal Energy Regulatory Commission",
+          "parent_id": 136,
+          "url": "https://www.federalregister.gov/agencies/federal-energy-regulatory-commission",
+          "name": "Federal Energy Regulatory Commission",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/167.json",
+          "id": 167
+        }
+      ],
+      "publication_date": "2015-04-13",
+      "document_number": "2015-08401",
+      "public_inspection_pdf_url": "https://s3.amazonaws.com/public-inspection.federalregister.gov/2015-08401.pdf?1428669984"
+    },
+    {
+      "type": "Notice",
+      "html_url": "https://www.federalregister.gov/articles/2015/04/13/2015-08367/combined-notice-of-filings",
+      "title": "Combined Notice of Filings",
+      "pdf_url": "http://www.gpo.gov/fdsys/pkg/FR-2015-04-13/pdf/2015-08367.pdf",
+      "abstract": null,
+      "excerpts": "",
+      "agencies": [
+        {
+          "raw_name": "DEPARTMENT OF ENERGY",
+          "parent_id": null,
+          "url": "https://www.federalregister.gov/agencies/energy-department",
+          "name": "Energy Department",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/136.json",
+          "id": 136
+        },
+        {
+          "raw_name": "Federal Energy Regulatory Commission",
+          "parent_id": 136,
+          "url": "https://www.federalregister.gov/agencies/federal-energy-regulatory-commission",
+          "name": "Federal Energy Regulatory Commission",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/167.json",
+          "id": 167
+        }
+      ],
+      "publication_date": "2015-04-13",
+      "document_number": "2015-08367",
+      "public_inspection_pdf_url": "https://s3.amazonaws.com/public-inspection.federalregister.gov/2015-08367.pdf?1428669961"
+    },
+    {
+      "type": "Notice",
+      "html_url": "https://www.federalregister.gov/articles/2015/04/13/2015-08366/combined-notice-of-filings-1",
+      "title": "Combined Notice of Filings #1",
+      "pdf_url": "http://www.gpo.gov/fdsys/pkg/FR-2015-04-13/pdf/2015-08366.pdf",
+      "abstract": null,
+      "excerpts": "",
+      "agencies": [
+        {
+          "raw_name": "DEPARTMENT OF ENERGY",
+          "parent_id": null,
+          "url": "https://www.federalregister.gov/agencies/energy-department",
+          "name": "Energy Department",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/136.json",
+          "id": 136
+        },
+        {
+          "raw_name": "Federal Energy Regulatory Commission",
+          "parent_id": 136,
+          "url": "https://www.federalregister.gov/agencies/federal-energy-regulatory-commission",
+          "name": "Federal Energy Regulatory Commission",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/167.json",
+          "id": 167
+        }
+      ],
+      "publication_date": "2015-04-13",
+      "document_number": "2015-08366",
+      "public_inspection_pdf_url": "https://s3.amazonaws.com/public-inspection.federalregister.gov/2015-08366.pdf?1428669960"
+    },
+    {
+      "type": "Notice",
+      "html_url": "https://www.federalregister.gov/articles/2015/04/13/2015-08398/combined-notice-of-filings-1",
+      "title": "Combined Notice of Filings #1",
+      "pdf_url": "http://www.gpo.gov/fdsys/pkg/FR-2015-04-13/pdf/2015-08398.pdf",
+      "abstract": null,
+      "excerpts": "",
+      "agencies": [
+        {
+          "raw_name": "DEPARTMENT OF ENERGY",
+          "parent_id": null,
+          "url": "https://www.federalregister.gov/agencies/energy-department",
+          "name": "Energy Department",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/136.json",
+          "id": 136
+        },
+        {
+          "raw_name": "Federal Energy Regulatory Commission",
+          "parent_id": 136,
+          "url": "https://www.federalregister.gov/agencies/federal-energy-regulatory-commission",
+          "name": "Federal Energy Regulatory Commission",
+          "json_url": "https://www.federalregister.gov/api/v1/agencies/167.json",
+          "id": 167
+        }
+      ],
+      "publication_date": "2015-04-13",
+      "document_number": "2015-08398",
+      "public_inspection_pdf_url": "https://s3.amazonaws.com/public-inspection.federalregister.gov/2015-08398.pdf?1428669980"
+    }
+  ],
+  "next_page_url": "https://www.federalregister.gov/api/v1/articles.json?conditions%5Bsections%5D%5B%5D=environment&order=relevance&page=2&per_page=20",
+  "count": 208466,
+  "total_pages": 50
+}

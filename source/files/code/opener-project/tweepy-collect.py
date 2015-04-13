@@ -23,8 +23,6 @@ auth.set_access_token(creds['access_token'],
 api = tweepy.API(auth)
 
 
-
-
 # First, download the CSV from Sunlight
 # Landing page is here:
 # https://sunlightlabs.github.io/congress/#legislator-spreadsheet
