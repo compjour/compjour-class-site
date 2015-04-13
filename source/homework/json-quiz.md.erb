@@ -1,48 +1,382 @@
 
+* The TOC
+{:toc}
 
-## 1.
+
+## Problems
+
+### 1. Realtime visitors to USA.GOV websites
+
+The data is displayed on [analytics.usa.gov](https://analytics.usa.gov/)
+
+#### Data URL
+
+<%= link_to_local_file '/files/code/json-examples/analyticsgov-realtime.json'  %>
+
+Original source: [https://analytics.usa.gov/data/live/top-pages-realtime.json
+](https://analytics.usa.gov/data/live/top-pages-realtime.json
+){:.raw_url}
+
+#### Tasks
+
+A. Print the value of the `name` attribute of the top-level object.
+
+B. Print the value of the `taken_at` attribute of the top-level object.
+
+C. Print the `name` attribute of the `meta` object.
+
+D. Print the number of `active_visitors`, which is part of the `data` attribute.
+
+E. Print a comma-separated list of the top-level object's keys (i.e. attributes).*
+
+__Note:__ For __E__, you may get a slightly different answer because of the fact that the keys/attributes in a Python __dict__ are inherently _unordered_. In other words, these two dicts are equivalent:
+
+~~~py
+a = {'apples': 10, 'oranges': 50}
+b = {'oranges': 50, 'apples': 10}
+print(a == b)
+# True
+~~~
+
+
+
+#### Expected output
 
 ~~~
-https://status.github.com/api/last-message.json
+A. realtime
+B. 2015-04-13T03:20:02.401Z
+C. Active Users Right Now
+D. 78000
+E. name, query, meta, data, totals, taken_at
 ~~~
 
-<%= codepiece 'json-examples/github-last-message.json' %>
+
+#### Answer
+
+~~~py
+import requests
+import json
+data_url = "http://www.compjour.org/files/code/json-examples/analyticsgov-realtime.json"
+# fetch the data file
+response = requests.get(data_url)
+text = response.text
+# parse the data
+data = json.loads(text)
+
+print('A.', data['name'])
+print('B.', data['taken_at'])
+print('C.', data['meta']['name'])
+print('D.', data['data'][0]['active_visitors'])
+print('E.', ', '.join(data.keys()))
+~~~
 
 
-## 2.
+-------------------
 
+
+### 2. Facebook Graph Object for The White House
+
+
+[Facebook's documentation of the Graph API](https://developers.facebook.com/docs/graph-api/overview/)
+
+#### Data URL
+
+<%= link_to_local_file '/files/code/json-examples/graph.facebook-whitehouse.json'  %>
+
+Original source: [https://graph.facebook.com/WhiteHouse](https://graph.facebook.com/WhiteHouse){:.raw_url}
+
+
+#### Tasks
+
+A. Print the value of the `checkins` attribute of the top-level object.
+
+B. Print the value of the `likes` attribute of the top-level object.
+
+C. Print the value of the `longitude` attribute of the `location` object.
+
+D. Print the value of the `name` of the __last__ object inside the `category_list` list.
+
+#### Expected Output
 
 ~~~
-https://maps.googleapis.com/maps/api/geocode/json?address=McClatchy+Hall+Stanford,CA
+A. 1474208
+B. 3405748
+C. -77.035704501759
+D. Government Organization
 ~~~
 
-<%= codepiece 'json-examples/maps.googleapis-geocode-mcclatchy.json' %>
+-----------
+
+
+### 3. Google Maps Geocoder Response
+
+This is the API that powers the location data behind Google Maps and many other location-focused apps (such as Uber).
+
+Documentation for the [Geocoding API Request Format](https://developers.google.com/maps/documentation/geocoding/#GeocodingRequests).
 
 
 
-## 3. Single tweet
+#### Data URL
+
+<%= link_to_local_file '/files/code/json-examples/maps.googleapis-geocode-mcclatchy.json'  %>
+
+Original source: [https://maps.googleapis.com/maps/api/geocode/json?address=McClatchy+Hall+Stanford,CA](https://maps.googleapis.com/maps/api/geocode/json?address=McClatchy+Hall+Stanford,CA){:.raw_url}
+
+#### Tasks
+
+Note that the top-level object contains a __list__ of `results`; this is because for any given address-lookup, the address given may have been vague enough to require more than one result (see the [result for "Paris"](https://maps.googleapis.com/maps/api/geocode/json?address=Paris). For this problem, though, `results` contains exactly one object, which I refer to as the "result object".
+
+A. Print the value of the `formatted_address` attribute for the result object.
+
+B. For the __top-level object__, print out the value of the `status` attribute.
+
+C. For the result object, print out the `location_type`, which is part of the `geometry` object.
+
+D. Print the value of the `lat` attribute of the `location` object that is part of the `geometry` object (which is, again, part of the result object)
+
+E. Again, inside the `geometry` of the result object, print the value of the `southwest` `lng` attribute, which is inside the geometry's `viewport` object.
+
+F. For the result object, print the `long_name` values for the __first 2__ `address_components`, joined (by a commma-and-space).
+
+#### Expected Output
+
+~~~
+A. Stanford University, Main Quad, 450 Serra Mall McClatchy Hall, Stanford, CA 94305, USA
+B. OK
+C. ROOFTOP
+D. 37.4283125
+E. -122.1708429802915
+F. McClatchy Hall, Stanford University
+~~~
+
+
+#### Partial answer
+
+~~~py
+import requests
+import json
+data_url = "http://www.compjour.org/files/code/json-examples/maps.googleapis-geocode-mcclatchy.json"
+response = requests.get(data_url)
+text = response.text
+data = json.loads(text)
+
+result_obj = data['results'][0]
+print('A.',  result_obj['formatted_address'])
+print('C.', result_obj['geometry']['location_type'])
+~~~
+
+
+----------------------
+
+
+
+### 4. Artists Related to Beyoncé according to Spotify
+
+
+The [Spotify music service](https://www.spotify.com) has an API that will return a list of artists, in descending order of "similarity", that are considered similar to a given artist, [in this case, Beyoncé](https://play.spotify.com/artist/6vWDO969PvNqNYHIOW5v0m).
+
+
+![img](http://www.compciv.org/files/images/homework/beyonce-related.jpg)
+
+The [documentation for Spotify's Related Artists endpoint](https://developer.spotify.com/web-api/get-related-artists/).
+
+The "similarity" between artists is "[based on analysis of the Spotify community's listening history](https://developer.spotify.com/web-api/get-related-artists/)". From Spotify's [2010 press release on this feature](https://news.spotify.com/se/2010/02/03/related-artists/):
+
+> Previously we’ve used genre and artist tagging from AllMusic for related artists which worked well, but did not cover a large portion of our catalogue. What we’ve done now is to go through months and months of listening data and look closely at what people listen to.
+
+> This allows us to see that users who listen to a lot of The Rolling Stones, for example, are also big fans of Iggy Pop or The Byrds. The new feature pulls some of this information together to show you a range of related artists in one tab.
+
+
+#### Data URL
+
+<%= link_to_local_file '/files/code/json-examples/spotify-related-to-beyonce.json'  %>
+
+Original source: [https://api.spotify.com/v1/artists/6vWDO969PvNqNYHIOW5v0m/related-artists](https://api.spotify.com/v1/artists/6vWDO969PvNqNYHIOW5v0m/related-artists){:.raw_url}
+
+#### Tasks
+
+For this problem set, I'm being more colloquial and less code-specific in referring to the values that you need to find.
+
+A. How many related artists are in Spotify's response?
+B. What is the name of the __5th__ most-similar artist to Beyoncé?
+C. How many followers does the __12th__ most-similar artist to Beyoncé have?
+D. Print a comma-separated list of the `genres` of the artist _most_ related to Beyoncé.
+E. What is the URL for the largest image file for the artist that is _least_-related (at least in this result set) to Beyoncé?
+
+#### Expected Output
+
+~~~
+A. 20
+B. Ciara
+C. 74258
+D. pop christmas,r&b,urban contemporary
+E. https://i.scdn.co/image/7e8849593bcf16705c62128ed749de0e543c2e4e
+~~~
+
+#### Partial answer
+
+~~~py
+import requests
+import json
+data_url = "http://www.compjour.org/files/code/json-examples/spotify-related-to-beyonce.json"
+data = json.loads(requests.get(data_url).text)
+
+print('A.', len(data['artists']))
+~~~
+
+--------------------------------------------
+
+### 5. A single tweet from the Library of Congress
+
+<blockquote class="twitter-tweet" lang="en"><p>Passing by one vote, US Senate ratifies a treaty to purchase Alaska <a href="https://twitter.com/hashtag/OTD?src=hash">#OTD</a> 1867. More: <a href="https://twitter.com/hashtag/ChronAm?src=hash">#ChronAm</a> <a href="http://t.co/2RXNSMmOkf">http://t.co/2RXNSMmOkf</a></p>&mdash; Library of Congress (@librarycongress) <a href="https://twitter.com/librarycongress/status/586227094285225984">April 9, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+See the Twitter documentation on [get/statuses/show](https://dev.twitter.com/rest/reference/get/statuses/show/%3Aid) endpoint.
+
+#### Data URL
+
+<%= link_to_local_file '/files/code/json-examples/single-tweet-librarycongress.json'  %>
+
+Original source: [https://twitter.com/librarycongress/status/586227094285225984](https://twitter.com/librarycongress/status/586227094285225984)
+
+Fetching the data programmatically, using the Tweepy library to handle the authentication:
 
 ~~~py
 # assuming that client is an authenticated instance of tweepy.api.API
-data = client.statuses_lookup([586227094285225984])[0]._json
-with open("./single-tweet-librarycongress.json", 'w') as f:
-    f.write(json.dumps(data, indent = 2))
+tweet = client.statuses_lookup([586227094285225984])[0]
+tweet_dict = tweet._json
+print(json.dumps(tweet_dict, indent = 2))
 ~~~
 
-<%= codepiece 'json-examples/single-tweet-librarycongress.json' %>
+
+#### Tasks
+
+A. Print the timestamp of when the tweet was created at.
+
+B. Print the timestamp of when the _account_ that sent the tweet was created at.
+
+C. Print the text of the tweet.
+
+D. Print the Twitter account name of the tweet's author.
+
+E. Print the `id` of the tweet.
+
+F. Print the number of users mentioned
+
+G. Print a comma-separated list of the hashtags used in the tweet.
+
+H. Print a comma-separated list of the displayed URLs in the tweet. Note: your answer should be similar to the answer for `G.`, in that if there were 0 or 5 URLs, the code would still work the same.
+
+#### Expected Output
+
+~~~
+A. Thu Apr 09 18:00:05 +0000 2015
+B. Fri Jun 29 14:23:25 +0000 2007
+C. Passing by one vote, US Senate ratifies a treaty to purchase Alaska #OTD 1867. More: #ChronAm http://t.co/2RXNSMmOkf
+D. librarycongress
+E. 586227094285225984
+F. 0
+G. OTD,ChronAm
+H. go.usa.gov/3YD7V
+~~~
+
+#### Partial answer
+
+~~~py
+import requests
+import json
+data_url = 'http://www.compjour.org/files/code/json-examples/single-tweet-librarycongress.json'
+data = json.loads(requests.get(data_url).text)
 
 
-## 4. Several Twitter users
+### For G.
+hashtag_objs = data['entities']['hashtags']
+hashtag_texts = []
+for h in hashtag_objs:
+    hashtag_texts.append(h['text'])
+print('G.', ','.join(hashtag_texts))
+# alternatively, you could also use the list comprehension syntax:
+# hashtag_texts = [h['text'] for h in data['entities']['hashtags']]
+~~~
 
-https://dev.twitter.com/rest/reference/get/lists/members
+
+--------------------------------------------
+
+
+
+### 6. Congressmembers' Twitter accounts, as curated by C-SPAN
+
+
+Twitter API documentation for [get/lists/members endpoint](https://dev.twitter.com/rest/reference/get/lists/members)
+
+#### Data URL
+
+<%= link_to_local_file '/files/code/json-examples/twitter-cspan-congress-list.json'  %>
+
+Original source: [https://twitter.com/cspan/lists/members-of-congress/members](https://twitter.com/cspan/lists/members-of-congress/members){:.raw_url}
 
 ~~~py
 # assuming that client is an authenticated instance of tweepy.api.API
 members = client.list_members(owner_screen_name = 'cspan', slug = 'members-of-congress', count = 1000)
 data = [m._json for m in members]
-with open("./twitter-cspan-congress-list.json", 'w') as f:
-    f.write(json.dumps(data, indent = 2))
+print(json.dumps(data, indent = 2))
 ~~~
+
+#### Tasks
+
+A. What are the total number of accounts in the list?
+B. Find the number of accounts that have more than 10000 followers.
+C. Find the number of accounts that are "verified".
+D. Find the highest number of followers among all the accounts.
+E. Find the highest number of tweets among all the accounts.
+F. Print the `screen_name` of the account that has the highest number of tweets.
+G. Print the `screen_name` of the account that has the highest number of followers _and_ is also "verified".
+
+
+#### Partial answer
+
+~~~py
+import requests
+import json
+data_url = 'http://www.compjour.org/files/code/json-examples/single-tweet-librarycongress.json'
+data = json.loads(requests.get(data_url).text)
+~~~
+
+
+
+#### Expected Output
+
+--------------------------------------------
+
+
+
+### X. YYY
+
+#### Data URL
+
+<%= link_to_local_file '/files/code/json-examples/'  %>
+
+Original source: [](){:.raw_url}
+
+#### Tasks
+
+#### Expected Output
+
+--------------------------------------------
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 ## 5. Sunlight legislators list
 
@@ -84,18 +418,13 @@ http://developer.nytimes.com/docs/books_api/Books_API_Best_Sellers
 http://api.nytimes.com/svc/books/v3/lists/2015-01-01/hardcover-fiction.json?sort-by=rank&api-key=YOURAPIKEY
 
 
-## Facebook
 
-https://graph.facebook.com/WhiteHouse
 
 
 ## Instagram
 
 https://api.instagram.com/v1/users/472797365/media/recent?access_token=YOURACCESSTOKEN&count=50
 
-## Analytics.gov
-
-https://analytics.usa.gov/data/live/top-pages-realtime.json
 
 
 ## FDA Food API recalls

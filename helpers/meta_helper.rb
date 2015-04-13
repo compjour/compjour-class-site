@@ -19,18 +19,26 @@ def page_description
 end
 
 
-def current_lede_image_url
-  if (m = current_page.data.metax)
-    if (img = m.lede_image)
-      return img
-    end
-  end
-end
+# def current_lede_image_url
+#   if (m = current_page.data.metax)
+#     if (img = m.lede_image)
+#       return img
+#     end
+#   end
+# end
 
-def current_lede_image_caption
-  if (m = current_page.data.metax)
-    if (txt = m.lede_caption)
-      return make_markdown txt
-    end
-  end
+# def current_lede_image_caption
+#   if (m = current_page.data.metax)
+#     if (txt = m.lede_caption)
+#       return make_markdown txt
+#     end
+#   end
+# end
+
+
+def link_to_local_file(url, opts = {})
+  full_url = URI.join(config[:site_domain], url)
+  title = opts[:title] || full_url
+  opts[:class] ||= 'raw_url'
+  link_to title, full_url, opts
 end
