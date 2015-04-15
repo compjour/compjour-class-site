@@ -1,0 +1,407 @@
+---
+title: Dicts, Lists, and JSON Quiz Part 2
+due_date: 2015-04-23
+description: |
+    More loops.
+---
+
+
+A continuation of the <%= link_to_slug "json-quiz-part-1", 'first part of this quiz' %>
+
+### Some bot code
+
+<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/RaiseNotBeg">@RaiseNotBeg</a> you&#39;re a dumb garbage bot and i hope your owner feels bad about making you.</p>&mdash; ya boi james colley (@JamColley) <a href="https://twitter.com/JamColley/status/588323785268400130">April 15, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+This
+
+
+
+* The TOC
+{:toc}
+
+### 6. Congressmembers' Twitter accounts, as curated by C-SPAN
+
+
+Twitter API documentation for [get/lists/members endpoint](https://dev.twitter.com/rest/reference/get/lists/members)
+
+#### Data URL
+
+<%= link_to_local_file '/files/code/json-examples/twitter-cspan-congress-list.json'  %>
+
+Original source: [https://twitter.com/cspan/lists/members-of-congress/members](https://twitter.com/cspan/lists/members-of-congress/members){:.raw_url}
+
+~~~py
+# assuming that client is an authenticated instance of tweepy.api.API
+members = client.list_members(owner_screen_name = 'cspan', slug = 'members-of-congress', count = 1000)
+data = [m._json for m in members]
+print(json.dumps(data, indent = 2))
+~~~
+
+#### Tasks
+
+A. What are the total number of accounts in the list?
+
+B. Find the number of accounts that have more than 10000 followers.
+
+C. Find the number of accounts that are "verified".
+
+D. Find the highest number of followers among all the accounts.
+
+E. Find the highest number of tweets among all the accounts.
+
+
+F. Find the account with the highest number of followers, then print: "`{account's screen_name} has {account's followers_count} followers`"
+
+G. Find the account that has the highest number of tweets _and_ is also __not__ "verified", then print: "`{account's screen_name} has {account's statuses_count} tweets`"
+
+H. Print the __average__ number (rounded to nearest integer) of followers among all the accounts.
+
+I. Print the __median__ number of followers among all the accounts.
+
+
+#### Partial answer
+
+~~~py
+import requests
+import json
+import os
+data_url = 'http://www.compjour.org/files/code/json-examples/twitter-cspan-congress-list.json'
+tempfilename = "/tmp/congresslist.json"
+# if you're on Windows, do this:
+# tempfilename = os.path.expandvars('%TEMP%\\congresslist.json')
+
+# Because this file is relatively large, let's save it to a tempfile, so that
+# subsequent runs read from that file
+if os.path.exists(tempfilename):
+    tfile = open(tempfilename, "r")
+    j = tfile.read()
+else:    
+    j = requests.get(data_url).text
+    tfile = open(tempfilename, "w")
+    tfile.write(j)
+
+tfile.close()
+accounts = json.loads(j)
+## woof, that was a lot of lines just to load a file...
+
+
+############# 
+## Task B:
+x = 0
+for a in accounts:
+    if a['followers_count'] > 10000:
+        x += 1
+
+## or more concisely:
+# x = len([a for a in accounts if a['followers_count'] > 10000])
+print("B.", x)
+
+
+#############
+## Task D:
+counts = []
+for a in accounts:
+    counts.append(a['followers_count'])
+maxval = sorted(counts, reverse = True)[0]
+# alternatively:
+# maxval = sorted([a['followers_count'] for a in accounts], reverse = True)[0]
+
+## or:
+# counts = []
+# for a in accounts:
+#    counts.append(a['followers_count'])
+# maxval = max(counts)
+
+## or:
+# maxval = max(a['followers_count'] for a in accounts)
+print("D.", maxval)
+
+
+
+##############
+## Task F:
+from operator import itemgetter
+y = sorted(accounts, key = itemgetter('followers_count'), reverse = True)
+x = y[0]
+# alternatively:
+# x = max(accounts, key = itemgetter('followers_count'))
+print("F.", x['screen_name'], 'has', x['followers_count'], 'followers')
+
+
+###############
+## Task H:
+totes = 0
+for a in accounts:
+    totes += a['followers_count']
+
+# alternatively
+# totes = sum([a['followers_count'] for a in accounts])
+print('H.', round(totes / len(accounts)))
+~~~
+
+
+
+#### Expected Output
+
+~~~
+A. 571
+B. 231
+C. 543
+D. 1955200
+E. 47169
+F. SenJohnMcCain has 1955200 followers
+G. reppittenger has 3668 tweets
+H. 28909
+I. 6767
+~~~
+
+
+--------------------------------------------
+
+### 7. A month's worth of significant earthquakes
+
+The USGS Earthquake Hazards Program provides several feeds of varying time lengths (last hour, last week, last month) for earthquakes of a specified magnitude. Their [GeoJSON data format is documented here](http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php).
+
+#### Data URL
+
+<%= link_to_local_file '/files/code/json-examples/earthquake.usgs-significant_month.json'  %>
+
+Original source: [http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson](http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson){:.raw_url}
+
+#### Tasks
+
+A. Print the title of this particular feed.
+
+B. Print the number of earthquakes contained in the sample feed.
+
+C. Print the largest _magnitude_ value of the earthquakes.
+
+D. Print the number of earthquakes that occurred in "oceanic regions" (Hint: [read the documentation here](http://earthquake.usgs.gov/earthquakes/feed/v1.0/glossary.php#tsunami)).
+
+E. Print the title of the earthquake with the smallest magnitude
+
+F. Print the title of the earthquake with the most number of "felt" reports.
+
+G. Print the date of the most recent earthquake in __YYYY-MM-DD HH:MM__ format, e.g. "`2015-02-22 17:10`" (note: for this, and subsequent tasks, the answers should be in [reference to Greenwich Mean Time, i.e. UTC](https://docs.python.org/3.4/library/time.html#time.gmtime))
+
+H. Print the date of the oldest earthquake in __WEEKDAYNAME, MONTHNAME DD__ format, e.g. "`Tuesday, February 22`"
+
+I. Print the number of earthquakes that occurred on a weekday.
+
+J. Print the number of earthquakes that happened between 5AM and 9AM.
+
+K. Print the __title__ of the earthquake farthest away from [Stanford, California](https://maps.googleapis.com/maps/api/geocode/json?address=Stanford,CA)
+
+L. Print the __title__ of the earthquake farthest away from Paris, France
+
+M. Print the URL for a Google Static Map that marks the locations of the earthquakes in __orange__ markers on a world map (i.e. having a zoom factor of __1__) that is 500 pixels wide by 400 pixels high.
+
+N. Same as above, but use __red__ markers to denote earthquakes with magnitudes __6.0 or stronger__.
+
+
+#### Expected Output
+
+~~~
+A. USGS Significant Earthquakes, Past Month
+B. 6
+C. 7.5
+D. 3
+E. M 3.6 - 1km NNW of San Ramon, California
+F. M 3.6 - 1km NNW of San Ramon, California
+G. 2015-04-02 07:06
+H. Wednesday, March 18
+I. 5
+J. 3
+K. M 7.5 - 56km SE of Kokopo, Papua New Guinea
+L. M 6.5 - 99km ENE of Hihifo, Tonga
+M. https://maps.googleapis.com/maps/api/staticmap?zoom=1&size=500x400&markers=color:orange%7C37.792,-121.9868333%7C-15.5149,-172.9402%7C-15.388,-172.9038%7C-4.7632,152.5606%7C-18.3534,-69.1663%7C-36.0967,-73.6259
+N. https://maps.googleapis.com/maps/api/staticmap?zoom=1&size=500x400&markers=color:orange%7C37.792,-121.9868333&markers=color:red%7C-15.5149,-172.9402%7C-15.388,-172.9038%7C-4.7632,152.5606%7C-18.3534,-69.1663%7C-36.0967,-73.6259
+~~~
+
+
+#### Partial solution
+
+~~~py
+import requests
+import json
+durl = 'http://www.compjour.org/files/code/json-examples/earthquake.usgs-significant_month.json'
+data = json.loads(requests.get(durl).text)
+quakes = data['features']
+
+
+#######################
+# Task C
+print("C.", max([q['properties']['mag'] for q in quakes]))
+
+
+#######################
+# Task E
+def get_mag(quake):
+    return quake['properties']['mag']
+
+q = min(quakes, key = get_mag)
+print("E.", q['properties']['title'])
+
+
+
+#######################
+# Task G
+import time
+# the USGS time attribute is precise to the millisecond
+# but we just need seconds:
+qsecs = [q['properties']['time'] / 1000 for q in quakes]
+# the feed was probably sorted in reverse chronological order, but
+# just to make sure...
+qsecs = sorted(qsecs, reverse = True)
+tsec = qsecs[0] 
+timeobj = time.gmtime(tsec)
+print('G.', time.strftime('%Y-%m-%d %H:%M', timeobj))
+
+#######################
+# Task I
+# assuming qsecs is the same as from Task G
+tobjs = [time.gmtime(s) for s in qsecs]
+wdays = [s.tm_wday for s in tobjs]
+x = [d for d in wdays if d in range(0, 6)]
+print('I.', len(x))
+
+
+
+#########################
+# Task K
+from math import radians, cos, sin, asin, sqrt
+def haversine(lon1, lat1, lon2, lat2):
+    lon1, lat1, lon2, lat2 = map(radians, [lon1, lat1, lon2, lat2])
+    # haversine formula 
+    dlon = lon2 - lon1 
+    dlat = lat2 - lat1 
+    a = sin(dlat /2 ) ** 2 + cos(lat1) * cos(lat2) * sin(dlon / 2) ** 2
+    c = 2 * asin(sqrt(a)) 
+    r = 6371 # Radius of earth in kilometers.
+    return c * r
+
+def distance_from_stanford(quake):
+    stanford_lng = -122.166
+    stanford_lat = 37.424
+    coords = quake['geometry']['coordinates']
+    lng = coords[0]
+    lat = coords[1]
+    return haversine(lng, lat, stanford_lng, stanford_lat)
+
+q = max(quakes, key = distance_from_stanford)
+print('K.', q['properties']['title'])
+
+
+#########################
+# Task M
+basemap_url = 'https://maps.googleapis.com/maps/api/staticmap?zoom=1&size=500x400'
+markers_str = 'markers=color:orange'
+for q in quakes:
+    coords = q['geometry']['coordinates']
+    lng = str(coords[0])
+    lat = str(coords[1])
+    s = '%7C' + lat + ',' + lng
+    markers_str += s
+
+print('M.', basemap_url + '&' + markers_str)  
+~~~
+
+
+--------------------------------------------
+
+
+
+### 8. NYT Best Sellers List
+
+http://developer.nytimes.com/docs/books_api/Books_API_Best_Sellers
+
+
+
+#### Data URL
+
+<%= link_to_local_file '/files/code/json-examples/nyt-books-bestsellers-hardcover-fiction.json'  %>
+
+Original source: [http://api.nytimes.com/svc/books/v3/lists/2015-01-01/hardcover-fiction.json?sort-by=rank&api-key=YOURAPIKEY
+](http://api.nytimes.com/svc/books/v3/lists/2015-01-01/hardcover-fiction.json?sort-by=rank&api-key=YOURAPIKEY
+){:.raw_url}
+
+#### Tasks
+
+A. Count the number of books published by __Scribner__
+
+B. Find the number of books with the word __"detective"__ (case-insensitive) in their descriptions.
+
+C. Find the book with the most weeks on the list and print its title and the number of weeks it's been listed (as pipe-separated values, i.e. __PSV__).
+
+D. Find the book that had the __lowest rank__ (i.e. highest rank numerically) _last week_. Print its title, current rank, and last week's rank, as PSV.
+
+E. Count the books that __are new this week__ (i.e. had a rank of `0` last week)
+
+F. Print the title and rank (as PSV) of the _highest-ranked_ book that is _new this week_.
+
+G. Find the book that _was ranked last week_ and had the biggest _increase_ in rank this week. 
+
+H. Find the book that was ranked last week and had the biggest _drop_ in rank this week. Print its title, current rank, and change in rank (as PSV).
+
+I. Among books ranked last week, find and print the __sum__ of the _positive_ changes in rank.
+
+J. Among books ranked last week, find the __sum__ of the _negative_ changes in rank. Print the number of books that dropped rank _and_ the sum of their rank changes (as PSV).
+
+K. Print the number of characters in the longest title.
+
+L. Print the average number of characters for titles (rounded to the nearest integer).
+
+
+#### Expected Output
+
+
+
+~~~
+A. 3
+B. 3
+C. THE GOLDFINCH|56
+D. SOMEWHERE SAFE WITH SOMEBODY GOOD|16|14
+E. 6
+F. REDEPLOYMENT|9
+G. THE GOLDFINCH|11|2
+H. THE BOSTON GIRL|15|-3
+I. 4
+J. 6|-12
+K. 33
+L. 16
+~~~
+
+### Partial answer
+
+~~~py
+import requests
+import json
+data_url = 'http://www.compjour.org/files/code/json-examples/nyt-books-bestsellers-hardcover-fiction.json'
+data = json.loads(requests.get(data_url).text)
+books = data['results']['books']
+
+################## 
+# Task G.
+# define a helper function
+def calc_rank_change(book_obj):
+    return book_obj["rank_last_week"] - book_obj["rank"]
+
+books_ranked_last_week = [b for b in books if b['rank_last_week'] > 0]
+x = max(books_ranked_last_week, key = calc_rank_change)
+s = "|".join([x['title'], str(x['rank']), str(calc_rank_change(x))])
+print("G.", s)
+
+################## 
+# Task I
+# (assuming books_ranked_last_week and calc_rank_change() have 
+#    been defined as above)
+changes = [calc_rank_change(b) for b in books_ranked_last_week]
+x = [v for v in changes if v > 0]
+s = sum(x)
+print("I.", s)
+
+###################
+# Task K
+print('K.', max([len(b['title']) for b in books]))
+~~~

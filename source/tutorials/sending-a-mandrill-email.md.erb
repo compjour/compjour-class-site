@@ -1,0 +1,141 @@
+---
+title: Sending Email Using Mandrill
+references:
+  - title: "Mandrill API Documentation - Python"
+    url: https://mandrillapp.com/api/docs/index.python.html
+  - title: "Mandrill API Endpoint: /messages/send.json"
+    url: https://mandrillapp.com/api/docs/messages.python.html
+---
+
+[Mandrill](http://mandrill.com/) is a MailChimp service that specializes in _transactional emails_. Think of all the big services you've signed up to, and the millions of customers like you to whom they have to send everything from account alerts to password reset emails. Mandrill makes it easy to programmatically send emails.
+
+It's [easy to sign up for Mandrill](http://mandrill.com/signup/) and you're allowed to send up to 12,000 free emails a month.
+
+
+This is what the dashboard looks like:
+
+![img](http://python.mfamt.org/files/images/apis/mandrill-dashboard.png)
+
+
+
+
+## Adding an API Key
+
+Once you've created an account, go to the [Account Settings page](https://mandrillapp.com/settings). Click the __+ Add API Key__ button at the bottom of the page.
+
+This will create a new entry in the __API Keys__ table. Highlight and copy the key string to paste into your script.
+
+![img](http://python.mfamt.org/files/images/apis/mandrill-settings-api-key.png)
+
+
+
+The basics:
+
+Note that the `to:` value has to be a __list__ of __dict__ objects, even if you're only sending to one recipient. Each __dict__ specifies not only the target email address, but how the name of the recipient should look, and whether it's a `to`, `bcc`, or `cc`-type of message.
+
+~~~py
+import mandrill
+MANDRILL_API_KEY = 'YOUR_API_KEY'
+mandrill_client = mandrill.Mandrill(MANDRILL_API_KEY)
+message = { 'from_email': 'you@email.com',
+  'from_name': 'Yourself',
+  'to': [{
+    'email': 'whoever@gmail.com',
+    'name': 'Whoever',
+    'type': 'to'
+   }],
+  'subject': "Testing out Mandrill",
+  'text': 'This is a message from Mandrill'
+}
+
+result = mandrill_client.messages.send(message = message)
+# result is a dict with metadata about the sent message, including
+# if it was successfully sent
+print(result)
+[{'_id': '94057836f5407bb92987aef025d6b4c',
+  'email': 'recipient@email.com',
+  'reject_reason': None,
+  'status': 'sent'}]
+~~~
+
+
+
+And this is what shows up in the recipient's inbox:
+
+![img](http://python.mfamt.org/files/images/apis/mandrill-gmail-result.png)
+
+
+## Sending an attachment
+
+### Base encode a file
+
+~~~py
+import mandrill
+import requests
+from base64 import b64encode
+
+imgurl = 'http://python.mfamt.orghttp://python.mfamt.org/files/images/pics/hoover-tower-fog.jpg'
+img = requests.get(imgurl)
+imgdata = b64encode(img.content)
+
+## Now formulate the message
+import mandrill
+MANDRILL_API_KEY = 'YOUR_API_KEY'
+mandrill_client = mandrill.Mandrill(MANDRILL_API_KEY)
+message = { 'from_email': 'you@email.com',
+  'from_name': 'Yourself',
+  'to': [{
+    'email': 'someone@email.com',
+    'name': 'Whoever',
+    'type': 'to'
+   }],
+  'subject': "Sending you a pic of Stanford campus",
+  'html': "<p>Here's a photo of the <a href='https://www.flickr.com/photos/zokuga/15138926354/'>Stanford campus</a>",
+  'attachments': [{'name': 'stanfordimage.jpg',
+    'type': 'image/jpeg',
+    'content': imgdata    
+  }]
+}
+result = mandrill_client.messages.send(message = message)
+print(result)
+# [{'_id': '08sa8Ea6b4e1e2b5ea1679jQJA341',
+#  'email': 'someone@email.com',
+#  'status': 'queued'}]
+~~~
+
+### Asynchronous sending
+
+By default, when you send a message with an attachment, the message is delivered _asynchronously_. For our purposes, this means that the result of `mandrill_client.messages.send(message = message)` is received _before_ the message is actually sent. Which is why `result['status']` above is `queued`.
+
+To get an update on the message's status, we have to call the Mandrill API a second time, using the `messages.info` method and passing the `id` of the recently sent message. Since `result` is a __list__ of __dict__ objects, we pass in `result[0]['_id']`:
+
+~~~py
+# Wait a few seconds, get the result
+mandrill_client.messages.info(id = result[0]['_id'])
+~~~
+
+The result is another `dict` object. Looks like our message successfully sent:
+
+~~~py
+{
+  "_id": "08sa8Ea6b4e1e2b5ea1679jQJA341",
+  "clicks": 0,
+  "clicks_detail": [],
+  "email": "someone@email.com",
+  "opens": 0,
+  "opens_detail": [],
+  "resends": [],
+  "sender": "you@email.com",
+  "smtp_events": [],
+  "state": "sent",
+  "subject": "Sending you a pic of Stanford campus",
+  "tags": [],
+  "template": None,
+  "ts": 1428401091
+}
+~~~
+
+Result:
+
+![img](http://python.mfamt.org/files/images/apis/mandrill-gmail-embed.png)
+

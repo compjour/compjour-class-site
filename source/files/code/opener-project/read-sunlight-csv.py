@@ -34,5 +34,5 @@ print("There are {} active Congressmembers from CA".format(len(ca_active_members
 #     if m['twitter_id'] != '':
 #           ca_twitters.append(m)
 ca_tweeters = [m for m in ca_active_members if m['twitter_id'] != '']
-print("There are active CA Congressmembers from CA on Twitter".format(len(ca_tweeters)))
+print("There are {} active CA Congressmembers from CA on Twitter".format(len(ca_tweeters)))
 # yes, the list comprehension syntax can be hard to understand

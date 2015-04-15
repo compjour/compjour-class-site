@@ -1,3 +1,16 @@
+"2015-04-13":
+  - title: Make a new Twitter account to use as a bot
+    description: |
+      The easiest way to do this is, if you have GMail, to register with an email address of: `yournormalname+mytwitterbot@gmail.com`...GMail will redirect all of these emails to `yournormalname@gmail.com` while other services will treat is as a unique email. This is handy for handing out email addresses that can be easily filtered.
+  - title: Try out Twilio
+    description: |
+      [Sign up for Twilio](/tutorials/sending-texts-through-twilio) and test sending text messages via Python
+
+  - title: Try out Mandrill
+    description: |
+      [Sign up for Mandrill](/tutorials/sending-a-mandrill-email) and test sending emails via Python
+
+  - title: "Homeworks: Opener Project and JSON Quiz Part 1"
 
 
 "2015-04-08":

@@ -30,6 +30,13 @@ sections:
         description: |
           An exercise to get you through the hoops of writing and running Python data-related programs.
         content_slug: opener-project-intro
+      - title: "Dicts, Lists, and JSON Quiz Part 1"
+        due: 2015-04-17
+        points: 5
+        description: |
+          Testing your understanding of Python data structures and JSON, and introducing you to some interesting APIs.
+        content_slug: json-quiz-part-1
+
 
       # - title: Debug and publish a webpage
       #   points: 10

@@ -1,0 +1,62 @@
+---
+title: Sending a Text Message via Twilio's API
+ordernum: 5205
+references:
+  - title: Twilio Python Helper Library documentation
+    url: https://www.twilio.com/docs/python/install
+---
+
+[Twilio](https://www.twilio.com/) is a cloud service that provides a bridge between software and the world of phones and text messaging. In short, Twilio makes it easy to write scripts to send and receive phone calls and text messages.
+
+In this tutorial, we'll go over the steps to sign up with Twilio and send a text message with Python. 
+
+## Sign up with Twilio
+
+[Sign up here](https://www.twilio.com/try-twilio). Trial users are given an allotment of free messages to send and receive, though you will need a phone number.
+
+
+## Experiment with the API
+
+Before we try out sending a message via Python, let's use __Twilio's web API Explorer__: click here to go to the [message-create action](https://www.twilio.com/user/account/developer-tools/api-explorer/message-create)
+
+In the __To__ field, enter the phone number to which you want to send the text message. Then, in the __Body__ field, put in the actual text message:
+
+![img](http://python.mfamt.org/files/images/apis/twilio-send-message-api-explorer.png)
+
+Scroll down to the bottom. Twilio's API Explorer has a helpful panel showing you the actual code behind the message-sending action. The __Curl__ tab contains a version you can copy-and-paste right into your Unix terminal. Click on the Python tab to see the code equivalent in a Python script.
+
+When you're ready to send the message, hit the red __Make Request__ button; don't worry, it won't cost you money to send a trial message out:
+
+![img](http://python.mfamt.org/files/images/apis/twilio-send-message-request-sample-python-code.png)
+
+
+
+
+## Installation
+
+OK, now that we've seen how Twilio works on a high-level, let's try to send a message via a Python script.
+
+~~~sh
+pip install twilio
+~~~
+
+## Code
+
+via [Twilio Python Helper Library documentation](https://www.twilio.com/docs/python/install):
+
+~~~py
+from twilio.rest import TwilioRestClient
+# Your Account Sid and Auth Token from twilio.com/user/account
+ACCOUNT_SID = "YOURACCOUNTSID" 
+AUTH_TOKEN = "YOURACCOUTAUTHTOKEN" 
+client = TwilioRestClient(ACCOUNT_SID, AUTH_TOKEN) 
+#    to = "+15556667777",    # Replace with the number you want to text
+#    from_ ="+15558675309")  # Replace with your Twilio number
+#    Note that the parameter is named `from_`, not `from`
+message = client.messages.create(to = "+15558675309", 
+  from_ = "+15556667777",
+  body = "Oh, you don't know me, but you make me so happy"
+)
+~~~
+
+

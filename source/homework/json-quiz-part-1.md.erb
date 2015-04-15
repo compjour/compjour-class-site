@@ -1,6 +1,150 @@
+---
+title: Dicts, Lists, and JSON Quiz Part 1
+due_date: 2015-04-17
+description: |
+  Testing your understanding of Python data structures and JSON, and introducing you to some interesting APIs.
+---
+
+
+
+
 
 * The TOC
 {:toc}
+
+## Deliverables
+
+Due date: <%= homework_due_date %>
+
+By the end of this assignment, these things will have been done:
+
+- Inside your Github repo named __compjour-hw__, create a subfolder named: __json-quiz/__
+- Inside __json-quiz/__ will be five files, named and numbered as `1.py`, `2.ppy`, etc, each corresponding to the [problems listed below](#problems).
+
+
+Each problem has a list of tasks (lettered `A` through `G`, or so) and the __expected output__. When you run each script, it should generate the _exact output_ as expected, i.e. you will be using `print()` calls.
+
+Some of the problems have partial solutions. The first problem is completely solved for you as an example. Copy that into your repo (as `json-quiz/1.py`) and run it and see that you get the expected output.
+
+
+## Quick intro to JSON, Dicts, Lists, etc.
+
+Understanding how text turns into data structures is pretty much fundamental to doing anything useful in programming, especially in the journalism/scientific domain.
+
+__Lists__ are how ordered collections of objects (numbers, strings, other data objects) are represented:
+
+~~~py
+[1, 2, 3, 'bingo']
+~~~
+
+And __Dictionaries__ are how Python represents _objects_ with _attributes_, i.e. a car is an "object" and that "object" has _attributes_ such as `color`, `mpg`, and `make`:
+
+~~~py
+{"color" : "red", "mpg" : 20.5, "make": "Honda"}
+~~~
+
+In other words, lists and dictionaries can be used to describe pretty much every real-world object there is. Hence, a lot of programming involves turning real-life data objects into lists and dictionaries, so that they can be processed with code. And that's why we learn these data structures.
+
+
+
+### Why JSON
+
+While there are several different textual data formats, JSON is the most ubiquitous among modern services, and the most versatile. And just as importantly, in Python (as well as Ruby and JavaScript), the __dict__ (dictionary) and __list__ structures look the same in code as they do in JSON text files.
+
+
+#### From Python data object to JSON
+
+For instance, this is a Python dictionary object:
+
+~~~py
+d = {"apples": 20, "pears": 40, "kiwis": 90}
+print(d['pears'])
+# 40
+~~~
+
+This is how you write that data structure into a JSON formatted text file, which is referred to as, __encoding the data object as JSON__.
+
+~~~py
+import json
+d = {"apples": 20, "pears": 40, "kiwis": 90}
+txt = json.dumps(d, indent = 2)
+f = open("/tmp/test.json", "w")
+f.write(txt)
+f.close()
+~~~
+
+The resulting text file looks like this (i.e. pretty much identical):
+
+~~~json
+{
+  "apples": 20,
+  "pears": 40,
+  "kiwis": 90
+}
+~~~
+
+#### From JSON to Python data object
+
+A more frequent situation is that you'll have data in a JSON text file and you want to bring it into your Python program. This is referred to as _parsing the JSON text file_, or: __decoding the JSON text file__.
+
+
+For example, the current Github status is found at this URL:
+
+[https://status.github.com/api/status.json](https://status.github.com/api/status.json){:.raw_url}
+
+Its contents look something like this:
+
+~~~json
+{"status":"good","last_updated":"2015-04-13T16:36:48Z"}
+~~~
+
+If we want to write a program that tells us if Github's status is `good` or not (i.e. a [istheLtrainf---ed.com](http://www.istheltrainfucked.com/), but for Github), we have to:
+
+1. Fetch the text file from the URL
+2. Use Python's JSON __parser__ to convert that text into a Python data object (in this case, a __dict__)
+
+Here's one way to do it:
+
+First, we have to get the contents of that URL (`https://status.github.com/api/status.json`) as a text string:
+
+~~~py
+import requests
+import json
+xfile = requests.get("https://status.github.com/api/status.json")
+# xfile is not a text file, but a Requests object, so 
+#  we need this intermediary step:
+txt = xfile.text
+print(txt)
+# {"status":"good","last_updated":"2015-04-13T16:36:48Z"}
+~~~
+
+At this point, `txt` is just _text_. To make it a __dict__ data object, [we use Python's __json__ library](https://docs.python.org/3.4/library/json.html) to __decode__ (or _parse_) that text string:
+
+~~~py
+data = json.loads(txt)
+print(data['last_updated'])
+# 2015-04-13T16:36:48Z
+
+print "Is Github f___ed?"
+if data['status'] == 'good':
+    print("Github is not f___ed")
+else:
+    print( "Github may be f___ed")
+~~~
+
+
+
+
+
+
+### Helpful references
+
+Zed Shaw's _Learn Python the Hard Way_ has a [good chapter on dictionaries](http://learnpythonthehardway.org/book/ex39.html). And on [lists (and how to loop through them)](http://learnpythonthehardway.org/book/ex32.html).
+
+Check out the [Codecademy lesson on lists and dictionaries](http://www.codecademy.com/courses/python-beginner-en-pwmb1/0/1?curriculum_id=4f89dab3d788890003000096).
+
+
+
 
 
 ## Problems
@@ -198,9 +342,13 @@ Original source: [https://api.spotify.com/v1/artists/6vWDO969PvNqNYHIOW5v0m/rela
 For this problem set, I'm being more colloquial and less code-specific in referring to the values that you need to find.
 
 A. How many related artists are in Spotify's response?
+
 B. What is the name of the __5th__ most-similar artist to Beyoncé?
+
 C. How many followers does the __12th__ most-similar artist to Beyoncé have?
+
 D. Print a comma-separated list of the `genres` of the artist _most_ related to Beyoncé.
+
 E. What is the URL for the largest image file for the artist that is _least_-related (at least in this result set) to Beyoncé?
 
 #### Expected Output
@@ -300,140 +448,3 @@ print('G.', ','.join(hashtag_texts))
 # hashtag_texts = [h['text'] for h in data['entities']['hashtags']]
 ~~~
 
-
---------------------------------------------
-
-
-
-### 6. Congressmembers' Twitter accounts, as curated by C-SPAN
-
-
-Twitter API documentation for [get/lists/members endpoint](https://dev.twitter.com/rest/reference/get/lists/members)
-
-#### Data URL
-
-<%= link_to_local_file '/files/code/json-examples/twitter-cspan-congress-list.json'  %>
-
-Original source: [https://twitter.com/cspan/lists/members-of-congress/members](https://twitter.com/cspan/lists/members-of-congress/members){:.raw_url}
-
-~~~py
-# assuming that client is an authenticated instance of tweepy.api.API
-members = client.list_members(owner_screen_name = 'cspan', slug = 'members-of-congress', count = 1000)
-data = [m._json for m in members]
-print(json.dumps(data, indent = 2))
-~~~
-
-#### Tasks
-
-A. What are the total number of accounts in the list?
-B. Find the number of accounts that have more than 10000 followers.
-C. Find the number of accounts that are "verified".
-D. Find the highest number of followers among all the accounts.
-E. Find the highest number of tweets among all the accounts.
-F. Print the `screen_name` of the account that has the highest number of tweets.
-G. Print the `screen_name` of the account that has the highest number of followers _and_ is also "verified".
-
-
-#### Partial answer
-
-~~~py
-import requests
-import json
-data_url = 'http://www.compjour.org/files/code/json-examples/single-tweet-librarycongress.json'
-data = json.loads(requests.get(data_url).text)
-~~~
-
-
-
-#### Expected Output
-
---------------------------------------------
-
-
-
-### X. YYY
-
-#### Data URL
-
-<%= link_to_local_file '/files/code/json-examples/'  %>
-
-Original source: [](){:.raw_url}
-
-#### Tasks
-
-#### Expected Output
-
---------------------------------------------
-
-
-
-
-
-
-
-
-
-
-
-
-
-
-## 5. Sunlight legislators list
-
-
-https://sunlightlabs.github.io/congress/legislators.html
-
-
-`https://congress.api.sunlightfoundation.com/legislators&api_key=YOUR_API_KEY`
-
-
-## Sunlight Bills
-
-https://sunlightlabs.github.io/congress/bills.html
-Bills sponsored by Republicans that have been vetoed
-
-
-
-https://congress.api.sunlightfoundation.com/bills?apikey=YOUR_API_KEY&sponsor.party=R&history.vetoed=true
-
-
-## Federal Register
-https://www.federalregister.gov/learn/developers
-[API Explorer](https://www.federalregister.gov/developers/api/v1)
-
-`http://www.federalregister.gov/api/v1/articles.json?per_page=20&order=relevance&conditions%5Bsections%5D%5B%5D=environment`
-
-
-## USAJobs
-
-https://data.usajobs.gov/api/jobs?series=2210
-
-
-
-## NYT Books
-http://developer.nytimes.com/docs/books_api/Books_API_Best_Sellers
-
-2e33ea458fa387bc742c62d1ba879702:11:65561518
-
-http://api.nytimes.com/svc/books/v3/lists/2015-01-01/hardcover-fiction.json?sort-by=rank&api-key=YOURAPIKEY
-
-
-
-
-
-## Instagram
-
-https://api.instagram.com/v1/users/472797365/media/recent?access_token=YOURACCESSTOKEN&count=50
-
-
-
-## FDA Food API recalls
-
-https://api.fda.gov/food/enforcement.json?search=report_date:[20040101+TO+20131231]&limit=20
-
-
-## USGS GeoJSON data
-
-http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
-
-http://earthquake.usgs.gov/earthquakes/feed/v1.0/summary/significant_month.geojson

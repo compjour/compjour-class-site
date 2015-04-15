@@ -1,0 +1,48 @@
+---
+title: "JSON Quiz Part 3: Instagram fun"
+due_date: 2015-04-17
+description: |
+  Testing your understanding of Python data structures and JSON, and introducing you to some interesting APIs.
+---
+
+
+### 9. Instagrams of a Congressmember
+
+#### Data URL
+
+<%= link_to_local_file '/files/code/json-examples/instagram-aaron-schock.json'  %>
+
+Original source: [https://api.instagram.com/v1/users/472797365/media/recent?access_token=YOURACCESSTOKEN&count=50](https://api.instagram.com/v1/users/472797365/media/recent?access_token=YOURACCESSTOKEN&count=50){:.raw_url}
+
+#### Tasks
+
+A. Print the number of images versus number of videos in the feed.
+
+B. Print the top 3 filters most frequently used, in "`name:count`", separated by a pipe symbol.
+
+C. Print the number of items that are geocoded.
+
+D. Print the number of items that have a listed location of "`United States Capitol`"
+
+E. Print the top 3 named locations, as "`name:count`", separated by a pipe symbol.
+
+F. Find the geocoded item that took place _farthest_ from the "United States Capitol" and print the __name__ of the item's location.
+
+G. Print the first 20 letters of the caption, URL of the thumbnail, likes count, and comments count (as pipe-separated values) of the item with the __highest sum of comments and likes__.
+
+H. Print the __number of days__ (rounded to the nearest integer) between the oldest and newest item in this feed.
+
+I. Calculate the rate of __items posted per week__ (rounded to the nearest tenth decimal place) in this feed.
+
+
+J. Find the __longest gap in days__ (rounded to nearest day) between consecutively posted images.
+
+K. Find the largest difference in __comment count__ (as an absolute number) between consecutively posted images.
+
+
+L. Print the __month__ (as a number, e.g. `4` for April) of the _most recently_ posted item. *
+
+M. Print the ratio of items posted on the __weekends__ versus __the weekdays__ (round to two decimal places). 
+
+N. Find the day in which the most items were posted. Then print the name of that day (e.g. `Monday`) and the percentage of total items posted on that day (rounded to two decimal places), as pipe-separated values.
+
