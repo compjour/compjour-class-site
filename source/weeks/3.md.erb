@@ -9,6 +9,11 @@ topics:
   - title: More data structures
 ---
 
+On Thursday, a symposium through the journalism program:
+
+[Corruption: Who Plays? Who Pays?](http://events.stanford.edu/events/501/50185/)- Thursday, April 16, 2015 4:00 pm Paul Brest Hall East
+
+
 
 ## Homework
 
@@ -17,6 +22,55 @@ topics:
 - <%= link_to_slug "json-quiz-part-2" %>
 
 
+### Some bot code
+
+[RaiseNotBeg bot on Github](https://github.com/compjour/compjour-class-site/blob/master/source/files/code/bots/raisethequestion/bot.py) - Politely tells people they are using "begs the question incorrectly".
+
+<blockquote class="twitter-tweet" lang="en"><p><a href="https://twitter.com/RaiseNotBeg">@RaiseNotBeg</a> you&#39;re a dumb garbage bot and i hope your owner feels bad about making you.</p>&mdash; ya boi james colley (@JamColley) <a href="https://twitter.com/JamColley/status/588323785268400130">April 15, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+
+[HotStories bot on Github](https://github.com/compjour/compjour-class-site/tree/master/source/files/code/bots/hotstories) - A sinmpler bot, broken down into four steps:
+
+1. Collecting tweets
+2. Deciding which tweet is worth rewteeting
+3. Sending the actual tweet
+
+And then there's the ["scheduler" script](https://github.com/compjour/compjour-class-site/blob/master/source/files/code/bots/hotstories/scheduler.py) which wraps all the other three steps and runs them in a constant loop.
+
+
+### Thinking in loops
+
+Another domain, but same concept: [Programmer Mary Rose Cook live-codes a JavaScript game](https://vimeo.com/105955605). You can see [the annotated source code here](http://annotated-code.maryrosecook.com/).
+
+It's a great demonstration of how a website &ndash; and game &ndash; can be built from an empty text file. And it's a great demonstration of the basic logic behind every game: a dumb loop that runs for as long as the program is on, and on each run, it checks to see which "bullets" have to move, where the player is, and then draws all the pixels on the screen:
+
+~~~js
+ // Main game tick function.  Loops forever, running 60ish times a second.
+    var tick = function() {
+
+      // Update game state.
+      self.update();
+
+      // Draw game bodies.
+      self.draw(screen, gameSize);
+
+      // Queue up the next call to tick with the browser.
+      requestAnimationFrame(tick);
+    };
+
+    // Run the first game tick.  All future calls will be scheduled by
+    // the tick() function itself.
+    tick();
+  };
+
+~~~
+
+<iframe src="https://player.vimeo.com/video/105955605" width="500" height="281" frameborder="0" webkitallowfullscreen mozallowfullscreen allowfullscreen></iframe> <p><a href="https://vimeo.com/105955605">Mary live-codes a JavaScript game from scratch &ndash; Mary Rose Cook at Front-Trends 2014</a> from <a href="https://vimeo.com/fronttrends">Front-Trends</a> on <a href="https://vimeo.com">Vimeo</a>.</p>
+
+
+
+-----------
 
 
 ## Bots and Notifications

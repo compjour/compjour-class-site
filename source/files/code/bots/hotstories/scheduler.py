@@ -26,7 +26,6 @@ if __name__ == "__main__":
 
     while True:
         print("------------")
-        print("On iteration", loopcount)
         resp = make_it_so(starting_tweet_id)
 
         sleep(intervaltime)

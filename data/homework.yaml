@@ -37,6 +37,13 @@ sections:
           Testing your understanding of Python data structures and JSON, and introducing you to some interesting APIs.
         content_slug: json-quiz-part-1
 
+      - title: "JSON Quiz Part 2"
+        due: 2015-04-22
+        points: 5
+        description: |
+          More JSON, more APIs, now with loops.
+        content_slug: json-quiz-part-2
+
 
       # - title: Debug and publish a webpage
       #   points: 10

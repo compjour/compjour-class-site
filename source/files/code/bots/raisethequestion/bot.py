@@ -73,7 +73,7 @@ def twitter_client(credsfile):
 
 
 if __name__ == "__main__":
-    intervaltime = 400
+    intervaltime = 800
     loopcount = 0
     maxloopcount = 1000
     print("Hello, going to be raising questions every %s seconds, for at least %s times!" % (intervaltime, maxloopcount))
