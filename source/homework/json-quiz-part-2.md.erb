@@ -8,13 +8,14 @@ description: |
 
 A continuation of the <%= link_to_slug "json-quiz-part-1", 'first part of this quiz' %>
 
-
-
-
 * The TOC
 {:toc}
 
 ### 6. Congressmembers' Twitter accounts, as curated by C-SPAN
+
+The Twitter list functionality is mostly used by power users, which means it's a decent place to start to compile a list of social media accounts for a given group (because anyone who goes through the trouble to put the list together is going to make it half-correct). 
+
+Sunlight Foundation keeps a [spreadsheet of social media contacts here](https://sunlightlabs.github.io/congress/#legislator-spreadsheet) (it's part of the [unitedstates/congress public data project](https://github.com/unitedstates/congress)). Note that their count is slightly different than C-SPAN's, and it's likely a result of C-SPAN's list not purporting to be an up-to-date official list.
 
 
 Twitter API documentation for [get/lists/members endpoint](https://dev.twitter.com/rest/reference/get/lists/members)
@@ -155,7 +156,7 @@ I. 6767
 
 ### 7. A month's worth of significant earthquakes
 
-The USGS Earthquake Hazards Program provides several feeds of varying time lengths (last hour, last week, last month) for earthquakes of a specified magnitude. Their [GeoJSON data format is documented here](http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php).
+The USGS Earthquake Hazards Program provides several feeds of varying time lengths (last hour, last week, last month) for earthquakes of a specified magnitude. Their [GeoJSON data format is documented here](http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php). If you're interested in making a ["QuakeBot"](http://www.slate.com/blogs/future_tense/2014/03/17/quakebot_los_angeles_times_robot_journalist_writes_article_on_la_earthquake.html), this would be the source.
 
 #### Data URL
 
@@ -308,7 +309,8 @@ print('M.', basemap_url + '&' + markers_str)
 
 ### 8. NYT Best Sellers List
 
-http://developer.nytimes.com/docs/books_api/Books_API_Best_Sellers
+The [New York Times offers a variety of APIs](http://developer.nytimes.com/docs), including its own collection of [Congressional vote](http://developer.nytimes.com/docs/congress_api) and [campaign finance](http://developer.nytimes.com/docs/campaign_finance_api/) data. It also has APIs into its own content, including its [articles](http://developer.nytimes.com/docs/read/article_search_api_v2) and its [best sellers list](http://developer.nytimes.com/docs/books_api/Books_API_Best_Sellers).
+
 
 
 
