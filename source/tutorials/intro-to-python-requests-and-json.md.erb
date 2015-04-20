@@ -1,0 +1,241 @@
+---
+title: An introduction to the Python Requests and data serialization, in general
+description: This is less a guide to Requests and more an attempt to explain fundamental data concepts.
+---
+
+
+This is a hybrid primer that covers: 
+
+1. Basic usage of the [Python Requests package](http://docs.python-requests.org/en/latest/) to download files from the web and, in the case of JSON text files, decode them into Python data structures.
+2. Why we serialize data as JSON text files in the first place.
+
+It was originally part of the tutorial: <%=link_to_slug "exploring-wikipedia-api-via-python"%>
+
+
+
+* TOC
+{:toc .tock}
+
+
+
+## The Python Requests package
+
+Given that contacting the Web is such a frequent task for programs, one of the most popular Python packages is the [Requests library](http://docs.python-requests.org/en/latest/), which bills itself as "an elegant and simple HTTP library for Python, built for human beings."
+
+Describing the [Hypertext Transfer Protocol](http://en.wikipedia.org/wiki/Hypertext_Transfer_Protocol) is beyond the scope of this article, but we only care about one type of HTTP method: __GET__, which is what our web browser typically uses to download webpages, including Wikipedia pages.
+
+### A standard GET call in Requests
+
+This is the code needed to download a page with Requests:
+
+~~~py
+# Bring in the library
+import requests
+# make the GET call
+resp = requests.get("http://www.example.com")
+~~~
+
+### The Response object
+
+The result of the `get` method, i.e. the web server's response, i.e. what's been assigned to the `resp` variable above, is a [__Response__ object](http://docs.python-requests.org/en/latest/user/quickstart/#response-content). You can `print` out its `type` to verify this:
+
+~~~py
+print(type(resp))  # => <class 'requests.models.Response'>
+~~~
+
+According to the [Requests documentation](http://docs.python-requests.org/en/latest/user/quickstart/#response-content), we can access the __content__ of the response (i.e. the raw HTML in this example) with the `text` attribute:
+
+~~~py
+txt = resp.text
+# print the size of the webpage's content:
+print(len(txt))  # => 1270
+~~~
+
+There's other useful attributes, too:
+
+~~~py
+print(resp.ok)           # => True
+print(resp.status_code)  # => 200
+print(resp.headers['content-type'])   # => "text/html"
+~~~
+
+The `headers` attribute contains the response headers as Python dictionary. The full object looks like this:
+
+~~~py
+{
+  "content-length": "1270",
+  "content-type": "text/html",
+  "etag": '359670651"',
+  "cache-control": "max-age=604800",
+  "server": "ECS (cpm/F9D5)",
+  "date": "Mon, 20 Apr 2015 12:16:24 GMT",
+  "x-cache": "HIT",
+  "x-ec-custom-error": "1",
+  "accept-ranges": "bytes",
+  "last-modified": "Fri, 09 Aug 2013 23:54:35 GMT",
+  "expires": "Mon, 27 Apr 2015 12:16:24 GMT"
+}
+~~~
+
+
+### Working with JSON and Requests
+
+The Requests `Response` object has a convenience method named `json`, which decodes (i.e. converts) the text of a JSON file into a Python data structure (e.g. a [__Dictionary__](https://docs.python.org/3/tutorial/datastructures.html#dictionaries)).
+
+Visit the URL of `https://status.github.com/api/status.json` to see the JSON used by Github to represent its current system status:
+
+~~~json
+{
+  status: "good",
+  last_updated: "2015-04-20T11:50:51Z"
+}
+~~~
+
+Accessing that with Requests and its `json` method:
+
+~~~py
+resp = requests.get("https://status.github.com/api/status.json")
+x = resp.json()
+print("Github's status is currently:", x['status'], 'as of:', x['last_updated'])
+# Github's status is currently: good as of: 2015-04-20T11:54:13Z
+~~~
+
+
+## Working with JSON, the old-fashioned way
+
+The `json` decoding method of the Requests `Response` object is very handy, but it's important to understand the "magic" underneath the hood, if you're still new to Python data structures and, more importantly, the fundamental concept of [serializing data objects](http://www.diveintopython3.net/serializing.html), i.e. taking data from inside your program and converting it into text that can be saved as text, and read-in by other programs. 
+
+__The main takeaway is:__ JSON files are __just text__. The `Response`'s `json` method does the work of converting that text into a data object (i.e. a __dictionary__) that can be used inside a Python program. But no matter if you're accessing [status.github.com/api/status.json](https://status.github.com/api/status.json) from the browser, the Requests library, or any other URL-fetching code, its content is __just text__.
+
+
+### Why we serialize
+
+When we visit the Github Site Status API URL and receive a JSON text file, what we can surmise is that the Github webserver has some kind of program that surmises Github's current "state", and when things are __"good"__, returns the value of `"good"` and the exact time (`"2015-04-20T11:54:13Z"`) of the check.
+
+There's no reason why Github, instead of this [dry JSON file](https://status.github.com/api/status.json):
+
+~~~json
+{"status":"good","last_updated":"2015-04-20T11:50:51Z"}
+~~~
+
+&ndash; couldn't produce a nice, to-the-point page in the flavor of [Is the L Train F**cked?](http://www.istheltrainfucked.com/):
+
+![img](/files/images/tutorials/is-the-github-fked-example.png)
+
+In fact, Github has a nice status page at [status.github.com](https://status.github.com/), and the data we see there originates from the [Github Site Status API](https://status.github.com/api). 
+
+![img](/files/images/tutorials/github-status-page-top.png)
+
+But imagine trying to write a program that reads that pretty status page and tries to simply find out if things are "f--ked" or not? Pretend that parsing HTML was something you just knew how to do: what would your code look for? The phrase "All systems operational"? Or for text in a light-green color? Either way, all of those are harder to write a program for. But [interpreting the JSON format is easy](https://status.github.com/api/status.json):
+
+~~~py
+resp = requests.get("https://status.github.com/api/status.json")
+x = resp.json()
+print("As of: ", x['last_updated'])
+if x['status'] == 'good':
+    print("Github is not f--ked")
+else:
+    print("Github may be f--ked")
+~~~
+
+
+
+By making an API that responds in JSON, Github makes it easy for their own web developers to create a status webpage, __and more importantly__, makes it easy for __anyone else__ to make their own status webpage, including a "Is Github F--cked" if they so wished.
+
+### Serializing/Decoding JSON in Python
+
+Let's revisit the `json` method of the Requests `Response` object:
+
+~~~py
+import requests
+resp = requests.get("https://status.github.com/api/status.json")
+obj = resp.json()
+print(type(obj))
+# <class 'dict'>
+print(obj)
+# {'last_updated': '2015-04-20T12:36:05Z', 'status': 'good'}
+~~~
+
+The standard [Python library contains its own json module](https://docs.python.org/3/library/json.html), with a `load` method:
+
+~~~py
+import requests
+import json
+resp = requests.get("https://status.github.com/api/status.json")
+####  the beginning of the relevant code for resp.json():
+txt = resp.text
+obj = json.loads(txt)
+##### the end of the relevant code
+print(type(obj))
+# <class 'dict'>
+print(obj)
+# {'last_updated': '2015-04-20T12:36:05Z', 'status': 'good'}
+~~~
+
+Nothing complicated here, but it's again worth reiterating that converting JSON text to Python data objects is not something exclusive to the Requests library; indeed, the reason why JSON is so popular is that virtually every modern programming language has a standard way to serialize/decode it.
+
+### Serializing objects into JSON
+
+A quick sidetrack: So we know how to turn JSON text into Python data objects. But how do we turn data objects into JSON text (maybe at some point, we want to create an API of our own that responds with JSON)?
+
+This is not something that the Requests library has to explicitly care about, since it only cares about _requesting_ data from websites (although we'll see later one example of how Requests serializes a Python dictionary into something that is __not__ JSON).
+
+But here's how to _serialize_ a Python data object as JSON, using Python's `json` module and its `dumps` method:
+
+~~~py
+import json
+mydata = {"name": "Apple", "quantity": 42, "date": "2014-02-27" }
+serializeddata = json.dumps(mydata)
+## to write to a textfile named "whatever":
+f = open("whatever", "w")
+f.write(serializeddata)
+f.close()
+~~~
+
+## Questions and caveats
+
+Before moving on, make sure you know offhand the answers to these questions. Or, at least know the motivation behind these questions (and how to find the answers):
+
+Given this code:
+
+~~~py
+import requests
+url = 'https://status.github.com/api/status.json'
+resp = requests.get(url)
+o = resp.json()
+~~~
+
+1. What _type_ of object does the `resp` variable contain?
+2. How do we access the textual content of the response?
+3. In this case, the textual content of the response is formatted as JSON. If you know that the data object it represents contains a `last_updated` attribute, how would you print the value of that attribute?
+4. For the given URL and response, printing out its `text` attribute, versus printing out the result of its `json` method &ndash;i.e. doing `print(resp.text)` and `print(resp.json())` &ndash; results in nearly the same output. Why is that?
+5. If `url` pointed instead to `http://www.example.com`, the command `requests.get(url)` would result in an error. Why?
+
+
+#### Attributes versus methods
+
+__Sidenote:__ You may have noticed in my above notes that given a Requests `Response` object, I refer to it having `status_code` and `text` __attributes__, and having a __method__ named `json`. What's the difference? Well, syntax-wise, note how __methods__ require the use inclusion of __parentheses__ in order to get an actual result:
+
+~~~py
+import requests
+url = 'https://status.github.com/api/status.json'
+resp = requests.get(url)
+print(resp.status_code)
+# => 200
+print(resp.json())
+# => {'status': 'good', 'last_updated': '2015-04-20T13:08:28Z'}
+print(resp.json()['status'])
+# => 'good'
+~~~
+
+_Forgetting_ the parentheses will result in this:
+
+~~~py
+print(resp.json)
+# <bound method Response.json of <Response [200]>>
+~~~
+
+Why are some things __attributes__ (e.g. `text`, `status_code`) and other things __methods__? A fuller explanation would require getting into the principles of __object-oriented programming__ and data design. For now, it's enough to think of a __method__ that has to be _invoked/executed_, and that the syntax for doing so is to include the pair of parentheses right after the method name. Without the parentheses, the Python interpreter thinks you're just trying to print the type of thing that `resp.json` is.
+
+And it kind of makes sense that `json` is something that has to be _executed_; when we looked at how to decode JSON using the Python standard library, we had to execute the `json.loads()` method. Anyway, in lieu of going into greater detail here, just be able to recognize the syntactical difference between an __attribute__ and a __method__.
+

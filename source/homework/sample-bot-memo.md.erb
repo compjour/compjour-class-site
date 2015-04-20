@@ -1,0 +1,71 @@
+---
+title: Twitter Bot Memo
+due_date: 2015-04-14
+---
+
+
+
+Write a memo describing a Twitter bot that you want to make. 
+
+- By "Twitter bot," I mean that it should:
+  - A. Use Twitter as a way to _receive_ messages from the world. Think of it as building an interactive website, except that "Twitter" is your website, which means that the infrastructure is already built for you, but you are constrained by [Twitter's API](https://dev.twitter.com/rest/public) (i.e. the only way for users to message your bot is to send it a Tweet).
+  - B. send the things it learns and deduces in a 140-character text message that is public to the world.
+- By "learns and deduces", I mean that you've designed a program to collect, cull, and process a bunch of data. It could be as simple as: "Given a Congressmember's last name, find their [most recent roll call vote](https://sunlightlabs.github.io/congress/votes.html)." Calculating the "most recent roll call vote" _is_ a kind of calculation, the computer takes a bunch of date values and sorts them.
+
+The tweet is only one the _medium_ of communication. You may end up using this same data-processing script but publishing a full-fledged web application from it.
+
+
+The memo should consist of these sections:
+
+- __The Pitch:__  100 words generally describing the point of your "bot"
+- __The Steps:__ In as much _granular_ detail as possible, describe each step your bot needs to take. Everything from, "it sends a tweet via Twitter's [statuses/update](https://dev.twitter.com/rest/reference/post/statuses/update) endpoint" to "it takes a list of messages, sorts by date in most recent order, and chooses the first date". No step is too pedantic.
+
+
+[Here's a sample memo](/files/code/bots/sample-memo/). I recommend using Markdown (you can see the [raw plaintext of that sample memo here](github.com/compjour/compjour-class-site/tree/master/source/files/code/bots/sample-memo.md)). It's not as granular in its steps as I'd like, but it does link to the documentation of the services and the exact endpoints it plans to use, such as Instagram's [media/search](https://instagram.com/developer/endpoints/media/?hl=en#get_media_search).
+
+
+## Requirements
+
+You can work with a partner. Don't worry about the code, just write out all the steps. Assume that the medium for receiving/sending messages will be Twitter. I'll provide scripts for the actual logging into of Twitter.
+
+### Two feature requests
+
+The bot can be relatively simple. But I have two feature requests:
+
+1. __The bot should be designed to respond to a user-generated event.__ An obvious example is, "someone sends a tweet with the bot's name".
+2. __The bot should find/calculate something "not on the surface".__ So a bot that, in response to a tweet, responds with that Twitter user's follower count, is not very interesting because looking up a given user's follower count is as easy as visiting their Twitter page. However, responding with that user's number of tweets per day in the last 14 days is a derived fact not immediately apparent from the Twitter data.
+
+
+So here are some less-than-ideal bots for this example:
+
+
+- The [@everyword bot](http://gawker.com/5854314/one-mans-quest-to-tweet-every-word-in-the-english-language) (or its many [profane](https://twitter.com/fuckeveryword) imitators). It doesn't react to anything, it just keeps an internal record of the last word it has tweeted and all the words it needs to eventually retweet. Also, it doesn't really calculate anything, except the initial ordering of all the English words in the dictionary before tweeting each one, one at a time.
+- [@horse_ebooks (back when it really was a bot)](https://twitter.com/fuckeveryword) - While calculating a Markov chain is a type of calculation, again, this bot didn't really react to user input.
+- [Coca Cola's MakeItHappy ASCII Art Bot](http://gawker.com/make-hitler-happy-the-beginning-of-mein-kampf-as-told-1683573587) - This bot definitely reacts to user input, but it does not really derive any "facts" from that input.
+
+
+
+
+### Good examples
+
+Many various bot examples can be found in the [Week 3 Notes](/weeks/3)
+
+Here's a timely and thorough article about the CongressEdits bot: [Automating Transparency](https://source.opennews.org/en-US/learning/automating-transparency/).
+
+
+
+## Deliverables
+
+In your `compjour-hw` repo, create a folder named `twitterbot`. Then create a file named: `README.md`, eg. `compjour-hw/twitterbot/README.md`
+
+
+
+
+
+
+--------
+
+
+
+
+

@@ -1,0 +1,367 @@
+---
+title: Exploring Wikipedia's API via Python
+---
+
+* TOC
+{:toc .tock}
+
+
+
+This article directly follows "<%= link_to_slug 'exploring-wikipedia-api-intro' %>", except that instead of viewing the Wikipedia API via the web browser (i.e. via human-friendly graphical means), it demonstrates how to do the same thing in Python code. If "doing the same thing, but in Python (or in any programming language)" sounds like masochism, it's because it is masochism. So this guide will also cover how to leverage loops and functions to do efficient, scalable data mining, which is generally the main purpose of programming.
+
+If you are relatively new to Python/programming, please start with this guide: <%=link_to_slug "intro-to-python-requests-and-json"%>, which covers basic usage of the [Python Requests library](http://docs.python-requests.org/en/latest/), as well as fundamental programming concepts, such as serializing data structures into text (i.e. JSON text files).
+
+You should read that guide if the following makes no sense to you:
+
+~~~py
+import requests
+resp = requests.get("http://en.wikipedia.org/w/api.php?action=query&prop=info&format=json&titles=Hello")
+print(resp.status_code)   #  200
+print(resp.json())
+~~~
+
+Result of `print(resp.json())`:
+
+~~~json
+{
+  "query": {
+    "pages": {
+      "6710844": {
+        "pageid": 6710844,
+        "ns": 0,
+        "title": "Hello",
+        "contentmodel": "wikitext",
+        "pagelanguage": "en",
+        "touched": "2015-04-03T08:34:32Z",
+        "lastrevid": 654750689,
+        "length": 16607
+      }
+    }
+  }
+}
+~~~
+
+
+
+
+## Reviewing the components of a Wikipedia API request
+
+Recall the URL to get the basic info for the [Stanford University Wikipedia page](http://en.wikipedia.org/wiki/Stanford%20University) as a JSON object:
+
+[http://en.wikipedia.org/w/api.php?action=query&prop=info&format=json&titles=Stanford%20University](http://en.wikipedia.org/w/api.php?action=query&prop=info&format=json&titles=Stanford%20University)
+
+And recall the components of that URL:
+
+Base endpoint:
+
+    http://en.wikipedia.org/w/api.php?
+
+Key-value attribute pairs:
+
+- `action=query`
+- `prop=info`
+- `format=json`
+- `titles=Stanford%20University` (`%20` is how a space character is represented in a URL)
+
+If writing out this out seemed painfully tedious and hard on the eyes, you're right: that's why API stands for [__application programming interface__](http://en.wikipedia.org/wiki/Application_programming_interface). It's not meant for humans to read or to write, but it's relatively easy for a program to consume.
+
+
+
+## Turning a Python dictionary into a URL
+
+The most immediate annoyance of accessing the Wikipedia Query API is writing out all of those key-value pairs in the URL, i.e.
+
+      ?action=query&prop=info&format=json&titles=Stanford%20University
+
+
+[One nice feature of the Requests library](http://docs.python-requests.org/en/latest/user/quickstart/#passing-parameters-in-urls) is that these attributes can be represented as a Python __dictionary__. In the following example, I'm showing how each key-pair in the dictionary corresponds to the URL string:
+
+~~~py
+my_atts = {}
+my_atts['action'] = 'query'  # action=query
+my_atts['prop'] = 'info'     # prop=info
+my_atts['format'] = 'json'   # format=json
+my_atts['titles'] = 'Stanford University' # titles=Stanford%20University
+print(my_atts)
+~~~
+
+The resulting dictionary:
+
+~~~json
+{
+  "titles": "Stanford University",
+  "prop": "info",
+  "action": "query",
+  "format": "json"
+}
+~~~
+
+One thing to note: In the dictionary, I pass the string value of `"Stanford University"` to the `titles` key, instead of `"Stanford%20University` &ndash; the Requests library will take care of that conversion for us later.
+
+
+### Passing parameters in URLs
+
+Recall that the basic usage of the Requests `get` method looks like this:
+
+~~~py
+import requests
+url = 'http://en.wikipedia.org/w/api.php?action=query&prop=info&format=json&titles=Stanford%20University'
+resp = requests.get(url)
+data = resp.json()
+~~~
+
+
+So how does a dictionary get converted into a URL string? We just let Requests handle the details by passing in a dictionary into the `get` method's `params` argument:
+
+
+~~~py
+import requests
+baseurl = 'http://en.wikipedia.org/w/api.php'
+my_atts = {}
+my_atts['action'] = 'query'  # action=query
+my_atts['prop'] = 'info'     # prop=info
+my_atts['format'] = 'json'   # format=json
+my_atts['titles'] = 'Stanford University'
+
+resp = requests.get(baseurl, params = my_atts)
+data = resp.json()
+~~~
+
+
+The response object has a `url` attribute, which we can print to see what the dictionary resolved to:
+
+~~~py
+print(resp.url)
+# 'http://en.wikipedia.org/w/api.php?titles=Stanford+University&prop=info&action=query&format=json'
+~~~
+
+Note that the __ordering__ of key-value pairs in the URL (and in Python dictionaries), _does not matter_.
+
+
+## Joining lists of strings
+
+Some of the parameters can take in multiple values. For example, this following snippet:
+
+        inprop=protection|watchers
+
+&ndash; specifies that we want the additional "info properties" of `protection` _and_ `watchers`. It's pretty easy to write out a list of 2 items, so let's just add that to the `my_atts` dictionary in our previous example:
+
+~~~py
+my_atts['inprop'] = 'protection|watchers'
+~~~
+
+The `titles` parameter can also take multiple pipe-separated values. To get the data for Stanford University and Palo Alto, here's the code re-written from the beginning, with the tedious dictionary-assignments condensed into one line:
+
+~~~py
+import requests
+baseurl = 'http://en.wikipedia.org/w/api.php'
+my_atts = {'prop': 'info', 'action': 'query', 'format': 'json',
+  'inprop': 'protection|watchers', 
+  'titles': 'Stanford University|Palo Alto',
+}
+resp = requests.get(baseurl, params = my_atts)
+data = resp.json()
+~~~
+
+But what if we want the info data [for all of the Ivy League schools](http://en.wikipedia.org/wiki/Ivy_League)? There's only 8 of them, but typing those in and carefully separating them with pipe characters is extremely tedious. And look at just how ugly a list of 8-items can turn into:
+
+      Brown University|Columbia University|Cornell University|Dartmouth College|Harvard University|University of Pennsylvania|Princeton University|Yale University
+
+
+This is definitely a repetitive problem that can be helped by programming. If you think of the school names as being a __list__ of __strings__, then we use the [`str.join()`](https://docs.python.org/3/library/stdtypes.html#str.join) method to _join_ the strings together, using whatever the value of `str` is as the delimiter:
+
+~~~py
+letters = ['A', 'B', 'C']
+csvletters = ",".join(letters)
+print(csvletters)  # => A,B,C
+~~~
+
+
+So getting all the Wikipedia basic info data for all 8 Ivy league schools _and_ Stanford:
+
+~~~py
+import requests
+baseurl = 'http://en.wikipedia.org/w/api.php'
+schools = ['Brown University',
+ 'Columbia University',
+ 'Cornell University',
+ 'Dartmouth College',
+ 'Harvard University',
+ 'University of Pennsylvania',
+ 'Princeton University',
+ 'Yale University',
+ 'Stanford University']
+
+
+my_atts = {'prop': 'info', 'action': 'query', 'format': 'json',
+  'inprop': 'protection|watchers', 
+  'titles': '|'.join(schools)
+}
+resp = requests.get(baseurl, params = my_atts)
+data = resp.json()
+~~~
+
+You can [view the raw data on Wikipedia here](http://en.wikipedia.org/w/api.php?format=json&inprop=protection%7Cwatchers&titles=Brown+University%7CColumbia+University%7CCornell+University%7CDartmouth+College%7CHarvard+University%7CUniversity+of+Pennsylvania%7CPrinceton+University%7CYale+University%7CStanford+University&prop=info&action=query). Or, a [nicer-formatted view here](http://en.wikipedia.org/w/api.php?inprop=protection%7Cwatchers&titles=Brown+University%7CColumbia+University%7CCornell+University%7CDartmouth+College%7CHarvard+University%7CUniversity+of+Pennsylvania%7CPrinceton+University%7CYale+University%7CStanford+University&prop=info&action=query).
+
+
+
+## Writing functions
+
+Even if you're copying-and-pasting the code, doing multiple Wikipedia API requests is going to be tedious. At the very least, we can simplify the amount of code that needs to be copy-and-pasted by writing a __function__ (I sloppily interchange the word __function__ with __method__, [though for our purposes, the two are very close in meaning](http://stackoverflow.com/questions/155609/difference-between-a-method-and-a-function)).
+
+If you think of variables as a way to store values that you want to reuse later, think of functions as a similar mechanism for storing a set of commands for later use. Functions are a bit different than values, though, in that they are meant to be __executed__. Think of the humble `print` function, which takes in any number of arguments and prints them to screen:
+
+~~~py
+a = 42
+b = "Apples"
+print(a, b)
+# 42 Apples
+~~~
+
+
+Defining functions has its own syntax: here's a couple of guides:
+
+- http://anh.cs.luc.edu/python/hands-on/3.1/handsonHtml/functions.html
+- http://learnpythonthehardway.org/book/ex18.html
+
+
+
+### Basic get_wikipedia_basic_info() function
+
+And here's one way to define a function that wraps up all the code we've written to call the Wikipedia basic info API:
+
+~~~py
+def get_wikipedia_basic_info(titles):      
+    atts = {'prop': 'info', 'action': 'query', 'format': 'json',
+      'inprop': 'protection|watchers', 
+      'titles': titles
+    }
+    resp = requests.get('http://en.wikipedia.org/w/api.php', params = atts)
+    
+    return resp.json()
+~~~
+
+
+And this is how we use it:
+
+~~~py
+get_wikipedia_basic_info("Apples|Oranges")
+~~~
+
+
+### Refined get_wikipedia_basic_info() function
+
+Recall that it was a pain to manually generate that pipe-delimited string of titles. So let's give the user the option to pass in a __list__ of titles, and we'll take care of the details of joining them together:
+
+
+~~~py
+def get_wikipedia_basic_info(title_obj):
+    if type(title_obj) == list:
+        titles = '|'.join(title_obj)
+    else:
+        # assume it's a string
+        titles = title_obj
+
+    atts = {'prop': 'info', 'action': 'query', 'format': 'json',
+      'inprop': 'protection|watchers', 
+      'titles': titles
+    }
+    resp = requests.get('http://en.wikipedia.org/w/api.php', params = atts)
+    
+    return resp.json()    
+~~~
+
+Sample usage:
+
+~~~py
+get_wikipedia_basic_info(['Apples', 'Oranges'])
+~~~
+
+
+## Get All The Schools
+
+Now that we've seen how writing a function can encapsulate some relatively complex code, it should be even more apparent that fetching the data for "Stanford University" is pretty much the same as it is for "Harvard University" or for any Wikipedia page. Moreover, the computer doesn't care if we want just one page or, theoretically, 1000 pages. And this is where the power of programming starts to really shine.
+
+Rather than fetch 1,000 Wikipedia pages, [let's just get the data for the 350 Division I schools](http://en.wikipedia.org/wiki/List_of_NCAA_Division_I_institutions).
+
+
+### Getting a list of school names
+
+
+Once you've figured out the programming pattern of:
+
+1. Do something once
+2. Try to do it in code once
+3. Re-write the code so it can be reused an infinite number of times
+
+&ndash; the new challenge is: upon _what_ exactly do you run your code? In the case of the [Division I schools](http://en.wikipedia.org/wiki/List_of_NCAA_Division_I_institutions), the answer is easy: the names of the schools.
+
+But the reality is not that simply. Who's going to type all those names in?
+
+And so just when we've thought we solved a problem, the opportunity to exploit it on a wide-scale has created a new problem: how do we get the data in there?
+
+To my knowledge, there's not a JSON-formatted list of schools, or else that would be easy to fix. However, there is an [HTML-formatted list of schools via Wikipedia](http://en.wikipedia.org/wiki/List_of_NCAA_Division_I_institutions).
+
+I'll save the intricacies of web-scraping for another lesson. If you're curious, though:
+
+~~~py
+from lxml import html
+import requests
+url = 'http://en.wikipedia.org/wiki/List_of_NCAA_Division_I_institutions'
+tree  = html.fromstring(requests.get(url).text)
+school_cells = tree.cssselect('table.wikitable')[0].cssselect('tr th:nth-of-type(1) a')
+school_names = [t.text_content() for t in school_cells]
+~~~
+
+
+For your convenience, I've dumped that data into a JSON-formatted file which you can access at this URL:
+
+[http://stash.compjour.org/data/wikipedia/wiki-d1-school-names.json](http://stash.compjour.org/data/wikipedia/wiki-d1-school-names.json)
+
+
+### Attempting to fetch 350 titles at once
+
+Let's try to pull down the data for all DI schools. In the [JSON file I mentioned above](http://stash.compjour.org/data/wikipedia/wiki-d1-school-names.json), the list of names is under the attribute `school_names`:
+
+~~~py
+import requests
+import json
+sdata = requests.get('http://stash.compjour.org/data/wikipedia/wiki-d1-school-names.json').json()
+school_names = sdata['school_names']
+print("There are %s DI schools" % len(school_names))
+# 348
+~~~
+
+
+Using our `get_wikipedia_basic_info` function:
+
+~~~py
+get_wikipedia_basic_info(school_names)
+~~~
+
+You're going to get an error. The debug message is hard to trace (since our function doesn't have any fallback for an error situation), but basically, Wikipedia only allows you to retrieve __50__ titles at a time.
+
+So we can break it up into sublists:
+
+~~~py
+results = []
+results.extend(get_wikipedia_basic_info(school_names[0:50]))
+results.extend(get_wikipedia_basic_info(school_names[50:100]))
+# ...
+results.extend(get_wikipedia_basic_info(school_names[300:-1]))
+~~~
+
+
+Except that's kind of tedious, so we use a `for/while` loop:
+
+~~~py
+results = []
+x = 0
+while x < len(school_names):
+    results.extend(x) 
+
+
+
+#(To be continued)
+~~~
+
