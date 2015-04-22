@@ -46,11 +46,18 @@ sections:
 
 
       - title: "JSON Quiz Part 2"
-        due: 2015-04-24
+        due: 2015-04-28
         points: 5
         description: |
           More JSON, more APIs, now with loops.
         content_slug: json-quiz-part-2
+
+      - title: Twitterbot Skeleton
+        due: 2015-04-28
+        points: 5
+        description: |
+          Fill out boilerplate code for your bot, with some empty, but documented functions.
+        content_slug: twitterbot_skeleton
 
 
       # - title: Debug and publish a webpage
