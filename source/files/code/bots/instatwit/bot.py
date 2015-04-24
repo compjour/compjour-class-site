@@ -25,5 +25,3 @@ def make_it_so():
     # get_latest_showme_notification(since_id = id)
 
     print("3.", "Extract ")
-
-

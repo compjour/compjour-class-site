@@ -3,4 +3,104 @@ title: Twitterbot Skeleton
 due: 2015-04-28
 ---
 
+Continuing on with the <%=link_to_slug "sample-bot-memo"%> assignment, now try to write some boilerplate documentation/pseudocode that you think your bot needs.
+
+
+## Things to do
+
+### Get registered with Twitter
+
+By now, you should have done the steps in: <%= link_to_slug 'getting-started-with-tweepy' %>, including having a Twitter app registered.
+
+And you should also have a "bot" account, not your true twitter account, but one that you can send tweets through. The next step is to register that __bot account__ as a user of that Twitter app you just created (you will need to be able to operate two browsers at once):
+
+<%= link_to_slug 'twitter-app-authentication-process' %>
+
+By the end of it, you should have some kind of __credentials__ file somewhere on your file system. __DO NOT__ put it in your compjour-hw repo, or else it will be pushed onto the Github server! Save it somewhere like:
+
+        ~/Desktop/tw.json
+
+### Test out my Tweepy wrapper methods
+
+Check out the code (and memo) for my simple [Yolobro Twitter bot](https://github.com/compjour/compjour-class-site/tree/master/source/files/code/bots/yolobro/).
+
+Take particular look at the [twit_utils.py](https://github.com/compjour/compjour-class-site/tree/master/source/files/code/bots/yolobro/twit_utils.py) script.
+
+Copy the code there and make a `twit_utils.py` in your `compjour-hw/twitterbot` folder.
+
+Then try this from your terminal:
+
+~~~sh
+# assuming your folder is somewhere on your Desktop
+cd ~/Desktop/compjour-hw/twitterbot
+ipython
+~~~
+
+Now inside iPython:
+
+~~~py
+import twit_utils
+# assuming you have a creds file named "~/Desktop/tw.json"
+CREDS_FILE = "~/Desktop/tw.json"
+api = twit_utils.get_api(CREDS_FILE)
+obj = api.me()
+print("My name is", obj.screen_name)
+~~~
+
+### Write your own bot.py and foo.py
+
+Inside the `compjour-hw/twitterbot/` folder, create:
+
+- bot.py
+- foo.py
+
+Look again at my [yolobro](https://github.com/compjour/compjour-class-site/tree/master/source/files/code/bots/yolobro/) example.
+
+In `foo.py`, define functions that pertain to the steps that you think you'll run. You don't have to write any real code, but you do have to include a [docstring](https://www.python.org/dev/peps/pep-0257/) comment that explains, briefly:
+
+1. What the function does
+2. What __arguments__ it takes, and what the __types__ of those arguments are
+3. What the function __returns__
+
+
+Some examples:
+
+
+~~~py
+def make_yolobro_text():
+"""
+    Create a custom #YOLOBRO happy message
+    Arguments:
+        None
+    Returns:
+        A text string with the #YOLOBRO hashtag and something extra special
+    """
+    if random() > 0.7:
+        return "#YOLOBRO YOU MY BRO!"
+    else:
+        return "#YOLOBRO YO YO"
+
+def latest_yolobro_reply(tweets):
+    """
+    Given a list of tweets (ostensibly from user_timeline API endpoint),
+    find the earliest one that has the #YOLOBRO hashtag in it
+
+    Arguments:
+        tweets (list): a list of Twitter tweet objects that are dicts
+
+    Returns:
+        if any such tweet is found, return that tweet (dict)
+        else, return None
+    """
+    for tweet in tweets:
+        tags = [tag for tag in tweet['entities']['hashtags'] if tag['text'].upper() == 'YOLOBRO']
+        if len(tags) > 0:
+            return tweet
+~~~
+
+
+In __bot.py__: this should contain a single function, `make_it_so()`, and any other dependencies (such as importing `foo.py` and `twit_utils.py`). The steps you plan to take will run in the body of that `make_it_so()` function
+
+
+The `twit_utils.py` file is meant for your usage, so that you don't have to become a master of the Twitter API to just send out a tweet, or search for things.
 

@@ -34,3 +34,10 @@ def make_it_so():
         resp = twit_utils.reply(CREDS_FILE, txt, brotweet)
         return resp
 
+
+
+import time
+print('what')
+while True:
+    make_it_so()
+    time.sleep(10)

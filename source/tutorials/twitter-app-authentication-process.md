@@ -17,6 +17,17 @@ By __main Twitter account__, I mean, _the Twitter account that has been authenti
 By __secondary accounts__, I mean any other Twitter accounts you may have created that haven't been tied to a working phone number.
 
 
+At the end of this, you should have a file __somewhere on your computer__ (preferably in your home directory, such as `~/Desktop/tw.json`, or `~/tw.json`), that looks like this:
+
+~~~json
+{
+    "consumer_key": "JKSADFJKLfdJASKDF",
+    "access_token_secret": "ASDIFJ3iusaodfj",
+    "consumer_secret": "JASKDFLJASDLKFJ39uasdfmljdsafkl3",
+    "access_token": "98asdfkl3j-ASJDFKASJDF"
+}
+~~~
+
 
 
 ### 1. Create a new app with your main account
@@ -167,6 +178,8 @@ What iPython prints to screen is pretty much actual JSON. In fact, you can save 
 2. Open up a new text file in your text editor. 
 3. Paste the contents of the clipboard into the new text file.
 4. Save the file.
+
+Note: You may have to do a little find-and-replace so that Python can read that JSON file: find all __single-quotes__ and replace with __double-quotes__.
 
 
 Now, this "Save the file" step is technically like saving any other file you've ever saved before. But you need to be extra, __extra__ aware of where you save this file. For starters, any programming script that wants to use those credentials will have to, well, open that file at whatever location you saved it to.

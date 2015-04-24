@@ -45,7 +45,7 @@ def latest_yolobro_reply(tweets):
 
 
 def make_yolobro_text():
-"""
+    """
     Create a custom #YOLOBRO happy message
     Arguments:
         None
@@ -56,3 +56,4 @@ def make_yolobro_text():
         return "#YOLOBRO YOU MY BRO!"
     else:
         return "#YOLOBRO YO YO"
+
