@@ -2,8 +2,111 @@
 title: Week 5
 week: 5
 description: '' 
+show_link: true
+topics:
+  - Apgars score
+  - Bot detection
 ---
 
+
+## Todos
+
+
+### Review the USAJobs site and API
+
+There will be a homework/"midterm" of sorts, based off of the data found at USAJobs.gov. I'll have it in by Tuesday (yes, I know, I said that last week; and it will be due over the next week).
+
+For now, do yourself a favor and visit the USAJobs.gov homepage:
+
+[https://www.usajobs.gov/](https://www.usajobs.gov/)
+
+Then do a search by location for "France":
+
+[/Search?Keyword=&Location=France&search=Search&AutoCompleteSelected=true](https://www.usajobs.gov/Search?Keyword=&Location=France&search=Search&AutoCompleteSelected=true)
+
+Then meander on over to the homepage for [the REST API of data.usajobs.gov](https://data.usajobs.gov/Rest). In particular, read the [API Query Parameters Tab](https://data.usajobs.gov/Rest).
+
+Then visit this [sample URL](https://data.usajobs.gov/api/jobs?Country=France) __in your web browser__ (your browser will either show plaintext, or might downlaod the file (as plain text) to your Downloads folder):
+
+[https://data.usajobs.gov/api/jobs?Country=France](https://data.usajobs.gov/api/jobs?Country=France)
+
+
+And then try this snippet of Python code in iPython:
+
+~~~py
+import requests
+url = "https://data.usajobs.gov/api/jobs?Country=France"
+data = requests.get(url).json()
+print('There are %s job openings' % data['TotalJobs'])
+
+for job in data['JobData']:
+    print("%s, for the %s, with a max salary of %s" % (job['JobTitle'], job['OrganizationName'], job['SalaryMax']))
+~~~
+
+Then you've got the gist of what the homework entails.
+
+
+
+### Example of Twitter bot-rating code
+
+<%= link_to_slug 'twitter-bot-simple' %>
+
+
+
+
+## Simplifying the questions we ask
+
+Being that computers are ultimately limited to processing 1s and 0s, they are profoundly awkward in answering non-binary (i.e. yes/no, true/false) questions, e.g. "What is love?", or yes/no questions that are based off of nuanced observations, e.g. "Does this person love me?"
+
+So there are basically two approaches: 
+
+#### 1. Increase the sophistication of the models and queries
+
+An example can be found in this recent article about ["How PayPal beats the bad guys"](http://www.infoworld.com/article/2907877/machine-learning/how-paypal-reduces-fraud-with-machine-learning.html). Or in allegations that Capital One fraud detection analysts committed insider trading when they searched credit-card usage data to divine [that Capital One customers were increasingly going to Chipotle](http://www.bloombergview.com/articles/2015-01-23/capital-one-fraud-researchers-may-also-have-done-some-fraud).
+
+(actually we don't know if their calculations were that complicated, just that the [redacted SQL query](http://www.bloombergview.com/articles/2015-01-23/capital-one-fraud-researchers-may-also-have-done-some-fraud) is pretty gruesome:) 
+
+![img](/files/images/tutorials/capital-one-redacted-sql.png)
+
+
+#### 2. Simplify your criteria
+
+It's possible that networked computing power in the future will be so fast that it can give satisfactory answers to complicated questions. But until then, why not go for a mostly-good, 80%-of-the-way solution?
+
+A great journalistic example: determining the [America's "worst charity" using a single number](http://www.tampabay.com/americas-worst-charities/): the amount of money "blown on soliciting costs", e.g. the ratio of __total money raised__ by solicitors versus __paid to solicitors__. Both of those are a simple data point that can be culled from 990s.
+
+Countless babies' lives were born simply because a doctor came up with a system to add points for every easily observable vital sign [(Apgar's Score)](http://www.newyorker.com/magazine/2006/10/09/the-score) - no fancy technology needed.  
+
+
+#### Look at dating
+
+Pre-2012, dating websites were heavily into algorithms:
+
+[Who's Telling You the Truth About Dating Algorithms?](http://www.fastcompany.com/1812010/whos-telling-you-truth-about-dating-algorithms)
+
+> The online dating industry is a $4 billion business. And everyone from popular author Dr. Pepper Schwartz to mathletic OkCupid cofounder Sam Yagan is trying to crack the code for success. Business success.
+
+
+[Looking for Someone - Sex, love, and loneliness on the Internet.](http://www.newyorker.com/magazine/2011/07/04/looking-for-someone)
+
+> In 2005, in response to the success of eHarmony, Match.com began developing a new site—a longer-term-relationship operation with a scientific underpinning. The white coat whom Match.com recruited for this new counter-venture was a biological anthropologist named Helen Fisher, a research professor at Rutgers and a renowned scholar of human attraction and attachment. Fisher’s observations and findings regarding the human personality, romantic or otherwise, are rooted in her study of the human species over the millennia and in the role that brain chemistry plays in temperament, especially with regard to love, attraction, choice, and compatibility.
+
+
+On OkCupid:
+
+> OK Cupid sends all your answers to its servers, which are housed on Broad Street in New York. The algorithms find the people out there whose answers best correspond to yours—how yours fit their desires and how theirs meet yours, and according to what degree of importance. It’s a Venn diagram. And then the algorithms determine how exceptional those particular correlations are: it’s more statistically significant to share an affection for the Willies than for the Beatles. The match is expressed as a percentage. Each match search requires tens of millions of mathematical operations. To the extent that OK Cupid has any abiding faith, it is in mathematics.
+
+
+
+
+
+Then Tinder came along; [Love Me Tinder](http://www.gq.com/life/relationships/201402/tinder-online-dating-sex-app):
+
+> Tinder does not give out statistics about the number of its users, but the app has grown from being the plaything of a few hundred Los Angeles party kids to a multinational phenomenon in less than a year. Unlike the robot yentas of yore (Match.com, OkCupid, eHarmony), which out-competed one another with claims of compatibility algorithms and secret love formulas, the only promise Tinder makes is to show you the other users in your immediate vicinity. Depending on your feelings for these people, you swipe them to the left (meaning “no thanks”) or to the right (“yes, please”). Two people who swipe each other to the right will “match.” Your matches accrue in a folder, and often that's the end of the story. Other times you start texting. The swiping phase is as lulling in its eye-glazing repetition as a casino slot machine, the chatting phase ideal for idle, noncommittal flirting. In terms of popularity, Tinder is a massive and undeniable success. Whether it works depends on your idea of “working.”
+
+
+
+## Bot detection
 
 
 Read [The Bot Bubble: How Click Farms Have Inflated Social Media Currency](http://www.newrepublic.com/article/121551/bot-bubble-click-farms-have-inflated-social-media-currency) by the *New Republic's*Doug Bock Clark.
@@ -22,6 +125,47 @@ Related:
 - [7 Habits of Highly Fraudulent Users](http://blog.siftscience.com/blog/seven-habits-of-highly-fraudulent-users) via Sift Science.
 - [Social Media Bots Offer Phony Friends and Real Profit](http://www.nytimes.com/2014/11/20/fashion/social-media-bots-offer-phony-friends-and-real-profit.html?_r=0) via the New York Times.
 - [Hacker News discussion on New Republic article](https://news.ycombinator.com/item?id=9440961)
+- []()
+
+
+
+
+## Apgar Score
+
+
+
+
+<iframe width="600" height="400" src="https://www.youtube.com/embed/wXFr9QsTgPA?rel=0" frameborder="0" allowfullscreen></iframe>
+
+via [Atul Gawande of the New Yorker](http://www.newyorker.com/magazine/2006/10/09/the-score):
+
+> But the situation wasn’t so encouraging for newborns: one in thirty still died at birth—odds that were scarcely better than those of the century before—and it wasn’t clear how that could be changed. Then a doctor named Virginia Apgar, who was working in New York, had an idea. It was a ridiculously simple idea, but it transformed obstetrics and the nature of childbirth. Apgar was an unlikely revolutionary for obstetrics. For starters, she had never delivered a baby—not as a doctor and not even as a mother.
+
+> The Apgar score, as it became known universally, allowed nurses to rate the condition of babies at birth on a scale from zero to ten. An infant got two points if it was pink all over, two for crying, two for taking good, vigorous breaths, two for moving all four limbs, and two if its heart rate was over a hundred. Ten points meant a child born in perfect condition. Four points or less meant a blue, limp baby.
+
+> The score was published in 1953, and it transformed child delivery. It turned an intangible and impressionistic clinical concept—the condition of a newly born baby—into a number that people could collect and compare. Using it required observation and documentation of the true condition of every baby. Moreover, even if only because doctors are competitive, it drove them to want to produce better scores—and therefore better outcomes—for the newborns they delivered.
+> 
+> 
+
+The [Wikipedia entry](http://en.wikipedia.org/wiki/Apgar_score) for the Apgar score:
+
+> Virginia Apgar invented the Apgar score in 1952 as a method to quickly summarize the health of newborn children. Apgar was an anesthesiologist who developed the score in order to ascertain the effects of obstetric anesthesia on babies.
+
+
+A summary of the metric via the [American Congress of Obstetricians and Gynecologists](http://www.acog.org/Resources%20And%20Publications/Committee%20Opinions/Committee%20on%20Obstetric%20Practice/The%20Apgar%20Score.aspx), particularly its limitations, and to warn against it "being used inappropriately in term infants to predict specific neurologic outcome":
+
+> It is important to recognize the limitations of the Apgar score. The Apgar score is an expression of the infant's physiologic condition, has a limited time frame, and includes subjective components. In addition, the biochemical disturbance must be significant before the score is affected. Elements of the score such as tone, color, and reflex irritability partially depend on the physiologic maturity of the infant. The healthy preterm infant with no evidence of asphyxia may receive a low score only because of immaturity (6). A number of factors may influence an Apgar score, including but not limited to drugs, trauma, congenital anomalies, infections, hypoxia, hypovolemia, and preterm birth (7). The incidence of low Apgar scores is inversely related to birth weight, and a low score is limited in predicting morbidity or mortality (8). Accordingly, it is inappropriate to use an Apgar score alone to establish the diagnosis of asphyxia.
+> 
+
+ACOG notes that it's not just the score itself that is important, but when it is taken (when the baby is 1- and 5-minutes old), and the _difference between the two measurements_. Also, the score's relevancy has not been tested in situations in which the baby is undergoing resuscitation.
+
+
+
+[NIH definition of the APGAR test](http://www.nlm.nih.gov/medlineplus/ency/article/003402.htm)
+
+A [video by the WSJ](http://www.wsj.com/video/assigning-an-apgar-score-to-newborns/9B7B09A9-1B12-4C65-92BA-D4C6DFA35BBA.html)
+
+
 
 
 

@@ -1,7 +1,3 @@
-
-
-
-
 ### 1. * Count the total number of current job openings in New York
 
 

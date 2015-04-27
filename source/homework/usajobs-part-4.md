@@ -1,12 +1,10 @@
 
-### 11. Find job positions that are only International. 
+### 1. * Find all single location positions.
 
-### 12. Of the job positions that are international, find the one that has the most locations. And make a Google Map of those locations. And a table.
+### 2. * Find all single-location listings that are in a U.S. state
 
+### 3. For each state, find the highest paying job in that state
 
-### 13. Find the 10 highest paying job titles
+### 4. Make a map and table from that data.
 
-### 14. For each state, find the highest paying job that exists only in that state.
-
-
-
+### 5. Of all physician jobs, get a list of all cities, and make a Google map of those cities.
