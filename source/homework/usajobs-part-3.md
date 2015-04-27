@@ -1,0 +1,29 @@
+
+
+### 1. * Write a function that returns a dict given the name of a state.
+
+~~~
+{"Name": "California", "TotalJobs": 500 }
+~~~
+
+
+### 2. Same as 1, but take in a Name and Type, but return a dict: 
+
+### 3. Using foo#3, iterate through all 50 US states and return a list sorted by TotalJobs
+
+### 4. Write a function that given a state's name, will return a list of all the jobs, and the date of the scrape
+
+### 5. Same as 5, but write it for type, name
+
+### 6. * Write a function that returns either a datafile or goes out and scrapes using 6.
+
+### 7. * Use function 6 to get every us state
+
+### 8. Use function 6 to get every non-us country
+
+### 9. * Write a convenience function that loads all U.S. state data
+
+### 10. Write a convenience function that loads all international data
+
+### 11. * Write a function that creates a set of unique job postings
+
