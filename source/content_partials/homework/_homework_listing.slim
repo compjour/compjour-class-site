@@ -28,6 +28,10 @@ table.homework-listing.table.table-condensed
           div.title = d.title
           - if d.content_slug
             div = link_to_slug(d.content_slug, 'More info')
-        td.due = friendly_date d.due
+        td.due
+          - if d.content_slug
+            = friendly_date d.due
+          - else
+            = 'TBA'
         td.points = d.points
 
