@@ -41,6 +41,10 @@
   }
 
   h2{
+    margin-top: 2.5em;
+  }
+
+  h3{
     margin-top: 2.0em;
   }
 }
@@ -49,8 +53,9 @@ a:link, a:visited{
   text-decoration: underline;
 }
 
-a.raw_url{
-  font-family: $font-family-sans-serif;
+a.rawurl{
+  font-family: $font-family-monospace;
+  font-size: $font-size-small;
 }
 
 h1,h2,h3,h4,h5,h6{

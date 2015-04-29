@@ -1,3 +1,13 @@
+"2015-04-29":
+  - title: "Homework: USAJobs Midterm 1"
+  - title: "Get your tweepy-Twitter going"
+    description: |
+      Register a Twitter app, create a bot account, and make sure you can successfully communicate with the Twitter API.
+
+      - [Twitter App registration and authentication](/tutorials/twitter-app-authentication-process)
+      - [Getting Started with Tweepy](/tutorials/getting-started-with-tweepy)
+
+
 "2015-04-22":
   - title: "Homework: Twitter Bot Memo for Wednesday, JSON Quiz 2 for Friday"
 

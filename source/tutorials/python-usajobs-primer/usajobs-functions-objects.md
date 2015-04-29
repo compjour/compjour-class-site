@@ -16,8 +16,7 @@ If you are overwhelmed by the variety and number of new terms thrown at you in a
 | __def__   | __for__   | lambda     | __True__   |          |
 {:.table}
 
-
-And in these lessons, in which I'm skipping such concepts as [object-oriented programming](https://docs.python.org/3/tutorial/classes.html) and any process more complicated than a loop-within-a-loop, maybe just __12__ of these keywords are fundamentally important to memorize (with the others being variants/extensions of those, such as `while` to `for`, and `elif` to `if` and `else`):
+And in these lessons, I skip such concepts as [object-oriented programming](https://docs.python.org/3/tutorial/classes.html), so maybe just __12__ of these keywords are fundamentally important to memorize (with the others being variants/extensions of those, such as `while` to `for`, and `elif` to `if` and `else`):
 
 |and|False|import|not|True|
 |def|for|is|or|
@@ -29,7 +28,7 @@ If we take another look at the first script in the [previous lesson on variables
 
 <pre>
 <strong>import</strong> requests
-url = "http://stash.compjour.org/data/wikipedia/hi.html"
+url = "http://stash.compjour.org/pages/hi.html"
 response = requests.get(url)
 pagetext = response.text
 print(pagetext)
@@ -248,23 +247,21 @@ Is it `84`, `4242`, or `"4242"`? If you run that expression in iPython, you'll g
 No need to go into much more detail about this except to note that many, _many_ of your errors will be "type errors".
 
 
-## Wikipedia code
+## USAJobs code
+
+Let's use a more real-world example involving the __requests__ library and the USAJobs API. Refresh your memory of what the following URL looks like in your web browser:
 
 
-Let's use a more real-world example involving the __requests__ library and the Wikipedia API. Refresh your memory of what the following URL looks like in your web browser:
-
-
-[http://en.wikipedia.org/w/api.php?format=json&action=query&prop=info&titles=Hello](http://en.wikipedia.org/w/api.php?format=json&action=query&prop=info&titles=Hello)
+[https://data.usajobs.gov/api/jobs?Country=Iraq](https://data.usajobs.gov/api/jobs?Country=Iraq){:.rawurl}
 
 Now access it via iPython:
 
 ~~~py
 import requests
-url = "http://en.wikipedia.org/w/api.php?format=json&action=query&prop=info&titles=Hello"
+url = "https://data.usajobs.gov/api/jobs?Country=Iraq"
 resp = requests.get(url)
 txt = resp.text
 print(txt)
-# {"query":{"pages":{"6710844":{"pageid":6710844,"ns":0,"title":"Hello","contentmodel":"wikitext","pagelanguage":"en","touched":"2015-04-03T08:34:32Z","lastrevid":654750689,"length":16607}}}}
 ~~~
 
 Things that should be evident or derivable by you:
@@ -295,8 +292,10 @@ One method we'll find especially useful is the `Response` object's method, `json
 data = resp.json()
 type(data)
 # dict
-print(data)
-# {'query': {'pages': {'6710844': {'pageid': 6710844, 'contentmodel': 'wikitext', 'touched': '2015-04-03T08:34:32Z', 'lastrevid': 654750689, 'pagelanguage': 'en', 'length': 16607, 'title': 'Hello', 'ns': 0}}}}
+print(data['TotalJobs'])
+# 6
+print(data['Pages'])
+# 1
 ~~~
 
 What is a `dict` object? It's short for "dictionary", and we'll cover that data structure in the next lesson.

@@ -39,6 +39,21 @@ end
 def link_to_local_file(url, opts = {})
   full_url = URI.join(config[:site_domain], url)
   title = opts[:title] || full_url
-  opts[:class] ||= 'raw_url'
+  opts[:class] ||= 'rawurl'
+  link_to title, url, opts
+end
+
+def link_to_stash_file(url, opts = {})
+  full_url = URI.join(config[:stash_domain], url)
+  title = opts[:title] || full_url
+  opts[:class] ||= 'rawurl'
   link_to title, full_url, opts
+end
+
+
+
+
+def raw_link(url, opts = {})
+  opts[:class] ||= 'rawurl'
+  link_to url, url, opts
 end

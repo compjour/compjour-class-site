@@ -1,0 +1,328 @@
+---
+title: USAJobs Midterm Part 1
+due_date: 2015-05-04
+---
+
+## Directions
+
+
+The problems with asterisks _already have the solution_. A problem with a solution usually contains hints for subsequent problems, or sometimes for the problem directly preceding it.
+
+All the problems come with expected results, but _your results may be slightly different_, because the job listings change on an hourly/daily basis.
+
+For the problems that are already done, **you must still turn them in**. The expectation is that you at least type them out, line by line, into iPython so each step and its effect are made clear to you.
+
+* TOC
+{:toc .tock}
+
+
+
+### Deliverables
+
+Create a folder in your `compjour-hw` repo named: `usajobs-midterm-1`.
+
+For each exercise, create a separate file, e.g.
+
+    |-- compjour-hw/
+        |-- usajobs-midterm-1/
+           |-- 1-1.py
+           |-- 1-2.py
+           |-- 1-3.py 
+           (etc)
+
+
+Some exercises may require you to produce a file. For example, exercise __1-6__ requires that you create a webpage. Store that webpage in the same directory as the script files, e.g.
+
+
+    |-- compjour-hw/
+        |-- usajobs-midterm-1/
+           |-- 1-6.py
+           |-- 1-6.html
+           (etc)
+
+
+## Exercises
+
+### 1. * Find the total number of job listings in New York
+
+Query the data.usajobs.gov API for job listings for the __state of New York__ and print the total number of job listings in this format:
+
+~~~
+New York has XYZ job listings.
+~~~
+
+#### Takeaway
+
+This is just a warmup exercise that requires little more than knowing the basics of executing Python code and how to use an external library like  __Requests__. Pretty much every exercise from here on out will require this pattern of:
+
+1. Decide what kind of query you want to make to data.usajobs.gov
+2. Use `requests.get()`
+3. Parse the response as JSON and do something with it.
+
+In the posted solution, observe how __variables__ are used from a stylistic point. I set up my `requests.get()` call with:
+
+~~~py
+state_name = 'New York'
+atts = {"CountrySubdivision": state_name, 'NumberOfJobs': 1}
+resp = requests.get(BASE_USAJOBS_URL, params = atts)
+~~~
+
+But I could've done it in one line:
+
+~~~py
+resp = requests.get(BASE_USAJOBS_URL, params = {"CountrySubdivision": 'New York', 'NumberOfJobs': 1})
+~~~
+
+However, that one line is now hard to read because of its width. And while `state_name = 'New York'` may seem overly verbose, look at how `state_name` is re-used in the final `print()` statement, which saves me from having to type out `"New York"` twice.
+
+
+#### Result
+
+~~~
+New York has 384 job listings.
+~~~
+
+
+#### Solution
+
+
+<%= codepiece '/answers/usajobs-midterm/1-1.py' %>
+
+
+### 2. Find the total number of job listings in Alaska and Hawaii. 
+
+Same as problem 1-1, except print one line for each state. And print a __third__ line that contains the sum of the two state's total job counts:
+
+~~~
+Alaska has XXX job listings.
+Hawaii has YYY job listings.
+Together, they have ZZZ total job listings.
+~~~
+
+#### Takeaway
+
+You can almost get by with copying the solution for Exercise 1-1 and pasting it in twice, and then changing the variables for Alaska and Hawaii, respectively. And that's fine (for now). But notice how if you _didn't_ follow my posted solution and take the time to do:
+
+~~~py
+state_name = 'New York'
+~~~
+
+And instead, did:
+
+~~~py
+resp = requests.get(BASE_USAJOBS_URL, params = {"CountrySubdivision": 'New York', 'NumberOfJobs': 1})
+~~~
+
+Then for this exercise, you would have to make 4 manual changes (2 for each state) in both the `requests.get()` call and the corresponding `print()` statement. Imagine how much of a pain that becomes when you have to repeat a snippet of code 10 or 10,000 times, and you should get a better sense of why variables are useful.
+
+Quick note: To total the two job counts up, examine _in specific detail_ how the job counts are represented in the API text response; just because they _look_ like numbers doesn't mean that Python, when parsing the JSON, will _treat them like numbers_.
+
+
+
+#### Result
+
+~~~
+Alaska has 207 job listings.
+Hawaii has 204 job listings.
+Together, they have 411 total job listings.
+~~~
+
+
+### 3. Using a for-loop, find the total number of job listings in China, South Africa, and Tajikistan.
+
+The output should be in the same format as Exercise 1-2, but you __must use a for-loop__.
+
+
+#### Takeaway
+
+Pretty much the same code as exercises 1-1 and 1-2, except with a `for-loop`. Your code should end up being slightly shorter (in terms of line count) compared to 1-2, and it should just _feel_ a little more elegant than copy-pasting the same snippet 3 times over.
+
+
+
+#### Result
+
+~~~
+China currently has 13 job listings.
+South Africa currently has 4 job listings.
+Tajikistan currently has 7 job listings.
+Together, they have 24 total job listings.
+~~~
+
+
+### 4. Get and store job listing counts in a dictionary
+
+For each of the U.S. states of __California, Florida, New York, and Maryland__, get the total job listing count and store the result in a __dictionary__, using the __name of the state__ as the __key__ and the total job count -- as an __integer__ &ndash; for the corresponding __value__:
+
+~~~py
+{'StateName1': 100, 'StateName2': 42}
+~~~
+
+
+#### Takeaway
+
+It is rarely useful to create a program or function that just spits out made-for-human-reports text like "Alabama has 12 total jobs." More realistically, you create programs that will _output_ or __return__ a data structure (as in this case, a __dictionary__), so that _other_ programs can easily use the result.
+
+
+#### Result
+
+~~~py
+{'California': 755, 'New York': 356, 'Maryland': 380, 'Florida': 361}
+~~~
+
+### 5. * Get and store job listing counts as a list
+
+For the same states as Exercise 1-4, get their total job listing counts, but store the result in a __list__. More specifically, a list in which _each member is itself a list_, e.g.
+
+
+~~~py
+[['StateName1', 100], ['StateName2', 42]]
+~~~
+
+
+#### Takeaway
+
+Same concept as Exercise 1-5. It's worth noting how the exact same data can be sufficiently represented either as a dictionary or a list. However, think about the difference in how an end user accesses the data members. For example, compare how you would get Maryland's number of jobs if the result (as in 1-5) is a __dictionary__:
+
+~~~py
+result['Maryland']
+~~~
+
+&ndash; to how you would access that same data point from a __list__:
+
+~~~py
+result[2][0]
+~~~
+
+(hint: one data structure is more human-friendly than the other, in this situation)
+
+#### Result
+
+~~~py
+[['California', 755], ['Florida', 361], ['Maryland', 380], ['New York', 356]]
+~~~
+
+#### Solution 
+
+<%= codepiece '/answers/usajobs-midterm/1-5.py' %>
+
+
+
+### 6. Create an interactive Google Bar Chart showing the job counts
+
+For the same 4 states in Exercise 1-4, produce the HTML needed to display the job count data as an [interactive Google Bar Chart](https://develpers.google.com/chart/interactive/docs/gallery/barchart).
+
+#### Takeaway
+
+Learning the front-end stack of web development (e.g. HTML, CSS, JavaScript, the [Document Object Model](http://en.wikipedia.org/wiki/Document_Object_Model), asynchronous programming) is beyond the scope of this class. However, if you can accept that the code for a webpage itself ends up being _just text_, then it should seem possible that, if given a working template &ndash; even one with an interactive element &ndash; you could create  your own customized webpage by just replacing the parts specific to your data (and isn't that what most programming consists of?)
+
+Also, take note of how the __output format__ in Exercise 1-5 is __directly relevant__ to making this exercise (as well as 1-7, 1-8, and 1-9) trivially easy.
+
+
+(Hint: read on to Exercise 1-7 if you have no clue how to start on this)
+
+__Copy the HTML from this example file__ and adapt it as necessary: 
+
+<%= link_to_local_file '/files/code/answers/usajobs-midterm/sample-barchart-1' %>
+
+Your program must __create a HTML file__ named: `1-6.html`
+
+#### Result
+
+<%= link_to_local_file '/files/code/answers/usajobs-midterm/1-6' %>
+
+![img](/files/images/homework/usajobs-1-6-chart.png)
+
+
+
+### 7. * Create an interactive Google Pie Chart for the 4 states
+
+For the same 4 states in Exercise 1-4, produce the HTML needed to display the job count data as an [interactive Google Bar Chart](https://developers.google.com/chart/interactive/docs/gallery/piechart).
+
+#### Takeaway
+
+To belabor the point that, with a working template and the ability to [read instructions](https://developers.google.com/chart/interactive/docs/gallery/piechart), you can create a variety of charts and pages to your liking. The code to solve this problem should be virtually identical to Exercise 1-6.
+
+
+__Copy the HTML from this example file__ and adapt it as necessary: 
+
+(Hint: Besides replacing the data element, you also have to do the necessary change to make a __pie__ instead of a bar chart)
+
+<%= link_to_local_file '/files/code/answers/usajobs-midterm/sample-barchart-1' %>
+
+<%= link_to_local_file '/files/code/answers/usajobs-midterm/sample-barchart-1' %>
+
+Your program must __create a HTML file__ named: `1-7.html`
+
+
+#### Result
+
+<%= link_to_local_file '/files/code/answers/usajobs-midterm/1-7' %>
+
+![img](/files/images/homework/usajobs-1-7-pie.png)
+
+
+
+#### Solution
+
+<%= codepiece '/answers/usajobs-midterm/1-7.py' %>
+
+
+### 8. Create an interactive Google Geochart for all 4 states
+
+Same setup as exercises 1-6 and 1-7, except create a [Geochart visualization](https://developers.google.com/chart/interactive/docs/gallery/geochart).
+
+As per the Google documentation, you must translate state names to their corresponding [ISO_3166-2:US codes](http://en.wikipedia.org/wiki/ISO_3166-2:US), e.g. `California` is `US-CA` (which all end up being their standard postal abbreviation, prepended by `US-`)
+
+For your convenience, I've produced this JSON file which contains a dictionary that maps each full state name to its corresponding postal abbreviation: 
+
+<%= link_to_stash_file '/data/usajobs/us-statecodes.json' %>
+
+
+For the chart, __copy the HTML from this example file__ and adapt it as necessary: 
+
+<%= link_to_local_file '/files/code/answers/usajobs-midterm/sample-geochart-1' %>
+
+Your program must __create a HTML file__ named: `1-8.html`
+
+
+#### Takeaway
+
+Again, observe the wide variety of charts you can make using the same data-gathering/processing code from the previous exercises. A [map is not ideal for this kind of data](http://www.ericson.net/content/2011/10/when-maps-shouldnt-be-maps/), but since [Google makes it so easy](https://developers.google.com/chart/interactive/docs/gallery/geochart), might as well try it out.
+
+#### Result
+
+<%= link_to_local_file '/files/code/answers/usajobs-midterm/1-8' %>
+
+
+![img](/files/images/homework/usajobs-1-8-geochart.png)
+
+
+
+
+
+
+
+### 9. Create an interactive Google Geochart for all 50 states
+
+Same setup as __Exercise 1-8__, except repeat for all __50 states and Washington D.C.__. You will re-use virtually all of the code from 1-8, but you need to add code to generate a list of all the states.
+
+(Do not hand-type all 51 names in; doing so misses the point of this exercise and will result in zero-credit for this problem).
+
+For your convenience, I've produced this JSON file which contains a dictionary that maps each full state name to its corresponding postal abbreviation: 
+
+<%= link_to_stash_file '/data/usajobs/us-statecodes.json' %>
+
+Use the same sample chart HTML as per Exercise 1-9.
+
+
+#### Takeaway
+
+This exercise is the exact same pattern/process as Exercise 1-8. The only difference is the _amount of data_ to process: __51__ names as opposed to __4__. But the only significant increase in _our_ work is to actually get those names in such a way that we feed it into our existing program &ndash; everything else, from calling the API to making the map, involves _no more sweat from us_ whether the data has 10 names or 10,000 names.
+
+And in this case, the challenge of getting those 51 names is yet another challenge made relatively easy with an understanding and appreciation of for-loops and data structures. I've given you a [machine-readable list of state names as JSON](http://stash.compjour.org.s3.amazonaws.com/data/usajobs/us-statecodes.json); extracting the names (and their abbreviations) is no different than the process of extracting data from the USAJobs API itself. 
+
+#### Result
+<%= link_to_local_file '/files/code/answers/usajobs-midterm/1-9' %>
+
+
+![img](/files/images/homework/usajobs-1-9-geochart.png)

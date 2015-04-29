@@ -1,11 +1,34 @@
 ---
 title: Introduction to iPython and Variables
-group_title: Exploring Wikipedia
 ---
 
 
 * TOC
 {:toc .tock}
+
+
+Our memories are bad. And it doesn't get any easier when it comes to programming.
+
+74.125.228.206 is google.com
+
+The main takeaway: the standalone __equals__ sign is how we assign a value to 
+
+
+
+__The main takeaway of this lesson:__ You should know even before running this code what the answer of this will be.
+
+~~~py
+a = "b"
+b = ((a + '** (99 // 5)').__str__()).__contains__('math.trig * power.squared')
+c = (100).__ceil__() , ((type(42**(4+2)) == type(type)))
+PI = a == ((int(a == c and c == c)).__neg__()).__str__()   
+print(a)
+~~~
+
+
+
+
+
 
 Open iPython:
 

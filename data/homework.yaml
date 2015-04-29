@@ -60,6 +60,14 @@ sections:
         content_slug: twitterbot_skeleton
 
 
+      - title: USAJobs Midterm Part 1
+        due: 2015-05-04
+        points: 10
+        description: |
+          Part 1 of fundamental Python and programming concepts with the USAJobs API
+        content_slug: usajobs-midterm-1
+
+
       # - title: Debug and publish a webpage
       #   points: 10
       #   due: 2015-04-13
