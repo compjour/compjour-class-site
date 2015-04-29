@@ -1,8 +1,27 @@
 ---
-title: Introduction to Functions and Objects 
-group_title: Exploring Wikipedia
+title: Introduction to Objects and Functions and a Few Keywords 
+description: Python is made up of barely more than 30 keywords. The rest are shortcut-words to let us use other programmers' useful code.
 ---
 
+You don't have to know very much about the Python language internals or even its vocabulary to do highly-productive tasks with it. Believe it or not, in this snippet of code:
+
+~~~py
+import requests
+url = "http://stash.compjour.org/pages/hi.html"
+response = requests.get(url)
+pagetext = response.text
+print(pagetext)
+~~~
+
+There is exactly __one__ special-to-Python keyword that you have to actually know. And what's the rest? It's either user-provided values (such as that URL), or words that refer to the pre-packaged code made by programmers that can be directly imported and used in our code. The trick in reading any given script is knowing which words (and patterns and structures) that you _just_ have to know. And which come from a third-party, in which case, you just have to read their docs (here's [the docs for __requests__ refers](http://docs.python-requests.org/en/latest/), for instance).
+
+
+
+
+* TOC
+{:toc .tock}
+
+## Python's keywords
 
 If you are overwhelmed by the variety and number of new terms thrown at you in a Python script, take comfort in knowing that there are actually very few [keywords that make up the Python language](http://en.wikipedia.org/wiki/Python_syntax_and_semantics#Keywords) &ndash. For Python 3.x, there are __32__ keywords for Python 3.x, and roughly half of those (in __bold__ below) we'll encounter on a regular basis:
 
@@ -24,7 +43,7 @@ And in these lessons, I skip such concepts as [object-oriented programming](http
 {:.table}
 
 
-If we take another look at the first script in the [previous lesson on variables](/tutorials/wiki-variables-ipython-intro/), this means there is exactly __one__ Python-language keyword in that entire script, which I've bolded below:
+So this means that for the script at the beginning of this lesson, there is exactly __one__ Python-language keyword in that entire script, which I've bolded below:
 
 <pre>
 <strong>import</strong> requests
@@ -298,5 +317,7 @@ print(data['Pages'])
 # 1
 ~~~
 
-What is a `dict` object? It's short for "dictionary", and we'll cover that data structure in the next lesson.
+What is a `dict` object? It's short for "dictionary", and we'll cover that data structure in the next lesson. (note: this lesson is not done...so check out other documentation on lists and functions):
 
+- [https://docs.python.org/3.4/tutorial/datastructures.html](https://docs.python.org/3.4/tutorial/datastructures.html)
+- [Dictionaries via LPTHW](http://learnpythonthehardway.org/book/ex39.html)

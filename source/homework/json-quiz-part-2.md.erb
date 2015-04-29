@@ -10,6 +10,17 @@ A continuation of the <%= link_to_slug "json-quiz-part-1", 'first part of this q
 
 __Due date:__ <%= homework_due_date %>
 
+## Deliverables
+
+Due date: <%= homework_due_date %>
+
+By the end of this assignment, these things will have been done:
+
+- Inside your Github repo named __compjour-hw__, create a subfolder named: __json-quiz/__
+- Inside __json-quiz/__ will be five files, named and numbered as `5.py`, `6.py`, etc, each corresponding to the [problems listed below](#problems).
+
+
+
 
 * The TOC
 {:toc}
@@ -411,7 +422,18 @@ print('K.', max([len(b['title']) for b in books]))
 
 ### 9. Instagrams of a Congressmember
 
-As inspired by this February 2015 [Associated Press Instagram-powered investigation](http://bigstory.ap.org/article/e2f1f52c3eb34caca7d74e5bf90f27f9/lawmaker-lavish-decor-billed-private-planes-concerts).
+![schock instagram](/files/images/homework/instagram-schock-header.jpg)
+
+As inspired by this February 2015 [Instagram-informed investigation, via Associated Press's By Jack Gillum and Stephen Braun
+](http://bigstory.ap.org/article/e2f1f52c3eb34caca7d74e5bf90f27f9/lawmaker-lavish-decor-billed-private-planes-concerts).
+
+> The AP tracked Schock's reliance on the aircraft __partly through the congressman's penchant for uploading pictures and videos of himself to his Instagram account__. The AP extracted location data associated with each image then correlated it with flight records showing airport stopovers and expenses later billed for air travel against Schock's office and campaign records.
+
+
+Note: Since the AP revelations Rep. Schock has made his [Instagram account invite-only](https://instagram.com/aaronschock). Also, he [resigned from Congress](http://www.washingtonpost.com/blogs/post-politics/wp/2015/03/26/aaron-schock-says-goodbye-to-congress-with-sadness-and-humility-and-a-nod-to-abe-lincoln/).
+
+Note 2: This problem was never officially assigned, but I include it here for fun
+
 
 #### Data URL
 
@@ -421,11 +443,9 @@ As inspired by this February 2015 [Associated Press Instagram-powered investigat
 
 Original source: [https://api.instagram.com/v1/users/472797365/media/recent?access_token=YOURACCESSTOKEN&count=50](https://api.instagram.com/v1/users/472797365/media/recent?access_token=YOURACCESSTOKEN&count=50){:.rawurl}
 
-(note:  Rep. Schock has made his Instagram account invite-only. Also, he [ resigned from Congress shortly after the AP revelations](http://www.washingtonpost.com/blogs/post-politics/wp/2015/03/26/aaron-schock-says-goodbye-to-congress-with-sadness-and-humility-and-a-nod-to-abe-lincoln/).)
 
 #### Tasks
 
-(note: this problem was never assigned, but I include it here for fun)
 
 A. Print the number of images versus number of videos in the feed.
 

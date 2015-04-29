@@ -1,20 +1,29 @@
 ---
 title: Touring the USAJobs.gov Site and API
+description: Before programmatically exploring the USAJobs.gov website and API, explore it the old-fashioned way
 ---
 
-From its [About page](https://help.usajobs.gov/index.php/About_Us): 
+
+This lesson is simply meant to acquaint yourself with the USAJobs.gov website, as it appears to the general user, and then the API, and how the two data systems are similar and different. More importantly, it's a casual demonstration of how to test things with what you're familiar with, i.e. using the web browser to test out the API and to closely examine how the URLs are constructed. At the end, I present some sample Python that can be used to download the site programmatically.
+
+
+* TOC
+{:toc .tock}
+
+## About USAJobs.gov
+
+From  [USAJobs.gov's About page](https://help.usajobs.gov/index.php/About_Us): 
 
 
 > USAJOBS.gov is a free web-based job board enabling federal job seekers access to thousands of job opportunities across hundreds of federal agencies and organizations, allowing agencies to meet their legal obligation (5 USC 3327 and 5 USC 3330) of providing public notice for federal employment opportunities.
 
 > As the Federal Government's official source for federal job listings and employment opportunity information, USAJOBS.gov provides a variety of opportunities. To date, USAJOBS has attracted over 17 million job seekers.
 
-Sounds pretty spiffy,
-
-
-Like [Craigslist](http://www.craigslist.org/), it's a site that has a tremendous amount of useful content and makes it easy to access, and yet we can think of ways that we [could remix the data](http://www.gregreda.com/2014/07/27/scraping-craigslist-for-tickets/) for our own needs. [Unlike Craigslist](https://gigaom.com/2013/08/19/craigslist-can-use-anti-hacking-law-to-stop-firm-from-scraping-its-data-court-rules/), USAJobs.gov encourages the reuse of its data and toward that end, [has created an API](https://data.usajobs.gov/):
+Sounds pretty spiffy. Like [Craigslist](http://www.craigslist.org/),  USAJobs.gov is a site that has a tremendous amount of useful content and makes it easy to access, and yet we can think of ways that we [could remix the data](http://www.gregreda.com/2014/07/27/scraping-craigslist-for-tickets/) for our own needs. [Unlike Craigslist](https://gigaom.com/2013/08/19/craigslist-can-use-anti-hacking-law-to-stop-firm-from-scraping-its-data-court-rules/), USAJobs.gov encourages the reuse of its data and toward that end, [has created an API](https://data.usajobs.gov/):
 
 > The target is to provide Public Jobs to Commercial Job Boards, Mobile Apps and Social Media. These consumers typically require a more lightweight data definition than typically presented on USAJOBS.
+
+
 
 
 ## The user-friendly website
@@ -94,7 +103,14 @@ To see what I got, I saved a [cached version of the data that you can view here]
 
 When it's properly formatted, [the JSON data format](http://en.wikipedia.org/wiki/JSON) is relatively easy to comprehend; indeed, it was designed as a way to send data as text that could be efficiently read by machines and humans alike. Even with knowing little about the format itself or the USAJobs API, you wouldn't be wrong in guessing that this data contains jobs that contain  the word "Explosive" in their `JobTitle` (e.g. `"AMMUNITION & EXPLOSIVES HANDLER"`) property. Or that when this search was made, 5 such jobs were open.
 
-JSON is even more effective on the machine sideTK
+JSON is even more effective from the _machine's_ perspective, as JSON-formatted text can be parsed by standard Python library functions and made into directly usable data structures, such as lists and dictionaries. JSON text even _looks like_ the data structures that they get turned into:
+
+The following is valid JSON in a text file. And if you paste it directly into your Python code (or iPython), it's recognized as a dictionary:
+
+
+~~~json
+{"a": "Apple", "b": [1, 2, 3] }
+~~~
 
 
 ## The Query String

@@ -7,16 +7,14 @@ items = data['data']
 
 #################
 # Task A
-i = len([i for i in items if i['type'] == 'image'])
-v = len([i for i in items if i['type'] == 'video'])
-print("A.", "%s|%s" % (i, v))
+ix = len([i for i in items if i['type'] == 'image'])
+vx = len([i for i in items if i['type'] == 'video'])
+print("A.", "%s|%s" % (ix, vx))
 
 
 ###########################
 # Task B
 from operator import itemgetter
-
-
 filter_dict = {}
 for i in items:
     fname = i['filter']

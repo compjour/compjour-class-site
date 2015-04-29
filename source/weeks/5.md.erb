@@ -25,6 +25,43 @@ topics:
   + [Getting Started with Tweepy](/tutorials/getting-started-with-tweepy)
 
 
+## Some notes for 2015-04-29
+
+
+### Free dinner tonight
+
+Sponsored by [Stanford Journalism](http://journalism.stanford.edu):
+
+Burt Herman will be talking at the
+Stanford Daily on Wednesday, __April 29 at 6pm, with a Tacolicious dinner to follow at 7pm__. He will be talking about his career in journalism, his work at [Storify](https://storify.com), and the rewards of digital storytelling. More on Burt,
+a Stanford alum and [former JSK Fellow](http://knight.stanford.edu/fellows/class-of-2009/burt-herman/), at [http://www.burtherman.com/](http://www.burtherman.com/)
+
+
+
+### Explore on your own
+
+There will be at least __two more sections__ to the midterm. But otherwise, we've covered what I think you need to know to be _effective_, if not _elegant_, because when you can tell a computer to do something, __brute force__ is not a bad strategy. 
+
+So there won't be any more exercises to see if you can tell apart what's a __list__ and what's a __dictionary__, or how to get JSON into those data structures. It's up to you to test out what seemingly-little you know (downloading a file and having access to its contents is a huge step) using what you find in the real-world.
+
+
+#### Search-Script-Scrape
+
+Remember that [Search-Script-Scrape](/search-script-scrape/) exercise? I'm still expecting you to do it. Believe it or not, if you can even attempt the first part of the midterm, you know more than enough programming logic to complete SSS. What you currently lack, though, is, how to deal with things that aren't necessarily JSON (such as HTML or CSV). Those two data formats have their own libraries, which we can figure out in time. But the end process is the same:
+
+1. You download text from a URL (__requests__ will pretty much always work)
+2. You parse the text with the proper tool (e.g. `json.loads()`) and turn it into a Python list or dictionary
+3. You extract what you want from that list or dictionary.
+
+Go through the SSS exercises and in your own version of the spreadsheet, at least mark down which of the problems involve JSON. A lot of the motivation behind SSS was to acquaint you with real-world datasets, in advance of your final project for this class.
+
+
+#### Other APIs to explore
+
+Well, for starters: <%=link_to_slug 'github-autograde' %>. (You might want to run the `is_passing()` function on your own account...)
+
+## Notes for 2015-04-27
+
 ### Example of Twitter bot-rating code
 
 As shown in class:
