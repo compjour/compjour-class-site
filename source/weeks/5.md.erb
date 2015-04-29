@@ -16,43 +16,18 @@ topics:
 
 ## Todos
 
+- Check the [todos](/todos)
 
-### Review the USAJobs site and API
-
-There will be a homework/"midterm" of sorts, based off of the data found at USAJobs.gov. I'll have it in by Tuesday (yes, I know, I said that last week; and it will be due over the next week).
-
-For now, do yourself a favor and visit the USAJobs.gov homepage:
-
-[https://www.usajobs.gov/](https://www.usajobs.gov/)
-
-Then do a search by location for "France":
-
-[/Search?Keyword=&Location=France&search=Search&AutoCompleteSelected=true](https://www.usajobs.gov/Search?Keyword=&Location=France&search=Search&AutoCompleteSelected=true)
-
-Then meander on over to the homepage for [the REST API of data.usajobs.gov](https://data.usajobs.gov/Rest). In particular, read the [API Query Parameters Tab](https://data.usajobs.gov/Rest).
-
-Then visit this [sample URL](https://data.usajobs.gov/api/jobs?Country=France) __in your web browser__ (your browser will either show plaintext, or might downlaod the file (as plain text) to your Downloads folder):
-
-[https://data.usajobs.gov/api/jobs?Country=France](https://data.usajobs.gov/api/jobs?Country=France)
-
-
-And then try this snippet of Python code in iPython:
-
-~~~py
-import requests
-url = "https://data.usajobs.gov/api/jobs?Country=France"
-data = requests.get(url).json()
-print('There are %s job openings' % data['TotalJobs'])
-
-for job in data['JobData']:
-    print("%s, for the %s, with a max salary of %s" % (job['JobTitle'], job['OrganizationName'], job['SalaryMax']))
-~~~
-
-Then you've got the gist of what the homework entails.
-
+- New homework: <%= link_to_slug 'usajobs-midterm-1' %>
+- Answers posted to <%= link_to_slug "json-quiz-part-1"%> and <%= link_to_slug "json-quiz-part-2" %>
+- Twitter Bot stuff we'll revisit next week, but please make sure you can at least send a tweet from within Python:
+  + [Twitter App registration and authentication](/tutorials/twitter-app-authentication-process)
+  + [Getting Started with Tweepy](/tutorials/getting-started-with-tweepy)
 
 
 ### Example of Twitter bot-rating code
+
+As shown in class:
 
 <%= link_to_slug 'twitter-bot-simple' %>
 
@@ -179,3 +154,40 @@ A [video by the WSJ](http://www.wsj.com/video/assigning-an-apgar-score-to-newbor
 
 
 Peter Norvig ([director of research at Google](http://research.google.com/pubs/author205.html)) wrote a [Python solution for the When is Cheryl's Birthday logic puzzle](http://nbviewer.ipython.org/url/norvig.com/ipython/Cheryl.ipynb). It's a perfect example of how a programming solution is typically much longer and convoluted than the pen-and-pencil solution. Nonetheless, it demonstrates how logical principles can be stated as programmatic functions, so it's a nice demonstration for all the times when abstracting a problem *is* the right path.
+
+
+
+#### Review the USAJobs site and API
+
+(old)
+
+There will be a homework/"midterm" of sorts, based off of the data found at USAJobs.gov. I'll have it in by Tuesday (yes, I know, I said that last week; and it will be due over the next week).
+
+For now, do yourself a favor and visit the USAJobs.gov homepage:
+
+[https://www.usajobs.gov/](https://www.usajobs.gov/)
+
+Then do a search by location for "France":
+
+[/Search?Keyword=&Location=France&search=Search&AutoCompleteSelected=true](https://www.usajobs.gov/Search?Keyword=&Location=France&search=Search&AutoCompleteSelected=true)
+
+Then meander on over to the homepage for [the REST API of data.usajobs.gov](https://data.usajobs.gov/Rest). In particular, read the [API Query Parameters Tab](https://data.usajobs.gov/Rest).
+
+Then visit this [sample URL](https://data.usajobs.gov/api/jobs?Country=France) __in your web browser__ (your browser will either show plaintext, or might downlaod the file (as plain text) to your Downloads folder):
+
+[https://data.usajobs.gov/api/jobs?Country=France](https://data.usajobs.gov/api/jobs?Country=France)
+
+
+And then try this snippet of Python code in iPython:
+
+~~~py
+import requests
+url = "https://data.usajobs.gov/api/jobs?Country=France"
+data = requests.get(url).json()
+print('There are %s job openings' % data['TotalJobs'])
+
+for job in data['JobData']:
+    print("%s, for the %s, with a max salary of %s" % (job['JobTitle'], job['OrganizationName'], job['SalaryMax']))
+~~~
+
+Then you've got the gist of what the homework entails.

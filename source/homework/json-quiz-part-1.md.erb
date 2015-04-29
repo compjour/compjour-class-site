@@ -6,7 +6,7 @@ description: |
 ---
 
 * The TOC
-{:toc}
+{:toc .tock}
 
 ## Deliverables
 
@@ -22,9 +22,6 @@ Each problem has a list of tasks (lettered `A` through `G`, or so) and the __exp
 
 Some of the problems have partial solutions. The first problem is completely solved for you as an example. Copy that into your repo (as `json-quiz/1.py`) and run it and see that you get the expected output.
 
-#### Answers
-
-[1](/files/code/answers/json-quiz/1.py), [2](/files/code/answers/json-quiz/2.py), [3](/files/code/answers/json-quiz/4.py), [4](/files/code/answers/json-quiz/4.py), [5](/files/code/answers/json-quiz/5.py)
 
 
 ## Quick intro to JSON, Dicts, Lists, etc.
@@ -447,4 +444,15 @@ print('G.', ','.join(hashtag_texts))
 # alternatively, you could also use the list comprehension syntax:
 # hashtag_texts = [h['text'] for h in data['entities']['hashtags']]
 ~~~
+
+
+
+## All Solutions
+
+<% [1,2,3,4,5].each do |num| %>
+### <%=num%>.
+
+  <%=codepiece "/answers/json-quiz/#{num}.py" %>
+<% end %>
+
 

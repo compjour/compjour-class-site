@@ -1,5 +1,5 @@
 ---
-title: Dicts, Lists, and JSON Quiz Part 2
+title: Sorting fun with JSON Quiz Part 2
 due_date: 2015-04-28
 description: |
     More loops.
@@ -7,6 +7,9 @@ description: |
 
 
 A continuation of the <%= link_to_slug "json-quiz-part-1", 'first part of this quiz' %>
+
+__Due date:__ <%= homework_due_date %>
+
 
 * The TOC
 {:toc}
@@ -401,3 +404,84 @@ print("I.", s)
 # Task K
 print('K.', max([len(b['title']) for b in books]))
 ~~~
+
+
+
+
+
+### 9. Instagrams of a Congressmember
+
+As inspired by this February 2015 [Associated Press Instagram-powered investigation](http://bigstory.ap.org/article/e2f1f52c3eb34caca7d74e5bf90f27f9/lawmaker-lavish-decor-billed-private-planes-concerts).
+
+#### Data URL
+
+<%= link_to_local_file '/files/code/json-examples/instagram-aaron-schock.json'  %>
+
+
+
+Original source: [https://api.instagram.com/v1/users/472797365/media/recent?access_token=YOURACCESSTOKEN&count=50](https://api.instagram.com/v1/users/472797365/media/recent?access_token=YOURACCESSTOKEN&count=50){:.rawurl}
+
+(note:  Rep. Schock has made his Instagram account invite-only. Also, he [ resigned from Congress shortly after the AP revelations](http://www.washingtonpost.com/blogs/post-politics/wp/2015/03/26/aaron-schock-says-goodbye-to-congress-with-sadness-and-humility-and-a-nod-to-abe-lincoln/).)
+
+#### Tasks
+
+(note: this problem was never assigned, but I include it here for fun)
+
+A. Print the number of images versus number of videos in the feed.
+
+B. Print the top 3 filters most frequently used, in "`name:count`", separated by a pipe symbol.
+
+C. Print the number of items that are geocoded.
+
+D. Print the number of items that have a listed location of "`United States Capitol`"
+
+E. Print the top 3 named locations, as "`name:count`", separated by a pipe symbol.
+
+F. Find the geocoded item that took place _farthest_ from the "United States Capitol" and print the __name__ of the item's location.
+
+G. Print the first 20 letters of the caption, URL of the thumbnail, likes count, and comments count (as pipe-separated values) of the item with the __highest sum of comments and likes__.
+
+H. Print the __number of days__ (rounded to the nearest integer) between the oldest and newest item in this feed.
+
+I. Calculate the rate of __items posted per week__ (rounded to the nearest tenth decimal place) in this feed.
+
+
+J. Find the __longest gap in days__ (rounded to nearest day) between consecutively posted images.
+
+K. Find the largest difference in __comment count__ (as an absolute number) between consecutively posted images.
+
+
+L. Print the __month__ (as a number, e.g. `4` for April) of the _most recently_ posted item. *
+
+M. Print the ratio of items posted on the __weekends__ versus __the weekdays__ (round to two decimal places). 
+
+N. Find the day in which the most items were posted. Then print the name of that day (e.g. `Monday`) and the percentage of total items posted on that day (rounded to two decimal places), as pipe-separated values.
+
+#### Expected Output
+
+~~~
+A. 30|3
+B. Normal:25|Ludwig:3|Mayfair:2
+C. 30
+D. 3
+E. United States Capitol:3|Perito Moreno Glacier - Patagonia :2|Pulenta Vineyard, Mendoza, Argentina:1
+F. Yangon, Myanmar
+G. Lunch with this old|http://scontent-b.cdninstagram.com/hphotos-xap1/t51.2885-15/s150x150/e15/10809784_562189993924641_1683766928_n.jpg|961|26
+H. 86
+I. 2.7
+J. 13
+K. 55
+L. 2
+M. 0.24
+N. Monday|0.24
+~~~
+
+
+## All Solutions
+
+<% [6,7,8,9].each do |num| %>
+### <%=num%>.
+  <%=codepiece "/answers/json-quiz/#{num}.py" %>
+<% end %>
+
+

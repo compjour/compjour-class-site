@@ -1,6 +1,6 @@
 "2015-04-29":
   - title: "Homework: USAJobs Midterm 1"
-  - title: "Get your tweepy-Twitter going"
+  - title: "Get your tweepy-Twitter authenticated"
     description: |
       Register a Twitter app, create a bot account, and make sure you can successfully communicate with the Twitter API.
 
