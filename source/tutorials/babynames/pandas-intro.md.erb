@@ -1,0 +1,177 @@
+
+
+
+
+
+
+
+
+## Set up the environment
+
+~~~py
+import pandas as pd
+import numpy as np
+~~~
+
+
+
+## Numpy
+
+
+### arrays
+
+~~~py
+mylist = [1,2,3,4]
+myarr = np.array(mylist)
+~~~
+
+#### reshaping
+
+~~~py
+np.array(range(20)).reshape(5,4)
+~~~
+
+#### Extra functions
+
+~~~py
+myarr.sum()
+# 10
+myarr.mean()
+# 2.5
+myarr.size
+# 4
+~~~
+
+#### Initializing multi-d arrays
+
+~~~py
+my2dlist = [[1,2], [3,4], [4,5]]
+my2darr = np.array(my2dlist)
+
+~~~
+
+
+## Pandas Series
+
+
+
+
+### Making some data
+
+~~~py
+crops = []
+crops.append(['year', 'apples', 'oranges', 'pears'])
+crops.append(['1990', '50', '63', '13'])
+crops.append(['1991', '60', '91', '29'])
+crops.append(['1992', '75', '48', '48'])
+crops.append(['1993', '95', '24', '55'])
+crops.append(['1994', '123', '18', '72'])
+crops.append(['1995', '168', '56', '84'])
+
+cropsdf = pd.DataFrame(crops)
+~~~
+
+
+## Indexes
+
+### Adding columns ad-hoc
+
+~~~py
+cropsdf.columns = cropsdf.iloc[0]
+~~~
+
+~~~
+0  year  apples  oranges  pears
+0  year  apples  oranges  pears
+1  1990      50       63     13
+2  1991      60       91     29
+3  1992      75       48     48
+4  1993      95       24     55
+5  1994     123       18     72
+6  1995     168       56     84
+~~~
+
+~~~py
+cropsdf.reindex(cropsdf.index.drop(0))
+~~~
+
+### Get it right the first time
+
+~~~py
+cropsdf = pd.DataFrame(crops[1:], columns = crops[0])
+~~~
+
+
+
+### Converting types
+
+~~~py
+ncropsdf = pd.DataFrame.convert_objects(cropsdf, convert_numeric = True)
+~~~
+
+
+
+
+
+## Exploring the DataFrame
+
+## Scalar function
+
+
+
+
+
+
+
+## Selections
+
+### Select by one factor (a name)
+
+
+
+
+
+
+- Select by several factors (name, sex)
+
+
+## Group aggregates
+
+- Group by year - 
+
+
+
+
+
+
+
+
+
+## Other tutorials
+
+- [10 Minutes to pandas (pandas.pydata.org)](http://pandas.pydata.org/pandas-docs/stable/10min.html) 
+- [Intro to pandas data structures (gregreda.com)](http://www.gregreda.com/2013/10/26/intro-to-pandas-data-structures/)
+- [Software Carpentry: Programming with Python (with `numpy`) (swcarpentry.github.io)](http://swcarpentry.github.io/python-novice-inflammation/01-numpy.html) 
+- [Intro to Pandas and Saving to a CSV and reading from a CSV (pythonprogramming.net)](http://pythonprogramming.net/pandas-saving-reading-csv-file/) 
+
+- [Tidy data](http://vita.had.co.nz/papers/tidy-data.pdf)
+
+- [Plotting on data-aware grids — seaborn 0.5.1 documentation (stanford.edu)](http://stanford.edu/~mwaskom/software/seaborn/tutorial/axis_grids.html) 
+
+-----
+
+
+~~~py
+import pandas as pd
+import numpy as np
+import seaborn
+
+d = {'apples': 200, 'oranges': 120, 'pears': 72}
+myseries = pd.Series(d)
+%pylab
+
+# simple plot
+myplot = seaborn.barplot(x = np.array(['a', 'b', 'c']), y = np.array([20,10,30]))
+fig = myplot.get_figure()
+fig.savefig("/tmp/myplot.png")
+~~~

@@ -1,0 +1,29 @@
+~~~py
+import pandas
+import csv
+from pandas import DataFrame
+with open("combined-nationwide.csv") as f:
+    nation_names = list(csv.reader(f))
+    nationdf = DataFrame(nation_names[1:], columns = nation_names[0])
+with open("combined-state.csv") as f:
+    state_names = list(csv.reader(f))
+    statedf = DataFrame(state_names[1:], columns = state_names[0])
+~~~
+
+
+~~~py
+nationdf.values
+~~~
+
+Output:
+
+~~~py
+array([['name', 'sex', 'count', 'year'],
+       ['Mary', 'F', '7065', '1880'],
+       ['Anna', 'F', '2604', '1880'],
+       ..., 
+       ['Zymari', 'M', '5', '2013'],
+       ['Zymeer', 'M', '5', '2013'],
+       ['Zyree', 'M', '5', '2013']], dtype=object)
+~~~
+
