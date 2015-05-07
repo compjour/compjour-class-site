@@ -35,6 +35,9 @@ For the problems that are already done, **you must still turn them in**. The exp
 
 ### Deliverables
 
+__Due date:__ <%= homework_due_date %>
+
+
 Create a folder in your `compjour-hw` repo named: `usajobs-midterm-1`.
 
 For each exercise, create a separate file, e.g.
@@ -238,13 +241,15 @@ Also, take note of how the __output format__ in Exercise 1-5 is __directly relev
 
 __Copy the HTML from this example file__ and adapt it as necessary: 
 
-<%= link_to_local_file '/files/code/answers/usajobs-midterm/sample-barchart-1' %>
+<%= link_to_local_file '/files/code/answers/usajobs-midterm/sample-barchart-1.html' %>
+
+(Note: If you open the sample webpage in your browser, it will render all of the chart code...which is *not* what you want. Try using `requests.get()` instead, to get the bare HTML. Or use __View Source__ (but __not Inspect Element__ ) )
 
 Your program must __create a HTML file__ named: `1-6.html`
 
 #### Result
 
-<%= link_to_local_file '/files/code/answers/usajobs-midterm/1-6' %>
+<%= link_to_local_file '/files/code/answers/usajobs-midterm/1-6.html' %>
 
 ![img](/files/images/homework/usajobs-1-6-chart.png)
 
@@ -263,16 +268,19 @@ __Copy the HTML from this example file__ and adapt it as necessary:
 
 (Hint: Besides replacing the data element, you also have to do the necessary change to make a __pie__ instead of a bar chart)
 
-<%= link_to_local_file '/files/code/answers/usajobs-midterm/sample-barchart-1' %>
 
-<%= link_to_local_file '/files/code/answers/usajobs-midterm/sample-barchart-1' %>
+<%= link_to_local_file '/files/code/answers/usajobs-midterm/sample-barchart-1.html' %>
+
+(Note: If you open the sample webpage in your browser, it will render all of the chart code...which is *not* what you want. Try using `requests.get()` instead, to get the bare HTML. Or use __View Source__ (but __not Inspect Element__ ) )
+
+
 
 Your program must __create a HTML file__ named: `1-7.html`
 
 
 #### Result
 
-<%= link_to_local_file '/files/code/answers/usajobs-midterm/1-7' %>
+<%= link_to_local_file '/files/code/answers/usajobs-midterm/1-7.html' %>
 
 ![img](/files/images/homework/usajobs-1-7-pie.png)
 
@@ -296,7 +304,7 @@ For your convenience, I've produced this JSON file which contains a dictionary t
 
 For the chart, __copy the HTML from this example file__ and adapt it as necessary: 
 
-<%= link_to_local_file '/files/code/answers/usajobs-midterm/sample-geochart-1' %>
+<%= link_to_local_file '/files/code/answers/usajobs-midterm/sample-geochart-1.html' %>
 
 Your program must __create a HTML file__ named: `1-8.html`
 
@@ -307,7 +315,7 @@ Again, observe the wide variety of charts you can make using the same data-gathe
 
 #### Result
 
-<%= link_to_local_file '/files/code/answers/usajobs-midterm/1-8' %>
+<%= link_to_local_file '/files/code/answers/usajobs-midterm/1-8.html' %>
 
 
 ![img](/files/images/homework/usajobs-1-8-geochart.png)
@@ -328,7 +336,10 @@ For your convenience, I've produced this JSON file which contains a dictionary t
 
 <%= link_to_stash_file '/data/usajobs/us-statecodes.json' %>
 
-Use the same sample chart HTML as per Exercise 1-9.
+Use the same sample chart HTML as per Exercise 1-8:
+
+<%= link_to_local_file '/files/code/answers/usajobs-midterm/sample-geochart-1.html' %>
+
 
 
 #### Takeaway
@@ -338,7 +349,7 @@ This exercise is the exact same pattern/process as Exercise 1-8. The only differ
 And in this case, the challenge of getting those 51 names is yet another challenge made relatively easy with an understanding and appreciation of for-loops and data structures. I've given you a [machine-readable list of state names as JSON](http://stash.compjour.org.s3.amazonaws.com/data/usajobs/us-statecodes.json); extracting the names (and their abbreviations) is no different than the process of extracting data from the USAJobs API itself. 
 
 #### Result
-<%= link_to_local_file '/files/code/answers/usajobs-midterm/1-9' %>
+<%= link_to_local_file '/files/code/answers/usajobs-midterm/1-9.html' %>
 
 
 ![img](/files/images/homework/usajobs-1-9-geochart.png)

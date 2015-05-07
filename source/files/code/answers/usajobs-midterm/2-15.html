@@ -1,0 +1,326 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+
+    <script type='text/javascript' src='https://www.google.com/jsapi'></script>
+
+  </head>
+  <body>
+
+    <script type='text/javascript'>
+     google.load('visualization', '1', {'packages': ['geochart']});
+     google.setOnLoadCallback(drawMarkersMap);
+
+      function drawMarkersMap() {
+      var data = [['City', 'Jobs'], ['Willow Creek', 18], ['Kings Canyon National Park', 1], ['Upper Lake', 16], ['Palmdale', 9], ['Nevada City', 26], ['Belden', 3], ['Johnsondale', 7], ['Fort Hunter Liggett', 6], ['Idyllwild', 19], ['Chico', 5], ['San Francisco', 47], ['Whitethorn', 2], ['Barstow', 28], ['Saugus', 18], ['Los Angeles County', 6], ['Point Mugu', 2], ['Big Bear City', 1], ['San Bruno', 1], ['Port Hueneme', 25], ['Newman', 4], ['Foresthill', 16], ['Lemoore Naval Air Station', 5], ['Dinkey Creek', 7], ['Long Beach', 45], ['Scott Bar', 3], ['Sequoia National Park', 1], ['San Fernando', 18], ['Point Loma Complex', 4], ['Prather', 18], ['Trimmer', 16], ['Hayfork', 19], ['Pioneer', 12], ['Camino', 17], ['Goleta', 18], ['Blairsden', 14], ['Van Nuys', 1], ['Mendota', 1], ['Santa Rosa', 4], ['Creston', 2], ['Bridgeport', 19], ['Topaz', 8], ['Carpinteria', 7], ['San Diego County', 1], ['Chino', 4], ['Ventura', 3], ['Santa Barbara', 22], ['Auburn', 2], ['Berry Creek', 11], ['Alameda County', 2], ['Santa Ynez', 7], ['Seaside', 3], ['Fall River Mills', 14], ['Hat Creek', 11], ['Davis', 6], ['Ojai', 10], ['Needles', 1], ['Moffett Field', 13], ['Victorville', 1], ['Yosemite National Park', 2], ['Lytle Creek', 18], ['Madera', 4], ['Sierraville', 10], ['Moreno Valley', 2], ['Mineral', 3], ['Canby', 7], ['Georgetown', 15], ['Groveland', 19], ['El Segundo', 24], ['Ukiah', 6], ['Cecilville', 3], ['June Lake', 3], ['Monterey', 22], ['Alameda', 2], ['Tulelake', 12], ['Stockton', 8], ['Markleeville', 5], ['Merced', 4], ['Glendora', 15], ['Arcadia', 13], ['Alpine', 17], ['Los Angeles', 64], ['Santa Margarita', 3], ['Naval Air Station San Diego', 5], ['San Jose', 6], ['California Hot Springs', 7], ['Los Banos', 4], ['March AFB', 17], ['San Francisco County', 1], ['China Lake', 11], ['Jolon', 10], ['Carson', 2], ['Death Valley', 2], ['Orland', 2], ['Palm Springs', 2], ['Twentynine Palms', 29], ['Paso Robles', 1], ['Hathaway Pines', 16], ['Winterhaven', 4], ['Auberry', 1], ['Arcata', 8], ['Susanville', 50], ['Macdoel', 16], ['Wofford Heights', 7], ['Fortuna', 8], ['Redding', 56], ['Brawley', 4], ['Naval Post Graduate School', 1], ['Beale AFB', 26], ['Naval Medical Center', 6], ['Imperial Beach', 4], ['Gasquet', 15], ['Downieville', 7], ['Oroville', 12], ['Dunlap', 4], ['Capitola', 1], ['San Diego', 68], ['Skyforest', 13], ['Klamath River', 16], ['Naval Station Complex', 4], ['Arroyo Grande', 12], ['Hemet', 1], ['Quincy', 36], ['Livingston', 4], ['Vallejo', 5], ['Martinez', 10], ['Clovis', 9], ['San Mateo', 1], ['Mammoth Lakes', 14], ['King City', 2], ['Stanford', 1], ['Modesto', 9], ['Norwalk', 1], ['Lemoore', 11], ['Ontario', 3], ['Cedarville', 16], ['Independence', 4], ['Seal Beach', 1], ['Greenfield', 7], ['Valyermo', 12], ['El Cajon', 3], ['Fillmore', 3], ['Los Olivos', 7], ['Corona', 21], ['Seiad Valley', 3], ['Willows', 16], ['Piru', 7], ['Yorba Linda', 1], ['Fort Irwin', 28], ['Fallbrook', 5], ['Fort Jones', 23], ['Mountain View', 3], ['Porterville', 17], ['Ramona', 20], ['Vacaville', 1], ['Yreka', 17], ['Forest Ranch', 7], ['Tulare', 3], ['Oakhurst', 12], ['Chester', 22], ['Santa Cruz', 2], ['Edwards AFB', 57], ['El Dorado Hills', 9], ['Citrus Heights', 2], ['Toms Place', 7], ['California', 4], ['Greenville', 11], ['Travis AFB', 40], ['Paskenta', 8], ['Bishop', 41], ['Kyburz', 3], ['Big Sur', 8], ['Agoura Hills', 1], ['Camp Pendleton', 27], ['Imperial', 1], ['Oceanside', 10], ['Weaverville', 16], ['Mariposa', 13], ['Albany', 4], ['Parlier', 1], ['Sacramento', 25], ['Stonyford', 11], ['Placerville', 10], ['Petaluma', 4], ['Shaver Lake', 4], ['Frazier Park', 13], ['Fairfield', 2], ['Livermore', 4], ['Sanger', 4], ['Big Creek', 9], ['Strawberry Valley', 3], ['Mad River', 18], ['Clearlake', 2], ['Riverside', 3], ['Eureka', 19], ['Loma Linda', 33], ['Turlock', 5], ['El Centro', 10], ['Herlong Sierra Ordnance Depot', 5], ['Sawyers Bar', 3], ['Springville', 22], ['New Cuyama', 3], ['Oakland', 8], ['Pinehurst', 11], ['Lee Vining', 8], ['Bakersfield', 9], ['Camptonville', 15], ['Palo Alto', 32], ['Richmond', 1], ['Vernon', 2], ['Dixon', 4], ['Poway', 4], ['Happy Camp', 23], ['San Clemente', 2], ['Soda Springs', 7], ['Sunnyvale', 2], ['Fort Ord', 5], ['Folsom', 1], ['McCloud', 2], ['McKittrick', 1], ['North Fork', 16], ['McClellan', 8], ['Hollister', 4], ['Menlo Park', 6], ['La Canada Flintridge', 7], ['Challenge', 7], ['Irvine', 1], ['Byron', 1], ['Kernville', 22], ['Mather AFB', 6], ['Hume', 7], ['Adin', 13], ['Pico Rivera', 4], ['Mi-Wuk Village', 20], ['Hanford', 4], ['Fawnskin', 11], ['Fontana', 4], ['Lancaster', 12], ['Manzanita Lake', 3], ['Coleville', 1], ['Mount Shasta', 14], ['Vandenberg AFB', 38], ['Selma', 4], ['Orleans', 16], ['Fresno', 34], ['Havilah', 11], ['Naval Air Station Miramar ', 35], ['Llano', 1], ['Lake Isabella', 9], ['Camp Parks', 3], ['Old Station', 3], ['South Lake Tahoe', 25], ['Glennville', 4], ['Pinecrest', 16], ['Alturas', 31], ['Presidio', 1], ['Elk Creek', 5], ['Doyle', 10], ['Pollock Pines', 25], ['Adelanto', 1], ['San Bernardino', 24], ['Mentone', 14], ['Ridgecrest', 2], ['Sonora', 23], ['Acton', 12], ['Lone Pine', 10], ['Callahan', 3], ['Pine Grove', 4], ['Covelo', 8], ['San Luis Obispo', 4], ['Whiskeytown', 1], ['Santa Maria', 20], ['Beckwourth', 11], ['Truckee', 15], ['Grizzly Flats', 7]];
+
+      var datatable = google.visualization.arrayToDataTable(data)
+
+      var options = {
+        region: 'US-CA',
+        resolution: 'provinces',
+        displayMode: 'markers',
+        backgroundColor: {fill: '#A5C5FF', strokeWidth: 2, stroke: '#333'},
+        datalessRegionColor: '#ddeedd',
+        colorAxis: {colors: ['yellow', 'red']}
+      };
+
+      var chart = new google.visualization.GeoChart(document.getElementById('mychart'));
+      chart.draw(datatable, options);
+    };
+    </script>
+
+
+    <div class="container">
+      <div id="mychart" style="width: 900px; height: 500px;"></div>
+      <table class="table table-striped table-condensed">
+        <thead>
+          <tr>
+            <th>City</th>
+            <th>Jobs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>San Diego</td><td>68</td></tr>
+<tr><td>Los Angeles</td><td>64</td></tr>
+<tr><td>Edwards AFB</td><td>57</td></tr>
+<tr><td>Redding</td><td>56</td></tr>
+<tr><td>Susanville</td><td>50</td></tr>
+<tr><td>San Francisco</td><td>47</td></tr>
+<tr><td>Long Beach</td><td>45</td></tr>
+<tr><td>Bishop</td><td>41</td></tr>
+<tr><td>Travis AFB</td><td>40</td></tr>
+<tr><td>Vandenberg AFB</td><td>38</td></tr>
+<tr><td>Quincy</td><td>36</td></tr>
+<tr><td>Naval Air Station Miramar </td><td>35</td></tr>
+<tr><td>Fresno</td><td>34</td></tr>
+<tr><td>Loma Linda</td><td>33</td></tr>
+<tr><td>Palo Alto</td><td>32</td></tr>
+<tr><td>Alturas</td><td>31</td></tr>
+<tr><td>Twentynine Palms</td><td>29</td></tr>
+<tr><td>Barstow</td><td>28</td></tr>
+<tr><td>Fort Irwin</td><td>28</td></tr>
+<tr><td>Camp Pendleton</td><td>27</td></tr>
+<tr><td>Nevada City</td><td>26</td></tr>
+<tr><td>Beale AFB</td><td>26</td></tr>
+<tr><td>Port Hueneme</td><td>25</td></tr>
+<tr><td>Sacramento</td><td>25</td></tr>
+<tr><td>South Lake Tahoe</td><td>25</td></tr>
+<tr><td>Pollock Pines</td><td>25</td></tr>
+<tr><td>El Segundo</td><td>24</td></tr>
+<tr><td>San Bernardino</td><td>24</td></tr>
+<tr><td>Fort Jones</td><td>23</td></tr>
+<tr><td>Happy Camp</td><td>23</td></tr>
+<tr><td>Sonora</td><td>23</td></tr>
+<tr><td>Santa Barbara</td><td>22</td></tr>
+<tr><td>Monterey</td><td>22</td></tr>
+<tr><td>Chester</td><td>22</td></tr>
+<tr><td>Springville</td><td>22</td></tr>
+<tr><td>Kernville</td><td>22</td></tr>
+<tr><td>Corona</td><td>21</td></tr>
+<tr><td>Ramona</td><td>20</td></tr>
+<tr><td>Mi-Wuk Village</td><td>20</td></tr>
+<tr><td>Santa Maria</td><td>20</td></tr>
+<tr><td>Idyllwild</td><td>19</td></tr>
+<tr><td>Hayfork</td><td>19</td></tr>
+<tr><td>Bridgeport</td><td>19</td></tr>
+<tr><td>Groveland</td><td>19</td></tr>
+<tr><td>Eureka</td><td>19</td></tr>
+<tr><td>Willow Creek</td><td>18</td></tr>
+<tr><td>Saugus</td><td>18</td></tr>
+<tr><td>San Fernando</td><td>18</td></tr>
+<tr><td>Prather</td><td>18</td></tr>
+<tr><td>Goleta</td><td>18</td></tr>
+<tr><td>Lytle Creek</td><td>18</td></tr>
+<tr><td>Mad River</td><td>18</td></tr>
+<tr><td>Camino</td><td>17</td></tr>
+<tr><td>Alpine</td><td>17</td></tr>
+<tr><td>March AFB</td><td>17</td></tr>
+<tr><td>Porterville</td><td>17</td></tr>
+<tr><td>Yreka</td><td>17</td></tr>
+<tr><td>Upper Lake</td><td>16</td></tr>
+<tr><td>Foresthill</td><td>16</td></tr>
+<tr><td>Trimmer</td><td>16</td></tr>
+<tr><td>Hathaway Pines</td><td>16</td></tr>
+<tr><td>Macdoel</td><td>16</td></tr>
+<tr><td>Klamath River</td><td>16</td></tr>
+<tr><td>Cedarville</td><td>16</td></tr>
+<tr><td>Willows</td><td>16</td></tr>
+<tr><td>Weaverville</td><td>16</td></tr>
+<tr><td>North Fork</td><td>16</td></tr>
+<tr><td>Orleans</td><td>16</td></tr>
+<tr><td>Pinecrest</td><td>16</td></tr>
+<tr><td>Georgetown</td><td>15</td></tr>
+<tr><td>Glendora</td><td>15</td></tr>
+<tr><td>Gasquet</td><td>15</td></tr>
+<tr><td>Camptonville</td><td>15</td></tr>
+<tr><td>Truckee</td><td>15</td></tr>
+<tr><td>Blairsden</td><td>14</td></tr>
+<tr><td>Fall River Mills</td><td>14</td></tr>
+<tr><td>Mammoth Lakes</td><td>14</td></tr>
+<tr><td>Mount Shasta</td><td>14</td></tr>
+<tr><td>Mentone</td><td>14</td></tr>
+<tr><td>Moffett Field</td><td>13</td></tr>
+<tr><td>Arcadia</td><td>13</td></tr>
+<tr><td>Skyforest</td><td>13</td></tr>
+<tr><td>Mariposa</td><td>13</td></tr>
+<tr><td>Frazier Park</td><td>13</td></tr>
+<tr><td>Adin</td><td>13</td></tr>
+<tr><td>Pioneer</td><td>12</td></tr>
+<tr><td>Tulelake</td><td>12</td></tr>
+<tr><td>Oroville</td><td>12</td></tr>
+<tr><td>Arroyo Grande</td><td>12</td></tr>
+<tr><td>Valyermo</td><td>12</td></tr>
+<tr><td>Oakhurst</td><td>12</td></tr>
+<tr><td>Lancaster</td><td>12</td></tr>
+<tr><td>Acton</td><td>12</td></tr>
+<tr><td>Berry Creek</td><td>11</td></tr>
+<tr><td>Hat Creek</td><td>11</td></tr>
+<tr><td>China Lake</td><td>11</td></tr>
+<tr><td>Lemoore</td><td>11</td></tr>
+<tr><td>Greenville</td><td>11</td></tr>
+<tr><td>Stonyford</td><td>11</td></tr>
+<tr><td>Pinehurst</td><td>11</td></tr>
+<tr><td>Fawnskin</td><td>11</td></tr>
+<tr><td>Havilah</td><td>11</td></tr>
+<tr><td>Beckwourth</td><td>11</td></tr>
+<tr><td>Ojai</td><td>10</td></tr>
+<tr><td>Sierraville</td><td>10</td></tr>
+<tr><td>Jolon</td><td>10</td></tr>
+<tr><td>Martinez</td><td>10</td></tr>
+<tr><td>Oceanside</td><td>10</td></tr>
+<tr><td>Placerville</td><td>10</td></tr>
+<tr><td>El Centro</td><td>10</td></tr>
+<tr><td>Doyle</td><td>10</td></tr>
+<tr><td>Lone Pine</td><td>10</td></tr>
+<tr><td>Palmdale</td><td>9</td></tr>
+<tr><td>Clovis</td><td>9</td></tr>
+<tr><td>Modesto</td><td>9</td></tr>
+<tr><td>El Dorado Hills</td><td>9</td></tr>
+<tr><td>Big Creek</td><td>9</td></tr>
+<tr><td>Bakersfield</td><td>9</td></tr>
+<tr><td>Lake Isabella</td><td>9</td></tr>
+<tr><td>Topaz</td><td>8</td></tr>
+<tr><td>Stockton</td><td>8</td></tr>
+<tr><td>Arcata</td><td>8</td></tr>
+<tr><td>Fortuna</td><td>8</td></tr>
+<tr><td>Paskenta</td><td>8</td></tr>
+<tr><td>Big Sur</td><td>8</td></tr>
+<tr><td>Oakland</td><td>8</td></tr>
+<tr><td>Lee Vining</td><td>8</td></tr>
+<tr><td>McClellan</td><td>8</td></tr>
+<tr><td>Covelo</td><td>8</td></tr>
+<tr><td>Johnsondale</td><td>7</td></tr>
+<tr><td>Dinkey Creek</td><td>7</td></tr>
+<tr><td>Carpinteria</td><td>7</td></tr>
+<tr><td>Santa Ynez</td><td>7</td></tr>
+<tr><td>Canby</td><td>7</td></tr>
+<tr><td>California Hot Springs</td><td>7</td></tr>
+<tr><td>Wofford Heights</td><td>7</td></tr>
+<tr><td>Downieville</td><td>7</td></tr>
+<tr><td>Greenfield</td><td>7</td></tr>
+<tr><td>Los Olivos</td><td>7</td></tr>
+<tr><td>Piru</td><td>7</td></tr>
+<tr><td>Forest Ranch</td><td>7</td></tr>
+<tr><td>Toms Place</td><td>7</td></tr>
+<tr><td>Soda Springs</td><td>7</td></tr>
+<tr><td>La Canada Flintridge</td><td>7</td></tr>
+<tr><td>Challenge</td><td>7</td></tr>
+<tr><td>Hume</td><td>7</td></tr>
+<tr><td>Grizzly Flats</td><td>7</td></tr>
+<tr><td>Fort Hunter Liggett</td><td>6</td></tr>
+<tr><td>Los Angeles County</td><td>6</td></tr>
+<tr><td>Davis</td><td>6</td></tr>
+<tr><td>Ukiah</td><td>6</td></tr>
+<tr><td>San Jose</td><td>6</td></tr>
+<tr><td>Naval Medical Center</td><td>6</td></tr>
+<tr><td>Menlo Park</td><td>6</td></tr>
+<tr><td>Mather AFB</td><td>6</td></tr>
+<tr><td>Chico</td><td>5</td></tr>
+<tr><td>Lemoore Naval Air Station</td><td>5</td></tr>
+<tr><td>Markleeville</td><td>5</td></tr>
+<tr><td>Naval Air Station San Diego</td><td>5</td></tr>
+<tr><td>Vallejo</td><td>5</td></tr>
+<tr><td>Fallbrook</td><td>5</td></tr>
+<tr><td>Turlock</td><td>5</td></tr>
+<tr><td>Herlong Sierra Ordnance Depot</td><td>5</td></tr>
+<tr><td>Fort Ord</td><td>5</td></tr>
+<tr><td>Elk Creek</td><td>5</td></tr>
+<tr><td>Newman</td><td>4</td></tr>
+<tr><td>Point Loma Complex</td><td>4</td></tr>
+<tr><td>Santa Rosa</td><td>4</td></tr>
+<tr><td>Chino</td><td>4</td></tr>
+<tr><td>Madera</td><td>4</td></tr>
+<tr><td>Merced</td><td>4</td></tr>
+<tr><td>Los Banos</td><td>4</td></tr>
+<tr><td>Winterhaven</td><td>4</td></tr>
+<tr><td>Brawley</td><td>4</td></tr>
+<tr><td>Imperial Beach</td><td>4</td></tr>
+<tr><td>Dunlap</td><td>4</td></tr>
+<tr><td>Naval Station Complex</td><td>4</td></tr>
+<tr><td>Livingston</td><td>4</td></tr>
+<tr><td>Independence</td><td>4</td></tr>
+<tr><td>California</td><td>4</td></tr>
+<tr><td>Albany</td><td>4</td></tr>
+<tr><td>Petaluma</td><td>4</td></tr>
+<tr><td>Shaver Lake</td><td>4</td></tr>
+<tr><td>Livermore</td><td>4</td></tr>
+<tr><td>Sanger</td><td>4</td></tr>
+<tr><td>Dixon</td><td>4</td></tr>
+<tr><td>Poway</td><td>4</td></tr>
+<tr><td>Hollister</td><td>4</td></tr>
+<tr><td>Pico Rivera</td><td>4</td></tr>
+<tr><td>Hanford</td><td>4</td></tr>
+<tr><td>Fontana</td><td>4</td></tr>
+<tr><td>Selma</td><td>4</td></tr>
+<tr><td>Glennville</td><td>4</td></tr>
+<tr><td>Pine Grove</td><td>4</td></tr>
+<tr><td>San Luis Obispo</td><td>4</td></tr>
+<tr><td>Belden</td><td>3</td></tr>
+<tr><td>Scott Bar</td><td>3</td></tr>
+<tr><td>Ventura</td><td>3</td></tr>
+<tr><td>Seaside</td><td>3</td></tr>
+<tr><td>Mineral</td><td>3</td></tr>
+<tr><td>Cecilville</td><td>3</td></tr>
+<tr><td>June Lake</td><td>3</td></tr>
+<tr><td>Santa Margarita</td><td>3</td></tr>
+<tr><td>Ontario</td><td>3</td></tr>
+<tr><td>El Cajon</td><td>3</td></tr>
+<tr><td>Fillmore</td><td>3</td></tr>
+<tr><td>Seiad Valley</td><td>3</td></tr>
+<tr><td>Mountain View</td><td>3</td></tr>
+<tr><td>Tulare</td><td>3</td></tr>
+<tr><td>Kyburz</td><td>3</td></tr>
+<tr><td>Strawberry Valley</td><td>3</td></tr>
+<tr><td>Riverside</td><td>3</td></tr>
+<tr><td>Sawyers Bar</td><td>3</td></tr>
+<tr><td>New Cuyama</td><td>3</td></tr>
+<tr><td>Manzanita Lake</td><td>3</td></tr>
+<tr><td>Camp Parks</td><td>3</td></tr>
+<tr><td>Old Station</td><td>3</td></tr>
+<tr><td>Callahan</td><td>3</td></tr>
+<tr><td>Whitethorn</td><td>2</td></tr>
+<tr><td>Point Mugu</td><td>2</td></tr>
+<tr><td>Creston</td><td>2</td></tr>
+<tr><td>Auburn</td><td>2</td></tr>
+<tr><td>Alameda County</td><td>2</td></tr>
+<tr><td>Yosemite National Park</td><td>2</td></tr>
+<tr><td>Moreno Valley</td><td>2</td></tr>
+<tr><td>Alameda</td><td>2</td></tr>
+<tr><td>Carson</td><td>2</td></tr>
+<tr><td>Death Valley</td><td>2</td></tr>
+<tr><td>Orland</td><td>2</td></tr>
+<tr><td>Palm Springs</td><td>2</td></tr>
+<tr><td>King City</td><td>2</td></tr>
+<tr><td>Santa Cruz</td><td>2</td></tr>
+<tr><td>Citrus Heights</td><td>2</td></tr>
+<tr><td>Fairfield</td><td>2</td></tr>
+<tr><td>Clearlake</td><td>2</td></tr>
+<tr><td>Vernon</td><td>2</td></tr>
+<tr><td>San Clemente</td><td>2</td></tr>
+<tr><td>Sunnyvale</td><td>2</td></tr>
+<tr><td>McCloud</td><td>2</td></tr>
+<tr><td>Ridgecrest</td><td>2</td></tr>
+<tr><td>Kings Canyon National Park</td><td>1</td></tr>
+<tr><td>Big Bear City</td><td>1</td></tr>
+<tr><td>San Bruno</td><td>1</td></tr>
+<tr><td>Sequoia National Park</td><td>1</td></tr>
+<tr><td>Van Nuys</td><td>1</td></tr>
+<tr><td>Mendota</td><td>1</td></tr>
+<tr><td>San Diego County</td><td>1</td></tr>
+<tr><td>Needles</td><td>1</td></tr>
+<tr><td>Victorville</td><td>1</td></tr>
+<tr><td>San Francisco County</td><td>1</td></tr>
+<tr><td>Paso Robles</td><td>1</td></tr>
+<tr><td>Auberry</td><td>1</td></tr>
+<tr><td>Naval Post Graduate School</td><td>1</td></tr>
+<tr><td>Capitola</td><td>1</td></tr>
+<tr><td>Hemet</td><td>1</td></tr>
+<tr><td>San Mateo</td><td>1</td></tr>
+<tr><td>Stanford</td><td>1</td></tr>
+<tr><td>Norwalk</td><td>1</td></tr>
+<tr><td>Seal Beach</td><td>1</td></tr>
+<tr><td>Yorba Linda</td><td>1</td></tr>
+<tr><td>Vacaville</td><td>1</td></tr>
+<tr><td>Agoura Hills</td><td>1</td></tr>
+<tr><td>Imperial</td><td>1</td></tr>
+<tr><td>Parlier</td><td>1</td></tr>
+<tr><td>Richmond</td><td>1</td></tr>
+<tr><td>Folsom</td><td>1</td></tr>
+<tr><td>McKittrick</td><td>1</td></tr>
+<tr><td>Irvine</td><td>1</td></tr>
+<tr><td>Byron</td><td>1</td></tr>
+<tr><td>Coleville</td><td>1</td></tr>
+<tr><td>Llano</td><td>1</td></tr>
+<tr><td>Presidio</td><td>1</td></tr>
+<tr><td>Adelanto</td><td>1</td></tr>
+<tr><td>Whiskeytown</td><td>1</td></tr>
+        </tbody>
+      </table>
+    </div>
+
+
+
+
+  </body>
+</html>

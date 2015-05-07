@@ -1,0 +1,296 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  </head>
+
+  <body>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["geochart"]});
+      google.setOnLoadCallback(drawRegionsMap);
+      function drawRegionsMap() {
+        var data = [['Country', 'Jobs'], ['Afghanistan', 12], ['Bahrain', 15], ['Belgium', 13], ['China', 13], ['Egypt', 10], ['Germany', 99], ['Italy', 47], ['Japan', 57], ['Portugal', 14], ['South Korea', 47], ['Spain', 13], ['Turkey', 16], ['United Kingdom', 29]];
+        var datatable = google.visualization.arrayToDataTable(data);
+        var options = {'width': 800, 'height': 500, 'resolution': 'countries'};
+        var chart = new google.visualization.GeoChart(document.getElementById('mychart'));
+        chart.draw(datatable, options);
+      }
+    </script>
+
+    <div class="container">
+      <h1 style="text-align:center">Hello chart</h1>
+      <div id="mychart"></div>
+
+      <h2 style="text-align:center">Hello table</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Jobs</th>
+          </tr>
+        </thead>
+        <tbody>
+          <tr><td>Afghanistan</td><td>12</td></tr>
+<tr><td>Albania</td><td>0</td></tr>
+<tr><td>Algeria</td><td>0</td></tr>
+<tr><td>Andorra</td><td>0</td></tr>
+<tr><td>Angola</td><td>4</td></tr>
+<tr><td>Anguilla</td><td>0</td></tr>
+<tr><td>Antarctica</td><td>0</td></tr>
+<tr><td>Antigua and Barbuda</td><td>0</td></tr>
+<tr><td>Argentina</td><td>0</td></tr>
+<tr><td>Armenia</td><td>0</td></tr>
+<tr><td>Aruba</td><td>0</td></tr>
+<tr><td>Ashmore and Cartier Islands</td><td>0</td></tr>
+<tr><td>Australia</td><td>0</td></tr>
+<tr><td>Austria</td><td>0</td></tr>
+<tr><td>Azerbaijan</td><td>0</td></tr>
+<tr><td>Bahamas</td><td>0</td></tr>
+<tr><td>Bahrain</td><td>15</td></tr>
+<tr><td>Bangladesh</td><td>4</td></tr>
+<tr><td>Barbados</td><td>4</td></tr>
+<tr><td>Bassas Da India</td><td>0</td></tr>
+<tr><td>Belarus</td><td>0</td></tr>
+<tr><td>Belgium</td><td>13</td></tr>
+<tr><td>Belize</td><td>0</td></tr>
+<tr><td>Benin</td><td>5</td></tr>
+<tr><td>Bermuda</td><td>0</td></tr>
+<tr><td>Bhutan</td><td>0</td></tr>
+<tr><td>Bolivia</td><td>0</td></tr>
+<tr><td>Bosnia and Herzegovina</td><td>0</td></tr>
+<tr><td>Botswana</td><td>4</td></tr>
+<tr><td>Bouvet Island</td><td>0</td></tr>
+<tr><td>Brazil</td><td>4</td></tr>
+<tr><td>British Indian Ocean Territory</td><td>0</td></tr>
+<tr><td>British Virgin Islands</td><td>0</td></tr>
+<tr><td>Brunei</td><td>0</td></tr>
+<tr><td>Bulgaria</td><td>0</td></tr>
+<tr><td>Burkina Faso</td><td>5</td></tr>
+<tr><td>Burma</td><td>4</td></tr>
+<tr><td>Burundi</td><td>0</td></tr>
+<tr><td>Cambodia</td><td>4</td></tr>
+<tr><td>Cameroon</td><td>5</td></tr>
+<tr><td>Canada</td><td>1</td></tr>
+<tr><td>Cape Verde</td><td>0</td></tr>
+<tr><td>Cayman Islands</td><td>0</td></tr>
+<tr><td>Central African Republic</td><td>0</td></tr>
+<tr><td>Chad</td><td>4</td></tr>
+<tr><td>Chile</td><td>0</td></tr>
+<tr><td>China</td><td>13</td></tr>
+<tr><td>Christmas Island</td><td>0</td></tr>
+<tr><td>Clipperton Island</td><td>0</td></tr>
+<tr><td>Cocos (Keeling) Islands</td><td>0</td></tr>
+<tr><td>Colombia</td><td>0</td></tr>
+<tr><td>Comoros</td><td>0</td></tr>
+<tr><td>Congo</td><td>5</td></tr>
+<tr><td>Congo (DRC)</td><td>5</td></tr>
+<tr><td>Cook Islands</td><td>0</td></tr>
+<tr><td>Coral Sea Islands</td><td>0</td></tr>
+<tr><td>Costa Rica</td><td>0</td></tr>
+<tr><td>Cote D'Ivoire</td><td>5</td></tr>
+<tr><td>Croatia</td><td>0</td></tr>
+<tr><td>Cuba</td><td>3</td></tr>
+<tr><td>Cyprus</td><td>0</td></tr>
+<tr><td>Czech Republic</td><td>0</td></tr>
+<tr><td>Denmark</td><td>4</td></tr>
+<tr><td>Djibouti</td><td>0</td></tr>
+<tr><td>Dominica</td><td>0</td></tr>
+<tr><td>Dominican Republic</td><td>4</td></tr>
+<tr><td>Ecuador</td><td>0</td></tr>
+<tr><td>Egypt</td><td>10</td></tr>
+<tr><td>El Salvador</td><td>1</td></tr>
+<tr><td>Equatorial Guinea</td><td>0</td></tr>
+<tr><td>Eritrea</td><td>0</td></tr>
+<tr><td>Estonia</td><td>0</td></tr>
+<tr><td>Ethiopia</td><td>4</td></tr>
+<tr><td>Europa Island</td><td>0</td></tr>
+<tr><td>Falkland Islands</td><td>0</td></tr>
+<tr><td>Faroe Islands</td><td>0</td></tr>
+<tr><td>Fiji</td><td>0</td></tr>
+<tr><td>Finland</td><td>0</td></tr>
+<tr><td>France</td><td>4</td></tr>
+<tr><td>French Guiana</td><td>0</td></tr>
+<tr><td>French Polynesia</td><td>0</td></tr>
+<tr><td>French Southern and Antarctic Lands</td><td>0</td></tr>
+<tr><td>Gabon</td><td>4</td></tr>
+<tr><td>Gambia</td><td>4</td></tr>
+<tr><td>Gaza Strip</td><td>0</td></tr>
+<tr><td>Germany</td><td>99</td></tr>
+<tr><td>Ghana</td><td>4</td></tr>
+<tr><td>Gibraltar</td><td>0</td></tr>
+<tr><td>Glorioso Islands</td><td>0</td></tr>
+<tr><td>Greece</td><td>0</td></tr>
+<tr><td>Greenland</td><td>0</td></tr>
+<tr><td>Grenada</td><td>0</td></tr>
+<tr><td>Guadeloupe</td><td>0</td></tr>
+<tr><td>Guatemala</td><td>4</td></tr>
+<tr><td>Guernsey</td><td>0</td></tr>
+<tr><td>Guinea</td><td>4</td></tr>
+<tr><td>Guinea-Bissau</td><td>4</td></tr>
+<tr><td>Guyana</td><td>4</td></tr>
+<tr><td>Haiti</td><td>4</td></tr>
+<tr><td>Heard Island and McDonald Islands</td><td>0</td></tr>
+<tr><td>Honduras</td><td>1</td></tr>
+<tr><td>Hong Kong</td><td>0</td></tr>
+<tr><td>Hungary</td><td>1</td></tr>
+<tr><td>Iceland</td><td>0</td></tr>
+<tr><td>India</td><td>5</td></tr>
+<tr><td>Indonesia</td><td>4</td></tr>
+<tr><td>Iran</td><td>0</td></tr>
+<tr><td>Iraq</td><td>6</td></tr>
+<tr><td>Ireland</td><td>0</td></tr>
+<tr><td>Isle of Man</td><td>0</td></tr>
+<tr><td>Israel</td><td>0</td></tr>
+<tr><td>Italy</td><td>47</td></tr>
+<tr><td>Jamaica</td><td>0</td></tr>
+<tr><td>Jan Mayen</td><td>0</td></tr>
+<tr><td>Japan</td><td>57</td></tr>
+<tr><td>Jersey</td><td>0</td></tr>
+<tr><td>Jordan</td><td>8</td></tr>
+<tr><td>Juan De Nova Island</td><td>0</td></tr>
+<tr><td>Kazakhstan</td><td>4</td></tr>
+<tr><td>Kenya</td><td>4</td></tr>
+<tr><td>Kiribati</td><td>0</td></tr>
+<tr><td>Kosovo</td><td>0</td></tr>
+<tr><td>Kuril Islands</td><td>0</td></tr>
+<tr><td>Kuwait</td><td>6</td></tr>
+<tr><td>Kyrgyzstan</td><td>3</td></tr>
+<tr><td>Laos</td><td>4</td></tr>
+<tr><td>Latvia</td><td>0</td></tr>
+<tr><td>Lebanon</td><td>0</td></tr>
+<tr><td>Lesotho</td><td>4</td></tr>
+<tr><td>Liberia</td><td>4</td></tr>
+<tr><td>Libya</td><td>0</td></tr>
+<tr><td>Liechtenstein</td><td>0</td></tr>
+<tr><td>Lithuania</td><td>0</td></tr>
+<tr><td>Luxembourg</td><td>0</td></tr>
+<tr><td>Macau</td><td>0</td></tr>
+<tr><td>Macedonia</td><td>0</td></tr>
+<tr><td>Madagascar</td><td>4</td></tr>
+<tr><td>Malawi</td><td>4</td></tr>
+<tr><td>Malaysia</td><td>0</td></tr>
+<tr><td>Maldives</td><td>0</td></tr>
+<tr><td>Mali</td><td>5</td></tr>
+<tr><td>Malta</td><td>0</td></tr>
+<tr><td>Marshall Islands</td><td>0</td></tr>
+<tr><td>Martinique</td><td>0</td></tr>
+<tr><td>Mauritania</td><td>4</td></tr>
+<tr><td>Mauritius</td><td>0</td></tr>
+<tr><td>Mayotte</td><td>0</td></tr>
+<tr><td>Mexico</td><td>4</td></tr>
+<tr><td>Micronesia (FSM)</td><td>0</td></tr>
+<tr><td>Moldova</td><td>0</td></tr>
+<tr><td>Monaco</td><td>0</td></tr>
+<tr><td>Mongolia</td><td>0</td></tr>
+<tr><td>Montenegro</td><td>0</td></tr>
+<tr><td>Montserrat</td><td>0</td></tr>
+<tr><td>Morocco</td><td>4</td></tr>
+<tr><td>Mozambique</td><td>4</td></tr>
+<tr><td>Namibia</td><td>4</td></tr>
+<tr><td>Nauru</td><td>0</td></tr>
+<tr><td>Nepal</td><td>4</td></tr>
+<tr><td>Netherlands</td><td>5</td></tr>
+<tr><td>Netherlands Antilles</td><td>0</td></tr>
+<tr><td>New Caledonia</td><td>0</td></tr>
+<tr><td>New Zealand</td><td>0</td></tr>
+<tr><td>Nicaragua</td><td>0</td></tr>
+<tr><td>Niger</td><td>0</td></tr>
+<tr><td>Nigeria</td><td>4</td></tr>
+<tr><td>Niue</td><td>0</td></tr>
+<tr><td>Norfolk Island</td><td>0</td></tr>
+<tr><td>North Korea</td><td>0</td></tr>
+<tr><td>Norway</td><td>0</td></tr>
+<tr><td>Oman</td><td>4</td></tr>
+<tr><td>Pakistan</td><td>8</td></tr>
+<tr><td>Palau</td><td>0</td></tr>
+<tr><td>Panama</td><td>4</td></tr>
+<tr><td>Papua New Guinea</td><td>4</td></tr>
+<tr><td>Paracel Islands</td><td>0</td></tr>
+<tr><td>Paraguay</td><td>0</td></tr>
+<tr><td>Peru</td><td>4</td></tr>
+<tr><td>Philippines</td><td>4</td></tr>
+<tr><td>Pitcairn Islands</td><td>0</td></tr>
+<tr><td>Poland</td><td>0</td></tr>
+<tr><td>Portugal</td><td>14</td></tr>
+<tr><td>Portuguese Timor</td><td>0</td></tr>
+<tr><td>Qatar</td><td>4</td></tr>
+<tr><td>Republic of Georgia</td><td>5</td></tr>
+<tr><td>Reunion</td><td>0</td></tr>
+<tr><td>Romania</td><td>0</td></tr>
+<tr><td>Russia</td><td>0</td></tr>
+<tr><td>Rwanda</td><td>4</td></tr>
+<tr><td>Saint Helena</td><td>0</td></tr>
+<tr><td>Saint Kitts And Nevis</td><td>0</td></tr>
+<tr><td>Saint Lucia</td><td>0</td></tr>
+<tr><td>Saint Pierre and Miquelon</td><td>0</td></tr>
+<tr><td>Saint Vincent and The Grenadines</td><td>0</td></tr>
+<tr><td>Samoa</td><td>0</td></tr>
+<tr><td>San Marino</td><td>0</td></tr>
+<tr><td>Sao Tome and Principe</td><td>0</td></tr>
+<tr><td>Saudi Arabia</td><td>9</td></tr>
+<tr><td>Senegal</td><td>5</td></tr>
+<tr><td>Serbia</td><td>0</td></tr>
+<tr><td>Seychelles</td><td>0</td></tr>
+<tr><td>Sierra Leone</td><td>4</td></tr>
+<tr><td>Singapore</td><td>6</td></tr>
+<tr><td>Slovakia</td><td>0</td></tr>
+<tr><td>Slovenia</td><td>0</td></tr>
+<tr><td>Solomon Islands</td><td>0</td></tr>
+<tr><td>Somalia</td><td>0</td></tr>
+<tr><td>South Africa</td><td>4</td></tr>
+<tr><td>South Georgia and South Sandwich Islands</td><td>0</td></tr>
+<tr><td>South Korea</td><td>47</td></tr>
+<tr><td>South Sudan</td><td>4</td></tr>
+<tr><td>Spain</td><td>13</td></tr>
+<tr><td>Spratly Islands</td><td>0</td></tr>
+<tr><td>Sri Lanka</td><td>0</td></tr>
+<tr><td>Sudan</td><td>0</td></tr>
+<tr><td>Suriname</td><td>0</td></tr>
+<tr><td>Svalbard</td><td>0</td></tr>
+<tr><td>Swaziland</td><td>4</td></tr>
+<tr><td>Sweden</td><td>0</td></tr>
+<tr><td>Switzerland</td><td>5</td></tr>
+<tr><td>Syria</td><td>0</td></tr>
+<tr><td>Taiwan</td><td>0</td></tr>
+<tr><td>Tajikistan</td><td>7</td></tr>
+<tr><td>Tanzania</td><td>4</td></tr>
+<tr><td>Thailand</td><td>5</td></tr>
+<tr><td>Timor-Leste</td><td>0</td></tr>
+<tr><td>Togo</td><td>5</td></tr>
+<tr><td>Tokelau</td><td>0</td></tr>
+<tr><td>Tonga</td><td>0</td></tr>
+<tr><td>Trinidad and Tobago</td><td>0</td></tr>
+<tr><td>Tromelin Island</td><td>0</td></tr>
+<tr><td>Tunisia</td><td>0</td></tr>
+<tr><td>Turkey</td><td>16</td></tr>
+<tr><td>Turkmenistan</td><td>0</td></tr>
+<tr><td>Turks and Caicos Islands</td><td>0</td></tr>
+<tr><td>Tuvalu</td><td>0</td></tr>
+<tr><td>Uganda</td><td>4</td></tr>
+<tr><td>Ukraine</td><td>4</td></tr>
+<tr><td>Undesignated Sovereignty</td><td>0</td></tr>
+<tr><td>United Arab Emirates</td><td>4</td></tr>
+<tr><td>United Kingdom</td><td>29</td></tr>
+<tr><td>Uruguay</td><td>0</td></tr>
+<tr><td>Uzbekistan</td><td>4</td></tr>
+<tr><td>Vanuatu</td><td>0</td></tr>
+<tr><td>Vatican City</td><td>0</td></tr>
+<tr><td>Venezuela</td><td>0</td></tr>
+<tr><td>Vietnam</td><td>4</td></tr>
+<tr><td>Wallis And Futuna</td><td>0</td></tr>
+<tr><td>West Bank</td><td>0</td></tr>
+<tr><td>Western Sahara</td><td>0</td></tr>
+<tr><td>Yemen</td><td>4</td></tr>
+<tr><td>Zambia</td><td>4</td></tr>
+<tr><td>Zimbabwe</td><td>4</td></tr>
+        </tbody>
+      </table>
+    </div> <!--end container -->
+
+
+
+
+  <body>
+    <div id="mychart"></div>
+  </body>
+</html>

@@ -1,0 +1,43 @@
+---
+title: Basic Matplotlib examples
+---
+
+
+Matplotlib is a powerful but incredibly-hard-to-use (at first) visualization library for Python.
+
+Check out these simple examples. Then move on to the readings at the bottom of the lesson.
+
+
+<%- examples = ["001-simple.py",
+"002-main_title.py",
+"003-axis_labels.py",
+"004-format_ticks.py",
+"005-set_ticks.py",
+"006-rename_ticks.py",
+"007-limit_axis.py",
+"008-activate_grid.py",
+"009-customize_grid.py",
+"010-remove_splines.py",
+"030-use_style.py"
+] %>
+
+<%- examples.each do |ex| -%>
+
+<%=codepiece "/matplotlib-intro/#{ex}" %>
+
+<img src="/files/code/matplotlib-intro/pngs/<%=ex.split('.')[0]%>.png">
+
+<% end %>
+
+### Readings
+
+- [Pyplot tutorial — Matplotlib 1.4.3 documentation (matplotlib.org)](http://matplotlib.org/users/pyplot_tutorial.html) 
+
+- [pylab_examples example code: subplots_demo.py — Matplotlib 1.4.3 documentation (matplotlib.org)](http://matplotlib.org/examples/pylab_examples/subplots_demo.html) 
+
+
+- [How to make beautiful data visualizations in Python with matplotlib - Randal S. Olson (randalolson.com)](http://www.randalolson.com/2014/06/28/how-to-make-beautiful-data-visualizations-in-python-with-matplotlib/) 
+
+- [Software Carpentry: An Exercise With Matplotlib and Numpy (software-carpentry.org)](http://software-carpentry.org/blog/2012/05/an-exercise-with-matplotlib-and-numpy.html) 
+
+- [Analyzing Patient Data (software-carpentry.org)](https://software-carpentry.org/v5/novice/python/01-numpy.html) 

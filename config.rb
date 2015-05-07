@@ -31,6 +31,7 @@ set :images_dir, 'assets/images'
 set :layout, 'page'
 page "/tutorials/*", :layout => "content_article"
 page "/articles/*", :layout => "content_article"
+page "/files/code/**/*.html", :directory_index => false
 
 ############################# Build-specific configuration
 configure :build do

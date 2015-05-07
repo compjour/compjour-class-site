@@ -67,6 +67,13 @@ sections:
           Part 1 of fundamental Python and programming concepts with the USAJobs API
         content_slug: usajobs-midterm-1
 
+      - title: USAJobs Midterm Part 2
+        due: 2015-05-011
+        points: 10
+        description: |
+          Part 2 of fundamental Python and programming concepts with the USAJobs API
+        content_slug: usajobs-midterm-2
+
 
       # - title: Debug and publish a webpage
       #   points: 10

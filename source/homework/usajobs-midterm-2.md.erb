@@ -1,7 +1,50 @@
+---
+title: USAJobs Midterm Part 2
+due_date: 2015-05-11
+---
 
 
+__Note:__ All of the exercises are done, but there are a few "TKs" where I haven't finished fleshing out the explanations. Still do what you can, as the explanations aren't necessary to finishing the proble.m
+
+A continuation of <%=link_to_slug 'usajobs-midterm-1' %>; refer to it for the background information about the <%=link_to_slug 'intro-usajobs-site-and-api', "USAJobs.gov API" %>.
+
+This assignment continues the practice of working with JSON, lists, and dictionaries, but emphasizes a few more fundamental concepts, including:
+
+- The defining of your own functions
+- Using if-statements to filter lists
+- Sorting and aggregating sequences
+
+
+
+* TOC
+{:toc .tock}
+
+
+## Reference
+
+- [Software Carpentry: Creating Functions in Python (swcarpentry.github.io)](http://swcarpentry.github.io/python-novice-inflammation/06-func.html) 
+- [Software Carpentry: Repeating Actions with Loops](http://swcarpentry.github.io/python-novice-inflammation/02-loop.html)
+- [Software Carpentry: Making Choices with Conditionals](http://swcarpentry.github.io/python-novice-inflammation/05-cond.html)
+- [Think Python: Functions (greenteapress.com)](http://www.greenteapress.com/thinkpython/html/thinkpython004.html) 
+- [Think Python: Conditional execution (greenteapress.com)](http://www.greenteapress.com/thinkpython/html/thinkpython006.html#toc55)
+- [Think Python: Lists](http://www.greenteapress.com/thinkpython/html/thinkpython011.html)
+- [Think Python: Dictionaries](http://www.greenteapress.com/thinkpython/html/thinkpython012.html)
+- [A short Python cheatsheet](http://www.cogsci.rpi.edu/~destem/gamedev/python.pdf)
+- [A long Python cheatsheet](http://new.math.uiuc.edu/math198/repo/math198/week3/SturtPythonReference.pdf)
+
+## Directions
+
+
+The exercises with __asterisks__ _already have the solution_. A problem with a solution usually contains hints for subsequent problems, or sometimes for the problem directly preceding it.
+
+All the problems come with expected results, but _your results may be slightly different_, because the job listings change on an hourly/daily basis.
+
+For the problems that are already done, **you must still turn them in**. The expectation is that you at least type them out, line by line, into iPython so each step and its effect are made clear to you.
 
 ### Deliverables
+
+__Due date:__ <%= homework_due_date %>
+
 
 Create a folder in your `compjour-hw` repo named: `usajobs-midterm-1`.
 
@@ -29,7 +72,7 @@ Some exercises may require you to produce a file. For example, exercise __2-7__ 
 ## Exercises
 
 
-### 1. * Download the job data for every country and save as JSON
+### 2-1. * Download the job data for every country and save as JSON
 
 Using the list of country codes found here:
 
@@ -65,7 +108,7 @@ So this exercise is mostly to make the next few exercises more convenient. Howev
 <%= codepiece '/answers/usajobs-midterm/2-1.py' %>
 
 
-### 2. Download the job data for every U.S. state and save as JSON
+### 2-2. Download the job data for every U.S. state and save as JSON
 
 Similar to Exercise #1, except use:
 
@@ -93,7 +136,7 @@ And save the file to:
 Pretty much the same process as Exercise 1, except you don't need an if-statement, as the [us-statecodes.json](http://stash.compjour.org/data/usajobs/us-statecodes.json) file contains _only_ the state names you need, i.e. no filtering is required.
 
 
-### 3. * Sum and print the job listings for foreign countries and for U.S. states
+### 2-3. * Sum and print the job listings for foreign countries and for U.S. states
 
 __Note:__ Exercises 1 and 2 must have completed successfully before you can do this exercise.
 
@@ -125,84 +168,454 @@ for z in xlist:
     ylist.append(z[1])
 ~~~
 
+
+#### Result
+
+~~~
+There are 735 international jobs.
+There are 12902 domestic jobs.
+~~~
+
+
+#### Solution
+
 <%= codepiece '/answers/usajobs-midterm/2-3.py' %>
 
 
 
-### 4. Print the U.S. job states with fewer than 100 listings
+### 2-4. Print the U.S. job states with fewer than 100 listings
 
 __Note:__ Exercise 2 must have completed successfully -- i.e. `data-hold/domestic-jobcount.json` exists -- before you can do this exercise.
 
 
-Open `data-hold/domestic-jobcount.json` and, for the states that have _fewer than_ 100 job listings, print a comma-separated list of the state's name and job listings count.
+Open `data-hold/domestic-jobcount.json` (use the setup code from Exercise 2-3) and, for the states that have _fewer than_ 100 job listings, print a comma-separated list of the state's name and job listings count. This list should be _sorted by alphabetical order of state names_.
 
 
+#### Takeaway
+
+Another loop across a list.. This exercise gets you used to doing things in steps:
+
+1. Sorting the list
+2. Filtering the list
 
 
+#### Hints
 
+
+Step 1 is the most difficult to do without an understanding of Python syntax and convention, i.e. you can't easily start from knowing what a __for-loop__ is and end up with a sorted sequence.
+
+The built-in __sorted()__ function will take in one sequence and return a _sorted copy_:
+
+~~~py
+listx = [3,2,4]
+listy = sorted(listx)
+# [2, 3, 4]
+~~~
+
+_However_, in this problem, we don't have a simple list of numbers. We have a _list-of-lists_:
+
+~~~py
+domestic_list = [['Iowa', 20], ['Alabama', 45]]
+~~~
+
+_However_, calling `sorted()` on the list will actually _just work_, because given no further guidance, `sorted()` will compare the first element of each member (and again, each member of the list-to-be-sorted is a list). And since we want an alphabetically-sorted list of elements, and the first member of each list is the name of the country, we should be good to go!
+
+
+Step 2, i.e. _filtering_ the list, is pretty straightforward: use a __if-statement__ to select and print only the states that meet the given condition (_fewer than 100 job listings_). 
+
+The simplest way to think of the process is to create a sorted copy of the states list in Step 1, and then iterate across _that sorted copy_ with the __for-loop__ and __if-statement__. A similar loop-and-filter process was done in Exercise 2-1.
 
 
 #### Result
 
 ~~~
+Connecticut,78
+Delaware,52
+Iowa,96
+Maine,52
+New Hampshire,66
 Rhode Island,41
-Iowa,85
-Connecticut,75
-Delaware,51
-New Hampshire,65
-Maine,51
 Vermont,31
 ~~~
 
-### 5. Print the foreign countries with more than 10 listings
+### 2-5. Print the foreign countries with more than 10 listings
 
 Open `data-hold/intl-jobcount.json` and, for the countries that have _more than_ 10 job listings, print a comma-separated list of the country's name and job listings count.
 
-### 6. Print the job counts for the top 10 non-US countries, and sum all others
+#### Takeaway
 
-Similar to Exercise 5, read `data-hold/intl-jobcount.json` and print out the top 10 countries _in descending order_ of number of job listings as a comma-separated list. Then, include an 11th line as `Other`, with its total being the sum of all the jobs from the non top-10 countries.
+Same principle and process as Exercise 2-4. Except the sorting process is more complicated because instead of sorting by _name of country_ -- i.e. the _first_ element of each list -- we want to sort by the _second_ element of each list:
 
-### 7. Create a Google Bar Chart and HTML table of the states
+~~~py
+[['Afghanistan',12], ['Germany', 99]]
+~~~
+
+
+#### Hints
+
+The `sorted()` method takes a keyword argument named __key__, in which you can specify the __name of a function__. This function should, given any member of the list-to-be-sorted, __return__ the value that will be used to figure out where that list member should be in the sort order.
+
+For example, let's pretend we wanted to __sort by length of country name__. I might define a function like so:
+
+~~~py
+def myfoo(thing):
+    name = thing[0]
+    return len(name)
+
+### usage:
+# myfoo(['Germany', 99])
+### returns:
+# 7
+~~~
+
+To use this in `sorted()`:
+
+~~~py
+mysortedlist = sorted(mycountrieslist, key = myfoo)
+~~~
+
+So for this exercise, you have to define `myfoo` (or whatever you want to call it) to extract the jobs count value, i.e. the _second_ element of a list like `'['Germany', 99]` &ndash; it will be even simpler than the example `myfoo` above.
+
+Hint: `sorted()` also takes in an argument named `reverse`, which you can set to `True` if you want to get things in _reverse_ order. Not necessary for this exercise, but more direct given that the answer requires a list of countries in __descending__ order of total job count.
+
+Another hint: In the previous JSON homework assignments, the solutions contain the use of `itemgetter`, which is a convenience method that accomplishes the same thing as the "define a custom function" solution above.
+
+Recommended reading:
+
+- [sorting - how does operator.itemgetter and sort() work in Python? - Stack Overflow (stackoverflow.com)](http://stackoverflow.com/questions/18595686/how-does-operator-itemgetter-and-sort-work-in-python) 
+- [HowTo/Sorting - Python Wiki (wiki.python.org)](https://wiki.python.org/moin/HowTo/Sorting) 
+
+
+#### Result
+
+~~~
+Germany,99
+Japan,57
+Italy,47
+South Korea,47
+United Kingdom,29
+Turkey,16
+Bahrain,15
+Portugal,14
+Belgium,13
+China,13
+Spain,13
+Afghanistan,12
+~~~
+
+### 2-6. Print the job counts for the top 10 non-US countries, and sum all others
+
+Similar to Exercise 2-5, read `data-hold/intl-jobcount.json` and print out the top 10 countries _in descending order_ of number of job listings as a comma-separated list. Then, include an 11th line as `Other`, with its total being the sum of all the jobs from the non top-10 countries.
+
+
+#### Takeaway
+
+You should be able to use most of the code from Exercise 2-5. However, instead of filtering the sorted list using an __if-statement__, you simply take the first 10 elements and print them as before. Then you take the remaining elements and sum them up into an `Other` category. This technique of *"throwing-all-the-non-major-stuff-into-a-bucket"* is extremely common and handy in data visualization, as you typically don't want to represent _every_ possible category in a dataset (think about how useless a pie chart is with 50 slices).
+
+
+#### Result
+
+~~~
+Germany,99
+Japan,57
+Italy,47
+South Korea,47
+United Kingdom,29
+Turkey,16
+Bahrain,15
+Portugal,14
+Belgium,13
+China,13
+Others,385
+~~~
+
+
+### 2-7. * Create a Google Bar Chart and HTML table of the states
 
 Using `data-hold/domestic-jobcount.json`, print a webpage containing:
 
-1. A Google interactive bar chart showing the job totals for *only the top 10 states* with the most jobs.
+1. A [Google interactive bar chart](https://developers.google.com/chart/interactive/docs/gallery/geochart) showing the job totals for *only the top 10 states* with the most jobs.
 2. An HTML table listing the states and their job totals in _alphabetical order_.
 
-### 8. Print out a world Google Map with the non-US countries and a table
+Use the template HTML found here:
 
-Similar to Exercise 7, except use `data-hold/domestic-jobcount.json` and instead of printing a bar chart, use a Interactive Google Geochart to produce a map of _only_ the foreign countries that have at least 1 job.
+<%= link_to_local_file '/files/code/answers/usajobs-midterm/sample-barchart-2.html' %>
+
+#### Takeaway
+
+TK
 
 
-### 9. * Get first 250 jobs in California, count full time jobs
+#### Results
+
+<%= link_to_local_file '/files/code/answers/usajobs-midterm/2-7.html' %>
+
+#### Solution
+
+<%= codepiece '/answers/usajobs-midterm/2-7.py' %>
+
+
+### 2-8. Print out a world Google Map with the non-US countries and a table
+
+Similar to Exercise 2-7, except use `data-hold/intl-jobcount.json` and instead of printing a bar chart, use a [Interactive Google Geochart](https://developers.google.com/chart/interactive/docs/gallery/geochart) to produce a map of _only_ the _foreign countries that have at least 1 job_.
+
+
+Use this Geochart template and replace the placeholder-text as necessary:
+
+<%= link_to_local_file '/files/code/answers/usajobs-midterm/sample-geochart-2.html' %>
+
+
+#### Results
+
+<%= link_to_local_file '/files/code/answers/usajobs-midterm/2-8.html' %>
+
+#### Solution
+
+
+
+### 2-9. * Get first 250 jobs in California, count full time jobs
 
 Query the USAJobs API to get 250 job listings. From those job listings, count the number of jobs that are considered __full-time__ jobs.
 
+At the end of the script, __print()__ the resulting dictionary.
 
-### 10. Get first 250 jobs in California, get jobs available to non-citizens
+#### Takeaway
 
-Same USAJobs query as in Exercise 9, but count the jobs that are open to non-U.S. citizens.
+This is one small example of what "dirty data" looks like. It'd be nice if the  `'WorkSchedule'` attribute contained a list of predictable values, i.e. "Full-time" for jobs that are _full-time_...but a quick examination of all the job entries shows that apparently, the USAJobs system lets people type in arbitrary text:
+
+~~~py
+# assuming that `data` is a response from USAJobs.gov
+jobterms = set()
+for job in data['JobData']:
+    jobterms.add(job['WorkSchedule'])
+
+print(jobterms)
+~~~
+
+The result looks like:
+
+~~~py
+{'This is a full-time position.', 'Part Time 50 hours', 'Permanent', 'Full Time', 'Part Time', 'Full-time', 'Part Time .5 hours', 'Intermittent', 'Part Time 48 hours', 'Multiple Schedules', 'Full-Time', 'Shift Work', 'Part Time 16 hours', 'Part Time 5 hours', 'Part-Time', 'Term', 'Work Schedule is Full Time.'}
+~~~
+
+So the trick to this problem is coming up with some kind of conditional that will get all the variations of work schedules that are used for full-time work, e.g. `"Full Time"`, "`Full-Time`", `'This is a full-time position.'`
+
+#### Results
+
+~~~py
+{'Other': 43, 'Full-time': 207}
+~~~
 
 
-### 11. * Find the 5 highest paying jobs in California among full-time jobs
+#### Solution
 
-Using a static file [TK], which will contain all of the California jobs, sort the list by the _maximum_ possible salary amount and print the 5 highest-paying jobs as a comma-separated list of: the job title, the minimum salary, the maximum salary.
-
-
-### 12. Find the job with the highest spread between min and max
-
-Using the [data dump of all California jobs](http://stash.compjour.org/data/usajobs/california-all.json) find the job with the biggest difference between minimum and maximum salary.
-
-### 13.* Find the average number of days between post-date and end-date
-
-Using the [data dump of all California jobs](http://stash.compjour.org/data/usajobs/california-all.json), calculate the _average number of days_ between when a job is first posted and its expiration date.
-
-### 14. Find the jobs with the shortest date spread and the longest date spread
-
-Similar to Exercise #13, except find the two jobs with the shortest and longest time periods between the start and end of their posting dates.
+<%= codepiece '/answers/usajobs-midterm/2-9.py' %>
 
 
-### 15. Produce an interactive Google Geochart showing jobs per California city
+### 2-10. Get first 250 jobs in California, count jobs by Department
 
-Difficult data munging
+Same query of the USAJobs API as in Exercise 2-9, but create a Dictionary in which the keys are the __organization name__, e.g. "Department of Veterans Affairs" and "Department Of Homeland Security".
 
+At the end of the script, __print()__ the resulting dictionary.
+
+#### Takeaway
+
+This is similar to Exercise 2-9, except that you don't have to use a conditional to filter by terms; you just need to create a dictionary that contains a key for each possible organization name, with the value being equal to how many times a job showed up under that organization name.
+
+If you want, you can try to figure out the [Counter](https://docs.python.org/3/library/collections.html#collections.Counter) class, though it's not necessary.
+
+
+#### Results
+
+~~~py
+{'Other Agencies and Independent Organizations': 13, 'Department of the Air Force': 13, 'Department Of Transportation': 4, 'General Services Administration': 2, 'Department Of Justice': 3, 'Department Of Health And Human Services': 5, 'Department Of Homeland Security': 14, 'National Aeronautics and Space Administration': 3, 'Department of the Army': 24, 'Department of Defense': 7, 'Department Of Energy': 1, 'Department of the Navy': 46, 'Department Of Labor': 3, 'Department Of Veterans Affairs': 78, 'Department Of The Interior': 16, 'Department Of Agriculture': 18}
+~~~
+
+
+
+### 2-11. * Find the 5 highest paying jobs in California among full-time jobs
+
+Using a static JSON file that contains a snapshot of all of the California jobs, sort the list by the _maximum possible salary amount_ and print the __5 highest-paying jobs__ as a comma-separated list of: the job title, the minimum salary, the maximum salary.
+
+##### About the static JSON file
+
+Sometime ago, I ran a script to download all of the job listings for California and then combined the results into one large page, which you can download here:
+
+[http://stash.compjour.org/data/usajobs/california-all.json](http://stash.compjour.org/data/usajobs/california-all.json)
+
+It's a pretty big file, so in the posted solution, I've included some code that downloads and saves the file to disk, and on subsequent runs, uses that same file so you don't have to keep repeating the download.
+
+As it is a compilation of several USAJobs data pages, I've saved it in my own JSON format. Don't expect `TotalJobs` or `JobData` to be the attributes, for instance. And to remind me of when I actually downloaded the file, I've included a `date_collected` attribute, which will be useful for Exercises 2-13 and 2-14.
+
+
+#### Takeaway
+
+We haven't yet written a script to paginate through all the results of the USAJobs API for a given state/country. So this will do for now for the remaining exercises in this assignment.
+
+#### Results
+
+~~~
+Staff Physician (Neurosurgeon),98967,375000
+Physician (Thoracic Surgeon - Scientist),98967,375000
+Physician (General Surgery),99957,355000
+Anesthesiologist (Chief, Pain Management),200000,340000
+Physician (Anesthesiologist),99957,325000
+~~~
+
+
+#### Solution
+
+
+<%= codepiece '/answers/usajobs-midterm/2-11.py' %>
+
+
+
+
+
+### 2-12. Find the California job with the widest range in min and max salary
+
+Using the [data dump of all California jobs](http://stash.compjour.org/data/usajobs/california-all.json), filter for jobs that have a _max salary under $100,000_. From this list, find the job with the _biggest difference between minimum and maximum salary_.
+
+Print the result as a single line of comma-separated values: job title, minimum salary, maximum salary. (there is only one answer)
+
+#### Results
+
+~~~
+CFPB Pathways Recent Graduate (Public Notice Flyer),29735,93380
+~~~
+
+
+
+
+
+### 2-13. * Find all California jobs that have been recently posted
+
+Using the [data dump of all California jobs](http://stash.compjour.org/data/usajobs/california-all.json), calculate the number of days since each job posting has been on the list (i.e. its `StartDate`) relative to the time it was collected, i.e. how many days the job has been on the list since the data file was collected.
+
+Sort the job listings by the number of days they've been on the list, then filter it to show just jobs that have been on the list _2 days or fewer_.
+
+Then print the listings as comma-separated values: job title, days since the job was first posted, and the URL to apply for the job
+
+The data dump contains an attribute named `date_collected` for you to use.
+
+
+#### Takeaway
+
+This is a short tour through the hell that can come from turning seemingly simple datetime strings, e.g. `"January 15, 2014"` and `2012-01-01 05:20:30`, into `datetime` objects.
+
+Why would you want to turn `"January 15, 2014"` into a "datetime" object? Because it seems handy to be able to do something like this:
+
+~~~py
+"January 20, 2015" - "11/3/2007"
+# 2635 days
+~~~
+
+Of course you can't subtract one __string__ from another. But if you convert them to a `datetime` object, then you have the ability to compare different dates and easily figure out the difference between two dates, i.e. how many days or hours or seconds have passed between them. When you consider all the complex things that have to be taken into account, such as how each month has a different number of days, and then leap years, calculating the chronological distance between time is something best left to the computer.
+
+
+Sample usage:
+
+~~~py
+from datetime import datetime
+d1 = '11/3/2007'
+d2 = 'January 20, 2015'
+date1 = datetime.strptime(d1, '%m/%d/%Y')
+date2 = datetime.strptime(d2, '%B %d, %Y')
+timediff = date2 - date1
+timediff.days
+# 2635
+timediff.total_seconds()
+# 227664000.0.0
+~~~
+
+What is that business with `datetime.strptime()` and `'%m/%d/%Y'`? As you should've guessed by now, there's no way that the Python interpreter is smart enough to figure out whether "11/3/2007" means "November 3, 2007", as per the American convention; or "March 11, 2007", as per most of the rest of the world's convention. So we pass a specially formatted string, e.g. `'%m/%d/%Y'`, into `strptime()` to tell it exactly what each number stands for.
+
+In other words, time-format strings represent one more thing about programming you have to memorize. Luckily, the conventions (e.g. `%Y` for a 4-digit-year) are mostly shared between all the modern languages.
+
+More reading:
+
+- [strftime() and strptime() Behavior](https://docs.python.org/3/library/datetime.html#strftime-strptime-behavior)
+- [python - Calculating Time Difference - Stack Overflow (stackoverflow.com)](http://stackoverflow.com/questions/3426870/calculating-time-difference) 
+
+#### Results
+
+Note: Only the first 10 results are shown below; there are 39 results total.
+
+~~~
+Procurement Technician,0,https://www.usajobs.gov/GetJob/ViewDetails/401978100?PostingChannelID=RESTAPI
+Legal Administrative Specialist (Litigation Support),0,https://www.usajobs.gov/GetJob/ViewDetails/401913100?PostingChannelID=RESTAPI
+Restorative Care Coordinator,0,https://www.usajobs.gov/GetJob/ViewDetails/401975100?PostingChannelID=RESTAPI
+Legal Assistant (OA),0,https://www.usajobs.gov/GetJob/ViewDetails/401959500?PostingChannelID=RESTAPI
+Biological Science Technician,0,https://www.usajobs.gov/GetJob/ViewDetails/398381400?PostingChannelID=RESTAPI
+Professional Engineers,0,https://www.usajobs.gov/GetJob/ViewDetails/401557200?PostingChannelID=RESTAPI
+PHYSICIAN (FAMILY PRACTICE),0,https://www.usajobs.gov/GetJob/ViewDetails/401943100?PostingChannelID=RESTAPI
+Environmental Engineer, GS-0819-13,0,https://www.usajobs.gov/GetJob/ViewDetails/401930100?PostingChannelID=RESTAPI
+Recreation Aid (Outdoor Recreation) NF-0189-01,0,https://www.usajobs.gov/GetJob/ViewDetails/402032500?PostingChannelID=RESTAPI
+Realty Specialist,0,https://www.usajobs.gov/GetJob/ViewDetails/401972000?PostingChannelID=RESTAPI
+~~~
+
+#### Solution
+
+<%= codepiece '/answers/usajobs-midterm/2-13.py' %>
+
+
+
+
+
+### 2-14. Find all California jobs that pay $90K+ and have fewer than 5 days before they expire
+
+Similar to Exercise 2-13. Again, use the `date_collected` attribute found in the data dump. You'll also want to re-use the string-cleaning function (for converting `"$44,000"` to `44000`) from Exercise 2-11.
+
+Print the listings as comma-separated values: job title, days left on the list, and the URL to apply for the job
+
+#### Results
+
+Only the first 10 out of 24 results are posted here:
+
+~~~
+Clinical Pharmacist (Oncologist),0,https://www.usajobs.gov/GetJob/ViewDetails/401242000?PostingChannelID=RESTAPI
+RNP-Registered Nurse Practitioner (Home Based Primary Care),0,https://www.usajobs.gov/GetJob/ViewDetails/400951900?PostingChannelID=RESTAPI
+RNP-Registered Nurse Practitioner (Home Based Primary Care),0,https://www.usajobs.gov/GetJob/ViewDetails/400952000?PostingChannelID=RESTAPI
+Clinical Pharmacist (PACT Pain ),1,https://www.usajobs.gov/GetJob/ViewDetails/400783200?PostingChannelID=RESTAPI
+Clinical Pharmacist (PACT Pain ),1,https://www.usajobs.gov/GetJob/ViewDetails/401246000?PostingChannelID=RESTAPI
+Physician (Associate Chief of Staff for Research),2,https://www.usajobs.gov/GetJob/ViewDetails/392131900?PostingChannelID=RESTAPI
+Physician (Occupational Medicine),2,https://www.usajobs.gov/GetJob/ViewDetails/396122300?PostingChannelID=RESTAPI
+INTERDISCIPLINARY (SCIENTIST/ENGINEER),2,https://www.usajobs.gov/GetJob/ViewDetails/401080800?PostingChannelID=RESTAPI
+Interdisciplinary Engineer,2,https://www.usajobs.gov/GetJob/ViewDetails/401176400?PostingChannelID=RESTAPI
+Physician (Obstetrics/Gynecology),2,https://www.usajobs.gov/GetJob/ViewDetails/395916500?PostingChannelID=RESTAPI
+~~~
+
+
+
+
+### 2-15. Produce an interactive Google Geochart showing jobs per California city
+
+
+
+#### Hints
+
+I recommend defining a function named `get_ca_cities()` that operates like so:
+
+~~~py
+# `job` is one of the job listings in the job_data dump
+print(job['Locations'])
+# Print result is a string:
+# 'Los Angeles, California;Denver, Colorado;District of Columbia, District of Columbia;Atlanta, Georgia;Dallas, Texas;Seattle, Washington'
+xlist = get_ca_cities(job)
+print(xlist)
+# ['Los Angeles']
+type(xlist)
+# list
+~~~
+
+Given a Dictionary object, `get_ca_cities` should read its `"Locations"` value, and parsing it into a list that contains _only_ the first name of California cities. If the `"Locations"` value doesn't contain any reference to "California", then return an empty list.
+
+Take a look at the documentation [for the Marker Geocharts](https://developers.google.com/chart/interactive/docs/gallery/geochart#Markers). Notice in the given example that the `region` of `IT` (Italy) is given, and in the `data` list, only the names of the cities are used, e.g. `"Rome"`, `"Florence"`.
+
+
+#### Results
+
+<%= link_to_local_file '/files/code/answers/usajobs-midterm/2-15.html' %>
+
+
+![img](/files/images/homework/usajobs-midterm-2-15-result.png)

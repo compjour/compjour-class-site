@@ -1,0 +1,44 @@
+<html>
+  <head>
+    <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.4/css/bootstrap.min.css">
+    <script type="text/javascript" src="https://www.google.com/jsapi"></script>
+  </head>
+
+  <body>
+    <script type="text/javascript">
+      google.load("visualization", "1", {packages:["geochart"]});
+      google.setOnLoadCallback(drawRegionsMap);
+      function drawRegionsMap() {
+        var data = #CHART_DATA#;
+        var datatable = google.visualization.arrayToDataTable(data);
+        var options = {'width': 800, 'height': 500, 'resolution': 'countries'};
+        var chart = new google.visualization.GeoChart(document.getElementById('mychart'));
+        chart.draw(datatable, options);
+      }
+    </script>
+
+    <div class="container">
+      <h1 style="text-align:center">Hello chart</h1>
+      <div id="mychart"></div>
+
+      <h2 style="text-align:center">Hello table</h2>
+      <table class="table">
+        <thead>
+          <tr>
+            <th>Name</th>
+            <th>Jobs</th>
+          </tr>
+        </thead>
+        <tbody>
+          #TABLE_ROWS#
+        </tbody>
+      </table>
+    </div> <!--end container -->
+
+
+
+
+  <body>
+    <div id="mychart"></div>
+  </body>
+</html>
