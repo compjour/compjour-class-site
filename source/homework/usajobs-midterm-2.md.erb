@@ -46,7 +46,7 @@ For the problems that are already done, **you must still turn them in**. The exp
 __Due date:__ <%= homework_due_date %>
 
 
-Create a folder in your `compjour-hw` repo named: `usajobs-midterm-1`.
+Create a folder in your `compjour-hw` repo named: `usajobs-midterm-2`.
 
 For each exercise, create a separate file, e.g.
 
@@ -341,9 +341,6 @@ Use the template HTML found here:
 
 <%= link_to_local_file '/files/code/answers/usajobs-midterm/sample-barchart-2.html' %>
 
-#### Takeaway
-
-TK
 
 
 #### Results
@@ -539,7 +536,7 @@ More reading:
 
 #### Results
 
-Note: Only the first 10 results are shown below; there are 39 results total.
+Note: Only the first 10 results are shown below; there are 39 results total (you may get a few more because of differences in timezone calculation).
 
 ~~~
 Procurement Technician,0,https://www.usajobs.gov/GetJob/ViewDetails/401978100?PostingChannelID=RESTAPI
@@ -570,7 +567,7 @@ Print the listings as comma-separated values: job title, days left on the list, 
 
 #### Results
 
-Only the first 10 out of 24 results are posted here:
+Only the first 10 out of 24 (you may get a few more because of differences in timezone calculation) results are posted here:
 
 ~~~
 Clinical Pharmacist (Oncologist),0,https://www.usajobs.gov/GetJob/ViewDetails/401242000?PostingChannelID=RESTAPI
@@ -590,6 +587,38 @@ Physician (Obstetrics/Gynecology),2,https://www.usajobs.gov/GetJob/ViewDetails/3
 
 ### 2-15. Produce an interactive Google Geochart showing jobs per California city
 
+Create a interactive Google Geochart with markers indicating how many jobs there are per California city.
+
+Each job listing has a `Locations` attribute containing a string that looks like this:
+
+~~~
+'Los Angeles, California;San Francisco, California;Chicago, Illinois;New City, New York;San Antonio, Texas'
+~~~
+
+Some jobs have more than one city attributed to them, and some have non-California cities. 
+
+Pretend the jobs listing consisted of just two jobs, and that they had `Locations` values that looked like this:
+
+~~~
+'Los Angeles, California;San Francisco, California;Chicago, Illinois'
+
+'San Francisco, California;Albany, New York'
+~~~
+
+You need to produce a list that looks like:
+
+~~~
+[
+  ['Los Angeles', 1]
+  ['San Francisco', 2]
+]
+~~~
+
+Which you then feed into the HTML for a Interactive Google Geochart, as in previous exercises ([here's a live working example](https://developers.google.com/chart/interactive/docs/gallery/geochart#Markers)).
+
+Use this HTML template for the map:
+
+<%= link_to_local_file '/files/code/answers/usajobs-midterm/sample-geochart-cities.html' %>
 
 
 #### Hints
@@ -610,7 +639,26 @@ type(xlist)
 
 Given a Dictionary object, `get_ca_cities` should read its `"Locations"` value, and parsing it into a list that contains _only_ the first name of California cities. If the `"Locations"` value doesn't contain any reference to "California", then return an empty list.
 
-Take a look at the documentation [for the Marker Geocharts](https://developers.google.com/chart/interactive/docs/gallery/geochart#Markers). Notice in the given example that the `region` of `IT` (Italy) is given, and in the `data` list, only the names of the cities are used, e.g. `"Rome"`, `"Florence"`.
+##### Counting up the cities
+
+Once you `get_ca_cities()` function works, and you run it for every job listing, you'll end up with a list of list of strings, e.g.
+
+~~~py
+[
+  ['Los Angeles'],
+  ['Los Angeles', 'San Francisco'],
+  ['Palo Alto'],   
+]
+~~~
+
+Counting them up can be done in a similar fashion as done in Exercise 2-10.
+
+
+##### The Marker Geocharts
+
+I've already written up a [sample template for you to use]('/files/code/answers/usajobs-midterm/sample-geochart-cities.html'), but if you're curious, take a look at the documentation [for the Marker Geocharts](https://developers.google.com/chart/interactive/docs/gallery/geochart#Markers). Notice in the given example that the `region` of `IT` (Italy) is given, and in the `data` list, only the names of the cities are used, e.g. `"Rome"`, `"Florence"`.
+
+
 
 
 #### Results

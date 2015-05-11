@@ -10,6 +10,30 @@ lat=40.16624+0.000002746597×Y
 
 
 The end result is one large file.
+-----------------------
+
+Concerning the date formats:
+
+As it turns out, all dates are either:
+    - 12152014 (MMDDYYYY)
+    - 1142014  (MDDYYYY)
+
+i.e. the *day* is always expressed as DD
+
+Test:
+     grep -P '^ *1[1-9]20\d\d$' nypddates.csv  (returns nothing)
+----
+Concerning the time formats:
+
+As it turns out, all timestamps are either:
+    - 12:15 (HH:MM)
+    - 1215  (HHMM)
+    - 315   (HMM)
+    - 3:15  (H:MM)
+    - 15    (MM), e.g. 00:15
+    - 5     (M), e.g.  00:05
+
+i.e. the *day* is always expressed as DD
 """
 
 import re
@@ -46,4 +70,6 @@ def fix_time_str(s):
             break
     return s
 
-df = pd.read_csv(fname)
+
+NYPD_CONCAT_CSV = 'data-hold/concat.csv'
+df = pd.read_csv(NYPD_CONCAT_CSV)
