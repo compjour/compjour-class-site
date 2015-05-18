@@ -4,7 +4,6 @@ due_date: 2015-05-11
 ---
 
 
-__Note:__ All of the exercises are done, but there are a few "TKs" where I haven't finished fleshing out the explanations. Still do what you can, as the explanations aren't necessary to finishing the proble.m
 
 A continuation of <%=link_to_slug 'usajobs-midterm-1' %>; refer to it for the background information about the <%=link_to_slug 'intro-usajobs-site-and-api', "USAJobs.gov API" %>.
 
@@ -335,7 +334,7 @@ Others,385
 Using `data-hold/domestic-jobcount.json`, print a webpage containing:
 
 1. A [Google interactive bar chart](https://developers.google.com/chart/interactive/docs/gallery/geochart) showing the job totals for *only the top 10 states* with the most jobs.
-2. An HTML table listing the states and their job totals in _alphabetical order_.
+2. An HTML table listing the states and their job totals in _descending numerical order of the job count_.
 
 Use the template HTML found here:
 
@@ -536,7 +535,7 @@ More reading:
 
 #### Results
 
-Note: Only the first 10 results are shown below; there are 39 results total (you may get a few more because of differences in timezone calculation).
+Note: Only the first 10 results are shown below; there are 39 results total (you may get a few more because of differences in timezone calculation. Some things have a -1 day value...I filtered those out...for no reason at all...you can leave them in or include a condition to just show listings with 0 days or less)
 
 ~~~
 Procurement Technician,0,https://www.usajobs.gov/GetJob/ViewDetails/401978100?PostingChannelID=RESTAPI
@@ -567,7 +566,7 @@ Print the listings as comma-separated values: job title, days left on the list, 
 
 #### Results
 
-Only the first 10 out of 24 (you may get a few more because of differences in timezone calculation) results are posted here:
+Only the first 10 out of 24 (you may get a few more because of differences in timezone calculation. Some results may have a -1 day value...I filtered those out...for no reason at all...you can leave them in or include a condition to just show listings with 0 days or less) results are posted here:
 
 ~~~
 Clinical Pharmacist (Oncologist),0,https://www.usajobs.gov/GetJob/ViewDetails/401242000?PostingChannelID=RESTAPI
@@ -663,7 +662,15 @@ I've already written up a [sample template for you to use]('/files/code/answers/
 
 #### Results
 
-<%= link_to_local_file '/files/code/answers/usajobs-midterm/2-15.html' %>
+<%= link_to_local_file '/files/code/answers/usajobs-midterm/2-14.html' %>
 
 
 ![img](/files/images/homework/usajobs-midterm-2-15-result.png)
+
+
+## All Solutions
+
+<% (1..14).each do |num| %>
+### 2-<%=num%>.
+  <%=codepiece "/answers/usajobs-midterm/2-#{num}.py" %>
+<% end %>

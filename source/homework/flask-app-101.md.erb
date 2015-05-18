@@ -1,0 +1,186 @@
+---
+title: Making a Flask Web App 101
+due_date: 2015-05-14
+---
+
+## Deliverables
+
+__Due date:__ <%= homework_due_date %>
+
+Create a folder in your `compjour-hw` repo named: `flask-app-101`.
+
+Follow a directory structure similar (but modify as needed) to the [demo app found in the First News App tutorial](http://first-news-app.readthedocs.org/en/latest/):
+
+    |-- compjour-hw/
+        |-- flask-app-101/
+           |-- app.py
+           |-- static/
+               |--- whatever-datafiles.etc
+           |-- templates/
+               |-- index.html
+               |-- detail.html
+           (etc)
+
+
+At a minimum, your app must consist of:
+
+- __index.html__ - contains a listing (such as a HTML table) of data entries, and each data entry is clickable.
+- __detail.html__ - this is the template page for each specific data entry
+- __app.py__ - This is required for the app to even work, including its routes (e.g. `detail` and `index`. You can cram all the data-loading logic in here too. Or you can put those in separate files and `import` them.
+
+
+On your own computer, when you go to the command-line and change to your `compjour-hw/homework/flask-app-101` directory, the following command should properly start up a webserver and launch the app on your own computer:
+
+~~~sh
+python app.py
+~~~
+
+You can include similar front-end code as found in the [First News App tutorial to render a map](http://first-news-app.readthedocs.org/en/latest/).
+
+### The data
+
+For your app, Iw ant something similar to the [First News App tutorial](http://first-news-app.readthedocs.org/en/latest/) -- you can even copy its front-end code used to make a map. However, you must __use a different source of data__ (preferably something mappable) &ndash; i.e. not the Los Angeles riots. 
+
+Suggestions include:
+
+- [311 Data](http://www.open311.org/). Here's [San Francisco](https://data.sfgov.org/City-Infrastructure/Case-Data-from-San-Francisco-311-SF311-/vw6y-z8j6).
+- Crime data; [San Francisco, for example](https://data.sfgov.org/Public-Safety/Map-Crime-Incidents-from-1-Jan-2003/gxxq-x39z). Use a small subset, like the most recent 2 months.
+- Earthquake data: http://earthquake.usgs.gov/earthquakes/feed/v1.0/geojson.php
+
+
+
+## Some background
+
+A "__web application__" is essentially a program that serves up webpages. The path described for this homework assignment is one of many, _many_ ways to do it. The libraries that we will be using (which should be included in your Anaconda installation of Python):
+
+- [Jinja](http://jinja.pocoo.org/) - a HTML templating language: you define some static HTML code and put in some placeholders, and Jinja replaces those placeholders with data.
+- [Flask](http://flask.pocoo.org/) - a "microframework" for web applications. 
+
+## The First News App tutorial
+
+As a reference, we'll be using the excellent [__First News App__](http://first-news-app.readthedocs.org/en/latest/) guide, as created by Ben Welsh as a training session for [Investigative Reporters and Editors](http://www.ire.org/) and the [National Institute for Computer-Assisted Reporting](http://data.nicar.org/).
+
+You can see the live demo app here: [ireapps.github.io/first-news-app/build/index.html](http://ireapps.github.io/first-news-app/build/index.html)
+
+#### Start from scratch
+
+
+I recommend just following the [First News App tutorial verbatim](http://first-news-app.readthedocs.org/en/latest/) and re-writing it from scratch. You can [download the la-riots-deaths.csv here](https://raw.github.com/ireapps/first-news-app/master/static/la-riots-deaths.csv).
+
+
+__Don't put this in your homework folder__...put it somewhere else (i.e. `~/Desktop/myapp` or `/tmp/myapp`.
+
+_Then_, when you're ready to complete the homework, re-create the app, modify as you see fit.
+
+### Key takeaways
+
+#### A web app is just code 
+
+The logic and code needed to open a file, or to turn a JSON or CSV or anything to a Python data structure, is the same for a web app as it is for anything else you'd write in Python.
+
+#### The view consists of static HTML and a templating language
+
+Think of past homework assignments in which you've taken a bunch of HTML and replaced a single string in it (i.e. <%=link_to_slug 'usajobs-midterm-1' %>, with the Google Charts). This web app is no different:
+
+~~~html
+<td>{{ obj.address }}</td>
+~~~
+
+The `<td>` and `</td>` is the HTML code. And the `{{ obj.address }}` is just the format specified by the [Jinja templating language](http://jinja.pocoo.org/): think of it as a more formal version of this:
+
+~~~python
+"<td>%s</td>" % obj.address
+~~~
+
+#### It requires a webserver
+
+In the tutorial, you'll get to the part when you need to do this at __the Terminal command-line:__ (it will _not_ work to run it from Sublime Text)
+
+~~~
+python app.py
+~~~
+
+Then you're told to visit the address [localhost:5000](localhost:5000) &ndash; what makes a [__Flask app__](http://flask.pocoo.org/) different than just some plain Python code is that it is designed to run on a __web server__...which is, well, just a computer except one configured to accept HTTP requests. For our limited practical purposes, this means __we have to run a webserver to test the app__...and that is part of what the `app.py` code does when running it locally: it opens up a port on your machine (by default, `5000`), and you can visit this makeshift webserver in a browser by going to http://localhost:5000
+
+You can read more about it in the [Flask Quick Start docs](http://flask.pocoo.org/docs/0.10/quickstart/).
+
+#### View and app code are separate
+
+The files in `/templates` are considered the __views__ of the app. And `app.py` contains the app's main logic, sometimes referred to the __controller__ of the app. Notice how they're kept completely separate from each other. This is a key feature in most non-trivial web applications.
+
+
+#### A few caveats First News App tutorial
+
+This tutorial was written for an audience with less familiarity with Python/programming than you, and makes a few assumptions about your system that odn't apply:
+
+- Ignore everything about `virtualenv`. We don't need it.
+- Ignore the `pip install flask` part, it should already be installed (via Anaconda).
+- The `touch app.py` at the command-line simply creates a new file. You can run it if you like, or just create files through Sublime Text.
+- In fact, you should make a new project folder (call it `myapp` or something, and stick it in `~/Desktop` or `~/Downloads`). Then open that folder with Sublime Text and work from there.
+- When making the test/demo app, ignore the parts about __git__. You don't need to commit this app. And for your _actual_ app, just put it in `compjour-hw` and commit it the normal way (i.e. via your Github desktop app).
+- Python 2.x/3.x compatibility problem: Where the tutorial says to use this:
+   
+           csv_file = open(csv_path, 'rb')
+
+  Use this instead (i.e. omit the `b`, which stands for "bytes"):
+
+          csv_file = open(csv_path, 'r')
+
+- You can ignore the [Act 5: Hello Internet](http://first-news-app.readthedocs.org/en/latest/#act-5-hello-internet) steps, which describe how to "freeze" the app so that it can live as static HTML. We'll get to that later.
+
+
+### Test the tutorial, make it your own
+
+Still confused about how variables and functions work? Make an effort to change every variable and function name that you can. In fact, you can pretty much change everything, though the snippet below shows what you should keep the same to be safe:
+
+~~~py
+from flask import Flask
+from flask import render_template
+app = Flask(__name__)
+
+@app.route("/")
+
+def index():
+  # etc etc
+  return render_template(etc etc etc fill your variables here)
+
+@app.route("/<some_varname>/")
+def detail(some_varname):
+    template = 'detail.html'
+
+
+if __name__ == '__main__':
+    app.run(debug = True, use_reloader = True)
+~~~
+
+
+In other words, an alternative writeup of the demo app code would look like this:
+
+~~~py
+from flask import Flask
+from flask import render_template
+app = Flask(__name__)
+import csv
+
+def get_csv():
+    p = './static/la-riots-deaths.csv'
+    f = open(p, 'r')
+    return list(csv.DictReader(f))
+
+@app.route("/")
+def index():
+    template = 'index.html'
+    deathlist = get_csv()
+    return render_template(template, deaths = deathlist)
+
+@app.route("/<death_id>/")
+def detail(row_id):
+    template = 'detail.html'
+    deathlist = get_csv()
+    for death in deathlist:
+        if death['id'] == death_id:
+            return render_template(template, object = death)
+
+if __name__ == '__main__':
+    app.run(debug = True, use_reloader = True)
+~~~

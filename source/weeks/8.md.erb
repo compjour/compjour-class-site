@@ -1,5 +1,108 @@
 ---
 title: Week 8
 week: 8
-description: '' 
+description: 'More news applications'
+show_link: true
+topics:
+  - title: "Planning out a project" 
+  - title: "The Derek Willis edition"
 ---
+
+
+* TOC
+{:toc .tock}
+
+
+### Optional class on Wednesday  
+I'll be at the classroom so feel free to come and talk about ongoing work and technical issues. I'll try to have your grades by then. But generally, if you've turned things in on time and got close/pretty close to the given answers, you're probably at an A.
+
+
+## The final project
+
+
+
+Information about the project, and the first part: [Final project memo due on May 22](/homework/final-project-memo).
+
+
+
+
+## Readings
+
+### About corruption
+
+[49th Carlos Kelly McClatchy Symposium on ](http://comm.stanford.edu/49th-carlos-kelly-mcclatchy-symposium/) 
+
+<iframe width="700" height="450" src="https://www.youtube.com/embed/pW3sosviZsI?rel=0" frameborder="0" allowfullscreen></iframe>
+
+----------
+
+[Scooped by code » Nieman Journalism Lab (niemanlab.org)](http://www.niemanlab.org/2013/12/scooped-by-code/) via Scott Klein:
+
+> You probably haven’t gotten beaten by a journo-nerd yet. Your luck may hold out for a while. But somewhere out there is a recent j-school grad who’s just started covering your beat. She’s raw, and she has no rolodex. When she talks to sources, her voice shakes and she doesn’t ask all the questions she should. But she studied Python and statistics, and she can use OpenRefine and PostgreSQL, so she’s faster than you. And she’s about to publish something you thought nobody but you knew about.
+
+--------
+
+### The Itemizer
+
+[The Itemizer (thescoop.org)](http://thescoop.org/archives/2013/04/24/the-itemizer/) by Derek Willis:
+
+Why he made it: 
+
+> There’s one thing that has always bugged me about how we reference campaign finance data online: the best that most of us can do when we link to a campaign filing is to link to a particular page, whether that’s a list of contributors or a summary page. Yet often we’re referencing a single transaction or line-item.
+
+#### An example:
+
+<blockquote class="twitter-tweet" lang="en"><p lang="en" dir="ltr">NextGen Climate Action Cmte spent more than $250k on digital ads in April: <a href="http://t.co/K21nOcG50p">http://t.co/K21nOcG50p</a> <a href="http://t.co/7a3zDcipu0">pic.twitter.com/7a3zDcipu0</a></p>&mdash; Derek Willis (@derekwillis) <a href="https://twitter.com/derekwillis/status/599331010338279424">May 15, 2015</a></blockquote>
+<script async src="//platform.twitter.com/widgets.js" charset="utf-8"></script>
+
+The [direct link in his Itemizer app](http://itemizer.herokuapp.com/filing/1007652/schedule/sb)...here's an [example of a direct link that highlights one filing](http://itemizer.herokuapp.com/filing/1007652/schedule/sb#VNTPK9REZW6):
+
+![img](/files/images/articles/itemizer.png)
+
+What [it looks like on the FEC's site](http://query.nictusa.com/cgi-bin/forms/C00547349/1007652/):
+
+![img](/files/images/articles/fec-filings-sample.png)
+
+
+Not much different but the ability to directly link to specific items in the list make it easier to point people to the most interesting parts of what is generally hard-to-read/parse source material.
+
+
+
+
+### NYT's filter on Congress data
+
+via Derek Willis: [The Data-Driven Congressional Reporter (thescoop.org)](http://thescoop.org/archives/2012/12/26/the-data-driven-congressional-reporter/) 
+
+> Maybe you don’t have time to read the Record every day; wouldn’t it be great if you could set some simple rules for things of interest and have a computer do it for you? Wouldn’t it make sense that a computer could find the exception to the rule among a series of House votes that occurred while you were out interviewing people?
+
+Here are some screenshots from the NYT's internal Congress app that give an idea of the "views" into Congressional voting data that is interesting to New York Times political reporters:
+
+- Narrow margins
+- Late night votes (kind of like [Friday news dumps](http://fridaynewsdump.com/what-is-a-friday-news-dump))
+- Lone 'no' voters
+- Vote missers
+
+![img](/files/images/articles/nyt_admin_house_info.png)
+
+![img](/files/images/articles/nyt_admin_house_votes.png)
+
+![img](/files/images/articles/nyt_admin_senate_lone_no.png)
+
+A lot of these kinds of filters/analyses can be done by using the data provided by the [NYT's Congress API](http://developer.nytimes.com/docs/read/congress_api/congress_api_examples).
+
+### Bedfellows
+
+Derek Willis mentions a Python library he and [Nikolas Iubel](https://twitter.com/nikolasiubel), a Stanford alumni and former NYT intern, [called "Bedfellows", to analyze the relationship between PAC contributors and political recipients of their money](https://source.opennews.org/en-US/articles/introducing-bedfellows/).
+
+> Bedfellows is a tool developed to facilitate exploration of campaign finance data. Its model condenses all information associated with donations made by a given contributor to a given recipient into a relationship score from 0 to 1. The relationship scores provide a snapshot of the affinity between contributor and recipient, as evidenced by campaign donations. Relationship scores are in turn the basis for computing similarity scores, which allow for comparison between donation patterns of different contributors, recipients and pairs. Similarity scores point to similarities in donation patterns observed in campaign finance data.
+
+
+An example of [where Bedfellows was used for a news article](http://www.nytimes.com/2015/01/06/upshot/gohmert-doesnt-talk-like-a-speaker-or-donate-money-like-one.html):
+
+> The leadership PACs that most resemble his, based on the pattern of contributions to political candidates, are run by Jim Jordan, an Ohio Republican and frequent leadership critic, and Thomas Massie, a Kentucky Republican with libertarian leanings, according to an analysis using the Bedfellows tool developed by The Upshot.
+
+
+
+Speaking of Stanford Poli Sci and data: [Database on Ideology, Money in Politics, and Elections (DIME)](http://data.stanford.edu/dime)
+
+And politics and lobbying: [Take the Money and Run for Office - This American Life (thisamericanlife.org)](http://www.thisamericanlife.org/radio-archives/episode/461/take-the-money-and-run-for-office) 

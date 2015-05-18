@@ -46,6 +46,19 @@ That number is displayed at the top of [http://www.data.gov/](http://www.data.go
 Sample Python 2.x/3.x script, using the [requests](http://docs.python-requests.org/en/latest/) and [BeautifulSoup](http://www.crummy.com/software/BeautifulSoup/bs4/doc/) libraries:
 
 
+__Note:__ I previously showed an example with the BeautifulSoup library. Turns out the BeautifulSoup library seems to be malfunctioning for Anaconda. An alternative is the [__lxml__ library](http://lxml.de/parsing.html). Here's an example:
+
+~~~py
+from lxml import html
+import requests
+response = requests.get('http://www.data.gov/')
+doc = html.fromstring(response.text)
+link = doc.cssselect('small a')[0]
+print(link.text)
+~~~
+
+This is that same scrape with BeautifulSoup:
+
 ~~~py
 import bs4
 import requests
@@ -54,6 +67,72 @@ soup = bs4.BeautifulSoup(response.text)
 link = soup.select("small a")[0]
 print(link.text)
 ~~~
+
+#### Freebie #30
+
+Here's another example with lxml (Problem #30):
+
+> 30. The total number of inmates executed by Florida since 1976
+
+~~~py
+import requests
+from lxml import html
+response = requests.get('http://www.dc.state.fl.us/oth/deathrow/execlist.html')
+doc = html.fromstring(response.text) 
+last_row = doc.cssselect('tr')[-1]
+td = last_row.cssselect('td')[0]
+print(td.text)
+~~~
+
+
+
+The [lxml documentation on HTML parsing can be found here](http://lxml.de/parsing.html). You can find more information about HTML scraping via [The Hitchhiker's Guide to Python chapter on HTML scraping (docs.python-guide.org)](http://docs.python-guide.org/en/latest/scenarios/scrape/). Remember that __lxml__ _only applies_ to HTML; use __json__ for JSON files,  __csv__ for CSV files, etc.
+
+The [Web Inspector](http://www.compjour.org/tutorials/intro-to-the-web-inspector/) is immensely useful for finding out how to target HTML elements. 
+
+#### Freebie #101
+
+Speaking of [CSV](https://docs.python.org/3/library/csv.html), here's an example of how to use that library...you'll find that the [`csv.DictReader class`, which turns a CSV textfile into a dictionary](https://docs.python.org/3/library/csv.html#csv.DictReader), will be most helpful:
+
+> 101. The number of women currently serving in the U.S. Congress, according to Sunlight Foundation data
+
+~~~py
+import csv
+import requests
+CSVURL = 'http://unitedstates.sunlightfoundation.com/legislators/legislators.csv'
+response = requests.get(CSVURL)
+f = open("legislators.csv", "w")
+f.write(response.text)
+f.close()
+# re-open leglislators.csv
+data = csv.DictReader(open("legislators.csv"))
+rows = list(data)
+len([i for i in rows if i['gender'] == 'F' and i['in_office'] == '1'])
+~~~
+
+Note: The __csv__ library won't just let us turn a string into a data structure. So in the example above, I save the file to disk, and re-read/open it with `csv.reader(open(fname))`. There's a more graceful [way to do this with `io.StringIO`](https://docs.python.org/3/library/io.html). But the effect is the same:
+
+~~~py
+import csv
+import requests
+from io import StringIO
+CSVURL = 'http://unitedstates.sunlightfoundation.com/legislators/legislators.csv'
+response = requests.get(CSVURL)
+data = csv.DictReader(StringIO(response.text))
+rows = list(data)
+len([i for i in rows if i['gender'] == 'F' and i['in_office'] == '1'])
+~~~
+
+Of course, you can always use [__pandas__, which has a built-in CSV reading function](http://pandas.pydata.org/pandas-docs/stable/generated/pandas.read_csv.html), but loading __pandas__ is kind of overkill for this:
+
+~~~py
+import pandas as pd
+CSVURL = 'http://unitedstates.sunlightfoundation.com/legislators/legislators.csv'
+df = pd.read_csv(CSVURL)
+len(df[(df['gender'] == 'F') & (df['in_office'] == 1)])
+~~~
+
+
 
 
 

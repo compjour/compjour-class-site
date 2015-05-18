@@ -2,24 +2,24 @@ sections:
   - title: Quantitative Chores
     description: Staying on task
     deliverables:
-      - title: "Receive 10,000 unique visits across the webpages you publish for this class."
-        due: 2015-06-05
-        points: 10
-        description: |
-          Pageviews and visits aren't everything, but they aren't nothing either. This requirement means that you'll have to figure out how to get a Google Analytics embed code, and how to publish web pages in which you can embed this code.
-          You can receive partial credit (1 point per 1,000 visits). You won't get extra credit for exceeding the requirement.
+      # - title: "Receive 10,000 unique visits across the webpages you publish for this class."
+      #   due: 2015-06-05
+      #   points: 10
+      #   description: |
+      #     Pageviews and visits aren't everything, but they aren't nothing either. This requirement means that you'll have to figure out how to get a Google Analytics embed code, and how to publish web pages in which you can embed this code.
+      #     You can receive partial credit (1 point per 1,000 visits). You won't get extra credit for exceeding the requirement.
 
-      - title: Make at least total 150 commits to Github
+      - title: Make at least total 100 commits to Github
         due: 2015-06-05
         points: 10
         description: |
           Make at least 150 commits to Github over the course of the quarter. There is no requirement as to what the commits actually contain. These points are all or nothing.
 
-      - title: Make commits to Github for 10 consecutive days
-        due: 2015-06-05
-        points: 10
-        description: |
-          During this quarter, you must have made commits to Github for at least 10 days in a row. There is no requirement as to what the commits actually contain. These points are all or nothing.
+      # - title: Make commits to Github for 10 consecutive days
+      #   due: 2015-06-05
+      #   points: 10
+      #   description: |
+      #     During this quarter, you must have made commits to Github for at least 10 days in a row. There is no requirement as to what the commits actually contain. These points are all or nothing.
 
 
   - title: Technical Checkboxes
@@ -68,11 +68,33 @@ sections:
         content_slug: usajobs-midterm-1
 
       - title: USAJobs Midterm Part 2
-        due: 2015-05-011
+        due: 2015-05-11
         points: 10
         description: |
           Part 2 of fundamental Python and programming concepts with the USAJobs API
         content_slug: usajobs-midterm-2
+
+      - title: Making a Flask Web App 101
+        due: 2015-05-14
+        points: 5
+        description: |
+          Make a simple web app using the Flask framework and deploy it locally
+        content_slug: flask-app-101
+
+      - title: Project memo
+        points: 5
+        due: 2015-05-22
+        description: |
+          Create a Flask app that, based on parameters from user-input, [will query a database (preferably SQLite3) and return results](http://flask.pocoo.org/docs/0.10/patterns/sqlite3/#sqlite3).
+        more_link: final-project-memo
+
+      # - title: Memo
+      #   points: 5
+      #   due: 2015-05-22
+      #   description: |
+      #     Create a Flask app that, based on parameters from user-input, [will query a database (preferably SQLite3) and return results](http://flask.pocoo.org/docs/0.10/patterns/sqlite3/#sqlite3).
+      #   more_link: TBA
+
 
 
       # - title: Debug and publish a webpage
@@ -82,52 +104,26 @@ sections:
       #     You will be given a buggy webpage to fix up, including changing stylesheet errors, fixing broken HTML elements and links, and cleaning up JavaScript errors. This exercise is meant to demonstrate your knowledge of the web inspector and basic web development concepts. The page-to-fix and instructions will be posted before April 8.
       #   more_link: TBA
 
-      - title: Deploy a simple Flask app on a remote server
-        points: 10
-        due: 2015-04-24
-        description: |
-          Using the [Python Flask web framework](http://flask.pocoo.org/), create and deploy an app on a remote server with at least 3 dynamic endpoints. The remote server can be a service such as Heroku, Amazon AWS, or DigitalOcean. The actual look and functionality of the app and its endpoints can be the bare minimum (e.g. "Hello :username").
-        more_link: TBA
+      # - title: Deploy a simple Flask app on a remote server
+      #   points: 10
+      #   due: 2015-04-24
+      #   description: |
+      #     Using the [Python Flask web framework](http://flask.pocoo.org/), create and deploy an app on a remote server with at least 3 dynamic endpoints. The remote server can be a service such as Heroku, Amazon AWS, or DigitalOcean. The actual look and functionality of the app and its endpoints can be the bare minimum (e.g. "Hello :username").
+      #   more_link: TBA
 
-      - title: Setup and run a daily cron task
-        points: 5
-        due: 2015-04-28
-        description: |
-        more_link: TBA
-
-
-      - title: Create your own version of an IFTTT task
-        points: 10
-        due: 2015-05-02
+      # - title: Setup and run a daily cron task
+      #   points: 5
+      #   due: 2015-04-28
+      #   description: |
+      #   more_link: TBA
 
 
-      - title: Deploy a database-backed Flask app on a remote server
-        points: 10
-        due: 2015-05-04
-        description: |
-          Create a Flask app that, based on parameters from user-input, [will query a database (preferably SQLite3) and return results](http://flask.pocoo.org/docs/0.10/patterns/sqlite3/#sqlite3).
-        more_link: TBA
+      # - title: Create your own version of an IFTTT task
+      #   points: 10
+      #   due: 2015-05-02
 
-      - title: Execute a SQL injection attack on your own web app
-        points: 5
-        due: 2015-05-06
-        description: |
-          This assignment requires you to create a web application that connects to a database and then to be designed in such a way that you can craft an attack that corrupts the database. Do not attempt this on any application except your own. More info TBA.
-        more_link: TBA
 
-      - title: Execute a XSS attack on your own web app
-        points: 5
-        due: 2015-05-06
-        description: |
-          This assignment requires you to create a web application designed in such a way that user input is naively reprinted by the app, [allowing for a cross-site scripting attack](http://en.wikipedia.org/wiki/Cross-site_scripting). Do not attempt to attack a web application other than your own. More info TBA.
-        more_link: TBA
 
-      - title: A Python mashup of at least two different APIs or data sources
-        points: 15
-        due: 2015-05-13
-        description: |
-          Create a Python project (could be a web-app, could be a few scripts packaged together to make a command-line tool) that talks to two different APIs or data sources, e.g. counting up the number of Twitter followers by Congressional party (via the Sunlight Foundation data)
-        more_link: TBA
 
   - title: Search+Script+Scrape
     deliverables:
@@ -189,3 +185,26 @@ sections:
           The project should be accessible to the public and do what you described in the actual project memo.
         more_link: TBA
 
+
+
+
+      # - title: Execute a SQL injection attack on your own web app
+      #   points: 5
+      #   due: 2015-05-06
+      #   description: |
+      #     This assignment requires you to create a web application that connects to a database and then to be designed in such a way that you can craft an attack that corrupts the database. Do not attempt this on any application except your own. More info TBA.
+      #   more_link: TBA
+
+      # - title: Execute a XSS attack on your own web app
+      #   points: 5
+      #   due: 2015-05-06
+      #   description: |
+      #     This assignment requires you to create a web application designed in such a way that user input is naively reprinted by the app, [allowing for a cross-site scripting attack](http://en.wikipedia.org/wiki/Cross-site_scripting). Do not attempt to attack a web application other than your own. More info TBA.
+      #   more_link: TBA
+
+      # - title: A Python mashup of at least two different APIs or data sources
+      #   points: 15
+      #   due: 2015-05-13
+      #   description: |
+      #     Create a Python project (could be a web-app, could be a few scripts packaged together to make a command-line tool) that talks to two different APIs or data sources, e.g. counting up the number of Twitter followers by Congressional party (via the Sunlight Foundation data)
+      #   more_link: TBA
