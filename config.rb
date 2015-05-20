@@ -38,6 +38,11 @@ configure :build do
 
 end
 
+configure :development do
+  ["tom", "dick", "harry"].each do |name|
+    proxy "/sheet/#{name}", "/homework/homeworksheet.html", :locals => { :person_name => name }
+  end
+end
 
 
 
