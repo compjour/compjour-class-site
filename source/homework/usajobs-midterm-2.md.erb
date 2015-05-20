@@ -104,7 +104,7 @@ So this exercise is mostly to make the next few exercises more convenient. Howev
 
 #### Solution
 
-<%= codepiece '/answers/usajobs-midterm/2-1.py' %>
+<%= codepiece '/answers/usajobs-midterm-2/2-1.py' %>
 
 
 ### 2-2. Download the job data for every U.S. state and save as JSON
@@ -178,7 +178,7 @@ There are 12902 domestic jobs.
 
 #### Solution
 
-<%= codepiece '/answers/usajobs-midterm/2-3.py' %>
+<%= codepiece '/answers/usajobs-midterm-2/2-3.py' %>
 
 
 
@@ -338,17 +338,17 @@ Using `data-hold/domestic-jobcount.json`, print a webpage containing:
 
 Use the template HTML found here:
 
-<%= link_to_local_file '/files/code/answers/usajobs-midterm/sample-barchart-2.html' %>
+<%= link_to_local_file '/files/code/answers/usajobs-midterm-2/sample-barchart-2.html' %>
 
 
 
 #### Results
 
-<%= link_to_local_file '/files/code/answers/usajobs-midterm/2-7.html' %>
+<%= link_to_local_file '/files/code/answers/usajobs-midterm-2/2-7.html' %>
 
 #### Solution
 
-<%= codepiece '/answers/usajobs-midterm/2-7.py' %>
+<%= codepiece '/answers/usajobs-midterm-2/2-7.py' %>
 
 
 ### 2-8. Print out a world Google Map with the non-US countries and a table
@@ -358,12 +358,12 @@ Similar to Exercise 2-7, except use `data-hold/intl-jobcount.json` and instead o
 
 Use this Geochart template and replace the placeholder-text as necessary:
 
-<%= link_to_local_file '/files/code/answers/usajobs-midterm/sample-geochart-2.html' %>
+<%= link_to_local_file '/files/code/answers/usajobs-midterm-2/sample-geochart-2.html' %>
 
 
 #### Results
 
-<%= link_to_local_file '/files/code/answers/usajobs-midterm/2-8.html' %>
+<%= link_to_local_file '/files/code/answers/usajobs-midterm-2/2-8.html' %>
 
 #### Solution
 
@@ -405,7 +405,7 @@ So the trick to this problem is coming up with some kind of conditional that wil
 
 #### Solution
 
-<%= codepiece '/answers/usajobs-midterm/2-9.py' %>
+<%= codepiece '/answers/usajobs-midterm-2/2-9.py' %>
 
 
 ### 2-10. Get first 250 jobs in California, count jobs by Department
@@ -462,7 +462,7 @@ Physician (Anesthesiologist),99957,325000
 #### Solution
 
 
-<%= codepiece '/answers/usajobs-midterm/2-11.py' %>
+<%= codepiece '/answers/usajobs-midterm-2/2-11.py' %>
 
 
 
@@ -552,7 +552,7 @@ Realty Specialist,0,https://www.usajobs.gov/GetJob/ViewDetails/401972000?Posting
 
 #### Solution
 
-<%= codepiece '/answers/usajobs-midterm/2-13.py' %>
+<%= codepiece '/answers/usajobs-midterm-2/2-13.py' %>
 
 
 
@@ -617,7 +617,7 @@ Which you then feed into the HTML for a Interactive Google Geochart, as in previ
 
 Use this HTML template for the map:
 
-<%= link_to_local_file '/files/code/answers/usajobs-midterm/sample-geochart-cities.html' %>
+<%= link_to_local_file '/files/code/answers/usajobs-midterm-2/sample-geochart-cities.html' %>
 
 
 #### Hints
@@ -655,14 +655,14 @@ Counting them up can be done in a similar fashion as done in Exercise 2-10.
 
 ##### The Marker Geocharts
 
-I've already written up a [sample template for you to use]('/files/code/answers/usajobs-midterm/sample-geochart-cities.html'), but if you're curious, take a look at the documentation [for the Marker Geocharts](https://developers.google.com/chart/interactive/docs/gallery/geochart#Markers). Notice in the given example that the `region` of `IT` (Italy) is given, and in the `data` list, only the names of the cities are used, e.g. `"Rome"`, `"Florence"`.
+I've already written up a [sample template for you to use]('/files/code/answers/usajobs-midterm-2/sample-geochart-cities.html'), but if you're curious, take a look at the documentation [for the Marker Geocharts](https://developers.google.com/chart/interactive/docs/gallery/geochart#Markers). Notice in the given example that the `region` of `IT` (Italy) is given, and in the `data` list, only the names of the cities are used, e.g. `"Rome"`, `"Florence"`.
 
 
 
 
 #### Results
 
-<%= link_to_local_file '/files/code/answers/usajobs-midterm/2-14.html' %>
+<%= link_to_local_file '/files/code/answers/usajobs-midterm-2/2-14.html' %>
 
 
 ![img](/files/images/homework/usajobs-midterm-2-15-result.png)
@@ -672,5 +672,5 @@ I've already written up a [sample template for you to use]('/files/code/answers/
 
 <% (1..14).each do |num| %>
 ### 2-<%=num%>.
-  <%=codepiece "/answers/usajobs-midterm/2-#{num}.py" %>
+  <%=codepiece "/answers/usajobs-midterm-2/2-#{num}.py" %>
 <% end %>

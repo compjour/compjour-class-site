@@ -105,7 +105,7 @@ New York has 384 job listings.
 #### Solution
 
 
-<%= codepiece '/answers/usajobs-midterm/1-1.py' %>
+<%= codepiece '/answers/usajobs-midterm-1/1-1.py' %>
 
 
 ### 2. Find the total number of job listings in Alaska and Hawaii. 
@@ -222,7 +222,7 @@ result[2][0]
 
 #### Solution 
 
-<%= codepiece '/answers/usajobs-midterm/1-5.py' %>
+<%= codepiece '/answers/usajobs-midterm-1/1-5.py' %>
 
 
 
@@ -241,7 +241,7 @@ Also, take note of how the __output format__ in Exercise 1-5 is __directly relev
 
 __Copy the HTML from this example file__ and adapt it as necessary: 
 
-<%= link_to_local_file '/files/code/answers/usajobs-midterm/sample-barchart-1.html' %>
+<%= link_to_local_file '/files/code/answers/usajobs-midterm-1/sample-barchart-1.html' %>
 
 (Note: If you open the sample webpage in your browser, it will render all of the chart code...which is *not* what you want. Try using `requests.get()` instead, to get the bare HTML. Or use __View Source__ (but __not Inspect Element__ ) )
 
@@ -249,7 +249,7 @@ Your program must __create a HTML file__ named: `1-6.html`
 
 #### Result
 
-<%= link_to_local_file '/files/code/answers/usajobs-midterm/1-6.html' %>
+<%= link_to_local_file '/files/code/answers/usajobs-midterm-1/1-6.html' %>
 
 ![img](/files/images/homework/usajobs-1-6-chart.png)
 
@@ -269,7 +269,7 @@ __Copy the HTML from this example file__ and adapt it as necessary:
 (Hint: Besides replacing the data element, you also have to do the necessary change to make a __pie__ instead of a bar chart)
 
 
-<%= link_to_local_file '/files/code/answers/usajobs-midterm/sample-barchart-1.html' %>
+<%= link_to_local_file '/files/code/answers/usajobs-midterm-1/sample-barchart-1.html' %>
 
 (Note: If you open the sample webpage in your browser, it will render all of the chart code...which is *not* what you want. Try using `requests.get()` instead, to get the bare HTML. Or use __View Source__ (but __not Inspect Element__ ) )
 
@@ -280,7 +280,7 @@ Your program must __create a HTML file__ named: `1-7.html`
 
 #### Result
 
-<%= link_to_local_file '/files/code/answers/usajobs-midterm/1-7.html' %>
+<%= link_to_local_file '/files/code/answers/usajobs-midterm-1/1-7.html' %>
 
 ![img](/files/images/homework/usajobs-1-7-pie.png)
 
@@ -288,7 +288,7 @@ Your program must __create a HTML file__ named: `1-7.html`
 
 #### Solution
 
-<%= codepiece '/answers/usajobs-midterm/1-7.py' %>
+<%= codepiece '/answers/usajobs-midterm-1/1-7.py' %>
 
 
 ### 8. Create an interactive Google Geochart for all 4 states
@@ -304,7 +304,7 @@ For your convenience, I've produced this JSON file which contains a dictionary t
 
 For the chart, __copy the HTML from this example file__ and adapt it as necessary: 
 
-<%= link_to_local_file '/files/code/answers/usajobs-midterm/sample-geochart-1.html' %>
+<%= link_to_local_file '/files/code/answers/usajobs-midterm-1/sample-geochart-1.html' %>
 
 Your program must __create a HTML file__ named: `1-8.html`
 
@@ -315,7 +315,7 @@ Again, observe the wide variety of charts you can make using the same data-gathe
 
 #### Result
 
-<%= link_to_local_file '/files/code/answers/usajobs-midterm/1-8.html' %>
+<%= link_to_local_file '/files/code/answers/usajobs-midterm-1/1-8.html' %>
 
 
 ![img](/files/images/homework/usajobs-1-8-geochart.png)
@@ -338,7 +338,7 @@ For your convenience, I've produced this JSON file which contains a dictionary t
 
 Use the same sample chart HTML as per Exercise 1-8:
 
-<%= link_to_local_file '/files/code/answers/usajobs-midterm/sample-geochart-1.html' %>
+<%= link_to_local_file '/files/code/answers/usajobs-midterm-1/sample-geochart-1.html' %>
 
 
 
@@ -349,7 +349,7 @@ This exercise is the exact same pattern/process as Exercise 1-8. The only differ
 And in this case, the challenge of getting those 51 names is yet another challenge made relatively easy with an understanding and appreciation of for-loops and data structures. I've given you a [machine-readable list of state names as JSON](http://stash.compjour.org.s3.amazonaws.com/data/usajobs/us-statecodes.json); extracting the names (and their abbreviations) is no different than the process of extracting data from the USAJobs API itself. 
 
 #### Result
-<%= link_to_local_file '/files/code/answers/usajobs-midterm/1-9.html' %>
+<%= link_to_local_file '/files/code/answers/usajobs-midterm-1/1-9.html' %>
 
 
 ![img](/files/images/homework/usajobs-1-9-geochart.png)
@@ -361,7 +361,7 @@ And in this case, the challenge of getting those 51 names is yet another challen
 
 <% (1..9).each do |num| %>
 ### 1-<%=num%>.
-  <%=codepiece "/answers/usajobs-midterm/1-#{num}.py" %>
+  <%=codepiece "/answers/usajobs-midterm-1/1-#{num}.py" %>
 <% end %>
 
 
