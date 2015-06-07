@@ -1,0 +1,15 @@
+---
+layout: false
+---
+
+- students = RepoChecker.get_student_files()
+doctype html
+html lang='en' class='no-js'
+
+  => partial "/layouts/site/head-meta"
+
+  div.container
+    table.table
+      - students.each do |student|
+        tr
+          td => link_to student['stanford'], "/sheet/#{student['stanford']}"

@@ -1,8 +1,51 @@
 ---
 title: "Search-Script-Scrape"
+due_date: 2015-06-09
 ---
 
-Note: This section is still under major revision. Don't worry about committing any code right now, but [go ahead and copy the spreadsheet ](https://docs.google.com/spreadsheets/d/1JbY_-g9MkGH78Rta0PnE6D8rG8T-wdKGsMa3kAC3bDs/edit?usp=sharing) and start making notes on each of the tasks.
+__Due date:__ <%= homework_due_date %>
+
+#### Sample Repo
+
+A sample repo with how things should look can be found here:
+
+https://github.com/compjour/search-script-scrape
+
+(It comes with free answers, so it's worth checking out)
+
+
+
+## Submission 
+
+1. In your `compjour-hw` repo, make a folder named `search-script-scrape`.
+2. For each problem, create a new Python script [named after the number of the problem](https://docs.google.com/spreadsheets/d/1JbY_-g9MkGH78Rta0PnE6D8rG8T-wdKGsMa3kAC3bDs/edit?usp=sharing)
+
+e.g.
+
+~~~
+compjour-hw/
+  |_____ search-script-scrape/
+      |______ 1.py
+      |______ 2.py
+~~~
+
+Or, if you created a __separate repo__ for it:
+
+~~~
+search-script-scrape/
+      |______ 1.py
+      |______ 2.py
+~~~
+
+
+Each script should have a __print()__ statement that outputs the answer.
+
+
+
+### You only have to do 50 of these exercises.
+
+
+[Go ahead and copy the spreadsheet](https://docs.google.com/spreadsheets/d/1JbY_-g9MkGH78Rta0PnE6D8rG8T-wdKGsMa3kAC3bDs/edit?usp=sharing) and start making notes on each of the tasks.
 
 * TOC
 {:toc .tock}
@@ -29,7 +72,6 @@ __SSS__ is less an exercise about programming and more about how to strategicall
 
 ### Guidelines
 
-#### How to turn in a
 
 
 
@@ -59,6 +101,8 @@ print(link.text)
 
 This is that same scrape with BeautifulSoup:
 
+Note: Do __NOT__ use Beautifulsoup if you can help it. I've left this up as an example but use __lxml__ as shown in __Freebie #30__ below
+
 ~~~py
 import bs4
 import requests
@@ -66,6 +110,7 @@ response = requests.get('http://www.data.gov/')
 soup = bs4.BeautifulSoup(response.text)
 link = soup.select("small a")[0]
 print(link.text)
+# Reminder: Do NOT USE BS4; use lxml, as in the below example
 ~~~
 
 #### Freebie #30

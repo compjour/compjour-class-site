@@ -1,4 +1,6 @@
 require 'lib/carm'
+require 'classdocs/homework_file'
+require 'classdocs/repo_checker'
 
 Slim::Engine.disable_option_validator!
 
@@ -32,16 +34,23 @@ set :layout, 'page'
 page "/tutorials/*", :layout => "content_article"
 page "/articles/*", :layout => "content_article"
 page "/files/code/**/*.html", :directory_index => false
+proxy "/search-script-scrape", "/homework/search-script-scrape.html"
+
+
 
 ############################# Build-specific configuration
 configure :build do
-
+  ignore "/homework/homeworksheet.html"
+  ignore "/homework/homeworksheetindex.html"
+  ignore "/sheet/*.html"
+  ignore "/sheets/*.html"
 end
 
 configure :development do
-  ["tom", "dick", "harry"].each do |name|
-    proxy "/sheet/#{name}", "/homework/homeworksheet.html", :locals => { :person_name => name }
+  RepoChecker.get_student_files().each do |sfile|
+    proxy "/sheet/#{sfile['stanford']}", "/homework/homeworksheet.html", :locals => { :student => sfile }
   end
+  proxy "/sheets/", "/homework/homeworksheetindex.html"
 end
 
 

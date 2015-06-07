@@ -9,11 +9,11 @@ sections:
       #     Pageviews and visits aren't everything, but they aren't nothing either. This requirement means that you'll have to figure out how to get a Google Analytics embed code, and how to publish web pages in which you can embed this code.
       #     You can receive partial credit (1 point per 1,000 visits). You won't get extra credit for exceeding the requirement.
 
-      - title: Make at least total 100 commits to Github
+      - title: Make at least total 50 commits to Github
         due: 2015-06-05
         points: 10
         description: |
-          Make at least 150 commits to Github over the course of the quarter. There is no requirement as to what the commits actually contain. These points are all or nothing.
+          Make at least 50 commits to Github over the course of the quarter. There is no requirement as to what the commits actually contain. These points are all or nothing.
 
       # - title: Make commits to Github for 10 consecutive days
       #   due: 2015-06-05
@@ -85,8 +85,30 @@ sections:
         points: 5
         due: 2015-05-22
         description: |
-          Create a Flask app that, based on parameters from user-input, [will query a database (preferably SQLite3) and return results](http://flask.pocoo.org/docs/0.10/patterns/sqlite3/#sqlite3).
-        more_link: final-project-memo
+          A memo describing your final project.
+        content_slug: final-project-memo
+
+      - title: Final Project Update
+        points: 5
+        due: 2015-06-01
+        description: An update and a cocktail napkin sketch
+        content_slug: final-project-update
+
+      - title: Search+Script+Scrape
+        description: Complete 50 Scraping Scripts
+        due: 2015-06-09
+        points: 50
+        content_slug: search-script-scrape
+
+
+      - title: Final project
+        points: 50
+        due: 2015-06-09
+        description: |
+          A public, deployed data project that provides an interesting view into public data.
+
+          I know not everyone is an expert web designer. That is OK. But I do expect you to feel comfortable with having your project live on the web.
+        content_slug: final-project
 
       # - title: Memo
       #   points: 5
@@ -125,65 +147,50 @@ sections:
 
 
 
-  - title: Search+Script+Scrape
-    deliverables:
-      - title: Complete 101 Scraping Scripts
-        description: TK
-        due: 2015-06-05
-        points: 101
-      - title: Make 10 commits to your compjour-sss repo
-        points: 10
-        due: Weekly
-      - title: Create spreadsheet todo-diary
-        due: 2015-04-10
-        points: 10
-
-    description: |
-      TK
 
 
 
-  - title: Quick Visualizations
-    description: |
-      Not everything has to be a full-fledged web project or narrative story. Use code to build a visualization from start to finish, including the collection, filtering, and calculation of a dataset to the actual creation of the visualization. The visualization itself can be a static image or an interactive Javascript display.
-      More information TBA.
-    deliverables:
-      - title: Visualization 1
-        points: 20
-        due: 2015-05-11
-      - title: Visualization 2
-        points: 20
-        due: 2015-05-22
+  # - title: Quick Visualizations
+  #   description: |
+  #     Not everything has to be a full-fledged web project or narrative story. Use code to build a visualization from start to finish, including the collection, filtering, and calculation of a dataset to the actual creation of the visualization. The visualization itself can be a static image or an interactive Javascript display.
+  #     More information TBA.
+  #   deliverables:
+  #     - title: Visualization 1
+  #       points: 20
+  #       due: 2015-05-11
+  #     - title: Visualization 2
+  #       points: 20
+  #       due: 2015-05-22
 
 
 
 
-  - title: Public-Facing Project
-    description: |
-      This project is a culmination of the research and skills learned so far in this class, allowing you to demonstrate your ability to build domain knowledge and apply computational skills to a real-world problem.
-      It must be accessible to the public, and it must aim toward a civic purpose. Other than that, I have no hard requirements for technical fucntionality. It should be something that you're proud to include in your portfolio.
+  # - title: Public-Facing Project
+  #   description: |
+  #     This project is a culmination of the research and skills learned so far in this class, allowing you to demonstrate your ability to build domain knowledge and apply computational skills to a real-world problem.
+  #     It must be accessible to the public, and it must aim toward a civic purpose. Other than that, I have no hard requirements for technical fucntionality. It should be something that you're proud to include in your portfolio.
 
-    deliverables:
-      - title: Faux memo
-        points: 10
-        due: 2015-05-01
-        description: |
-          Write a project memo in the required format, but for an already existing journalism project that someone else has already built. You will write the memo as if you were the project creator, which means you have to do some research about how the project was actually built.
-        more_link: TBA
+  #   deliverables:
+  #     - title: Faux memo
+  #       points: 10
+  #       due: 2015-05-01
+  #       description: |
+  #         Write a project memo in the required format, but for an already existing journalism project that someone else has already built. You will write the memo as if you were the project creator, which means you have to do some research about how the project was actually built.
+  #       more_link: TBA
 
-      - title: Actual memo
-        points: 20
-        due: 2015-05-18
-        description: |
-          Write a project memo in the required format for the project you actually want to make for this class.
-        more_link: TBA
+  #     - title: Actual memo
+  #       points: 20
+  #       due: 2015-05-18
+  #       description: |
+  #         Write a project memo in the required format for the project you actually want to make for this class.
+  #       more_link: TBA
 
-      - title: Produce and publish the project
-        points: 100
-        due: 2015-06-05
-        description: |
-          The project should be accessible to the public and do what you described in the actual project memo.
-        more_link: TBA
+  #     - title: Produce and publish the project
+  #       points: 100
+  #       due: 2015-06-05
+  #       description: |
+  #         The project should be accessible to the public and do what you described in the actual project memo.
+  #       more_link: TBA
 
 
 

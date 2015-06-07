@@ -1,6 +1,53 @@
-= wrap_layout :layout
+---
+layout: false
+---
+
+- commits = RepoChecker.get_commit_list(student['github'])
+- homework_files = Homeworks.homework_files()
+- homework_notes = Homeworks.get_student_notes(student['stanford'])
+doctype html
+html lang='en' class='no-js'
+
+  => partial "/layouts/site/head-meta"
+
+
+  css:
+    .homeworkhed{ font-weight: bold; margin-top: 3.0em;  margin-bottom: 0.5em;}
+    .table.homeworkhed td{ border-top: 0}
+    tr.yes{ color: #3a3; background: #edffed; }
+    tr.no{ color: #a33; background: #ffeded;}
+    .notes{ padding: 1.0em; border: thin dashed #aaa; border-top: 0}
+
   div.container.page
-      h1.title => person_name
+      h1.title => link_to student['stanford'], "mailto:#{student['stanford']}@stanford.edu?subject=Compjour status card for #{student['stanford']}"
 
       div.page-content
-        div => 'hi'
+        div.well
+          p <strong>Note:</strong> this page does not show any scoring yet. Right now it just tells you if you have files where I expect them to be. If it says "no", then, well, you're missing a file. Or you've misspelled something.
+
+          p Please fix any problems by <strong>this Friday, May 29</strong>
+
+          p The final-project-memo assignment has notes and suggestions from me. Unless I didn't find a memo from you
+
+
+
+
+        - homework_files.each_pair do |k, obj|
+
+          table.table.homeworkhed
+            tr
+              td style="width: 70%;"
+                strong => link_to( obj['title'], "http://www.compjour.org/homework/#{k}", :id => "#{k}")
+              td style="width: 14%; text-align: right;" => obj['due']
+              td style="width: 14%; text-align: right;"=> "#{obj['points']} pts."
+
+          - if (hworknotes = homework_notes[k])
+              div.notes
+                => make_markdown(hworknotes['notes'])
+
+          table.table.table-condensed
+            - obj['files'].each do |f|
+              - is_found = commits[f].length > 0 ? 'yes' : 'no'
+              tr class="#{{is_found}}"
+                td => f
+                td style="text-align: right;" => is_found
