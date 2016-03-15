@@ -8,7 +8,7 @@ set :site_title, 'Computational Journalism'
 set :site_deck, 'Stanford COMM 177A/277A'
 set :site_author, "Dan Nguyen"
 set :class_start_date, '2015-03-30'
-set :site_domain, 'http://www.compjour.org'
+set :site_domain, 'http://2015.compjour.org'
 set :stash_domain, 'http://stash.compjour.org'
 
 set :site_description, "Data-mining, analysis, and visualization for civic purposes"
